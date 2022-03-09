@@ -6,4 +6,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Business\" />
+    <Folder Include="Persistence\" />
+  </ItemGroup>
+
 </Project>
