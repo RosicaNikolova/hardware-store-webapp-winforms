@@ -8,7 +8,7 @@ namespace MediaBazaarProject.Business
 {
     public class EmployeeManager
     {
-        /*EmployeeRepository employeeRepository = new EmployeeRepository();
+        /* private EmployeeRepository employeeRepository = new EmployeeRepository();
         public Employee CreateEmployee(string email, string password) {
             
         }
