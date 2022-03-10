@@ -57,28 +57,27 @@ namespace MediaBazaarProject
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.lblAdminEmpManagement = new System.Windows.Forms.Label();
             this.tabScheduleAdministration = new System.Windows.Forms.TabPage();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.gbAssignToShift = new System.Windows.Forms.GroupBox();
+            this.btnAssignToShift = new System.Windows.Forms.Button();
+            this.lbEmployeeShiftList = new System.Windows.Forms.ListBox();
+            this.cbShiftSelect = new System.Windows.Forms.ComboBox();
+            this.dtpDay = new System.Windows.Forms.DateTimePicker();
+            this.btnRemoveFromShift = new System.Windows.Forms.Button();
+            this.lbEveningShift = new System.Windows.Forms.ListBox();
+            this.lbMiddayShift = new System.Windows.Forms.ListBox();
+            this.lbMorningShift = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblMiddayShift = new System.Windows.Forms.Label();
+            this.lblMorning = new System.Windows.Forms.Label();
             this.lblAdministrationSchedule = new System.Windows.Forms.Label();
             this.tabStatistics = new System.Windows.Forms.TabPage();
             this.lblAdministrationStatistics = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabAdmin.SuspendLayout();
             this.tabAdminHome.SuspendLayout();
             this.tabEmployeeManagement.SuspendLayout();
             this.tabScheduleAdministration.SuspendLayout();
+            this.gbAssignToShift.SuspendLayout();
             this.tabStatistics.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabAdmin
@@ -357,15 +356,14 @@ namespace MediaBazaarProject
             // 
             // tabScheduleAdministration
             // 
-            this.tabScheduleAdministration.Controls.Add(this.groupBox1);
-            this.tabScheduleAdministration.Controls.Add(this.button1);
-            this.tabScheduleAdministration.Controls.Add(this.listBox3);
-            this.tabScheduleAdministration.Controls.Add(this.listBox2);
-            this.tabScheduleAdministration.Controls.Add(this.listBox1);
+            this.tabScheduleAdministration.Controls.Add(this.gbAssignToShift);
+            this.tabScheduleAdministration.Controls.Add(this.btnRemoveFromShift);
+            this.tabScheduleAdministration.Controls.Add(this.lbEveningShift);
+            this.tabScheduleAdministration.Controls.Add(this.lbMiddayShift);
+            this.tabScheduleAdministration.Controls.Add(this.lbMorningShift);
             this.tabScheduleAdministration.Controls.Add(this.label3);
-            this.tabScheduleAdministration.Controls.Add(this.label2);
-            this.tabScheduleAdministration.Controls.Add(this.label1);
-            this.tabScheduleAdministration.Controls.Add(this.dateTimePicker1);
+            this.tabScheduleAdministration.Controls.Add(this.lblMiddayShift);
+            this.tabScheduleAdministration.Controls.Add(this.lblMorning);
             this.tabScheduleAdministration.Controls.Add(this.lblAdministrationSchedule);
             this.tabScheduleAdministration.Location = new System.Drawing.Point(4, 29);
             this.tabScheduleAdministration.Name = "tabScheduleAdministration";
@@ -375,66 +373,122 @@ namespace MediaBazaarProject
             this.tabScheduleAdministration.Text = "scheduleAdministration";
             this.tabScheduleAdministration.UseVisualStyleBackColor = true;
             // 
-            // listBox3
+            // gbAssignToShift
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(753, 142);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(79, 104);
-            this.listBox3.TabIndex = 7;
+            this.gbAssignToShift.Controls.Add(this.btnAssignToShift);
+            this.gbAssignToShift.Controls.Add(this.lbEmployeeShiftList);
+            this.gbAssignToShift.Controls.Add(this.cbShiftSelect);
+            this.gbAssignToShift.Controls.Add(this.dtpDay);
+            this.gbAssignToShift.Location = new System.Drawing.Point(38, 61);
+            this.gbAssignToShift.Name = "gbAssignToShift";
+            this.gbAssignToShift.Size = new System.Drawing.Size(333, 292);
+            this.gbAssignToShift.TabIndex = 9;
+            this.gbAssignToShift.TabStop = false;
+            this.gbAssignToShift.Text = "Assign to shift";
             // 
-            // listBox2
+            // btnAssignToShift
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(648, 142);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(79, 104);
-            this.listBox2.TabIndex = 6;
+            this.btnAssignToShift.Location = new System.Drawing.Point(117, 246);
+            this.btnAssignToShift.Name = "btnAssignToShift";
+            this.btnAssignToShift.Size = new System.Drawing.Size(94, 29);
+            this.btnAssignToShift.TabIndex = 13;
+            this.btnAssignToShift.Text = "Assign";
+            this.btnAssignToShift.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lbEmployeeShiftList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(550, 142);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(79, 104);
-            this.listBox1.TabIndex = 5;
+            this.lbEmployeeShiftList.FormattingEnabled = true;
+            this.lbEmployeeShiftList.ItemHeight = 20;
+            this.lbEmployeeShiftList.Location = new System.Drawing.Point(39, 107);
+            this.lbEmployeeShiftList.Name = "lbEmployeeShiftList";
+            this.lbEmployeeShiftList.Size = new System.Drawing.Size(250, 124);
+            this.lbEmployeeShiftList.TabIndex = 12;
+            // 
+            // cbShiftSelect
+            // 
+            this.cbShiftSelect.FormattingEnabled = true;
+            this.cbShiftSelect.Items.AddRange(new object[] {
+            "Morning",
+            "Mid-day",
+            "Evening"});
+            this.cbShiftSelect.Location = new System.Drawing.Point(87, 59);
+            this.cbShiftSelect.Name = "cbShiftSelect";
+            this.cbShiftSelect.Size = new System.Drawing.Size(151, 28);
+            this.cbShiftSelect.TabIndex = 11;
+            // 
+            // dtpDay
+            // 
+            this.dtpDay.AccessibleRole = System.Windows.Forms.AccessibleRole.Separator;
+            this.dtpDay.Location = new System.Drawing.Point(39, 26);
+            this.dtpDay.MaxDate = new System.DateTime(2022, 3, 11, 0, 0, 0, 0);
+            this.dtpDay.MinDate = new System.DateTime(2022, 3, 7, 0, 0, 0, 0);
+            this.dtpDay.Name = "dtpDay";
+            this.dtpDay.Size = new System.Drawing.Size(261, 27);
+            this.dtpDay.TabIndex = 10;
+            this.dtpDay.Value = new System.DateTime(2022, 3, 7, 0, 0, 0, 0);
+            // 
+            // btnRemoveFromShift
+            // 
+            this.btnRemoveFromShift.Location = new System.Drawing.Point(550, 263);
+            this.btnRemoveFromShift.Name = "btnRemoveFromShift";
+            this.btnRemoveFromShift.Size = new System.Drawing.Size(282, 29);
+            this.btnRemoveFromShift.TabIndex = 8;
+            this.btnRemoveFromShift.Text = "Remove selected employee from shift";
+            this.btnRemoveFromShift.UseVisualStyleBackColor = true;
+            // 
+            // lbEveningShift
+            // 
+            this.lbEveningShift.FormattingEnabled = true;
+            this.lbEveningShift.ItemHeight = 20;
+            this.lbEveningShift.Location = new System.Drawing.Point(753, 142);
+            this.lbEveningShift.Name = "lbEveningShift";
+            this.lbEveningShift.Size = new System.Drawing.Size(79, 104);
+            this.lbEveningShift.TabIndex = 7;
+            // 
+            // lbMiddayShift
+            // 
+            this.lbMiddayShift.FormattingEnabled = true;
+            this.lbMiddayShift.ItemHeight = 20;
+            this.lbMiddayShift.Location = new System.Drawing.Point(648, 142);
+            this.lbMiddayShift.Name = "lbMiddayShift";
+            this.lbMiddayShift.Size = new System.Drawing.Size(79, 104);
+            this.lbMiddayShift.TabIndex = 6;
+            // 
+            // lbMorningShift
+            // 
+            this.lbMorningShift.FormattingEnabled = true;
+            this.lbMorningShift.ItemHeight = 20;
+            this.lbMorningShift.Location = new System.Drawing.Point(550, 142);
+            this.lbMorningShift.Name = "lbMorningShift";
+            this.lbMorningShift.Size = new System.Drawing.Size(79, 104);
+            this.lbMorningShift.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(771, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.label3.Text = "Evening";
             // 
-            // label2
+            // lblMiddayShift
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(664, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.lblMiddayShift.AutoSize = true;
+            this.lblMiddayShift.Location = new System.Drawing.Point(664, 119);
+            this.lblMiddayShift.Name = "lblMiddayShift";
+            this.lblMiddayShift.Size = new System.Drawing.Size(65, 20);
+            this.lblMiddayShift.TabIndex = 3;
+            this.lblMiddayShift.Text = "Mid-day";
             // 
-            // label1
+            // lblMorning
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(562, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(571, 61);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 1;
+            this.lblMorning.AutoSize = true;
+            this.lblMorning.Location = new System.Drawing.Point(562, 119);
+            this.lblMorning.Name = "lblMorning";
+            this.lblMorning.Size = new System.Drawing.Size(65, 20);
+            this.lblMorning.TabIndex = 2;
+            this.lblMorning.Text = "Morning";
             // 
             // lblAdministrationSchedule
             // 
@@ -465,61 +519,6 @@ namespace MediaBazaarProject
             this.lblAdministrationStatistics.TabIndex = 0;
             this.lblAdministrationStatistics.Text = "Administration- statistics";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(648, 270);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.listBox4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Location = new System.Drawing.Point(38, 61);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(333, 292);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(39, 26);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker2.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(87, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 20;
-            this.listBox4.Location = new System.Drawing.Point(39, 107);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(250, 124);
-            this.listBox4.TabIndex = 12;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(117, 246);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // admin_managerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -535,9 +534,9 @@ namespace MediaBazaarProject
             this.tabEmployeeManagement.PerformLayout();
             this.tabScheduleAdministration.ResumeLayout(false);
             this.tabScheduleAdministration.PerformLayout();
+            this.gbAssignToShift.ResumeLayout(false);
             this.tabStatistics.ResumeLayout(false);
             this.tabStatistics.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -575,18 +574,17 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Label lblAdministrationSchedule;
         private System.Windows.Forms.TabPage tabStatistics;
         private System.Windows.Forms.Label lblAdministrationStatistics;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbEveningShift;
+        private System.Windows.Forms.ListBox lbMiddayShift;
+        private System.Windows.Forms.ListBox lbMorningShift;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblMiddayShift;
+        private System.Windows.Forms.Label lblMorning;
+        private System.Windows.Forms.GroupBox gbAssignToShift;
+        private System.Windows.Forms.Button btnAssignToShift;
+        private System.Windows.Forms.ListBox lbEmployeeShiftList;
+        private System.Windows.Forms.ComboBox cbShiftSelect;
+        private System.Windows.Forms.DateTimePicker dtpDay;
+        private System.Windows.Forms.Button btnRemoveFromShift;
     }
 }
