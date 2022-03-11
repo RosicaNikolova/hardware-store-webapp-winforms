@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaBazaarProject.Persistence;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,16 @@ namespace MediaBazaarProject.Business
 {
     public class EmployeeManager
     {
-        /* private EmployeeRepository employeeRepository = new EmployeeRepository();
-        public Employee CreateEmployee(string email, string password) {
+        public EmployeeRepository employeeRepository = new EmployeeRepository();
+
+        
+
+        public List<Employee> GetAllEmployees()
+        {
+            return employeeRepository.GetEmployees();
+        }
+
+        /*public Employee CreateEmployee(string email, string password) {
             
         }
         public void UpdateEmployee(Employee e) {

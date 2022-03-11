@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarProject.Business
 {
-    class Employee
+    public class Employee
     {
+        public Employee()
+        {
+        }
+
+        public Employee(int e, string v)
+        {
+            
+        }
+
+        public int Id { get;  set; }
+        public string FirstName { get;  set; }
+        public string LastName { get;  set; }
     }
 }
