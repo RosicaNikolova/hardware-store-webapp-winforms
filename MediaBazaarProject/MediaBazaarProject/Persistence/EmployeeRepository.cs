@@ -14,7 +14,7 @@ namespace MediaBazaarProject.Persistence
         {
             //database magic
             List<Employee> employees = new List<Employee>();
-            MySqlConnection conn = new MySqlConnection("server=localhost;database=mediabazaar;uid=root;password=''");
+            MySqlConnection conn = new MySqlConnection("server=localhost;database=mediaschema;uid=dandi;password='1234'");
 
             string sql = "SELECT * FROM employees ORDER BY EmployeeId";
             MySqlCommand cmd = new MySqlCommand(sql, conn);

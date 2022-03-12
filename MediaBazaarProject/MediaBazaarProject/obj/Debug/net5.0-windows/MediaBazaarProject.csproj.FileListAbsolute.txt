@@ -73,3 +73,12 @@ D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-window
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\ref\MediaBazaarProject.dll
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.pdb
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.genruntimeconfig.cache
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.csproj.CopyComplete

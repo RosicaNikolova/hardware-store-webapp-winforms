@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarProject.Business
 {
-    class User
+    public class User
     {
+        private string name;
+        private Position position;
+
+        public User(string name, Position position)
+        {
+            this.name = name;
+            this.position = position;
+        }
     }
 }

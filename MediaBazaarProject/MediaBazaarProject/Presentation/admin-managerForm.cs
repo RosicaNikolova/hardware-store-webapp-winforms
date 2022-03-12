@@ -29,7 +29,6 @@ namespace MediaBazaarProject
                 lbEmployeeList.Items.Add(u.FirstName + " " + u.LastName);
 
             }
-            
         }
     }
 }
