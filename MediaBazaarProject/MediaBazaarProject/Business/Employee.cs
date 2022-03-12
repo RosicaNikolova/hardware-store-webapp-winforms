@@ -15,7 +15,7 @@ namespace MediaBazaarProject.Business
         private string address;
         private string nationality;
         private string password;
-        private double wage;
+        private double salary;
         private long phoneNumber;
         private string gender;
         private int BSN;
@@ -34,13 +34,13 @@ namespace MediaBazaarProject.Business
             this.address = address;
             this.nationality = nationality;
             this.password = password;
-            this.wage = wage;
+            this.salary = wage;
             this.phoneNumber = phoneNumber;
             this.gender = gender;
             this.BSN = BSN;
             this.permanentContract = permanentContract;
             this.position = position;
-            this.isAccountActive = isAccountActive;
+            this.IsAccountActive = isAccountActive;
             this.covidVaccinated = covidVaccinated;
             id++;
         }
@@ -58,5 +58,7 @@ namespace MediaBazaarProject.Business
         public int Id { get;  set; }
         public string FirstName { get;  set; }
         public string LastName { get;  set; }
+        public bool IsAccountActive { get => isAccountActive; set => isAccountActive = value; }
     }
+    
 }

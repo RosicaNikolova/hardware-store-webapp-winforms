@@ -87,10 +87,9 @@ namespace MediaBazaarProject
             this.tabAdmin.Controls.Add(this.tabScheduleAdministration);
             this.tabAdmin.Controls.Add(this.tabStatistics);
             this.tabAdmin.Location = new System.Drawing.Point(0, 1);
-            this.tabAdmin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.SelectedIndex = 0;
-            this.tabAdmin.Size = new System.Drawing.Size(830, 334);
+            this.tabAdmin.Size = new System.Drawing.Size(949, 445);
             this.tabAdmin.TabIndex = 0;
             // 
             // tabAdminHome
@@ -109,11 +108,10 @@ namespace MediaBazaarProject
             this.tabAdminHome.Controls.Add(this.btnScheduleAdministration);
             this.tabAdminHome.Controls.Add(this.btnEmployeeManagement);
             this.tabAdminHome.Controls.Add(this.lblRole);
-            this.tabAdminHome.Location = new System.Drawing.Point(4, 24);
-            this.tabAdminHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabAdminHome.Location = new System.Drawing.Point(4, 29);
             this.tabAdminHome.Name = "tabAdminHome";
-            this.tabAdminHome.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabAdminHome.Size = new System.Drawing.Size(822, 306);
+            this.tabAdminHome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAdminHome.Size = new System.Drawing.Size(941, 412);
             this.tabAdminHome.TabIndex = 0;
             this.tabAdminHome.Text = "adminHome";
             this.tabAdminHome.UseVisualStyleBackColor = true;
@@ -121,48 +119,43 @@ namespace MediaBazaarProject
             // lbEmployeeList
             // 
             this.lbEmployeeList.FormattingEnabled = true;
-            this.lbEmployeeList.ItemHeight = 15;
-            this.lbEmployeeList.Location = new System.Drawing.Point(313, 141);
-            this.lbEmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbEmployeeList.ItemHeight = 20;
+            this.lbEmployeeList.Location = new System.Drawing.Point(358, 188);
             this.lbEmployeeList.Name = "lbEmployeeList";
-            this.lbEmployeeList.Size = new System.Drawing.Size(494, 154);
+            this.lbEmployeeList.Size = new System.Drawing.Size(564, 204);
             this.lbEmployeeList.TabIndex = 13;
             // 
             // btnSearchByName
             // 
-            this.btnSearchByName.Location = new System.Drawing.Point(442, 114);
-            this.btnSearchByName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchByName.Location = new System.Drawing.Point(505, 152);
             this.btnSearchByName.Name = "btnSearchByName";
-            this.btnSearchByName.Size = new System.Drawing.Size(82, 22);
+            this.btnSearchByName.Size = new System.Drawing.Size(94, 29);
             this.btnSearchByName.TabIndex = 12;
             this.btnSearchByName.Text = "Search";
             this.btnSearchByName.UseVisualStyleBackColor = true;
             // 
             // tbFilterByName
             // 
-            this.tbFilterByName.Location = new System.Drawing.Point(313, 116);
-            this.tbFilterByName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbFilterByName.Location = new System.Drawing.Point(358, 155);
             this.tbFilterByName.Name = "tbFilterByName";
-            this.tbFilterByName.Size = new System.Drawing.Size(110, 23);
+            this.tbFilterByName.Size = new System.Drawing.Size(125, 27);
             this.tbFilterByName.TabIndex = 11;
             this.tbFilterByName.Text = "Search by name...";
             // 
             // btnResetFilters
             // 
-            this.btnResetFilters.Location = new System.Drawing.Point(419, 89);
-            this.btnResetFilters.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnResetFilters.Location = new System.Drawing.Point(479, 119);
             this.btnResetFilters.Name = "btnResetFilters";
-            this.btnResetFilters.Size = new System.Drawing.Size(82, 22);
+            this.btnResetFilters.Size = new System.Drawing.Size(94, 29);
             this.btnResetFilters.TabIndex = 10;
             this.btnResetFilters.Text = "Reset";
             this.btnResetFilters.UseVisualStyleBackColor = true;
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(313, 89);
-            this.btnFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFilter.Location = new System.Drawing.Point(358, 119);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(82, 22);
+            this.btnFilter.Size = new System.Drawing.Size(94, 29);
             this.btnFilter.TabIndex = 9;
             this.btnFilter.Text = "Filter";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -170,10 +163,9 @@ namespace MediaBazaarProject
             // rbPermanent
             // 
             this.rbPermanent.AutoSize = true;
-            this.rbPermanent.Location = new System.Drawing.Point(654, 67);
-            this.rbPermanent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbPermanent.Location = new System.Drawing.Point(747, 89);
             this.rbPermanent.Name = "rbPermanent";
-            this.rbPermanent.Size = new System.Drawing.Size(83, 19);
+            this.rbPermanent.Size = new System.Drawing.Size(100, 24);
             this.rbPermanent.TabIndex = 8;
             this.rbPermanent.TabStop = true;
             this.rbPermanent.Text = "Permanent";
@@ -182,10 +174,9 @@ namespace MediaBazaarProject
             // rbTemporary
             // 
             this.rbTemporary.AutoSize = true;
-            this.rbTemporary.Location = new System.Drawing.Point(561, 66);
-            this.rbTemporary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rbTemporary.Location = new System.Drawing.Point(641, 88);
             this.rbTemporary.Name = "rbTemporary";
-            this.rbTemporary.Size = new System.Drawing.Size(81, 19);
+            this.rbTemporary.Size = new System.Drawing.Size(101, 24);
             this.rbTemporary.TabIndex = 7;
             this.rbTemporary.TabStop = true;
             this.rbTemporary.Text = "Temporary";
@@ -194,67 +185,64 @@ namespace MediaBazaarProject
             // lblTypeOfContract
             // 
             this.lblTypeOfContract.AutoSize = true;
-            this.lblTypeOfContract.Location = new System.Drawing.Point(451, 66);
+            this.lblTypeOfContract.Location = new System.Drawing.Point(515, 88);
             this.lblTypeOfContract.Name = "lblTypeOfContract";
-            this.lblTypeOfContract.Size = new System.Drawing.Size(95, 15);
+            this.lblTypeOfContract.Size = new System.Drawing.Size(119, 20);
             this.lblTypeOfContract.TabIndex = 6;
             this.lblTypeOfContract.Text = "Type of contract:";
             // 
             // cbNationality
             // 
             this.cbNationality.FormattingEnabled = true;
-            this.cbNationality.Location = new System.Drawing.Point(313, 64);
-            this.cbNationality.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbNationality.Location = new System.Drawing.Point(358, 85);
             this.cbNationality.Name = "cbNationality";
-            this.cbNationality.Size = new System.Drawing.Size(133, 23);
+            this.cbNationality.Size = new System.Drawing.Size(151, 28);
             this.cbNationality.TabIndex = 5;
             this.cbNationality.Text = "Nationality...";
             // 
             // lblListOfEmployees
             // 
             this.lblListOfEmployees.AutoSize = true;
-            this.lblListOfEmployees.Location = new System.Drawing.Point(313, 46);
+            this.lblListOfEmployees.Location = new System.Drawing.Point(358, 61);
             this.lblListOfEmployees.Name = "lblListOfEmployees";
-            this.lblListOfEmployees.Size = new System.Drawing.Size(102, 15);
+            this.lblListOfEmployees.Size = new System.Drawing.Size(128, 20);
             this.lblListOfEmployees.TabIndex = 4;
             this.lblListOfEmployees.Text = "List of employees:";
             // 
             // btnStatistics
             // 
-            this.btnStatistics.Location = new System.Drawing.Point(15, 154);
-            this.btnStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnStatistics.Location = new System.Drawing.Point(17, 205);
             this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(100, 74);
+            this.btnStatistics.Size = new System.Drawing.Size(114, 99);
             this.btnStatistics.TabIndex = 3;
             this.btnStatistics.Text = "Statistics";
             this.btnStatistics.UseVisualStyleBackColor = true;
             // 
             // btnScheduleAdministration
             // 
-            this.btnScheduleAdministration.Location = new System.Drawing.Point(156, 46);
-            this.btnScheduleAdministration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnScheduleAdministration.Location = new System.Drawing.Point(178, 61);
             this.btnScheduleAdministration.Name = "btnScheduleAdministration";
-            this.btnScheduleAdministration.Size = new System.Drawing.Size(100, 74);
+            this.btnScheduleAdministration.Size = new System.Drawing.Size(114, 99);
             this.btnScheduleAdministration.TabIndex = 2;
             this.btnScheduleAdministration.Text = "Schedule administration";
             this.btnScheduleAdministration.UseVisualStyleBackColor = true;
             // 
             // btnEmployeeManagement
             // 
-            this.btnEmployeeManagement.Location = new System.Drawing.Point(15, 46);
-            this.btnEmployeeManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEmployeeManagement.Location = new System.Drawing.Point(17, 61);
             this.btnEmployeeManagement.Name = "btnEmployeeManagement";
-            this.btnEmployeeManagement.Size = new System.Drawing.Size(96, 74);
+            this.btnEmployeeManagement.Size = new System.Drawing.Size(110, 99);
             this.btnEmployeeManagement.TabIndex = 1;
             this.btnEmployeeManagement.Text = "Employee management";
             this.btnEmployeeManagement.UseVisualStyleBackColor = true;
+            this.btnEmployeeManagement.Click += new System.EventHandler(this.btnEmployeeManagement_Click);
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(15, 10);
+            this.lblRole.Location = new System.Drawing.Point(17, 13);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(132, 15);
+            this.lblRole.Size = new System.Drawing.Size(165, 20);
             this.lblRole.TabIndex = 0;
             this.lblRole.Text = "Administrator/Manager";
             // 
@@ -270,59 +258,54 @@ namespace MediaBazaarProject
             this.tabEmployeeManagement.Controls.Add(this.btnDeactivateEmployee);
             this.tabEmployeeManagement.Controls.Add(this.btnAddEmployee);
             this.tabEmployeeManagement.Controls.Add(this.lblAdminEmpManagement);
-            this.tabEmployeeManagement.Location = new System.Drawing.Point(4, 24);
-            this.tabEmployeeManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabEmployeeManagement.Location = new System.Drawing.Point(4, 29);
             this.tabEmployeeManagement.Name = "tabEmployeeManagement";
-            this.tabEmployeeManagement.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabEmployeeManagement.Size = new System.Drawing.Size(822, 306);
+            this.tabEmployeeManagement.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmployeeManagement.Size = new System.Drawing.Size(941, 412);
             this.tabEmployeeManagement.TabIndex = 1;
             this.tabEmployeeManagement.Text = "employeeManagement";
             this.tabEmployeeManagement.UseVisualStyleBackColor = true;
             // 
             // btnSearchEmpName
             // 
-            this.btnSearchEmpName.Location = new System.Drawing.Point(661, 42);
-            this.btnSearchEmpName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchEmpName.Location = new System.Drawing.Point(755, 56);
             this.btnSearchEmpName.Name = "btnSearchEmpName";
-            this.btnSearchEmpName.Size = new System.Drawing.Size(142, 22);
+            this.btnSearchEmpName.Size = new System.Drawing.Size(162, 29);
             this.btnSearchEmpName.TabIndex = 9;
             this.btnSearchEmpName.Text = "Search for employee";
             this.btnSearchEmpName.UseVisualStyleBackColor = true;
             // 
             // tbSearchEmployeeName
             // 
-            this.tbSearchEmployeeName.Location = new System.Drawing.Point(546, 42);
-            this.tbSearchEmployeeName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbSearchEmployeeName.Location = new System.Drawing.Point(624, 56);
             this.tbSearchEmployeeName.Name = "tbSearchEmployeeName";
-            this.tbSearchEmployeeName.Size = new System.Drawing.Size(110, 23);
+            this.tbSearchEmployeeName.Size = new System.Drawing.Size(125, 27);
             this.tbSearchEmployeeName.TabIndex = 8;
             this.tbSearchEmployeeName.Text = "Employee name...";
             // 
             // lblListOfEmployeesManagement
             // 
             this.lblListOfEmployeesManagement.AutoSize = true;
-            this.lblListOfEmployeesManagement.Location = new System.Drawing.Point(215, 44);
+            this.lblListOfEmployeesManagement.Location = new System.Drawing.Point(246, 59);
             this.lblListOfEmployeesManagement.Name = "lblListOfEmployeesManagement";
-            this.lblListOfEmployeesManagement.Size = new System.Drawing.Size(102, 15);
+            this.lblListOfEmployeesManagement.Size = new System.Drawing.Size(128, 20);
             this.lblListOfEmployeesManagement.TabIndex = 7;
             this.lblListOfEmployeesManagement.Text = "List of employees:";
             // 
             // lbEmployeeManagementList
             // 
             this.lbEmployeeManagementList.FormattingEnabled = true;
-            this.lbEmployeeManagementList.ItemHeight = 15;
-            this.lbEmployeeManagementList.Location = new System.Drawing.Point(215, 62);
-            this.lbEmployeeManagementList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbEmployeeManagementList.ItemHeight = 20;
+            this.lbEmployeeManagementList.Location = new System.Drawing.Point(246, 83);
             this.lbEmployeeManagementList.Name = "lbEmployeeManagementList";
-            this.lbEmployeeManagementList.Size = new System.Drawing.Size(588, 229);
+            this.lbEmployeeManagementList.Size = new System.Drawing.Size(671, 304);
             this.lbEmployeeManagementList.TabIndex = 6;
             // 
             // btnDeleteEmployee
             // 
-            this.btnDeleteEmployee.Location = new System.Drawing.Point(7, 242);
-            this.btnDeleteEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteEmployee.Location = new System.Drawing.Point(8, 323);
             this.btnDeleteEmployee.Name = "btnDeleteEmployee";
-            this.btnDeleteEmployee.Size = new System.Drawing.Size(121, 58);
+            this.btnDeleteEmployee.Size = new System.Drawing.Size(138, 77);
             this.btnDeleteEmployee.TabIndex = 5;
             this.btnDeleteEmployee.Text = "Delete employee";
             this.btnDeleteEmployee.UseVisualStyleBackColor = true;
@@ -330,48 +313,47 @@ namespace MediaBazaarProject
             // lblSelectEmployee
             // 
             this.lblSelectEmployee.AutoSize = true;
-            this.lblSelectEmployee.Location = new System.Drawing.Point(8, 100);
+            this.lblSelectEmployee.Location = new System.Drawing.Point(9, 133);
             this.lblSelectEmployee.Name = "lblSelectEmployee";
-            this.lblSelectEmployee.Size = new System.Drawing.Size(116, 15);
+            this.lblSelectEmployee.Size = new System.Drawing.Size(146, 20);
             this.lblSelectEmployee.TabIndex = 4;
             this.lblSelectEmployee.Text = "Select employee to...";
             // 
             // btnEditEmployee
             // 
-            this.btnEditEmployee.Location = new System.Drawing.Point(7, 180);
-            this.btnEditEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEditEmployee.Location = new System.Drawing.Point(8, 240);
             this.btnEditEmployee.Name = "btnEditEmployee";
-            this.btnEditEmployee.Size = new System.Drawing.Size(121, 58);
+            this.btnEditEmployee.Size = new System.Drawing.Size(138, 77);
             this.btnEditEmployee.TabIndex = 3;
             this.btnEditEmployee.Text = "Edit employee";
             this.btnEditEmployee.UseVisualStyleBackColor = true;
             // 
             // btnDeactivateEmployee
             // 
-            this.btnDeactivateEmployee.Location = new System.Drawing.Point(7, 118);
-            this.btnDeactivateEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeactivateEmployee.Location = new System.Drawing.Point(8, 157);
             this.btnDeactivateEmployee.Name = "btnDeactivateEmployee";
-            this.btnDeactivateEmployee.Size = new System.Drawing.Size(121, 58);
+            this.btnDeactivateEmployee.Size = new System.Drawing.Size(138, 77);
             this.btnDeactivateEmployee.TabIndex = 2;
             this.btnDeactivateEmployee.Text = "Deactivate employee";
             this.btnDeactivateEmployee.UseVisualStyleBackColor = true;
+            this.btnDeactivateEmployee.Click += new System.EventHandler(this.btnDeactivateEmployee_Click);
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(8, 32);
-            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddEmployee.Location = new System.Drawing.Point(9, 43);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(121, 58);
+            this.btnAddEmployee.Size = new System.Drawing.Size(138, 77);
             this.btnAddEmployee.TabIndex = 1;
             this.btnAddEmployee.Text = "Add employee";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // lblAdminEmpManagement
             // 
             this.lblAdminEmpManagement.AutoSize = true;
-            this.lblAdminEmpManagement.Location = new System.Drawing.Point(8, 5);
+            this.lblAdminEmpManagement.Location = new System.Drawing.Point(9, 7);
             this.lblAdminEmpManagement.Name = "lblAdminEmpManagement";
-            this.lblAdminEmpManagement.Size = new System.Drawing.Size(214, 15);
+            this.lblAdminEmpManagement.Size = new System.Drawing.Size(268, 20);
             this.lblAdminEmpManagement.TabIndex = 0;
             this.lblAdminEmpManagement.Text = "Administrator- Employee management";
             // 
@@ -386,11 +368,10 @@ namespace MediaBazaarProject
             this.tabScheduleAdministration.Controls.Add(this.lblMiddayShift);
             this.tabScheduleAdministration.Controls.Add(this.lblMorning);
             this.tabScheduleAdministration.Controls.Add(this.lblAdministrationSchedule);
-            this.tabScheduleAdministration.Location = new System.Drawing.Point(4, 24);
-            this.tabScheduleAdministration.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabScheduleAdministration.Location = new System.Drawing.Point(4, 29);
             this.tabScheduleAdministration.Name = "tabScheduleAdministration";
-            this.tabScheduleAdministration.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabScheduleAdministration.Size = new System.Drawing.Size(822, 306);
+            this.tabScheduleAdministration.Padding = new System.Windows.Forms.Padding(3);
+            this.tabScheduleAdministration.Size = new System.Drawing.Size(941, 412);
             this.tabScheduleAdministration.TabIndex = 2;
             this.tabScheduleAdministration.Text = "scheduleAdministration";
             this.tabScheduleAdministration.UseVisualStyleBackColor = true;
@@ -401,21 +382,18 @@ namespace MediaBazaarProject
             this.gbAssignToShift.Controls.Add(this.lbEmployeeShiftList);
             this.gbAssignToShift.Controls.Add(this.cbShiftSelect);
             this.gbAssignToShift.Controls.Add(this.dtpDay);
-            this.gbAssignToShift.Location = new System.Drawing.Point(33, 46);
-            this.gbAssignToShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.gbAssignToShift.Location = new System.Drawing.Point(38, 61);
             this.gbAssignToShift.Name = "gbAssignToShift";
-            this.gbAssignToShift.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.gbAssignToShift.Size = new System.Drawing.Size(291, 219);
+            this.gbAssignToShift.Size = new System.Drawing.Size(333, 292);
             this.gbAssignToShift.TabIndex = 9;
             this.gbAssignToShift.TabStop = false;
             this.gbAssignToShift.Text = "Assign to shift";
             // 
             // btnAssignToShift
             // 
-            this.btnAssignToShift.Location = new System.Drawing.Point(102, 184);
-            this.btnAssignToShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAssignToShift.Location = new System.Drawing.Point(117, 245);
             this.btnAssignToShift.Name = "btnAssignToShift";
-            this.btnAssignToShift.Size = new System.Drawing.Size(82, 22);
+            this.btnAssignToShift.Size = new System.Drawing.Size(94, 29);
             this.btnAssignToShift.TabIndex = 13;
             this.btnAssignToShift.Text = "Assign";
             this.btnAssignToShift.UseVisualStyleBackColor = true;
@@ -423,11 +401,10 @@ namespace MediaBazaarProject
             // lbEmployeeShiftList
             // 
             this.lbEmployeeShiftList.FormattingEnabled = true;
-            this.lbEmployeeShiftList.ItemHeight = 15;
-            this.lbEmployeeShiftList.Location = new System.Drawing.Point(34, 80);
-            this.lbEmployeeShiftList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbEmployeeShiftList.ItemHeight = 20;
+            this.lbEmployeeShiftList.Location = new System.Drawing.Point(39, 107);
             this.lbEmployeeShiftList.Name = "lbEmployeeShiftList";
-            this.lbEmployeeShiftList.Size = new System.Drawing.Size(219, 94);
+            this.lbEmployeeShiftList.Size = new System.Drawing.Size(250, 124);
             this.lbEmployeeShiftList.TabIndex = 12;
             // 
             // cbShiftSelect
@@ -437,30 +414,27 @@ namespace MediaBazaarProject
             "Morning",
             "Mid-day",
             "Evening"});
-            this.cbShiftSelect.Location = new System.Drawing.Point(76, 44);
-            this.cbShiftSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbShiftSelect.Location = new System.Drawing.Point(87, 59);
             this.cbShiftSelect.Name = "cbShiftSelect";
-            this.cbShiftSelect.Size = new System.Drawing.Size(133, 23);
+            this.cbShiftSelect.Size = new System.Drawing.Size(151, 28);
             this.cbShiftSelect.TabIndex = 11;
             // 
             // dtpDay
             // 
             this.dtpDay.AccessibleRole = System.Windows.Forms.AccessibleRole.Separator;
-            this.dtpDay.Location = new System.Drawing.Point(34, 20);
-            this.dtpDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpDay.Location = new System.Drawing.Point(39, 27);
             this.dtpDay.MaxDate = new System.DateTime(2022, 3, 11, 0, 0, 0, 0);
             this.dtpDay.MinDate = new System.DateTime(2022, 3, 7, 0, 0, 0, 0);
             this.dtpDay.Name = "dtpDay";
-            this.dtpDay.Size = new System.Drawing.Size(229, 23);
+            this.dtpDay.Size = new System.Drawing.Size(261, 27);
             this.dtpDay.TabIndex = 10;
             this.dtpDay.Value = new System.DateTime(2022, 3, 7, 0, 0, 0, 0);
             // 
             // btnRemoveFromShift
             // 
-            this.btnRemoveFromShift.Location = new System.Drawing.Point(481, 197);
-            this.btnRemoveFromShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRemoveFromShift.Location = new System.Drawing.Point(550, 263);
             this.btnRemoveFromShift.Name = "btnRemoveFromShift";
-            this.btnRemoveFromShift.Size = new System.Drawing.Size(247, 22);
+            this.btnRemoveFromShift.Size = new System.Drawing.Size(282, 29);
             this.btnRemoveFromShift.TabIndex = 8;
             this.btnRemoveFromShift.Text = "Remove selected employee from shift";
             this.btnRemoveFromShift.UseVisualStyleBackColor = true;
@@ -468,77 +442,73 @@ namespace MediaBazaarProject
             // lbEveningShift
             // 
             this.lbEveningShift.FormattingEnabled = true;
-            this.lbEveningShift.ItemHeight = 15;
-            this.lbEveningShift.Location = new System.Drawing.Point(659, 106);
-            this.lbEveningShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbEveningShift.ItemHeight = 20;
+            this.lbEveningShift.Location = new System.Drawing.Point(753, 141);
             this.lbEveningShift.Name = "lbEveningShift";
-            this.lbEveningShift.Size = new System.Drawing.Size(70, 79);
+            this.lbEveningShift.Size = new System.Drawing.Size(79, 104);
             this.lbEveningShift.TabIndex = 7;
             // 
             // lbMiddayShift
             // 
             this.lbMiddayShift.FormattingEnabled = true;
-            this.lbMiddayShift.ItemHeight = 15;
-            this.lbMiddayShift.Location = new System.Drawing.Point(567, 106);
-            this.lbMiddayShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbMiddayShift.ItemHeight = 20;
+            this.lbMiddayShift.Location = new System.Drawing.Point(648, 141);
             this.lbMiddayShift.Name = "lbMiddayShift";
-            this.lbMiddayShift.Size = new System.Drawing.Size(70, 79);
+            this.lbMiddayShift.Size = new System.Drawing.Size(79, 104);
             this.lbMiddayShift.TabIndex = 6;
             // 
             // lbMorningShift
             // 
             this.lbMorningShift.FormattingEnabled = true;
-            this.lbMorningShift.ItemHeight = 15;
-            this.lbMorningShift.Location = new System.Drawing.Point(481, 106);
-            this.lbMorningShift.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lbMorningShift.ItemHeight = 20;
+            this.lbMorningShift.Location = new System.Drawing.Point(550, 141);
             this.lbMorningShift.Name = "lbMorningShift";
-            this.lbMorningShift.Size = new System.Drawing.Size(70, 79);
+            this.lbMorningShift.Size = new System.Drawing.Size(79, 104);
             this.lbMorningShift.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(675, 89);
+            this.label3.Location = new System.Drawing.Point(771, 119);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 15);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Evening";
             // 
             // lblMiddayShift
             // 
             this.lblMiddayShift.AutoSize = true;
-            this.lblMiddayShift.Location = new System.Drawing.Point(581, 89);
+            this.lblMiddayShift.Location = new System.Drawing.Point(664, 119);
             this.lblMiddayShift.Name = "lblMiddayShift";
-            this.lblMiddayShift.Size = new System.Drawing.Size(52, 15);
+            this.lblMiddayShift.Size = new System.Drawing.Size(65, 20);
             this.lblMiddayShift.TabIndex = 3;
             this.lblMiddayShift.Text = "Mid-day";
             // 
             // lblMorning
             // 
             this.lblMorning.AutoSize = true;
-            this.lblMorning.Location = new System.Drawing.Point(492, 89);
+            this.lblMorning.Location = new System.Drawing.Point(562, 119);
             this.lblMorning.Name = "lblMorning";
-            this.lblMorning.Size = new System.Drawing.Size(53, 15);
+            this.lblMorning.Size = new System.Drawing.Size(65, 20);
             this.lblMorning.TabIndex = 2;
             this.lblMorning.Text = "Morning";
             // 
             // lblAdministrationSchedule
             // 
             this.lblAdministrationSchedule.AutoSize = true;
-            this.lblAdministrationSchedule.Location = new System.Drawing.Point(8, 5);
+            this.lblAdministrationSchedule.Location = new System.Drawing.Point(9, 7);
             this.lblAdministrationSchedule.Name = "lblAdministrationSchedule";
-            this.lblAdministrationSchedule.Size = new System.Drawing.Size(142, 15);
+            this.lblAdministrationSchedule.Size = new System.Drawing.Size(177, 20);
             this.lblAdministrationSchedule.TabIndex = 0;
             this.lblAdministrationSchedule.Text = "Administration- Schedule";
             // 
             // tabStatistics
             // 
             this.tabStatistics.Controls.Add(this.lblAdministrationStatistics);
-            this.tabStatistics.Location = new System.Drawing.Point(4, 24);
-            this.tabStatistics.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabStatistics.Location = new System.Drawing.Point(4, 29);
             this.tabStatistics.Name = "tabStatistics";
-            this.tabStatistics.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabStatistics.Size = new System.Drawing.Size(822, 306);
+            this.tabStatistics.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStatistics.Size = new System.Drawing.Size(941, 412);
             this.tabStatistics.TabIndex = 3;
             this.tabStatistics.Text = "statistics";
             this.tabStatistics.UseVisualStyleBackColor = true;
@@ -546,19 +516,18 @@ namespace MediaBazaarProject
             // lblAdministrationStatistics
             // 
             this.lblAdministrationStatistics.AutoSize = true;
-            this.lblAdministrationStatistics.Location = new System.Drawing.Point(7, 2);
+            this.lblAdministrationStatistics.Location = new System.Drawing.Point(8, 3);
             this.lblAdministrationStatistics.Name = "lblAdministrationStatistics";
-            this.lblAdministrationStatistics.Size = new System.Drawing.Size(139, 15);
+            this.lblAdministrationStatistics.Size = new System.Drawing.Size(173, 20);
             this.lblAdministrationStatistics.TabIndex = 0;
             this.lblAdministrationStatistics.Text = "Administration- statistics";
             // 
             // admin_managerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 338);
+            this.ClientSize = new System.Drawing.Size(955, 451);
             this.Controls.Add(this.tabAdmin);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "admin_managerForm";
             this.Text = "admin_managerForm";
             this.Load += new System.EventHandler(this.admin_managerForm_Load);

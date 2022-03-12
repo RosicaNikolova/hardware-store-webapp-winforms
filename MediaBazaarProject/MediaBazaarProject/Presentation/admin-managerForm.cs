@@ -27,7 +27,28 @@ namespace MediaBazaarProject
             foreach(Employee u in employees)
             {
                 lbEmployeeList.Items.Add(u.FirstName + " " + u.LastName);
+            }
+        }
 
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            AddEmployeeForm addEmployeeForm = new AddEmployeeForm();
+            addEmployeeForm.Show();
+        }
+
+        private void btnDeactivateEmployee_Click(object sender, EventArgs e)
+        {
+            Employee employee = 
+            employeeManager.DeactivateEmployee();
+        }
+
+        private void btnEmployeeManagement_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabEmployeeManagement;
+            List<Employee> employees = employeeManager.GetAllEmployees();
+            foreach (Employee u in employees)
+            {
+                lbEmployeeManagementList.Items.Add(u.GetInfoEmployeeManagment());
             }
         }
     }
