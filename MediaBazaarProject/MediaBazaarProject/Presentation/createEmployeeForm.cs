@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace MediaBazaarProject
 {
-    public partial class AddEmployeeForm : Form
+    public partial class createEmployeeForm : Form
     {
-        public AddEmployeeForm()
+        public createEmployeeForm()
         {
             InitializeComponent();
         }
+
+       
     }
 }

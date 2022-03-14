@@ -64,7 +64,7 @@ namespace MediaBazaarProject.Persistence
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
             {
-                string sql = "insert into users (FirstName,LastName,Age,Email,Password,Address,Nationality,Salary,PhoneNumber,Gender,BSN,PermanentContract,Position,IsAccountActive,CovidVaccinates) values (@FirstName,@LastName,@Age,@Email,@Password,@Address,@Nationality,@Salary,@PhoneNumber,@Gender,@BSN,@PermanentContract,@Position,@IsAccountActive,@CovidVaccinates)";
+                string sql = "insert into employees (FirstName,LastName,Age,Email,Password,Address,Nationality,Salary,PhoneNumber,Gender,BSN,PermanentContract,Position,IsAccountActive,CovidVaccinates) values (@FirstName,@LastName,@Age,@Email,@Password,@Address,@Nationality,@Salary,@PhoneNumber,@Gender,@BSN,@PermanentContract,@Position,@IsAccountActive,@CovidVaccinates)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("FirstName", firstName);
                 cmd.Parameters.AddWithValue("LastName", lastName);
@@ -89,9 +89,9 @@ namespace MediaBazaarProject.Persistence
         public void Deactivation(Employee e) {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "update users SET IsAccountActive=@IsAccountActive where EmployeeId=@Id";
+                string sql = "update employees SET IsAccountActive=@IsAccountActive where EmployeeId=@EmployeeId";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("Email", e.IsAccountActive);
+                cmd.Parameters.AddWithValue("IsAccountActive", e.IsAccountActive);
                 cmd.Parameters.AddWithValue("EmployeeId", e.Id);
 
                 conn.Open();

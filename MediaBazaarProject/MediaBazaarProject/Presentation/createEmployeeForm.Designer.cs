@@ -1,7 +1,7 @@
 ﻿
 namespace MediaBazaarProject
 {
-    partial class UpdateEmployeeForm
+    partial class createEmployeeForm
     {
         /// <summary>
         /// Required designer variable.

@@ -28,9 +28,10 @@ namespace MediaBazaarProject.Business
         }
         public void DeactivateEmployee(Employee e)
         {
-            Employee employee = employeeRepository.GetEmployee(e.Id);
-            employee.IsAccountActive = false;
-            employeeRepository.Deactivation(employee);
+           
+           //Employee employee = employeeRepository.GetEmployee(e.Id);
+            e.IsAccountActive = false;
+            employeeRepository.Deactivation(e);
         }
         public void DeleteEmployee(Employee e) {
             

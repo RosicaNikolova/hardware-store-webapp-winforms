@@ -59,6 +59,12 @@ namespace MediaBazaarProject.Business
         public string FirstName { get;  set; }
         public string LastName { get;  set; }
         public bool IsAccountActive { get => isAccountActive; set => isAccountActive = value; }
+
+        public override string ToString()
+        {
+            string s = $"{this.FirstName} {this.LastName}";
+            return s;
+        }
     }
     
 }
