@@ -65,6 +65,7 @@ namespace MediaBazaarProject
             // 
             this.tbPasswordLogin.Location = new System.Drawing.Point(147, 239);
             this.tbPasswordLogin.Name = "tbPasswordLogin";
+            this.tbPasswordLogin.PasswordChar = '*';
             this.tbPasswordLogin.Size = new System.Drawing.Size(125, 27);
             this.tbPasswordLogin.TabIndex = 3;
             // 

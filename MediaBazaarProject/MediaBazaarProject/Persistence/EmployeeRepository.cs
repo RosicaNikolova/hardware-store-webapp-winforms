@@ -116,7 +116,7 @@ namespace MediaBazaarProject.Persistence
                 while (dateReader.Read())
                 {
                     user.FirstName = dateReader.GetString("FirstName");
-                    user.Position = user.SetPosition(dateReader.GetString("Position"));
+                    user.Position = user.SetPosition(dateReader.GetString("Position").ToUpper());
    
                     
                 }
