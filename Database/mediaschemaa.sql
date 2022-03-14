@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: mediabazaar_database
+-- Host: localhost    Database: mediaschemaa
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
@@ -23,16 +23,14 @@ DROP TABLE IF EXISTS `date`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `date` (
-  `ShiftDate` int NOT NULL AUTO_INCREMENT,
+  `ShiftDate` date NOT NULL,
   `FullDate` date NOT NULL,
   `Year` int NOT NULL,
   `DayOfWeek` varchar(10) NOT NULL,
   `MonthNumber` int NOT NULL,
   `MonthName` varchar(20) NOT NULL,
-  `IsHoliday` tinyint(1) NOT NULL,
-  `IsWeekend` tinyint(1) NOT NULL,
   PRIMARY KEY (`ShiftDate`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +39,6 @@ CREATE TABLE `date` (
 
 LOCK TABLES `date` WRITE;
 /*!40000 ALTER TABLE `date` DISABLE KEYS */;
-INSERT INTO `date` VALUES (1,'2022-03-14',2022,'1',3,'March',0,0);
 /*!40000 ALTER TABLE `date` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,12 +50,11 @@ DROP TABLE IF EXISTS `employees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employees` (
-  `EmployeeId` int NOT NULL AUTO_INCREMENT,
+  `EmployeeId` int NOT NULL,
   `FirstName` varchar(50) NOT NULL,
   `LastName` varchar(50) NOT NULL,
   `Age` int NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `Password` varchar(45) NOT NULL DEFAULT 'hello',
   `Address` varchar(50) NOT NULL,
   `Nationality` varchar(56) NOT NULL,
   `Salary` double(10,2) NOT NULL,
@@ -70,7 +66,7 @@ CREATE TABLE `employees` (
   `IsAccountActive` tinyint(1) NOT NULL,
   `CovidVaccinated` tinyint(1) NOT NULL,
   PRIMARY KEY (`EmployeeId`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,7 +75,6 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (1,'John','Wijnen',50,'Admin.Company@mail.com','0','Ginnekenweg 133','Dutch',69696969.00,65315315189182,'Male',78465347,1,'Admin',1,1),(2,'Georgios','Metaxas',32,'Compay.admin@mail.com','0','Porthoslaan 185','Greek',5465784.00,78178484281875,'Male',78614525,1,'Admin',1,1),(3,'Rutger','Verhoeff',21,'r.verhoeff@mail.com','456','Bachstraat 50','Dutch',46853.00,587154878521359,'Male',557859945,1,'Manager',1,1),(4,'Vlad','Tepes',55,'vlad@mail.com','123','Strada Lililacului 12','Romanian',56452.00,874326552659465,'Male',367354548,1,'Manager',1,0);
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,12 +86,17 @@ DROP TABLE IF EXISTS `shifts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `shifts` (
-  `EmployeeId` int NOT NULL AUTO_INCREMENT,
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `EmployeeId` int NOT NULL,
   `ShiftDate` date NOT NULL,
   `ShiftNumber` enum('Morning','Day','Night','') NOT NULL,
-  PRIMARY KEY (`EmployeeId`,`ShiftDate`,`ShiftNumber`),
+  PRIMARY KEY (`Id`,`EmployeeId`,`ShiftDate`,`ShiftNumber`),
+  UNIQUE KEY `Id_UNIQUE` (`Id`),
+  KEY `ShiftDate_idx` (`ShiftDate`),
+  KEY `ShiftToEmployee` (`EmployeeId`),
+  CONSTRAINT `ShiftDate` FOREIGN KEY (`ShiftDate`) REFERENCES `date` (`ShiftDate`),
   CONSTRAINT `ShiftToEmployee` FOREIGN KEY (`EmployeeId`) REFERENCES `employees` (`EmployeeId`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +105,6 @@ CREATE TABLE `shifts` (
 
 LOCK TABLES `shifts` WRITE;
 /*!40000 ALTER TABLE `shifts` DISABLE KEYS */;
-INSERT INTO `shifts` VALUES (1,'2022-03-14','Day');
 /*!40000 ALTER TABLE `shifts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -118,4 +117,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-12 22:12:26
+-- Dump completed on 2022-03-14 21:22:52
