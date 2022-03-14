@@ -15,14 +15,7 @@ namespace MediaBazaarProject.Business
         {        
                     User user = employeeRepository.FindUser(email, password);
 
-                    if (user == null)
-                    {
-                        throw new Exception();
-                    }
-                    else
-                    {
-                        return user;
-                    }            
+                    return user;          
         }
 
         public Position SetPosition(int position)

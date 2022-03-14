@@ -13,13 +13,13 @@ namespace MediaBazaarProject.Business
         private string name;
         private Position position;
 
-        public string Name { get; set; }
+        public string FirstName { get; set; }
         public Position Position { get; set; }
 
-        public User(string name, Position position)
+        public User(string firstName, Position position)
         {
-            this.name = name;
-            this.position = position;
+            this.FirstName = firstName;
+            this.Position = position;
         }
 
         public User()
@@ -27,21 +27,21 @@ namespace MediaBazaarProject.Business
 
         }
 
-        public Position SetPosition(int position)
+        public Position SetPosition(string position)
         {
             Position setPosition = Position.WORKER;
 
             switch (position)
             {
-                case 0:
+                case "ADMIN":
                     setPosition = Position.ADMIN;
                     break;
 
-                case 1:
+                case "MANAGER":
                     setPosition = Position.MANAGER;
                     break;
 
-                case 2:
+                case "WORKER":
                     setPosition = Position.WORKER;
                     break;
 

@@ -102,21 +102,21 @@ namespace MediaBazaarProject.Persistence
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "select name, position from user where @email=email and @password=password;";
+                string sql = "select FirstName, Email, Password, Position from employees where Email=@Email and Password=@Password;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("email", email);
-                cmd.Parameters.AddWithValue("password", password);
+                cmd.Parameters.AddWithValue("Email", email);
+                cmd.Parameters.AddWithValue("Password", password);
 
 
                 conn.Open();
-                User user = null;
+                User user = new User();
                 MySqlDataReader dateReader = cmd.ExecuteReader();
-                if (dateReader.Read())
+
+                while (dateReader.Read())
                 {
-                    user = new User();
-                    user.Name = dateReader.GetString("name");
-                    user.Position = user.SetPosition(dateReader.GetInt32("position"));
+                    user.FirstName = dateReader.GetString("FirstName");
+                    user.Position = user.SetPosition(dateReader.GetString("Position"));
    
                     
                 }

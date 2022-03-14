@@ -58,10 +58,8 @@ D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-window
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\ZstdNet.dll
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.csproj.AssemblyReference.cache
-D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.AddEmployeeForm.resources
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.admin_managerForm.resources
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Form1.resources
-D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.UpdateEmployeeForm.resources
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.WorkerForm.resources
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.csproj.GenerateResource.cache
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.GeneratedMSBuildEditorConfig.editorconfig
@@ -105,3 +103,4 @@ D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\D
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\ref\MediaBazaarProject.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.pdb
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.createEmployeeForm.resources

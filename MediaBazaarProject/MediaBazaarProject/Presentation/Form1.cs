@@ -22,15 +22,21 @@ namespace MediaBazaarProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
+            if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text) != null)
+
             {
-                loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
                 MessageBox.Show("Login successful");
+                WorkerForm workerForm = new WorkerForm();
+                workerForm.Show();
+
             }
-            catch (Exception)
+            else
             {
                 MessageBox.Show("Invalid credentials");
             }
+            
+           
+            
         }
     }
 }
