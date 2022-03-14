@@ -11,7 +11,7 @@ namespace MediaBazaarProject
     {
         public static MySqlConnection CreateConnection()
         {
-            return new MySqlConnection("server=localhost;database=mediabazaar_database;uid=root;password=ceVu9eTH;"); //here change the database string to yours
+            return new MySqlConnection("server=localhost_media_bazar;database=media_bazar;uid=root;password=9Rosica9;"); //here change the database string to yours
         }
     }
 }

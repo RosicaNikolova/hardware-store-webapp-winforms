@@ -98,27 +98,36 @@ namespace MediaBazaarProject.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
-        //public List<Employee> FindEmployee()
-        //{
-        //    List<Employee> employees = new List<Employee>();
+        public User FindUser(string email, string password)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "select name, position from user where @email=email and @password=password;";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("email", email);
+                cmd.Parameters.AddWithValue("password", password);
 
 
-        //    MySqlConnection conn = new MySqlConnection("server=localhost;database=mediabazaar;uid=root;password=''");
+                conn.Open();
+                User user = null;
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+                if (dateReader.Read())
+                {
+                    user = new User();
+                    user.Name = dateReader.GetString("name");
+                    //user.Position = dateReader.GetString("position");
+                }
+                return user;
+            }
 
-        //    string sql = "SELECT * FROM employees ORDER BY EmployeeId";
-        //    MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-        //    conn.Open();
+            
 
-        //    MySqlDataReader dr = cmd.ExecuteReader();
+            
 
-
-        //    Employee employee = null;
+            
            
-
-        //    conn.Close();
-
-        //    return employees;
-        //}
+        }
     }
 }

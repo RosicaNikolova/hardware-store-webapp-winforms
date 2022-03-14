@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaBazaarProject.Persistence;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,20 @@ namespace MediaBazaarProject.Business
 {
     class LoginManager
     {
-        /*private EmployeeRepository employeeRepository = new EmployeeRepository();
+        private EmployeeRepository employeeRepository = new EmployeeRepository();
 
-        public User Login(string email, string password);*/
+        public User Login(string email, string password)
+        {        
+                    User user = employeeRepository.FindUser(email, password);
+
+                    if (user == null)
+                    {
+                        throw new Exception();
+                    }
+                    else
+                    {
+                        return user;
+                    }            
+        }
     }
 }
