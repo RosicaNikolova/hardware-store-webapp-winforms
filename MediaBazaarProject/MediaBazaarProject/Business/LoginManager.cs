@@ -24,5 +24,26 @@ namespace MediaBazaarProject.Business
                         return user;
                     }            
         }
+
+        public Position SetPosition(int position)
+        {
+            Position setPosition = Position.WORKER;
+
+            switch (position)
+            {
+                case 0: setPosition = Position.ADMIN;
+                    break;
+
+                case 1: setPosition = Position.MANAGER;
+                    break;
+
+                case 2: setPosition = Position.WORKER;
+                    break;
+                
+
+            }
+            return setPosition;
+                
+        }
     }
 }

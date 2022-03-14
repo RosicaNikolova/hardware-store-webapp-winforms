@@ -116,7 +116,9 @@ namespace MediaBazaarProject.Persistence
                 {
                     user = new User();
                     user.Name = dateReader.GetString("name");
-                    //user.Position = dateReader.GetString("position");
+                    user.Position = user.SetPosition(dateReader.GetInt32("position"));
+   
+                    
                 }
                 return user;
             }
