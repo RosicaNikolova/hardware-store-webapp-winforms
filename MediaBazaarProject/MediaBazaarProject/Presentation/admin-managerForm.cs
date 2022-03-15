@@ -47,6 +47,7 @@ namespace MediaBazaarProject
         {
             tabAdmin.SelectedTab = tabEmployeeManagement;
             List<Employee> employees = employeeManager.GetAllEmployees();
+            lbEmployeeManagementList.Items.Clear();
             foreach (Employee em in employees)
             {
                 lbEmployeeManagementList.Items.Add(em);

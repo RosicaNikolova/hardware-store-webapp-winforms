@@ -42,7 +42,6 @@ namespace MediaBazaarProject.Business
             this.Position = position;
             this.IsAccountActive = isAccountActive;
             this.CovidVaccinated = covidVaccinated;
-            id++;
         }
 
         public Employee()

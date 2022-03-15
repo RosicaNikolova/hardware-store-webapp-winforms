@@ -66,6 +66,16 @@ namespace MediaBazaarProject
             this.label11 = new System.Windows.Forms.Label();
             this.rBtnMale = new System.Windows.Forms.RadioButton();
             this.rBtnFemale = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txbID = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -130,7 +140,7 @@ namespace MediaBazaarProject
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 260);
+            this.label6.Location = new System.Drawing.Point(17, 22);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(142, 20);
             this.label6.TabIndex = 7;
@@ -248,7 +258,7 @@ namespace MediaBazaarProject
             // lblCovidVaccinated
             // 
             this.lblCovidVaccinated.AutoSize = true;
-            this.lblCovidVaccinated.Location = new System.Drawing.Point(33, 500);
+            this.lblCovidVaccinated.Location = new System.Drawing.Point(23, 24);
             this.lblCovidVaccinated.Name = "lblCovidVaccinated";
             this.lblCovidVaccinated.Size = new System.Drawing.Size(126, 20);
             this.lblCovidVaccinated.TabIndex = 22;
@@ -257,7 +267,8 @@ namespace MediaBazaarProject
             // rBtnYes
             // 
             this.rBtnYes.AutoSize = true;
-            this.rBtnYes.Location = new System.Drawing.Point(184, 499);
+            this.rBtnYes.Checked = true;
+            this.rBtnYes.Location = new System.Drawing.Point(174, 23);
             this.rBtnYes.Name = "rBtnYes";
             this.rBtnYes.Size = new System.Drawing.Size(51, 24);
             this.rBtnYes.TabIndex = 23;
@@ -268,18 +279,17 @@ namespace MediaBazaarProject
             // tBtnNo
             // 
             this.tBtnNo.AutoSize = true;
-            this.tBtnNo.Location = new System.Drawing.Point(253, 499);
+            this.tBtnNo.Location = new System.Drawing.Point(243, 23);
             this.tBtnNo.Name = "tBtnNo";
             this.tBtnNo.Size = new System.Drawing.Size(50, 24);
             this.tBtnNo.TabIndex = 24;
-            this.tBtnNo.TabStop = true;
             this.tBtnNo.Text = "No";
             this.tBtnNo.UseVisualStyleBackColor = true;
             // 
             // lblIsAccountActive
             // 
             this.lblIsAccountActive.AutoSize = true;
-            this.lblIsAccountActive.Location = new System.Drawing.Point(398, 41);
+            this.lblIsAccountActive.Location = new System.Drawing.Point(20, 16);
             this.lblIsAccountActive.Name = "lblIsAccountActive";
             this.lblIsAccountActive.Size = new System.Drawing.Size(125, 20);
             this.lblIsAccountActive.TabIndex = 25;
@@ -288,7 +298,8 @@ namespace MediaBazaarProject
             // rBtnActive
             // 
             this.rBtnActive.AutoSize = true;
-            this.rBtnActive.Location = new System.Drawing.Point(541, 40);
+            this.rBtnActive.Checked = true;
+            this.rBtnActive.Location = new System.Drawing.Point(163, 15);
             this.rBtnActive.Name = "rBtnActive";
             this.rBtnActive.Size = new System.Drawing.Size(71, 24);
             this.rBtnActive.TabIndex = 26;
@@ -299,11 +310,10 @@ namespace MediaBazaarProject
             // rBtnNotActive
             // 
             this.rBtnNotActive.AutoSize = true;
-            this.rBtnNotActive.Location = new System.Drawing.Point(630, 40);
+            this.rBtnNotActive.Location = new System.Drawing.Point(252, 15);
             this.rBtnNotActive.Name = "rBtnNotActive";
             this.rBtnNotActive.Size = new System.Drawing.Size(100, 24);
             this.rBtnNotActive.TabIndex = 27;
-            this.rBtnNotActive.TabStop = true;
             this.rBtnNotActive.Text = "Not Active";
             this.rBtnNotActive.UseVisualStyleBackColor = true;
             // 
@@ -343,7 +353,8 @@ namespace MediaBazaarProject
             // rBtnYesPermanent
             // 
             this.rBtnYesPermanent.AutoSize = true;
-            this.rBtnYesPermanent.Location = new System.Drawing.Point(186, 259);
+            this.rBtnYesPermanent.Checked = true;
+            this.rBtnYesPermanent.Location = new System.Drawing.Point(176, 21);
             this.rBtnYesPermanent.Name = "rBtnYesPermanent";
             this.rBtnYesPermanent.Size = new System.Drawing.Size(51, 24);
             this.rBtnYesPermanent.TabIndex = 32;
@@ -354,18 +365,17 @@ namespace MediaBazaarProject
             // rBtnNotPermanent
             // 
             this.rBtnNotPermanent.AutoSize = true;
-            this.rBtnNotPermanent.Location = new System.Drawing.Point(253, 259);
+            this.rBtnNotPermanent.Location = new System.Drawing.Point(243, 21);
             this.rBtnNotPermanent.Name = "rBtnNotPermanent";
             this.rBtnNotPermanent.Size = new System.Drawing.Size(50, 24);
             this.rBtnNotPermanent.TabIndex = 33;
-            this.rBtnNotPermanent.TabStop = true;
             this.rBtnNotPermanent.Text = "No";
             this.rBtnNotPermanent.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(398, 169);
+            this.label11.Location = new System.Drawing.Point(11, 17);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 20);
             this.label11.TabIndex = 34;
@@ -374,7 +384,8 @@ namespace MediaBazaarProject
             // rBtnMale
             // 
             this.rBtnMale.AutoSize = true;
-            this.rBtnMale.Location = new System.Drawing.Point(478, 167);
+            this.rBtnMale.Checked = true;
+            this.rBtnMale.Location = new System.Drawing.Point(91, 15);
             this.rBtnMale.Name = "rBtnMale";
             this.rBtnMale.Size = new System.Drawing.Size(63, 24);
             this.rBtnMale.TabIndex = 35;
@@ -385,34 +396,84 @@ namespace MediaBazaarProject
             // rBtnFemale
             // 
             this.rBtnFemale.AutoSize = true;
-            this.rBtnFemale.Location = new System.Drawing.Point(551, 167);
+            this.rBtnFemale.Location = new System.Drawing.Point(164, 15);
             this.rBtnFemale.Name = "rBtnFemale";
             this.rBtnFemale.Size = new System.Drawing.Size(78, 24);
             this.rBtnFemale.TabIndex = 36;
-            this.rBtnFemale.TabStop = true;
             this.rBtnFemale.Text = "Female";
             this.rBtnFemale.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rBtnNotActive);
+            this.panel1.Controls.Add(this.lblIsAccountActive);
+            this.panel1.Controls.Add(this.rBtnActive);
+            this.panel1.Location = new System.Drawing.Point(398, 226);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(387, 54);
+            this.panel1.TabIndex = 37;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblCovidVaccinated);
+            this.panel2.Controls.Add(this.rBtnYes);
+            this.panel2.Controls.Add(this.tBtnNo);
+            this.panel2.Location = new System.Drawing.Point(27, 493);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(322, 58);
+            this.panel2.TabIndex = 38;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.rBtnYesPermanent);
+            this.panel3.Controls.Add(this.rBtnNotPermanent);
+            this.panel3.Location = new System.Drawing.Point(33, 252);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(316, 65);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.rBtnFemale);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.rBtnMale);
+            this.panel4.Location = new System.Drawing.Point(398, 158);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(387, 60);
+            this.panel4.TabIndex = 39;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(27, 8);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(27, 20);
+            this.lblID.TabIndex = 40;
+            this.lblID.Text = "ID:";
+            // 
+            // txbID
+            // 
+            this.txbID.Location = new System.Drawing.Point(167, 5);
+            this.txbID.Name = "txbID";
+            this.txbID.Size = new System.Drawing.Size(125, 27);
+            this.txbID.TabIndex = 41;
             // 
             // createEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 551);
-            this.Controls.Add(this.rBtnFemale);
-            this.Controls.Add(this.rBtnMale);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.rBtnNotPermanent);
-            this.Controls.Add(this.rBtnYesPermanent);
+            this.Controls.Add(this.txbID);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbNationality);
             this.Controls.Add(this.lblNationality);
             this.Controls.Add(this.tbAge);
             this.Controls.Add(this.lblAge);
-            this.Controls.Add(this.rBtnNotActive);
-            this.Controls.Add(this.rBtnActive);
-            this.Controls.Add(this.lblIsAccountActive);
-            this.Controls.Add(this.tBtnNo);
-            this.Controls.Add(this.rBtnYes);
-            this.Controls.Add(this.lblCovidVaccinated);
             this.Controls.Add(this.btnUpdateEmployee);
             this.Controls.Add(this.txbHourlyWage);
             this.Controls.Add(this.txbPhone);
@@ -426,7 +487,6 @@ namespace MediaBazaarProject
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -436,6 +496,14 @@ namespace MediaBazaarProject
             this.Controls.Add(this.label1);
             this.Name = "createEmployeeForm";
             this.Text = "UpdateEmployeeForm";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,5 +548,11 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton rBtnMale;
         private System.Windows.Forms.RadioButton rBtnFemale;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txbID;
     }
 }

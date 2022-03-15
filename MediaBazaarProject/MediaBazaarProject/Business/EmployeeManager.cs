@@ -18,10 +18,17 @@ namespace MediaBazaarProject.Business
             return employeeRepository.GetEmployees();
         }
         public Employee GetEmployee(Employee e) {
-            return employeeRepository.GetEmployee(e.Id);
+            return employeeRepository.GetEmployeeByBSN(e.Bsn1);
         }
-        public void CreateEmployee(string firstName, string lastName, int age, string email, string password, string address, string nationality, double salary, double phoneNumber, string gender, int BSN, bool permanentContract, Position position, bool isAccountActive, bool covidVaccinated) {
-            employeeRepository.Create(firstName, lastName, age, email, password, address, nationality, salary, phoneNumber, gender, BSN, permanentContract, position, isAccountActive, covidVaccinated);
+        public void CreateEmployee(int id,string firstName, string lastName, int age, string email, string password, string address, string nationality, double salary, double phoneNumber, string gender, int BSN, bool permanentContract, int position, bool isAccountActive, bool covidVaccinated) {
+            Employee employee = employeeRepository.GetEmployeeByBSN(BSN);
+            if (employee == null)
+            {
+                employeeRepository.Create(id,firstName, lastName, age, email, password, address, nationality, salary, phoneNumber, gender, BSN, permanentContract, position, isAccountActive, covidVaccinated);
+            }
+            else {
+                throw new Exception("User with such BSN exists");
+            }
         }
         public void UpdateEmployee(Employee e) {
             employeeRepository.Update(e);
