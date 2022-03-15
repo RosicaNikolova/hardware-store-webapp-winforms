@@ -121,15 +121,33 @@ namespace MediaBazaarProject.Persistence
                     
                 }
                 return user;
+            }  
+        }
+        public void Update(Employee employee)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+                string sql = "update employees SET * values (@FirstName,@LastName,@Age,@Email,@Password,@Address,@Nationality,@Salary,@PhoneNumber,@Gender,@BSN,@PermanentContract,@Position,@IsAccountActive,@CovidVaccinates)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("FirstName", employee.FirstName);
+                cmd.Parameters.AddWithValue("LastName", employee.LastName);
+                cmd.Parameters.AddWithValue("Age", employee.Age);
+                cmd.Parameters.AddWithValue("Email", employee.Email);
+                cmd.Parameters.AddWithValue("Password", employee.Password);
+                cmd.Parameters.AddWithValue("Address", employee.Address);
+                cmd.Parameters.AddWithValue("Nationality", employee.Nationality);
+                cmd.Parameters.AddWithValue("Salary", employee.Salary);
+                cmd.Parameters.AddWithValue("PhoneNumber", employee.PhoneNumber);
+                cmd.Parameters.AddWithValue("Gender", employee.Gender);
+                cmd.Parameters.AddWithValue("BSN", employee.Bsn1);
+                cmd.Parameters.AddWithValue("PermanentContract", employee.PermanentContract);
+                cmd.Parameters.AddWithValue("Position", employee.Position);
+                cmd.Parameters.AddWithValue("IsAccountActive", employee.IsAccountActive);
+                cmd.Parameters.AddWithValue("CovidVaccinated", employee.CovidVaccinated);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
             }
-
-
-            
-
-            
-
-            
-           
         }
     }
 }

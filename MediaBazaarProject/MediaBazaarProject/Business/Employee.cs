@@ -18,7 +18,7 @@ namespace MediaBazaarProject.Business
         private double salary;
         private long phoneNumber;
         private string gender;
-        private int BSN;
+        private int Bsn;
         private bool permanentContract;
         private Position position;
         private bool isAccountActive;
@@ -29,19 +29,19 @@ namespace MediaBazaarProject.Business
         {
             this.firstName = firstName;
             this.lastName = lastName;
-            this.age = age;
-            this.email = email;
-            this.address = address;
-            this.nationality = nationality;
-            this.password = password;
-            this.salary = wage;
-            this.phoneNumber = phoneNumber;
-            this.gender = gender;
-            this.BSN = BSN;
-            this.permanentContract = permanentContract;
-            this.position = position;
+            this.Age = age;
+            this.Email = email;
+            this.Address = address;
+            this.Nationality = nationality;
+            this.Password = password;
+            this.Salary = wage;
+            this.PhoneNumber = phoneNumber;
+            this.Gender = gender;
+            this.Bsn1 = BSN;
+            this.PermanentContract = permanentContract;
+            this.Position = position;
             this.IsAccountActive = isAccountActive;
-            this.covidVaccinated = covidVaccinated;
+            this.CovidVaccinated = covidVaccinated;
             id++;
         }
 
@@ -58,7 +58,19 @@ namespace MediaBazaarProject.Business
         public int Id { get;  set; }
         public string FirstName { get;  set; }
         public string LastName { get;  set; }
-        public bool IsAccountActive { get => isAccountActive; set => isAccountActive = value; }
+        public bool IsAccountActive { get; set; }
+        public int Age { get; set ; }
+        public string Email { get; set; }
+        public string Address { get; set ; }
+        public string Nationality { get; set ; }
+        public string Password { get; set; }
+        public double Salary { get ; set ; }
+        public long PhoneNumber { get ; set ; }
+        public string Gender { get ; set ; }
+        public bool PermanentContract { get ; set; }
+        public Position Position { get ; set; }
+        public bool CovidVaccinated { get ; set; }
+        public int Bsn1 { get => Bsn; set => Bsn = value; }
 
         public override string ToString()
         {
