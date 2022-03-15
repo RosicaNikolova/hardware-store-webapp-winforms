@@ -16,6 +16,7 @@ namespace MediaBazaarProject
     public partial class admin_managerForm : Form
     {
         EmployeeManager employeeManager = new EmployeeManager();
+        ShiftManager shiftManager = new ShiftManager();
         public admin_managerForm()
         {
             InitializeComponent();
@@ -52,6 +53,98 @@ namespace MediaBazaarProject
             {
                 lbEmployeeManagementList.Items.Add(em);
             }
+        }
+
+        private void btnScheduleAdministration_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabScheduleAdministration;
+            lbEmployeeShiftList.Items.Clear();
+            EmployeeManager employeeManager = new EmployeeManager();
+            List<Employee> workers = new List<Employee>();
+
+            DateTime date = new DateTime();
+            date = dtpDay.Value;
+            workers = employeeManager.GetAllWorkers();
+            //workers = shiftManager.GetAvailableWorkersForDate(workers, date);
+           
+            foreach (var w in workers)
+            {
+                lbEmployeeShiftList.Items.Add(w);
+            }
+        }
+
+        private void btnAssignToShift_Click(object sender, EventArgs e)
+        {
+            DateTime date = new DateTime();
+            date = dtpDay.Value;
+            
+            if (cbShiftSelect.Text != "Select shift" && cbShiftSelect.Text!= "" && lbEmployeeShiftList.SelectedItem != null)
+            {
+                object worker = lbEmployeeShiftList.SelectedItem;
+                int shift = cbShiftSelect.SelectedIndex + 1;
+                if (shiftManager.AssignShift((Employee)worker, date, (Shifts)shift))
+                {
+                    MessageBox.Show("Employee successfully assigned to a shift");
+
+                    if(shift == 1)
+                    {
+                        lbMorningShift.Items.Add(worker);
+                    }
+                    else if(shift == 2)
+                    {
+                        lbMiddayShift.Items.Add(worker);
+                    }
+                    else if(shift == 3)
+                    {
+                        lbEveningShift.Items.Add(worker);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Try again");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, select an employee and a shift");
+            }
+
+            EmployeeManager employeeManager = new EmployeeManager();
+
+            List<Employee> workers = new List<Employee>();
+
+            workers = employeeManager.GetAllWorkers();
+            workers = shiftManager.GetAvailableWorkersForDate(workers, date);
+
+            lbEmployeeShiftList.Items.Clear();
+
+            
+            foreach (var w in workers)
+            {
+                lbEmployeeShiftList.Items.Add(w);
+            }
+
+
+
+        }
+
+        private void dtpDay_ValueChanged(object sender, EventArgs e)
+        {
+            lbEmployeeShiftList.Items.Clear();
+            EmployeeManager employeeManager = new EmployeeManager();
+            List<Employee> workers = new List<Employee>();
+            DateTime date = new DateTime();
+            date = dtpDay.Value;
+            workers = employeeManager.GetAllWorkers();
+            workers = shiftManager.GetAvailableWorkersForDate(workers, date);
+
+            foreach (var w in workers)
+            {
+                lbEmployeeShiftList.Items.Add(w);
+            }
+
+            
+
         }
     }
 }

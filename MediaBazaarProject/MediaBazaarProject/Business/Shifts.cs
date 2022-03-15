@@ -8,8 +8,8 @@ namespace MediaBazaarProject.Business
 {
     public enum Shifts
     {
-        MORNING,
-        MIDDAY,
-        EVENING
+        MORNING = 1,
+        MIDDAY = 2,
+        EVENING = 3
     }
 }

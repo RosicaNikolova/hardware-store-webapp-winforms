@@ -44,5 +44,12 @@ namespace MediaBazaarProject.Business
         public void DeleteEmployee(Employee e) {
             
         }
+
+        public List<Employee> GetAllWorkers()
+        {
+            return employeeRepository.GetWorkers();
+        }
+
+
     }
 }

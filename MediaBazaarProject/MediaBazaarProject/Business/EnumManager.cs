@@ -31,5 +31,28 @@ namespace MediaBazaarProject.Business
             return setPosition;
 
         }
+
+
+        public Shifts SetShiftType(string inputShift)
+        {
+            Shifts shift = Shifts.MORNING;
+         
+            switch (inputShift)
+            {
+                case "Morning":
+                    shift = Shifts.MORNING;
+                    break;
+
+                case "Day":
+                    shift = Shifts.MIDDAY;
+                    break;
+
+                case "Night":
+                    shift = Shifts.EVENING;
+                    break;
+            }
+
+            return shift;
+        }
     }
 }

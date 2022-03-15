@@ -152,5 +152,39 @@ namespace MediaBazaarProject.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public List<Employee> GetWorkers()
+        {
+            //database magic
+            List<Employee> employees = new List<Employee>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+
+                string sql = "SELECT * FROM employees WHERE @Position=Position ORDER BY EmployeeId";
+
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("Position", "Worker");
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+
+                Employee employee = null;
+                while (dr.Read())
+                {
+                    employee = new Employee();
+                    employee.Id = dr.GetInt32("EmployeeId");
+                    employee.FirstName = dr.GetString("FirstName");
+                    employee.LastName = dr.GetString("LastName");
+                    employees.Add(employee);
+                }
+            }
+
+            return employees;
+        }
+
+
     }
 }
