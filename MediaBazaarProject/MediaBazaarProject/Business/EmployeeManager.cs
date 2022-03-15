@@ -18,13 +18,14 @@ namespace MediaBazaarProject.Business
             return employeeRepository.GetEmployees();
         }
         public Employee GetEmployee(Employee e) {
-            return GetEmployee(e);
+            return employeeRepository.GetEmployee(e.Id);
         }
         public void CreateEmployee(string firstName, string lastName, int age, string email, string password, string address, string nationality, double salary, double phoneNumber, string gender, int BSN, bool permanentContract, Position position, bool isAccountActive, bool covidVaccinated) {
             employeeRepository.Create(firstName, lastName, age, email, password, address, nationality, salary, phoneNumber, gender, BSN, permanentContract, position, isAccountActive, covidVaccinated);
         }
         public void UpdateEmployee(Employee e) {
-            
+            employeeRepository.Update(e);
+
         }
         public void DeactivateEmployee(Employee e)
         {

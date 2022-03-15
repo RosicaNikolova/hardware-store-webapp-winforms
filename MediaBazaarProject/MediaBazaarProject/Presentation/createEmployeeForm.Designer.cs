@@ -31,7 +31,7 @@ namespace MediaBazaarProject
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txbBsn = new System.Windows.Forms.TextBox();
-            this.txbName = new System.Windows.Forms.TextBox();
+            this.txbFirstName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,14 +42,30 @@ namespace MediaBazaarProject
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbPosition = new System.Windows.Forms.ComboBox();
             this.btnAddEmployee = new System.Windows.Forms.Button();
-            this.txbSurname = new System.Windows.Forms.TextBox();
+            this.txbLastName = new System.Windows.Forms.TextBox();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.txbAddress = new System.Windows.Forms.TextBox();
             this.txbPhone = new System.Windows.Forms.TextBox();
             this.txbHourlyWage = new System.Windows.Forms.TextBox();
+            this.btnUpdateEmployee = new System.Windows.Forms.Button();
+            this.lblCovidVaccinated = new System.Windows.Forms.Label();
+            this.rBtnYes = new System.Windows.Forms.RadioButton();
+            this.tBtnNo = new System.Windows.Forms.RadioButton();
+            this.lblIsAccountActive = new System.Windows.Forms.Label();
+            this.rBtnActive = new System.Windows.Forms.RadioButton();
+            this.rBtnNotActive = new System.Windows.Forms.RadioButton();
+            this.lblAge = new System.Windows.Forms.Label();
+            this.tbAge = new System.Windows.Forms.TextBox();
+            this.lblNationality = new System.Windows.Forms.Label();
+            this.cbNationality = new System.Windows.Forms.ComboBox();
+            this.rBtnYesPermanent = new System.Windows.Forms.RadioButton();
+            this.rBtnNotPermanent = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.rBtnMale = new System.Windows.Forms.RadioButton();
+            this.rBtnFemale = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -68,30 +84,30 @@ namespace MediaBazaarProject
             this.txbBsn.Size = new System.Drawing.Size(112, 27);
             this.txbBsn.TabIndex = 1;
             // 
-            // txbName
+            // txbFirstName
             // 
-            this.txbName.Location = new System.Drawing.Point(168, 81);
-            this.txbName.Name = "txbName";
-            this.txbName.Size = new System.Drawing.Size(112, 27);
-            this.txbName.TabIndex = 2;
+            this.txbFirstName.Location = new System.Drawing.Point(168, 81);
+            this.txbFirstName.Name = "txbFirstName";
+            this.txbFirstName.Size = new System.Drawing.Size(112, 27);
+            this.txbFirstName.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(27, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.Size = new System.Drawing.Size(83, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Name:";
+            this.label2.Text = "First Name:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 20);
+            this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Surname:";
+            this.label3.Text = "Last Name:";
             // 
             // label4
             // 
@@ -114,11 +130,11 @@ namespace MediaBazaarProject
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 259);
+            this.label6.Location = new System.Drawing.Point(27, 260);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 20);
+            this.label6.Size = new System.Drawing.Size(142, 20);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Type of contract:";
+            this.label6.Text = "Permanent Contract:";
             // 
             // label7
             // 
@@ -156,33 +172,34 @@ namespace MediaBazaarProject
             this.label10.TabIndex = 11;
             this.label10.Text = "Position:";
             // 
-            // comboBox1
+            // cbPosition
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbPosition.FormattingEnabled = true;
+            this.cbPosition.Items.AddRange(new object[] {
             "Admin",
             "Manager",
             "Worker"});
-            this.comboBox1.Location = new System.Drawing.Point(168, 459);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 12;
+            this.cbPosition.Location = new System.Drawing.Point(168, 459);
+            this.cbPosition.Name = "cbPosition";
+            this.cbPosition.Size = new System.Drawing.Size(151, 28);
+            this.cbPosition.TabIndex = 12;
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(557, 433);
+            this.btnAddEmployee.Location = new System.Drawing.Point(710, 433);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(181, 54);
             this.btnAddEmployee.TabIndex = 13;
             this.btnAddEmployee.Text = "Add Employee";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
-            // txbSurname
+            // txbLastName
             // 
-            this.txbSurname.Location = new System.Drawing.Point(168, 125);
-            this.txbSurname.Name = "txbSurname";
-            this.txbSurname.Size = new System.Drawing.Size(112, 27);
-            this.txbSurname.TabIndex = 14;
+            this.txbLastName.Location = new System.Drawing.Point(168, 125);
+            this.txbLastName.Name = "txbLastName";
+            this.txbLastName.Size = new System.Drawing.Size(112, 27);
+            this.txbLastName.TabIndex = 14;
             // 
             // txbEmail
             // 
@@ -219,19 +236,192 @@ namespace MediaBazaarProject
             this.txbHourlyWage.Size = new System.Drawing.Size(112, 27);
             this.txbHourlyWage.TabIndex = 19;
             // 
-            // UpdateEmployeeForm
+            // btnUpdateEmployee
+            // 
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(513, 433);
+            this.btnUpdateEmployee.Name = "btnUpdateEmployee";
+            this.btnUpdateEmployee.Size = new System.Drawing.Size(181, 54);
+            this.btnUpdateEmployee.TabIndex = 20;
+            this.btnUpdateEmployee.Text = "Update Employee";
+            this.btnUpdateEmployee.UseVisualStyleBackColor = true;
+            // 
+            // lblCovidVaccinated
+            // 
+            this.lblCovidVaccinated.AutoSize = true;
+            this.lblCovidVaccinated.Location = new System.Drawing.Point(33, 500);
+            this.lblCovidVaccinated.Name = "lblCovidVaccinated";
+            this.lblCovidVaccinated.Size = new System.Drawing.Size(126, 20);
+            this.lblCovidVaccinated.TabIndex = 22;
+            this.lblCovidVaccinated.Text = "Covid Vaccinated:";
+            // 
+            // rBtnYes
+            // 
+            this.rBtnYes.AutoSize = true;
+            this.rBtnYes.Location = new System.Drawing.Point(184, 499);
+            this.rBtnYes.Name = "rBtnYes";
+            this.rBtnYes.Size = new System.Drawing.Size(51, 24);
+            this.rBtnYes.TabIndex = 23;
+            this.rBtnYes.TabStop = true;
+            this.rBtnYes.Text = "Yes";
+            this.rBtnYes.UseVisualStyleBackColor = true;
+            // 
+            // tBtnNo
+            // 
+            this.tBtnNo.AutoSize = true;
+            this.tBtnNo.Location = new System.Drawing.Point(253, 499);
+            this.tBtnNo.Name = "tBtnNo";
+            this.tBtnNo.Size = new System.Drawing.Size(50, 24);
+            this.tBtnNo.TabIndex = 24;
+            this.tBtnNo.TabStop = true;
+            this.tBtnNo.Text = "No";
+            this.tBtnNo.UseVisualStyleBackColor = true;
+            // 
+            // lblIsAccountActive
+            // 
+            this.lblIsAccountActive.AutoSize = true;
+            this.lblIsAccountActive.Location = new System.Drawing.Point(398, 41);
+            this.lblIsAccountActive.Name = "lblIsAccountActive";
+            this.lblIsAccountActive.Size = new System.Drawing.Size(125, 20);
+            this.lblIsAccountActive.TabIndex = 25;
+            this.lblIsAccountActive.Text = "Is Account Active:";
+            // 
+            // rBtnActive
+            // 
+            this.rBtnActive.AutoSize = true;
+            this.rBtnActive.Location = new System.Drawing.Point(541, 40);
+            this.rBtnActive.Name = "rBtnActive";
+            this.rBtnActive.Size = new System.Drawing.Size(71, 24);
+            this.rBtnActive.TabIndex = 26;
+            this.rBtnActive.TabStop = true;
+            this.rBtnActive.Text = "Active";
+            this.rBtnActive.UseVisualStyleBackColor = true;
+            // 
+            // rBtnNotActive
+            // 
+            this.rBtnNotActive.AutoSize = true;
+            this.rBtnNotActive.Location = new System.Drawing.Point(630, 40);
+            this.rBtnNotActive.Name = "rBtnNotActive";
+            this.rBtnNotActive.Size = new System.Drawing.Size(100, 24);
+            this.rBtnNotActive.TabIndex = 27;
+            this.rBtnNotActive.TabStop = true;
+            this.rBtnNotActive.Text = "Not Active";
+            this.rBtnNotActive.UseVisualStyleBackColor = true;
+            // 
+            // lblAge
+            // 
+            this.lblAge.AutoSize = true;
+            this.lblAge.Location = new System.Drawing.Point(398, 81);
+            this.lblAge.Name = "lblAge";
+            this.lblAge.Size = new System.Drawing.Size(39, 20);
+            this.lblAge.TabIndex = 28;
+            this.lblAge.Text = "Age:";
+            // 
+            // tbAge
+            // 
+            this.tbAge.Location = new System.Drawing.Point(458, 78);
+            this.tbAge.Name = "tbAge";
+            this.tbAge.Size = new System.Drawing.Size(125, 27);
+            this.tbAge.TabIndex = 29;
+            // 
+            // lblNationality
+            // 
+            this.lblNationality.AutoSize = true;
+            this.lblNationality.Location = new System.Drawing.Point(398, 125);
+            this.lblNationality.Name = "lblNationality";
+            this.lblNationality.Size = new System.Drawing.Size(85, 20);
+            this.lblNationality.TabIndex = 30;
+            this.lblNationality.Text = "Nationality:";
+            // 
+            // cbNationality
+            // 
+            this.cbNationality.FormattingEnabled = true;
+            this.cbNationality.Location = new System.Drawing.Point(489, 122);
+            this.cbNationality.Name = "cbNationality";
+            this.cbNationality.Size = new System.Drawing.Size(151, 28);
+            this.cbNationality.TabIndex = 31;
+            // 
+            // rBtnYesPermanent
+            // 
+            this.rBtnYesPermanent.AutoSize = true;
+            this.rBtnYesPermanent.Location = new System.Drawing.Point(186, 259);
+            this.rBtnYesPermanent.Name = "rBtnYesPermanent";
+            this.rBtnYesPermanent.Size = new System.Drawing.Size(51, 24);
+            this.rBtnYesPermanent.TabIndex = 32;
+            this.rBtnYesPermanent.TabStop = true;
+            this.rBtnYesPermanent.Text = "Yes";
+            this.rBtnYesPermanent.UseVisualStyleBackColor = true;
+            // 
+            // rBtnNotPermanent
+            // 
+            this.rBtnNotPermanent.AutoSize = true;
+            this.rBtnNotPermanent.Location = new System.Drawing.Point(253, 259);
+            this.rBtnNotPermanent.Name = "rBtnNotPermanent";
+            this.rBtnNotPermanent.Size = new System.Drawing.Size(50, 24);
+            this.rBtnNotPermanent.TabIndex = 33;
+            this.rBtnNotPermanent.TabStop = true;
+            this.rBtnNotPermanent.Text = "No";
+            this.rBtnNotPermanent.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(398, 169);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 20);
+            this.label11.TabIndex = 34;
+            this.label11.Text = "Gender:";
+            // 
+            // rBtnMale
+            // 
+            this.rBtnMale.AutoSize = true;
+            this.rBtnMale.Location = new System.Drawing.Point(478, 167);
+            this.rBtnMale.Name = "rBtnMale";
+            this.rBtnMale.Size = new System.Drawing.Size(63, 24);
+            this.rBtnMale.TabIndex = 35;
+            this.rBtnMale.TabStop = true;
+            this.rBtnMale.Text = "Male";
+            this.rBtnMale.UseVisualStyleBackColor = true;
+            // 
+            // rBtnFemale
+            // 
+            this.rBtnFemale.AutoSize = true;
+            this.rBtnFemale.Location = new System.Drawing.Point(551, 167);
+            this.rBtnFemale.Name = "rBtnFemale";
+            this.rBtnFemale.Size = new System.Drawing.Size(78, 24);
+            this.rBtnFemale.TabIndex = 36;
+            this.rBtnFemale.TabStop = true;
+            this.rBtnFemale.Text = "Female";
+            this.rBtnFemale.UseVisualStyleBackColor = true;
+            // 
+            // createEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 551);
+            this.Controls.Add(this.rBtnFemale);
+            this.Controls.Add(this.rBtnMale);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.rBtnNotPermanent);
+            this.Controls.Add(this.rBtnYesPermanent);
+            this.Controls.Add(this.cbNationality);
+            this.Controls.Add(this.lblNationality);
+            this.Controls.Add(this.tbAge);
+            this.Controls.Add(this.lblAge);
+            this.Controls.Add(this.rBtnNotActive);
+            this.Controls.Add(this.rBtnActive);
+            this.Controls.Add(this.lblIsAccountActive);
+            this.Controls.Add(this.tBtnNo);
+            this.Controls.Add(this.rBtnYes);
+            this.Controls.Add(this.lblCovidVaccinated);
+            this.Controls.Add(this.btnUpdateEmployee);
             this.Controls.Add(this.txbHourlyWage);
             this.Controls.Add(this.txbPhone);
             this.Controls.Add(this.txbAddress);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.txbEmail);
-            this.Controls.Add(this.txbSurname);
+            this.Controls.Add(this.txbLastName);
             this.Controls.Add(this.btnAddEmployee);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbPosition);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -241,10 +431,10 @@ namespace MediaBazaarProject
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txbName);
+            this.Controls.Add(this.txbFirstName);
             this.Controls.Add(this.txbBsn);
             this.Controls.Add(this.label1);
-            this.Name = "UpdateEmployeeForm";
+            this.Name = "createEmployeeForm";
             this.Text = "UpdateEmployeeForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,7 +445,7 @@ namespace MediaBazaarProject
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txbBsn;
-        private System.Windows.Forms.TextBox txbName;
+        private System.Windows.Forms.TextBox txbFirstName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -266,13 +456,29 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPosition;
         private System.Windows.Forms.Button btnAddEmployee;
-        private System.Windows.Forms.TextBox txbSurname;
+        private System.Windows.Forms.TextBox txbLastName;
         private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.TextBox txbAddress;
         private System.Windows.Forms.TextBox txbPhone;
         private System.Windows.Forms.TextBox txbHourlyWage;
+        private System.Windows.Forms.Button btnUpdateEmployee;
+        private System.Windows.Forms.Label lblCovidVaccinated;
+        private System.Windows.Forms.RadioButton rBtnYes;
+        private System.Windows.Forms.RadioButton tBtnNo;
+        private System.Windows.Forms.Label lblIsAccountActive;
+        private System.Windows.Forms.RadioButton rBtnActive;
+        private System.Windows.Forms.RadioButton rBtnNotActive;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.TextBox tbAge;
+        private System.Windows.Forms.Label lblNationality;
+        private System.Windows.Forms.ComboBox cbNationality;
+        private System.Windows.Forms.RadioButton rBtnYesPermanent;
+        private System.Windows.Forms.RadioButton rBtnNotPermanent;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RadioButton rBtnMale;
+        private System.Windows.Forms.RadioButton rBtnFemale;
     }
 }
