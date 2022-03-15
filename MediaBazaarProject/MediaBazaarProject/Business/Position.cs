@@ -8,8 +8,8 @@ namespace MediaBazaarProject
 {
     public enum Position
     {
-        ADMIN,
-        MANAGER,
-        WORKER
+        ADMIN = 1,
+        MANAGER = 2,
+        WORKER = 3
     }
 }

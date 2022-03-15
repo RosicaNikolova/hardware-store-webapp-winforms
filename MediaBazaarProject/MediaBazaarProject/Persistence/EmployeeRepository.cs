@@ -63,18 +63,17 @@ namespace MediaBazaarProject.Persistence
                 return employee;
             }
         }
-        public void Create(int id, string firstName, string lastName, int age, string email, string password, string address, string nationality, double salary, double phoneNumber, string gender, int BSN, bool permanentContract, int position, bool isAccountActive, bool covidVaccinated)
+        public void Create(string firstName, string lastName, int age, string email, string password, string address, string nationality, double salary, double phoneNumber, string gender, int BSN, bool permanentContract, int position, bool isAccountActive, bool covidVaccinated)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
             {
-                string sql = "insert into employees (EmployeeId,FirstName,LastName,Age,Email,Address,Nationality,Salary,PhoneNumber,Gender,BSN,PermanentContract,Position,IsAccountActive,CovidVaccinated) values (@EmployeeId,@FirstName,@LastName,@Age,@Email,@Address,@Nationality,@Salary,@PhoneNumber,@Gender,@BSN,@PermanentContract,@Position,@IsAccountActive,@CovidVaccinated)";
+                string sql = "insert into employees (FirstName,LastName,Age,Email,Password,Address,Nationality,Salary,PhoneNumber,Gender,BSN,PermanentContract,Position,IsAccountActive,CovidVaccinated) values (@FirstName,@LastName,@Age,@Email,@Password,@Address,@Nationality,@Salary,@PhoneNumber,@Gender,@BSN,@PermanentContract,@Position,@IsAccountActive,@CovidVaccinated)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("EmployeeId", id);
                 cmd.Parameters.AddWithValue("FirstName", firstName);
                 cmd.Parameters.AddWithValue("LastName", lastName);
                 cmd.Parameters.AddWithValue("Age", age);
                 cmd.Parameters.AddWithValue("Email", email);
-                //cmd.Parameters.AddWithValue("Password", password);
+                cmd.Parameters.AddWithValue("Password", password);
                 cmd.Parameters.AddWithValue("Address", address);
                 cmd.Parameters.AddWithValue("Nationality", nationality);
                 cmd.Parameters.AddWithValue("Salary", salary);

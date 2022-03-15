@@ -70,8 +70,6 @@ namespace MediaBazaarProject
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblID = new System.Windows.Forms.Label();
-            this.txbID = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -443,29 +441,11 @@ namespace MediaBazaarProject
             this.panel4.Size = new System.Drawing.Size(387, 60);
             this.panel4.TabIndex = 39;
             // 
-            // lblID
-            // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(27, 8);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(27, 20);
-            this.lblID.TabIndex = 40;
-            this.lblID.Text = "ID:";
-            // 
-            // txbID
-            // 
-            this.txbID.Location = new System.Drawing.Point(167, 5);
-            this.txbID.Name = "txbID";
-            this.txbID.Size = new System.Drawing.Size(125, 27);
-            this.txbID.TabIndex = 41;
-            // 
             // createEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 551);
-            this.Controls.Add(this.txbID);
-            this.Controls.Add(this.lblID);
+            this.ClientSize = new System.Drawing.Size(928, 583);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -552,7 +532,5 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lblID;
-        private System.Windows.Forms.TextBox txbID;
     }
 }
