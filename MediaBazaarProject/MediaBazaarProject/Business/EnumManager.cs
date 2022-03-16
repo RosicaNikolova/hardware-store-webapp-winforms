@@ -31,7 +31,29 @@ namespace MediaBazaarProject.Business
             return setPosition;
 
         }
+        public Position GetPosition(string position)
+        {
+            Position setPosition = Position.WORKER;
 
+            switch (position)
+            {
+                case "Admin":
+                    setPosition = Position.ADMIN;
+                    break;
+
+                case "Manager":
+                    setPosition = Position.MANAGER;
+                    break;
+
+                case "Worker":
+                    setPosition = Position.WORKER;
+                    break;
+
+
+            }
+            return setPosition;
+
+        }
 
         public Shifts SetShiftType(string inputShift)
         {

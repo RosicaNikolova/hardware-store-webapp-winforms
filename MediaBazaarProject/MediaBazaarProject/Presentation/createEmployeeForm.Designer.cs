@@ -53,7 +53,7 @@ namespace MediaBazaarProject
             this.btnUpdateEmployee = new System.Windows.Forms.Button();
             this.lblCovidVaccinated = new System.Windows.Forms.Label();
             this.rBtnYes = new System.Windows.Forms.RadioButton();
-            this.tBtnNo = new System.Windows.Forms.RadioButton();
+            this.rBtnNo = new System.Windows.Forms.RadioButton();
             this.lblIsAccountActive = new System.Windows.Forms.Label();
             this.rBtnActive = new System.Windows.Forms.RadioButton();
             this.rBtnNotActive = new System.Windows.Forms.RadioButton();
@@ -252,6 +252,7 @@ namespace MediaBazaarProject
             this.btnUpdateEmployee.TabIndex = 20;
             this.btnUpdateEmployee.Text = "Update Employee";
             this.btnUpdateEmployee.UseVisualStyleBackColor = true;
+            this.btnUpdateEmployee.Click += new System.EventHandler(this.btnUpdateEmployee_Click);
             // 
             // lblCovidVaccinated
             // 
@@ -274,15 +275,15 @@ namespace MediaBazaarProject
             this.rBtnYes.Text = "Yes";
             this.rBtnYes.UseVisualStyleBackColor = true;
             // 
-            // tBtnNo
+            // rBtnNo
             // 
-            this.tBtnNo.AutoSize = true;
-            this.tBtnNo.Location = new System.Drawing.Point(243, 23);
-            this.tBtnNo.Name = "tBtnNo";
-            this.tBtnNo.Size = new System.Drawing.Size(50, 24);
-            this.tBtnNo.TabIndex = 24;
-            this.tBtnNo.Text = "No";
-            this.tBtnNo.UseVisualStyleBackColor = true;
+            this.rBtnNo.AutoSize = true;
+            this.rBtnNo.Location = new System.Drawing.Point(243, 23);
+            this.rBtnNo.Name = "rBtnNo";
+            this.rBtnNo.Size = new System.Drawing.Size(50, 24);
+            this.rBtnNo.TabIndex = 24;
+            this.rBtnNo.Text = "No";
+            this.rBtnNo.UseVisualStyleBackColor = true;
             // 
             // lblIsAccountActive
             // 
@@ -415,7 +416,7 @@ namespace MediaBazaarProject
             // 
             this.panel2.Controls.Add(this.lblCovidVaccinated);
             this.panel2.Controls.Add(this.rBtnYes);
-            this.panel2.Controls.Add(this.tBtnNo);
+            this.panel2.Controls.Add(this.rBtnNo);
             this.panel2.Location = new System.Drawing.Point(27, 493);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 58);
@@ -515,7 +516,7 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Button btnUpdateEmployee;
         private System.Windows.Forms.Label lblCovidVaccinated;
         private System.Windows.Forms.RadioButton rBtnYes;
-        private System.Windows.Forms.RadioButton tBtnNo;
+        private System.Windows.Forms.RadioButton rBtnNo;
         private System.Windows.Forms.Label lblIsAccountActive;
         private System.Windows.Forms.RadioButton rBtnActive;
         private System.Windows.Forms.RadioButton rBtnNotActive;

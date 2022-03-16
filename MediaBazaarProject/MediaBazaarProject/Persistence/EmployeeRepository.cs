@@ -40,7 +40,8 @@ namespace MediaBazaarProject.Persistence
 
             return employees;
         }
-        public Employee GetEmployeeByBSN(int BSN)
+        //for creating an employee, gets a user with BSN, if not null, user cant be created
+        public Employee GetEmployeeByBSNProtected(int BSN)
         {
             //database magic
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
@@ -101,11 +102,12 @@ namespace MediaBazaarProject.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
+        //Used in log in
         public User FindUser(string email, string password)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "select FirstName, Email, Password, Position from employees where Email=@Email and Password=@Password;";
+                string sql = "select FirstName, Email, Password, Position,EmployeeId from employees where Email=@Email and Password=@Password;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("Email", email);
@@ -126,12 +128,50 @@ namespace MediaBazaarProject.Persistence
                 return user;
             }  
         }
+        //used in updating employee, we store ID
+        public Employee GetEmployeeByID(int Id)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "select * from employees where EmployeeId=@EmployeeId;";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("EmployeeId", Id);
+
+
+                conn.Open();
+                Employee employee = new Employee();
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+
+                while (dateReader.Read())
+                {
+                    employee.Id = dateReader.GetInt32("EmployeeId");
+                    employee.Bsn1 = dateReader.GetInt32("BSN");
+                    employee.FirstName = dateReader.GetString("FirstName");
+                    employee.LastName = dateReader.GetString("LastName");
+                    employee.Email = dateReader.GetString("Email");
+                    employee.Password = dateReader.GetString("Password");
+                    employee.PermanentContract = dateReader.GetBoolean("PermanentContract");
+                    employee.Address = dateReader.GetString("Address");
+                    employee.PhoneNumber = ((long)dateReader.GetDouble("PhoneNumber"));
+                    employee.Salary = dateReader.GetDouble("Salary");
+                    employee.Position = enumManager.GetPosition(dateReader.GetString("Position"));
+                    employee.CovidVaccinated = dateReader.GetBoolean("CovidVaccinated");
+                    employee.Age = dateReader.GetInt32("Age");
+                    employee.Nationality = dateReader.GetString("Nationality");
+                    employee.Gender = dateReader.GetString("Gender");
+                    employee.IsAccountActive = dateReader.GetBoolean("IsAccountActive");                    
+                }
+                return employee;
+            }
+        }
         public void Update(Employee employee)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
             {
-                string sql = "update employees SET * values (@FirstName,@LastName,@Age,@Email,@Password,@Address,@Nationality,@Salary,@PhoneNumber,@Gender,@BSN,@PermanentContract,@Position,@IsAccountActive,@CovidVaccinates)";
+                string sql = "UPDATE employees SET FirstName=@FirstName, LastName=@LastName,Age=@Age,Email=@Email,Password=@Password,Address=@Address,Nationality=@Nationality,Salary=@Salary,PhoneNumber=@PhoneNumber,Gender=@Gender,BSN=@BSN,PermanentContract=@PermanentContract,Position=@Position,IsAccountActive=@IsAccountActive,CovidVaccinated=@CovidVaccinated where EmployeeId=@EmployeeId";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("EmployeeId", employee.Id);
                 cmd.Parameters.AddWithValue("FirstName", employee.FirstName);
                 cmd.Parameters.AddWithValue("LastName", employee.LastName);
                 cmd.Parameters.AddWithValue("Age", employee.Age);

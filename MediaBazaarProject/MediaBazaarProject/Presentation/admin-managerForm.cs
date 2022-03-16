@@ -17,15 +17,24 @@ namespace MediaBazaarProject
     {
         EmployeeManager employeeManager = new EmployeeManager();
         ShiftManager shiftManager = new ShiftManager();
+
         public admin_managerForm()
         {
             InitializeComponent();
         }
+        private Employee selectedEmployee()
+        {
+            Employee employee;
 
+            object selectedEmployee = lbEmployeeManagementList.SelectedItem;
+            employee = ((Employee)selectedEmployee);
+            return employee;
+
+        }
         private void admin_managerForm_Load(object sender, EventArgs e)
         {
-            List<Employee> employees =  employeeManager.GetAllEmployees();
-            foreach(Employee u in employees)
+            List<Employee> employees = employeeManager.GetAllEmployees();
+            foreach (Employee u in employees)
             {
                 lbEmployeeList.Items.Add(u.FirstName + " " + u.LastName);
             }
@@ -33,7 +42,7 @@ namespace MediaBazaarProject
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
-            createEmployeeForm addEmployeeForm = new createEmployeeForm();
+            createEmployeeForm addEmployeeForm = new createEmployeeForm(1);
             addEmployeeForm.Show();
         }
 
@@ -66,7 +75,7 @@ namespace MediaBazaarProject
             date = dtpDay.Value;
             workers = employeeManager.GetAllWorkers();
             //workers = shiftManager.GetAvailableWorkersForDate(workers, date);
-           
+
             foreach (var w in workers)
             {
                 lbEmployeeShiftList.Items.Add(w);
@@ -77,8 +86,8 @@ namespace MediaBazaarProject
         {
             DateTime date = new DateTime();
             date = dtpDay.Value;
-            
-            if (cbShiftSelect.Text != "Select shift" && cbShiftSelect.Text!= "" && lbEmployeeShiftList.SelectedItem != null)
+
+            if (cbShiftSelect.Text != "Select shift" && cbShiftSelect.Text != "" && lbEmployeeShiftList.SelectedItem != null)
             {
                 object worker = lbEmployeeShiftList.SelectedItem;
                 int shift = cbShiftSelect.SelectedIndex + 1;
@@ -86,15 +95,15 @@ namespace MediaBazaarProject
                 {
                     MessageBox.Show("Employee successfully assigned to a shift");
 
-                    if(shift == 1)
+                    if (shift == 1)
                     {
                         lbMorningShift.Items.Add(worker);
                     }
-                    else if(shift == 2)
+                    else if (shift == 2)
                     {
                         lbMiddayShift.Items.Add(worker);
                     }
-                    else if(shift == 3)
+                    else if (shift == 3)
                     {
                         lbEveningShift.Items.Add(worker);
                     }
@@ -118,7 +127,7 @@ namespace MediaBazaarProject
 
             lbEmployeeShiftList.Items.Clear();
 
-            
+
             foreach (var w in workers)
             {
                 lbEmployeeShiftList.Items.Add(w);
@@ -143,7 +152,25 @@ namespace MediaBazaarProject
                 lbEmployeeShiftList.Items.Add(w);
             }
 
-            
+
+
+        }
+
+        private void btnEditEmployee_Click(object sender, EventArgs e)
+        {
+            Employee employee = selectedEmployee();
+            if (employee != null)
+            {
+                Employee employeeFilled = employeeManager.GetEmployeeByID(employee);
+                createEmployeeForm createEmployeeForm = new createEmployeeForm(employeeFilled, 2);
+                createEmployeeForm.Show();
+                
+            }
+            else
+            {
+                MessageBox.Show("Employee not selected");
+            }
+
 
         }
     }
