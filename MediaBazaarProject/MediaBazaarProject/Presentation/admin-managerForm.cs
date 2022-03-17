@@ -209,5 +209,25 @@ namespace MediaBazaarProject
 
 
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAdminHome;
+        }
+
+        private void btnHome1_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAdminHome;
+        }
+
+        private void btnHome2_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAdminHome;
+        }
+
+        private void btnHome3_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAdminHome;
+        }
     }
 }
