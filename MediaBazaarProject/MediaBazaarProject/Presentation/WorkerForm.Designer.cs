@@ -29,103 +29,59 @@ namespace MediaBazaarProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lbxShiftEmployeeDay = new System.Windows.Forms.ListBox();
+            this.lblshift = new System.Windows.Forms.Label();
+            this.dateWorker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // listBox3
+            // lbxShiftEmployeeDay
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(462, 214);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(79, 104);
-            this.listBox3.TabIndex = 14;
+            this.lbxShiftEmployeeDay.FormattingEnabled = true;
+            this.lbxShiftEmployeeDay.ItemHeight = 20;
+            this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(316, 147);
+            this.lbxShiftEmployeeDay.Name = "lbxShiftEmployeeDay";
+            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(189, 124);
+            this.lbxShiftEmployeeDay.TabIndex = 12;
             // 
-            // listBox2
+            // lblshift
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(357, 214);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(79, 104);
-            this.listBox2.TabIndex = 13;
+            this.lblshift.AutoSize = true;
+            this.lblshift.Location = new System.Drawing.Point(343, 98);
+            this.lblshift.Name = "lblshift";
+            this.lblshift.Size = new System.Drawing.Size(130, 20);
+            this.lblshift.TabIndex = 9;
+            this.lblshift.Text = "Shifts for the date:";
             // 
-            // listBox1
+            // dateWorker
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(259, 214);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(79, 104);
-            this.listBox1.TabIndex = 12;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(480, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "label3";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(373, 191);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "label2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(271, 191);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "label1";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(280, 133);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(250, 27);
-            this.dateTimePicker1.TabIndex = 8;
+            this.dateWorker.Location = new System.Drawing.Point(280, 34);
+            this.dateWorker.MaxDate = new System.DateTime(2022, 3, 22, 0, 0, 0, 0);
+            this.dateWorker.MinDate = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
+            this.dateWorker.Name = "dateWorker";
+            this.dateWorker.Size = new System.Drawing.Size(255, 27);
+            this.dateWorker.TabIndex = 8;
+            this.dateWorker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
+            this.dateWorker.ValueChanged += new System.EventHandler(this.dateWorker_ValueChanged);
             // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.lbxShiftEmployeeDay);
+            this.Controls.Add(this.lblshift);
+            this.Controls.Add(this.dateWorker);
             this.Name = "WorkerForm";
             this.Text = "WorkerForm";
+            this.Load += new System.EventHandler(this.WorkerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ListBox lbxShiftEmployeeDay;
+        private System.Windows.Forms.Label lblshift;
+        private System.Windows.Forms.DateTimePicker dateWorker;
     }
 }

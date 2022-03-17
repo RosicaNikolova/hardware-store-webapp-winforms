@@ -114,5 +114,15 @@ namespace MediaBazaarProject.Business
            
             return availableWorkers;
         }
+
+        public List<Shift> GetShiftsForWorker(DateTime date, int id)
+        {
+            List<Shift> shifts = new List<Shift>();
+
+            shifts = scheduleRepository.GetShiftsForWorker(date, id);
+
+            return shifts;
+
+        }
     }
 }
