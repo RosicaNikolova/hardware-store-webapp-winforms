@@ -63,6 +63,10 @@ namespace MediaBazaarProject
                     this.Close();
 
                 }
+                else
+                {
+                    MessageBox.Show("Please fill in all fields");
+                }
             }
             catch (Exception error) {
                 MessageBox.Show(error.Message);
