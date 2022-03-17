@@ -23,7 +23,6 @@ namespace MediaBazaarProject
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text) != null)
-
             {
                 MessageBox.Show("Login successful");
                 WorkerForm workerForm = new WorkerForm();

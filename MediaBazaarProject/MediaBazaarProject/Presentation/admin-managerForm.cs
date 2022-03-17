@@ -68,18 +68,38 @@ namespace MediaBazaarProject
         {
             tabAdmin.SelectedTab = tabScheduleAdministration;
             lbEmployeeShiftList.Items.Clear();
-            EmployeeManager employeeManager = new EmployeeManager();
-            List<Employee> workers = new List<Employee>();
+            lbMorningShift.Items.Clear();
+            lbMiddayShift.Items.Clear();
+            lbEveningShift.Items.Clear();
 
             DateTime date = new DateTime();
             date = dtpDay.Value;
+            List<Employee> workers = new List<Employee>();
             workers = employeeManager.GetAllWorkers();
-            //workers = shiftManager.GetAvailableWorkersForDate(workers, date);
+            workers = shiftManager.GetAvailableWorkersForDate(workers, date);
 
             foreach (var w in workers)
             {
                 lbEmployeeShiftList.Items.Add(w);
             }
+
+            foreach (var shift in shiftManager.GetShiftsForDate(date))
+            {
+                if(shift.ShiftType == Shifts.MORNING)
+                {
+                    lbMorningShift.Items.Add(shift.Employee);
+                }
+                else if(shift.ShiftType == Shifts.MIDDAY)
+                {
+                    lbMiddayShift.Items.Add(shift.Employee);
+                }
+                else if (shift.ShiftType == Shifts.EVENING)
+                {
+                    lbEveningShift.Items.Add(shift.Employee);
+                }
+            }
+
+
         }
 
         private void btnAssignToShift_Click(object sender, EventArgs e)
@@ -140,20 +160,37 @@ namespace MediaBazaarProject
         private void dtpDay_ValueChanged(object sender, EventArgs e)
         {
             lbEmployeeShiftList.Items.Clear();
+            lbMorningShift.Items.Clear();
+            lbMiddayShift.Items.Clear();
+            lbEveningShift.Items.Clear();
+
             EmployeeManager employeeManager = new EmployeeManager();
             List<Employee> workers = new List<Employee>();
             DateTime date = new DateTime();
             date = dtpDay.Value;
             workers = employeeManager.GetAllWorkers();
             workers = shiftManager.GetAvailableWorkersForDate(workers, date);
-
+           
             foreach (var w in workers)
             {
                 lbEmployeeShiftList.Items.Add(w);
             }
 
-
-
+            foreach (Shift shift in shiftManager.GetShiftsForDate(date))
+            {
+                if (shift.ShiftType == Shifts.MORNING)
+                {
+                    lbMorningShift.Items.Add(shift.Employee.FirstName);
+                }
+                else if (shift.ShiftType == Shifts.MIDDAY)
+                {
+                    lbMiddayShift.Items.Add(shift.Employee.FirstName);
+                }
+                else if (shift.ShiftType == Shifts.EVENING)
+                {
+                    lbEveningShift.Items.Add(shift.Employee.FirstName);
+                }
+            }
         }
 
         private void btnEditEmployee_Click(object sender, EventArgs e)
@@ -164,7 +201,6 @@ namespace MediaBazaarProject
                 Employee employeeFilled = employeeManager.GetEmployeeByID(employee);
                 createEmployeeForm createEmployeeForm = new createEmployeeForm(employeeFilled, 2);
                 createEmployeeForm.Show();
-                
             }
             else
             {

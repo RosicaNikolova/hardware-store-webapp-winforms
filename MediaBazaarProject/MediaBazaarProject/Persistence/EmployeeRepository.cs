@@ -115,11 +115,12 @@ namespace MediaBazaarProject.Persistence
 
 
                 conn.Open();
-                User user = new User();
+                User user = null;
                 MySqlDataReader dateReader = cmd.ExecuteReader();
 
                 while (dateReader.Read())
                 {
+                    user = new User();
                     user.FirstName = dateReader.GetString("FirstName");
                     user.Position = user.SetPosition(dateReader.GetString("Position").ToUpper());
    

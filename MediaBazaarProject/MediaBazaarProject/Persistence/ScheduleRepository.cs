@@ -20,7 +20,7 @@ namespace MediaBazaarProject.Persistence
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
             {
 
-                string sql = "SELECT * FROM shifts";
+                string sql = "SELECT shifts.Id, shifts.EmployeeId, shifts.ShiftDate, shifts.ShiftNumber, employees.FirstName, employees.LastName FROM shifts INNER JOIN employees ON shifts.EmployeeId = employees.EmployeeId;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -38,6 +38,8 @@ namespace MediaBazaarProject.Persistence
                     shift.Date = (DateTime)dr.GetMySqlDateTime("ShiftDate");
                     shift.ShiftType = enumManager.SetShiftType(dr.GetString("ShiftNumber"));
                     shift.Employee.Id = dr.GetInt32("EmployeeId");
+                    shift.Employee.FirstName = dr.GetString("FirstName");
+                    shift.Employee.LastName = dr.GetString("LastName");
 
                     schedule.Add(shift);
                 }
@@ -63,5 +65,8 @@ namespace MediaBazaarProject.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
+
+        
+
     }
 }

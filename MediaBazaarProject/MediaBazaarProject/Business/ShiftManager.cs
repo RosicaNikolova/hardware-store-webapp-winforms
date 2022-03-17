@@ -10,7 +10,6 @@ namespace MediaBazaarProject.Business
     class ShiftManager
     {
         ScheduleRepository scheduleRepository = new ScheduleRepository();
-
         List<Shift> schedule;
 
         public ShiftManager()
@@ -18,6 +17,21 @@ namespace MediaBazaarProject.Business
             schedule = new List<Shift>();
             schedule = scheduleRepository.GetAllShifts();
         }
+
+
+        public List<Shift> GetShiftsForDate(DateTime date)
+        {
+            List<Shift> shiftForDate = new List<Shift>();
+            foreach (Shift shift in schedule)
+            {
+                if(shift.Date == date)
+                {
+                    shiftForDate.Add(shift);
+                }
+            }
+            return shiftForDate;
+        }
+
         //public ShiftRepository shiftRepo = new ShiftRepository();
 
         /*User(string name, emun role)
@@ -97,8 +111,7 @@ namespace MediaBazaarProject.Business
                 }
                 counter = 0;
             }
-            
-        
+           
             return availableWorkers;
         }
     }

@@ -31,7 +31,6 @@ namespace MediaBazaarProject
             InitializeComponent();
             employeeSelected = employee;
             idButton(employee, buttonId);
-
         }
         private void rBTNChecker() {
             if (!rBtnYes.Checked)
@@ -98,6 +97,7 @@ namespace MediaBazaarProject
             else {
                 MessageBox.Show("Fill in all boxes!");
             }
+
             
         }
         //checks what for the form is and if for update, fills up the textboxes
