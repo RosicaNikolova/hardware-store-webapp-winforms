@@ -22,20 +22,25 @@ namespace MediaBazaarProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text) != null)
+            if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.ADMIN)
             {
-                MessageBox.Show("Login successful");
-                WorkerForm workerForm = new WorkerForm();
-                workerForm.Show();
-
+                admin_managerForm adminManagerForm = new admin_managerForm("admin");
+                adminManagerForm.Show();
+            }
+            else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.MANAGER)
+            {
+                admin_managerForm adminManagerForm = new admin_managerForm("manager");
+                adminManagerForm.Show();
+            }
+            else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.WORKER)
+            {
+                createEmployeeForm employeeForm = new createEmployeeForm(1);
+                employeeForm.Show();
             }
             else
             {
                 MessageBox.Show("Invalid credentials");
             }
-            
-           
-            
         }
     }
 }

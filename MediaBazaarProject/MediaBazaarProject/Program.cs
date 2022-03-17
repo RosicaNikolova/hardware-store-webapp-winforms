@@ -17,7 +17,7 @@ namespace MediaBazaarProject
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new admin_managerForm());
+            Application.Run(new Form1());
         }
     }
 }

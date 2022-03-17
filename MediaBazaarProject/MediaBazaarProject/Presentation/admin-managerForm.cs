@@ -17,11 +17,29 @@ namespace MediaBazaarProject
     {
         EmployeeManager employeeManager = new EmployeeManager();
         ShiftManager shiftManager = new ShiftManager();
+        string role = string.Empty;
 
         public admin_managerForm()
         {
             InitializeComponent();
         }
+
+        public admin_managerForm(string role)
+        {
+            InitializeComponent();
+            this.role = role;
+            if (role == "admin")
+            {
+                btnScheduleAdministration.Visible = true;
+                btnEmployeeManagement.Visible = true;
+            }
+            else if (role == "manager")
+            {
+                btnScheduleAdministration.Visible = false;
+                btnEmployeeManagement.Visible = false;
+            }
+        }
+
         private Employee selectedEmployee()
         {
             Employee employee;
