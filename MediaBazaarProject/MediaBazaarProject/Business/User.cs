@@ -8,8 +8,8 @@ namespace MediaBazaarProject.Business
 {
     public class User
     {
-      
 
+        public int Id { get; set; }
         private string name;
         private Position position;
 

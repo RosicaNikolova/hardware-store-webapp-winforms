@@ -66,7 +66,42 @@ namespace MediaBazaarProject.Persistence
             }
         }
 
-        
+
+        public List<Shift> GetShiftsForWorker(DateTime date, int id)
+        {
+            List<Shift> schedule = new List<Shift>();
+
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+
+                string sql = "SELECT shifts.Id, shifts.EmployeeId, shifts.ShiftDate, shifts.ShiftNumber FROM shifts where @EmployeeId=EmployeeId and @ShiftDate = ShiftDate;";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+                cmd.Parameters.AddWithValue("EmployeeId", id);
+                cmd.Parameters.AddWithValue("ShiftDate", date);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                Shift shift = null;
+
+                while (dr.Read())
+                {
+                    shift = new Shift();
+                    shift.Id = dr.GetInt32("Id");
+                    shift.Date = (DateTime)dr.GetMySqlDateTime("ShiftDate");
+                    shift.ShiftType = enumManager.SetShiftType(dr.GetString("ShiftNumber"));
+                    shift.Employee.Id = dr.GetInt32("EmployeeId");
+                  
+
+                    schedule.Add(shift);
+                }
+            }
+            return schedule;
+        }
+
+
 
     }
 }

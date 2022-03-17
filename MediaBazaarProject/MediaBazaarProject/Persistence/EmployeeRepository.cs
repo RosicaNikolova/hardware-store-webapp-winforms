@@ -120,7 +120,7 @@ namespace MediaBazaarProject.Persistence
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "select FirstName, Email, Password, Position,EmployeeId from employees where Email=@Email and Password=@Password;";
+                string sql = "select FirstName, Email, Password, Position, EmployeeId from employees where Email=@Email and Password=@Password;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("Email", email);
@@ -136,8 +136,7 @@ namespace MediaBazaarProject.Persistence
                     user = new User();
                     user.FirstName = dateReader.GetString("FirstName");
                     user.Position = user.SetPosition(dateReader.GetString("Position").ToUpper());
-   
-                    
+                    user.Id = dateReader.GetInt32("EmployeeId");                 
                 }
                 return user;
             }  

@@ -22,7 +22,9 @@ namespace MediaBazaarProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.ADMIN)
+            User user = loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
+
+            if (user.Position == Position.ADMIN)
             {
                 admin_managerForm adminManagerForm = new admin_managerForm("admin");
                 adminManagerForm.Show();
@@ -33,8 +35,9 @@ namespace MediaBazaarProject
                 adminManagerForm.Show();
             }
             else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.WORKER)
+
             {
-                createEmployeeForm employeeForm = new createEmployeeForm(1);
+                WorkerForm employeeForm = new WorkerForm(user);
                 employeeForm.Show();
             }
             else
