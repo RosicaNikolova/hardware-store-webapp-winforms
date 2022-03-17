@@ -229,5 +229,43 @@ namespace MediaBazaarProject
         {
             tabAdmin.SelectedTab = tabAdminHome;
         }
+
+        private void btnSearchByName_Click(object sender, EventArgs e)
+        {
+            lbEmployeeList.Items.Clear();
+
+            List<Employee> employees = employeeManager.GetAllEmployees();
+            string fullName;
+
+            foreach (Employee u in employees)
+            {
+                fullName = "";
+                fullName = $"{u.FirstName} {u.LastName}";
+
+                if (fullName.Contains(tbFilterByName.Text))
+                {
+                    lbEmployeeList.Items.Add(fullName);
+                }
+            }
+        }
+
+        private void btnSearchEmpName_Click(object sender, EventArgs e)
+        {
+            lbEmployeeManagementList.Items.Clear();
+
+            List<Employee> employees = employeeManager.GetAllEmployees();
+            string fullName;
+
+            foreach (Employee u in employees)
+            {
+                fullName = "";
+                fullName = $"{u.FirstName} {u.LastName}";
+
+                if (fullName.Contains(tbSearchEmployeeName.Text))
+                {
+                    lbEmployeeManagementList.Items.Add(fullName);
+                }
+            }
+        }
     }
 }
