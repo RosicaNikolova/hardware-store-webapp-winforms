@@ -102,6 +102,19 @@ namespace MediaBazaarProject.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
+        public void DeleteEmployee(Employee e)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "Delete from employees where EmployeeId=@EmployeeId";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("EmployeeId", e.Id);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         //Used in log in
         public User FindUser(string email, string password)
         {
