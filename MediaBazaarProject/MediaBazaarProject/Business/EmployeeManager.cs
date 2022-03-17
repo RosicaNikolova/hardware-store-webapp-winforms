@@ -17,6 +17,10 @@ namespace MediaBazaarProject.Business
         {
             return employeeRepository.GetEmployees();
         }
+        public List<Employee> GetDeactivatedEmployees()
+        {
+            return employeeRepository.DeactivatedEmployees();
+        }
         public Employee GetEmployee(Employee e) {
             return employeeRepository.GetEmployeeByBSNProtected(e.Bsn1);
         }

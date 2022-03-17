@@ -285,5 +285,24 @@ namespace MediaBazaarProject
                 }
             }
         }
+
+        private void cbDisplayDeactivated_CheckedChanged(object sender, EventArgs e)
+        {
+            lbEmployeeManagementList.Items.Clear();
+            if (cbDisplayDeactivated.Checked == true)
+            {
+                foreach (Employee employee in employeeManager.GetDeactivatedEmployees())
+                {
+                    lbEmployeeManagementList.Items.Add(employee);
+                }
+            }
+            else if (cbDisplayDeactivated.Checked == false)
+            {
+                foreach (Employee employee in employeeManager.GetAllEmployees())
+                {
+                    lbEmployeeManagementList.Items.Add(employee);
+                }
+            }
+        }
     }
 }

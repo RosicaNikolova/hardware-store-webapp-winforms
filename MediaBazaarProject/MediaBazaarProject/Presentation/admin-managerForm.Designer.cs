@@ -115,6 +115,7 @@ namespace MediaBazaarProject
             this.lbSundayMidday = new System.Windows.Forms.ListBox();
             this.lbSundayEvening = new System.Windows.Forms.ListBox();
             this.btnHome3 = new System.Windows.Forms.Button();
+            this.cbDisplayDeactivated = new System.Windows.Forms.CheckBox();
             this.tabAdmin.SuspendLayout();
             this.tabAdminHome.SuspendLayout();
             this.tabEmployeeManagement.SuspendLayout();
@@ -308,6 +309,7 @@ namespace MediaBazaarProject
             // 
             // tabEmployeeManagement
             // 
+            this.tabEmployeeManagement.Controls.Add(this.cbDisplayDeactivated);
             this.tabEmployeeManagement.Controls.Add(this.btnHome);
             this.tabEmployeeManagement.Controls.Add(this.btnSearchEmpName);
             this.tabEmployeeManagement.Controls.Add(this.tbSearchEmployeeName);
@@ -791,7 +793,7 @@ namespace MediaBazaarProject
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel1.Controls.Add(this.lbMondayMorning, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbMondayMidday, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbMondayEvening, 0, 2);
@@ -855,7 +857,7 @@ namespace MediaBazaarProject
             this.lbTuesdayMorning.ItemHeight = 20;
             this.lbTuesdayMorning.Location = new System.Drawing.Point(143, 3);
             this.lbTuesdayMorning.Name = "lbTuesdayMorning";
-            this.lbTuesdayMorning.Size = new System.Drawing.Size(138, 104);
+            this.lbTuesdayMorning.Size = new System.Drawing.Size(137, 104);
             this.lbTuesdayMorning.TabIndex = 3;
             // 
             // lbTuesdayMidday
@@ -864,7 +866,7 @@ namespace MediaBazaarProject
             this.lbTuesdayMidday.ItemHeight = 20;
             this.lbTuesdayMidday.Location = new System.Drawing.Point(143, 125);
             this.lbTuesdayMidday.Name = "lbTuesdayMidday";
-            this.lbTuesdayMidday.Size = new System.Drawing.Size(138, 144);
+            this.lbTuesdayMidday.Size = new System.Drawing.Size(137, 144);
             this.lbTuesdayMidday.TabIndex = 4;
             // 
             // lbTuesdayEvening
@@ -873,14 +875,14 @@ namespace MediaBazaarProject
             this.lbTuesdayEvening.ItemHeight = 20;
             this.lbTuesdayEvening.Location = new System.Drawing.Point(143, 275);
             this.lbTuesdayEvening.Name = "lbTuesdayEvening";
-            this.lbTuesdayEvening.Size = new System.Drawing.Size(138, 124);
+            this.lbTuesdayEvening.Size = new System.Drawing.Size(137, 124);
             this.lbTuesdayEvening.TabIndex = 5;
             // 
             // lbWednesdayMorning
             // 
             this.lbWednesdayMorning.FormattingEnabled = true;
             this.lbWednesdayMorning.ItemHeight = 20;
-            this.lbWednesdayMorning.Location = new System.Drawing.Point(287, 3);
+            this.lbWednesdayMorning.Location = new System.Drawing.Point(286, 3);
             this.lbWednesdayMorning.Name = "lbWednesdayMorning";
             this.lbWednesdayMorning.Size = new System.Drawing.Size(149, 104);
             this.lbWednesdayMorning.TabIndex = 6;
@@ -889,7 +891,7 @@ namespace MediaBazaarProject
             // 
             this.lbWednesdayMidday.FormattingEnabled = true;
             this.lbWednesdayMidday.ItemHeight = 20;
-            this.lbWednesdayMidday.Location = new System.Drawing.Point(287, 125);
+            this.lbWednesdayMidday.Location = new System.Drawing.Point(286, 125);
             this.lbWednesdayMidday.Name = "lbWednesdayMidday";
             this.lbWednesdayMidday.Size = new System.Drawing.Size(149, 144);
             this.lbWednesdayMidday.TabIndex = 7;
@@ -898,7 +900,7 @@ namespace MediaBazaarProject
             // 
             this.lbWednesdayEvening.FormattingEnabled = true;
             this.lbWednesdayEvening.ItemHeight = 20;
-            this.lbWednesdayEvening.Location = new System.Drawing.Point(287, 275);
+            this.lbWednesdayEvening.Location = new System.Drawing.Point(286, 275);
             this.lbWednesdayEvening.Name = "lbWednesdayEvening";
             this.lbWednesdayEvening.Size = new System.Drawing.Size(149, 124);
             this.lbWednesdayEvening.TabIndex = 8;
@@ -907,7 +909,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayMorning.FormattingEnabled = true;
             this.lbThursdayMorning.ItemHeight = 20;
-            this.lbThursdayMorning.Location = new System.Drawing.Point(442, 3);
+            this.lbThursdayMorning.Location = new System.Drawing.Point(441, 3);
             this.lbThursdayMorning.Name = "lbThursdayMorning";
             this.lbThursdayMorning.Size = new System.Drawing.Size(142, 104);
             this.lbThursdayMorning.TabIndex = 9;
@@ -916,7 +918,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayMidday.FormattingEnabled = true;
             this.lbThursdayMidday.ItemHeight = 20;
-            this.lbThursdayMidday.Location = new System.Drawing.Point(442, 125);
+            this.lbThursdayMidday.Location = new System.Drawing.Point(441, 125);
             this.lbThursdayMidday.Name = "lbThursdayMidday";
             this.lbThursdayMidday.Size = new System.Drawing.Size(142, 144);
             this.lbThursdayMidday.TabIndex = 10;
@@ -925,7 +927,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayEvening.FormattingEnabled = true;
             this.lbThursdayEvening.ItemHeight = 20;
-            this.lbThursdayEvening.Location = new System.Drawing.Point(442, 275);
+            this.lbThursdayEvening.Location = new System.Drawing.Point(441, 275);
             this.lbThursdayEvening.Name = "lbThursdayEvening";
             this.lbThursdayEvening.Size = new System.Drawing.Size(142, 124);
             this.lbThursdayEvening.TabIndex = 11;
@@ -934,7 +936,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayMorning.FormattingEnabled = true;
             this.lbFridayMorning.ItemHeight = 20;
-            this.lbFridayMorning.Location = new System.Drawing.Point(590, 3);
+            this.lbFridayMorning.Location = new System.Drawing.Point(589, 3);
             this.lbFridayMorning.Name = "lbFridayMorning";
             this.lbFridayMorning.Size = new System.Drawing.Size(148, 104);
             this.lbFridayMorning.TabIndex = 12;
@@ -943,7 +945,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayMidday.FormattingEnabled = true;
             this.lbFridayMidday.ItemHeight = 20;
-            this.lbFridayMidday.Location = new System.Drawing.Point(590, 125);
+            this.lbFridayMidday.Location = new System.Drawing.Point(589, 125);
             this.lbFridayMidday.Name = "lbFridayMidday";
             this.lbFridayMidday.Size = new System.Drawing.Size(148, 144);
             this.lbFridayMidday.TabIndex = 13;
@@ -952,7 +954,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayEvening.FormattingEnabled = true;
             this.lbFridayEvening.ItemHeight = 20;
-            this.lbFridayEvening.Location = new System.Drawing.Point(590, 275);
+            this.lbFridayEvening.Location = new System.Drawing.Point(589, 275);
             this.lbFridayEvening.Name = "lbFridayEvening";
             this.lbFridayEvening.Size = new System.Drawing.Size(148, 124);
             this.lbFridayEvening.TabIndex = 14;
@@ -961,7 +963,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayMorning.FormattingEnabled = true;
             this.lbSaturdayMorning.ItemHeight = 20;
-            this.lbSaturdayMorning.Location = new System.Drawing.Point(744, 3);
+            this.lbSaturdayMorning.Location = new System.Drawing.Point(743, 3);
             this.lbSaturdayMorning.Name = "lbSaturdayMorning";
             this.lbSaturdayMorning.Size = new System.Drawing.Size(138, 104);
             this.lbSaturdayMorning.TabIndex = 15;
@@ -970,7 +972,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayMidday.FormattingEnabled = true;
             this.lbSaturdayMidday.ItemHeight = 20;
-            this.lbSaturdayMidday.Location = new System.Drawing.Point(744, 125);
+            this.lbSaturdayMidday.Location = new System.Drawing.Point(743, 125);
             this.lbSaturdayMidday.Name = "lbSaturdayMidday";
             this.lbSaturdayMidday.Size = new System.Drawing.Size(138, 144);
             this.lbSaturdayMidday.TabIndex = 16;
@@ -979,7 +981,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayEvening.FormattingEnabled = true;
             this.lbSaturdayEvening.ItemHeight = 20;
-            this.lbSaturdayEvening.Location = new System.Drawing.Point(744, 275);
+            this.lbSaturdayEvening.Location = new System.Drawing.Point(743, 275);
             this.lbSaturdayEvening.Name = "lbSaturdayEvening";
             this.lbSaturdayEvening.Size = new System.Drawing.Size(138, 124);
             this.lbSaturdayEvening.TabIndex = 17;
@@ -988,7 +990,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayMorning.FormattingEnabled = true;
             this.lbSundayMorning.ItemHeight = 20;
-            this.lbSundayMorning.Location = new System.Drawing.Point(888, 3);
+            this.lbSundayMorning.Location = new System.Drawing.Point(887, 3);
             this.lbSundayMorning.Name = "lbSundayMorning";
             this.lbSundayMorning.Size = new System.Drawing.Size(117, 104);
             this.lbSundayMorning.TabIndex = 18;
@@ -997,7 +999,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayMidday.FormattingEnabled = true;
             this.lbSundayMidday.ItemHeight = 20;
-            this.lbSundayMidday.Location = new System.Drawing.Point(888, 125);
+            this.lbSundayMidday.Location = new System.Drawing.Point(887, 125);
             this.lbSundayMidday.Name = "lbSundayMidday";
             this.lbSundayMidday.Size = new System.Drawing.Size(117, 144);
             this.lbSundayMidday.TabIndex = 19;
@@ -1006,7 +1008,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayEvening.FormattingEnabled = true;
             this.lbSundayEvening.ItemHeight = 20;
-            this.lbSundayEvening.Location = new System.Drawing.Point(888, 275);
+            this.lbSundayEvening.Location = new System.Drawing.Point(887, 275);
             this.lbSundayEvening.Name = "lbSundayEvening";
             this.lbSundayEvening.Size = new System.Drawing.Size(117, 124);
             this.lbSundayEvening.TabIndex = 20;
@@ -1020,6 +1022,17 @@ namespace MediaBazaarProject
             this.btnHome3.Text = "Home";
             this.btnHome3.UseVisualStyleBackColor = true;
             this.btnHome3.Click += new System.EventHandler(this.btnHome3_Click);
+            // 
+            // cbDisplayDeactivated
+            // 
+            this.cbDisplayDeactivated.AutoSize = true;
+            this.cbDisplayDeactivated.Location = new System.Drawing.Point(246, 393);
+            this.cbDisplayDeactivated.Name = "cbDisplayDeactivated";
+            this.cbDisplayDeactivated.Size = new System.Drawing.Size(238, 24);
+            this.cbDisplayDeactivated.TabIndex = 11;
+            this.cbDisplayDeactivated.Text = "Display deactivated employees";
+            this.cbDisplayDeactivated.UseVisualStyleBackColor = true;
+            this.cbDisplayDeactivated.CheckedChanged += new System.EventHandler(this.cbDisplayDeactivated_CheckedChanged);
             // 
             // admin_managerForm
             // 
@@ -1138,5 +1151,6 @@ namespace MediaBazaarProject
         private System.Windows.Forms.ListBox lbSundayMidday;
         private System.Windows.Forms.ListBox lbSundayEvening;
         private System.Windows.Forms.Button btnHome3;
+        private System.Windows.Forms.CheckBox cbDisplayDeactivated;
     }
 }
