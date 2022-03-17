@@ -69,6 +69,7 @@ namespace MediaBazaarProject
             object selectedEmployee = lbEmployeeManagementList.SelectedItem;
             Employee employee = ((Employee)selectedEmployee);
             employeeManager.DeactivateEmployee((Employee)employee);
+            MessageBox.Show("Employee deactivated");
         }
 
         private void btnEmployeeManagement_Click(object sender, EventArgs e)
