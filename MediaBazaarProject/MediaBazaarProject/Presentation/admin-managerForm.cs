@@ -1,5 +1,6 @@
 ﻿using MediaBazaarProject.Business;
 using MediaBazaarProject.Persistence;
+using MediaBazaarProject.Presentation;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -54,7 +55,7 @@ namespace MediaBazaarProject
             List<Employee> employees = employeeManager.GetAllEmployees();
             foreach (Employee u in employees)
             {
-                lbEmployeeList.Items.Add(u.FirstName + " " + u.LastName);
+                lbEmployeeList.Items.Add(u);
             }
         }
 
@@ -303,6 +304,19 @@ namespace MediaBazaarProject
                 {
                     lbEmployeeManagementList.Items.Add(employee);
                 }
+            }
+        }
+
+        private void lbEmployeeList_DoubleClick(object sender, EventArgs e)
+        {
+            if (this.role == "manager")
+            {   
+                Employee employee;
+                object selectedEmployee = lbEmployeeList.SelectedItem;
+                employee = ((Employee)selectedEmployee);
+                Employee eInfo = employeeManager.GetEmployeeByID(employee);
+                employeeCard employeeCard = new employeeCard(eInfo);
+                employeeCard.Show();
             }
         }
     }
