@@ -21,6 +21,18 @@ namespace MediaBazaarProject.Business
         {
             return employeeRepository.DeactivatedEmployees();
         }
+        public List<Employee> GetNationalityFilteredEmployees(string nationality)
+        {
+            return employeeRepository.FilterEmployeesByNationality(nationality);
+        }
+        public List<Employee> GetPermanentContractEmployees()
+        {
+            return employeeRepository.FilterEmployeesByPermanentContract();
+        }
+        public List<Employee> GetTemporaryContractEmployees()
+        {
+            return employeeRepository.FilterEmployeesByTemporaryContract();
+        }
         public Employee GetEmployee(Employee e) {
             return employeeRepository.GetEmployeeByBSNProtected(e.Bsn1);
         }

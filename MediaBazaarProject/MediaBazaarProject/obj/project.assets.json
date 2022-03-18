@@ -853,19 +853,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\renne\\.nuget\\packages\\": {}
+    "C:\\Users\\35988\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
+      "projectUniqueName": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
       "projectName": "MediaBazaarProject",
-      "projectPath": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
-      "packagesPath": "C:\\Users\\renne\\.nuget\\packages\\",
-      "outputPath": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarProject\\obj\\",
+      "projectPath": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
+      "packagesPath": "C:\\Users\\35988\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\renne\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\35988\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -873,7 +878,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.emzi0767.com/api/v3/index.json": {}
       },
       "frameworks": {
         "net5.0-windows7.0": {
@@ -914,7 +920,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }

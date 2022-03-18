@@ -341,5 +341,61 @@ namespace MediaBazaarProject
                 MessageBox.Show("Please select an employee");
             }
         }
+
+        private void cbNationality_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbEmployeeList.Items.Clear();
+            if (cbNationality.Text != "Show all")
+            {
+                foreach (Employee employee in employeeManager.GetNationalityFilteredEmployees(cbNationality.Text))
+                {
+                    lbEmployeeList.Items.Add($"{employee.FirstName} {employee.LastName}");
+                }
+            }
+            else
+            {
+                foreach (Employee employee in employeeManager.GetAllEmployees())
+                {
+                    lbEmployeeList.Items.Add(employee);
+                }
+            }
+        }
+
+        private void rbTemporary_CheckedChanged(object sender, EventArgs e)
+        {
+            lbEmployeeList.Items.Clear();
+            if (rbTemporary.Checked == true)
+            {
+                foreach (Employee employee in employeeManager.GetTemporaryContractEmployees())
+                {
+                    lbEmployeeList.Items.Add(employee);
+                }
+            }
+        }
+
+        private void rbPermanent_CheckedChanged(object sender, EventArgs e)
+        {
+            lbEmployeeList.Items.Clear();
+            if (rbPermanent.Checked == true)
+            {
+                foreach (Employee employee in employeeManager.GetPermanentContractEmployees())
+                {
+                    lbEmployeeList.Items.Add(employee);
+                }
+            }
+        }
+
+        private void btnResetFilters_Click(object sender, EventArgs e)
+        {
+            cbNationality.SelectedIndex = 0;
+            lbEmployeeList.Items.Clear();
+            rbTemporary.Checked = false;
+            rbPermanent.Checked = false;
+
+            foreach (Employee employee in employeeManager.GetAllEmployees())
+            {
+                lbEmployeeList.Items.Add(employee);
+            }
+        }
     }
 }

@@ -218,6 +218,126 @@ namespace MediaBazaarProject.Persistence
 
             return deactivatedEmployees;
         }
+        public List<Employee> FilterEmployeesByNationality(string nationality)
+        {
+            //database magic
+            List<Employee> filteredEmployees = new List<Employee>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+
+                string sql = "SELECT * FROM employees WHERE Nationality=@Nationality";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("Nationality", nationality);
+                conn.Open();
+
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+
+                Employee employee = null;
+                while (dateReader.Read())
+                {
+                    employee = new Employee();
+                    employee.Id = dateReader.GetInt32("EmployeeId");
+                    employee.Bsn1 = dateReader.GetInt32("BSN");
+                    employee.FirstName = dateReader.GetString("FirstName");
+                    employee.LastName = dateReader.GetString("LastName");
+                    employee.Email = dateReader.GetString("Email");
+                    employee.Password = dateReader.GetString("Password");
+                    employee.PermanentContract = dateReader.GetBoolean("PermanentContract");
+                    employee.Address = dateReader.GetString("Address");
+                    employee.PhoneNumber = ((long)dateReader.GetDouble("PhoneNumber"));
+                    employee.Salary = dateReader.GetDouble("Salary");
+                    employee.Position = enumManager.GetPosition(dateReader.GetString("Position"));
+                    employee.CovidVaccinated = dateReader.GetBoolean("CovidVaccinated");
+                    employee.Age = dateReader.GetInt32("Age");
+                    employee.Nationality = dateReader.GetString("Nationality");
+                    employee.Gender = dateReader.GetString("Gender");
+                    employee.IsAccountActive = dateReader.GetBoolean("IsAccountActive");
+                    filteredEmployees.Add(employee);
+                }
+            }
+
+            return filteredEmployees;
+        }
+        public List<Employee> FilterEmployeesByPermanentContract()
+        {
+            //database magic
+            List<Employee> filteredEmployees = new List<Employee>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+
+                string sql = "SELECT * FROM employees WHERE PermanentContract=@PermanentContract";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("PermanentContract", true);
+                conn.Open();
+
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+
+                Employee employee = null;
+                while (dateReader.Read())
+                {
+                    employee = new Employee();
+                    employee.Id = dateReader.GetInt32("EmployeeId");
+                    employee.Bsn1 = dateReader.GetInt32("BSN");
+                    employee.FirstName = dateReader.GetString("FirstName");
+                    employee.LastName = dateReader.GetString("LastName");
+                    employee.Email = dateReader.GetString("Email");
+                    employee.Password = dateReader.GetString("Password");
+                    employee.PermanentContract = dateReader.GetBoolean("PermanentContract");
+                    employee.Address = dateReader.GetString("Address");
+                    employee.PhoneNumber = ((long)dateReader.GetDouble("PhoneNumber"));
+                    employee.Salary = dateReader.GetDouble("Salary");
+                    employee.Position = enumManager.GetPosition(dateReader.GetString("Position"));
+                    employee.CovidVaccinated = dateReader.GetBoolean("CovidVaccinated");
+                    employee.Age = dateReader.GetInt32("Age");
+                    employee.Nationality = dateReader.GetString("Nationality");
+                    employee.Gender = dateReader.GetString("Gender");
+                    employee.IsAccountActive = dateReader.GetBoolean("IsAccountActive");
+                    filteredEmployees.Add(employee);
+                }
+            }
+
+            return filteredEmployees;
+        }
+        public List<Employee> FilterEmployeesByTemporaryContract()
+        {
+            //database magic
+            List<Employee> filteredEmployees = new List<Employee>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+
+                string sql = "SELECT * FROM employees WHERE PermanentContract=@PermanentContract";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("PermanentContract", false);
+                conn.Open();
+
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+
+                Employee employee = null;
+                while (dateReader.Read())
+                {
+                    employee = new Employee();
+                    employee.Id = dateReader.GetInt32("EmployeeId");
+                    employee.Bsn1 = dateReader.GetInt32("BSN");
+                    employee.FirstName = dateReader.GetString("FirstName");
+                    employee.LastName = dateReader.GetString("LastName");
+                    employee.Email = dateReader.GetString("Email");
+                    employee.Password = dateReader.GetString("Password");
+                    employee.PermanentContract = dateReader.GetBoolean("PermanentContract");
+                    employee.Address = dateReader.GetString("Address");
+                    employee.PhoneNumber = ((long)dateReader.GetDouble("PhoneNumber"));
+                    employee.Salary = dateReader.GetDouble("Salary");
+                    employee.Position = enumManager.GetPosition(dateReader.GetString("Position"));
+                    employee.CovidVaccinated = dateReader.GetBoolean("CovidVaccinated");
+                    employee.Age = dateReader.GetInt32("Age");
+                    employee.Nationality = dateReader.GetString("Nationality");
+                    employee.Gender = dateReader.GetString("Gender");
+                    employee.IsAccountActive = dateReader.GetBoolean("IsAccountActive");
+                    filteredEmployees.Add(employee);
+                }
+            }
+
+            return filteredEmployees;
+        }
         public void Update(Employee employee)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
