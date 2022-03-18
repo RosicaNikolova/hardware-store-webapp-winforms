@@ -22,28 +22,43 @@ namespace MediaBazaarProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            User user = loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
+            User user = new User(); //loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
+            try
+            {
+                if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text) != null)
+                {
+                    if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.ADMIN)
+                    {
+                        admin_managerForm adminManagerForm = new admin_managerForm("admin");
+                        adminManagerForm.Show();
+                    }
+                    else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.MANAGER)
+                    {
+                        admin_managerForm adminManagerForm = new admin_managerForm("manager");
+                        adminManagerForm.Show();
+                    }
+                    else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.WORKER)
 
-            if (user.Position == Position.ADMIN)
-            {
-                admin_managerForm adminManagerForm = new admin_managerForm("admin");
-                adminManagerForm.Show();
-            }
-            else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.MANAGER)
-            {
-                admin_managerForm adminManagerForm = new admin_managerForm("manager");
-                adminManagerForm.Show();
-            }
-            else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.WORKER)
+                    {
+                        WorkerForm employeeForm = new WorkerForm(user);
+                        employeeForm.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid credentials");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid credentials");
+                }
 
-            {
-                WorkerForm employeeForm = new WorkerForm(user);
-                employeeForm.Show();
             }
-            else
+            catch
             {
                 MessageBox.Show("Invalid credentials");
             }
+
         }
     }
 }

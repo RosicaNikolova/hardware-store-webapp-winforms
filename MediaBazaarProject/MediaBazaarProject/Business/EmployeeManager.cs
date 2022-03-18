@@ -50,7 +50,7 @@ namespace MediaBazaarProject.Business
             employeeRepository.Deactivation(e);
         }
         public void DeleteEmployee(Employee e) {
-            
+            employeeRepository.DeleteEmployee(e);
         }
 
         public List<Employee> GetAllWorkers()

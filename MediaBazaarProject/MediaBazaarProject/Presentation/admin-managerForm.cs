@@ -67,10 +67,17 @@ namespace MediaBazaarProject
 
         private void btnDeactivateEmployee_Click(object sender, EventArgs e)
         {
-            object selectedEmployee = lbEmployeeManagementList.SelectedItem;
-            Employee employee = ((Employee)selectedEmployee);
-            employeeManager.DeactivateEmployee((Employee)employee);
-            MessageBox.Show("Employee deactivated");
+            if(lbEmployeeManagementList.SelectedItem != null)
+            {
+                object selectedEmployee = lbEmployeeManagementList.SelectedItem;
+                Employee employee = ((Employee)selectedEmployee);
+                employeeManager.DeactivateEmployee((Employee)employee);
+                MessageBox.Show("Employee deactivated");
+            }
+            else
+            {
+                MessageBox.Show("Please select an employee");
+            }
         }
 
         private void btnEmployeeManagement_Click(object sender, EventArgs e)
@@ -105,11 +112,11 @@ namespace MediaBazaarProject
 
             foreach (var shift in shiftManager.GetShiftsForDate(date))
             {
-                if(shift.ShiftType == Shifts.MORNING)
+                if (shift.ShiftType == Shifts.MORNING)
                 {
                     lbMorningShift.Items.Add(shift.Employee);
                 }
-                else if(shift.ShiftType == Shifts.MIDDAY)
+                else if (shift.ShiftType == Shifts.MIDDAY)
                 {
                     lbMiddayShift.Items.Add(shift.Employee);
                 }
@@ -190,7 +197,7 @@ namespace MediaBazaarProject
             date = dtpDay.Value;
             workers = employeeManager.GetAllWorkers();
             workers = shiftManager.GetAvailableWorkersForDate(workers, date);
-           
+
             foreach (var w in workers)
             {
                 lbEmployeeShiftList.Items.Add(w);
@@ -310,13 +317,28 @@ namespace MediaBazaarProject
         private void lbEmployeeList_DoubleClick(object sender, EventArgs e)
         {
             if (this.role == "manager")
-            {   
+            {
                 Employee employee;
                 object selectedEmployee = lbEmployeeList.SelectedItem;
                 employee = ((Employee)selectedEmployee);
                 Employee eInfo = employeeManager.GetEmployeeByID(employee);
                 employeeCard employeeCard = new employeeCard(eInfo);
                 employeeCard.Show();
+            }
+        }
+
+        private void btnDeleteEmployee_Click(object sender, EventArgs e)
+        {
+            if(lbEmployeeManagementList.SelectedItem != null )
+            {
+                object selectedEmployee = lbEmployeeManagementList.SelectedItem;
+                Employee employee = ((Employee)selectedEmployee);
+                employeeManager.DeleteEmployee(employee);
+                MessageBox.Show("Employee Deleted");
+            }
+            else
+            {
+                MessageBox.Show("Please select an employee");
             }
         }
     }

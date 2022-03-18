@@ -119,3 +119,4 @@ D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\D
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.csproj.CopyComplete
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.genruntimeconfig.cache
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.employeeCard.resources
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.employeeCard.resources
