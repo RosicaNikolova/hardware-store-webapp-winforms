@@ -194,7 +194,7 @@ namespace MediaBazaarProject
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(710, 433);
+            this.btnAddEmployee.Location = new System.Drawing.Point(604, 497);
             this.btnAddEmployee.Name = "btnAddEmployee";
             this.btnAddEmployee.Size = new System.Drawing.Size(181, 54);
             this.btnAddEmployee.TabIndex = 13;
@@ -246,7 +246,7 @@ namespace MediaBazaarProject
             // 
             // btnUpdateEmployee
             // 
-            this.btnUpdateEmployee.Location = new System.Drawing.Point(513, 433);
+            this.btnUpdateEmployee.Location = new System.Drawing.Point(407, 497);
             this.btnUpdateEmployee.Name = "btnUpdateEmployee";
             this.btnUpdateEmployee.Size = new System.Drawing.Size(181, 54);
             this.btnUpdateEmployee.TabIndex = 20;
@@ -257,7 +257,7 @@ namespace MediaBazaarProject
             // lblCovidVaccinated
             // 
             this.lblCovidVaccinated.AutoSize = true;
-            this.lblCovidVaccinated.Location = new System.Drawing.Point(23, 24);
+            this.lblCovidVaccinated.Location = new System.Drawing.Point(23, 20);
             this.lblCovidVaccinated.Name = "lblCovidVaccinated";
             this.lblCovidVaccinated.Size = new System.Drawing.Size(126, 20);
             this.lblCovidVaccinated.TabIndex = 22;
@@ -267,7 +267,7 @@ namespace MediaBazaarProject
             // 
             this.rBtnYes.AutoSize = true;
             this.rBtnYes.Checked = true;
-            this.rBtnYes.Location = new System.Drawing.Point(174, 23);
+            this.rBtnYes.Location = new System.Drawing.Point(174, 19);
             this.rBtnYes.Name = "rBtnYes";
             this.rBtnYes.Size = new System.Drawing.Size(51, 24);
             this.rBtnYes.TabIndex = 23;
@@ -278,7 +278,7 @@ namespace MediaBazaarProject
             // rBtnNo
             // 
             this.rBtnNo.AutoSize = true;
-            this.rBtnNo.Location = new System.Drawing.Point(243, 23);
+            this.rBtnNo.Location = new System.Drawing.Point(243, 19);
             this.rBtnNo.Name = "rBtnNo";
             this.rBtnNo.Size = new System.Drawing.Size(50, 24);
             this.rBtnNo.TabIndex = 24;
@@ -319,7 +319,7 @@ namespace MediaBazaarProject
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(398, 81);
+            this.lblAge.Location = new System.Drawing.Point(30, 292);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(39, 20);
             this.lblAge.TabIndex = 28;
@@ -327,7 +327,7 @@ namespace MediaBazaarProject
             // 
             // tbAge
             // 
-            this.tbAge.Location = new System.Drawing.Point(458, 78);
+            this.tbAge.Location = new System.Drawing.Point(168, 290);
             this.tbAge.Name = "tbAge";
             this.tbAge.Size = new System.Drawing.Size(125, 27);
             this.tbAge.TabIndex = 29;
@@ -335,7 +335,7 @@ namespace MediaBazaarProject
             // lblNationality
             // 
             this.lblNationality.AutoSize = true;
-            this.lblNationality.Location = new System.Drawing.Point(398, 125);
+            this.lblNationality.Location = new System.Drawing.Point(27, 255);
             this.lblNationality.Name = "lblNationality";
             this.lblNationality.Size = new System.Drawing.Size(85, 20);
             this.lblNationality.TabIndex = 30;
@@ -344,7 +344,7 @@ namespace MediaBazaarProject
             // cbNationality
             // 
             this.cbNationality.FormattingEnabled = true;
-            this.cbNationality.Location = new System.Drawing.Point(489, 122);
+            this.cbNationality.Location = new System.Drawing.Point(168, 253);
             this.cbNationality.Name = "cbNationality";
             this.cbNationality.Size = new System.Drawing.Size(151, 28);
             this.cbNationality.TabIndex = 31;
@@ -407,7 +407,7 @@ namespace MediaBazaarProject
             this.panel1.Controls.Add(this.rBtnNotActive);
             this.panel1.Controls.Add(this.lblIsAccountActive);
             this.panel1.Controls.Add(this.rBtnActive);
-            this.panel1.Location = new System.Drawing.Point(398, 226);
+            this.panel1.Location = new System.Drawing.Point(398, 105);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(387, 54);
             this.panel1.TabIndex = 37;
@@ -417,7 +417,7 @@ namespace MediaBazaarProject
             this.panel2.Controls.Add(this.lblCovidVaccinated);
             this.panel2.Controls.Add(this.rBtnYes);
             this.panel2.Controls.Add(this.rBtnNo);
-            this.panel2.Location = new System.Drawing.Point(27, 493);
+            this.panel2.Location = new System.Drawing.Point(398, 169);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 58);
             this.panel2.TabIndex = 38;
@@ -427,7 +427,7 @@ namespace MediaBazaarProject
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.rBtnYesPermanent);
             this.panel3.Controls.Add(this.rBtnNotPermanent);
-            this.panel3.Location = new System.Drawing.Point(33, 252);
+            this.panel3.Location = new System.Drawing.Point(398, 238);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(316, 65);
             this.panel3.TabIndex = 0;
@@ -437,7 +437,7 @@ namespace MediaBazaarProject
             this.panel4.Controls.Add(this.rBtnFemale);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Controls.Add(this.rBtnMale);
-            this.panel4.Location = new System.Drawing.Point(398, 158);
+            this.panel4.Location = new System.Drawing.Point(398, 37);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(387, 60);
             this.panel4.TabIndex = 39;
@@ -446,7 +446,7 @@ namespace MediaBazaarProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(928, 583);
+            this.ClientSize = new System.Drawing.Size(820, 583);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

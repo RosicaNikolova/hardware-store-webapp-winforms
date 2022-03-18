@@ -34,63 +34,101 @@ namespace MediaBazaarProject
             this.tbEmailLogin = new System.Windows.Forms.TextBox();
             this.tbPasswordLogin = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(147, 134);
+            this.lblEmail.BackColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(234, 132);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(46, 20);
+            this.lblEmail.Size = new System.Drawing.Size(48, 17);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(147, 216);
+            this.lblPassword.BackColor = System.Drawing.Color.White;
+            this.lblPassword.Location = new System.Drawing.Point(234, 215);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(70, 20);
+            this.lblPassword.Size = new System.Drawing.Size(80, 17);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password";
             // 
             // tbEmailLogin
             // 
-            this.tbEmailLogin.Location = new System.Drawing.Point(147, 157);
+            this.tbEmailLogin.Location = new System.Drawing.Point(234, 160);
             this.tbEmailLogin.Name = "tbEmailLogin";
-            this.tbEmailLogin.Size = new System.Drawing.Size(125, 27);
+            this.tbEmailLogin.PlaceholderText = "Type email here...";
+            this.tbEmailLogin.Size = new System.Drawing.Size(211, 25);
             this.tbEmailLogin.TabIndex = 2;
             // 
             // tbPasswordLogin
             // 
-            this.tbPasswordLogin.Location = new System.Drawing.Point(147, 239);
+            this.tbPasswordLogin.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.tbPasswordLogin.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.tbPasswordLogin.Location = new System.Drawing.Point(234, 240);
             this.tbPasswordLogin.Name = "tbPasswordLogin";
             this.tbPasswordLogin.PasswordChar = '*';
-            this.tbPasswordLogin.Size = new System.Drawing.Size(125, 27);
+            this.tbPasswordLogin.PlaceholderText = "Type your password here...";
+            this.tbPasswordLogin.Size = new System.Drawing.Size(211, 25);
             this.tbPasswordLogin.TabIndex = 3;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(160, 292);
+            this.btnLogin.BackColor = System.Drawing.Color.Salmon;
+            this.btnLogin.Location = new System.Drawing.Point(269, 321);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(94, 29);
+            this.btnLogin.Size = new System.Drawing.Size(133, 28);
             this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Text = "Log In";
+            this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightBlue;
+            this.pictureBox1.Image = global::MediaBazaarProject.Properties.Resources.logIn;
+            this.pictureBox1.Location = new System.Drawing.Point(-3, -80);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(712, 719);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.Coral;
+            this.label1.Location = new System.Drawing.Point(261, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 54);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Log In";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 525);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(703, 456);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPasswordLogin);
             this.Controls.Add(this.tbEmailLogin);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.pictureBox1);
+            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +141,8 @@ namespace MediaBazaarProject
         private System.Windows.Forms.TextBox tbEmailLogin;
         private System.Windows.Forms.TextBox tbPasswordLogin;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
