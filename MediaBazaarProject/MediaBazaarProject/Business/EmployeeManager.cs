@@ -11,7 +11,6 @@ namespace MediaBazaarProject.Business
     {
         public EmployeeRepository employeeRepository = new EmployeeRepository();
 
-        
 
         public List<Employee> GetAllEmployees()
         {
@@ -52,7 +51,6 @@ namespace MediaBazaarProject.Business
         }
         public void UpdateEmployee(Employee employee) {
             employeeRepository.Update(employee);
-
         }
         public void DeactivateEmployee(Employee e)
         {

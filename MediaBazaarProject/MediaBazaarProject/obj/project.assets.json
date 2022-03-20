@@ -917,23 +917,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\35988\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\Rositsa\\.nuget\\packages\\": {},
+>>>>>>> 5cf8560e71ae4378fdb3d63461693a390473cb04
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
       "projectName": "MediaBazaarProject",
       "projectPath": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
       "packagesPath": "C:\\Users\\35988\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\obj\\",
+=======
+      "projectUniqueName": "D:\\media_bazar\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
+      "projectName": "MediaBazaarProject",
+      "projectPath": "D:\\media_bazar\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
+      "packagesPath": "C:\\Users\\Rositsa\\.nuget\\packages\\",
+      "outputPath": "D:\\media_bazar\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\obj\\",
+>>>>>>> 5cf8560e71ae4378fdb3d63461693a390473cb04
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\35988\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Rositsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 5cf8560e71ae4378fdb3d63461693a390473cb04
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -992,7 +1008,11 @@
             "privateAssets": "none"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.405\\RuntimeIdentifierGraph.json"
+>>>>>>> 5cf8560e71ae4378fdb3d63461693a390473cb04
       }
     }
   }

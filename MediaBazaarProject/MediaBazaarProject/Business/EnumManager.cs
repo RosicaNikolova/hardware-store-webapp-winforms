@@ -65,11 +65,11 @@ namespace MediaBazaarProject.Business
                     shift = Shifts.MORNING;
                     break;
 
-                case "Day":
+                case "Midday":
                     shift = Shifts.MIDDAY;
                     break;
 
-                case "Night":
+                case "Evening":
                     shift = Shifts.EVENING;
                     break;
             }

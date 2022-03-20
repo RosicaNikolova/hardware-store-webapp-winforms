@@ -42,7 +42,8 @@ namespace MediaBazaarProject
         {
             lbxShiftEmployeeDay.Items.Clear();
 
-            DateTime date = dateWorker.Value;
+            DateTime date = new DateTime();
+            date = dateWorker.Value;
 
             foreach (Shift shift in shiftManager.GetShiftsForWorker(date, user.Id))
             {

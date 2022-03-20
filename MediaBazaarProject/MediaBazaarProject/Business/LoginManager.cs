@@ -13,9 +13,9 @@ namespace MediaBazaarProject.Business
 
         public User Login(string email, string password)
         {        
-                    User user = employeeRepository.FindUser(email, password);
+              User user = employeeRepository.FindUser(email, password);
 
-                    return user;          
+              return user;          
         }
 
         
