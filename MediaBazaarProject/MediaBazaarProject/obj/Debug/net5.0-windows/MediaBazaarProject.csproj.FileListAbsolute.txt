@@ -130,3 +130,4 @@ C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaar
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.employeeCard.resources
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Properties.Resources.resources
 >>>>>>> 5cf8560e71ae4378fdb3d63461693a390473cb04
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Properties.Resources.resources
