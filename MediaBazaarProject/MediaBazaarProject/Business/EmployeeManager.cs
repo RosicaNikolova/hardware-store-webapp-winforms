@@ -70,6 +70,19 @@ namespace MediaBazaarProject.Business
             return employeeRepository.GetWorkers();
         }
 
+        public List<NationalityStatistics> GetNationalityStatistics()
+        {
+            return employeeRepository.GetNationalityStatistics();
+        }
 
+        public List<ContractStatistics> GetContractStatistics()
+        {
+            return employeeRepository.GetContractStatistics();
+        }
+
+        public double GetAverageSalary()
+        {
+            return employeeRepository.GetAverageSalary();
+        }
     }
 }

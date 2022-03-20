@@ -398,6 +398,75 @@ namespace MediaBazaarProject.Persistence
             return employees;
         }
 
+        public List<NationalityStatistics> GetNationalityStatistics()
+        {
+            List<NationalityStatistics> nationalityStatisticsList = new List<NationalityStatistics>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "Select Nationality, count(Nationality) as Count from employees group by Nationality";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                NationalityStatistics nationalityStatistics = null;
+                while (dr.Read())
+                {
+                    nationalityStatistics = new NationalityStatistics();
+                    nationalityStatistics.Nationality = dr.GetString("Nationality");
+                    nationalityStatistics.Count = dr.GetInt32("Count");
+                    nationalityStatisticsList.Add(nationalityStatistics);
+                }
+            }
+
+            return nationalityStatisticsList;
+        }
+
+        public List<ContractStatistics> GetContractStatistics()
+        {
+            List<ContractStatistics> contractStatisticsList = new List<ContractStatistics>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "Select PermanentContract, count(PermanentContract) as Count from employees group by PermanentContract";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                ContractStatistics contractStatistics = null;
+                while (dr.Read())
+                {
+                    contractStatistics = new ContractStatistics();
+                    contractStatistics.ContractType = dr.GetString("PermanentContract");
+                    contractStatistics.Count = dr.GetInt32("Count");
+                    contractStatisticsList.Add(contractStatistics);
+                }
+            }
+
+            return contractStatisticsList;
+        }
+
+        public double GetAverageSalary()
+        {
+            double averageSalary = 0;
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "select avg(Salary) as AverageSalary from employees";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    averageSalary = dr.GetDouble("AverageSalary");
+                }
+            }
+
+            return averageSalary;
+        }
     }
 }

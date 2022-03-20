@@ -11,6 +11,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OxyPlot;
+using OxyPlot.WindowsForms;
+using OxyPlot.Series;
 
 namespace MediaBazaarProject
 {
@@ -278,6 +281,7 @@ namespace MediaBazaarProject
 
         private void btnSearchEmpName_Click(object sender, EventArgs e)
         {
+            tEmployeeLbRefresh.Enabled = false;
             lbEmployeeManagementList.Items.Clear();
 
             List<Employee> employees = employeeManager.GetAllEmployees();
@@ -291,25 +295,6 @@ namespace MediaBazaarProject
                 if (fullName.Contains(tbSearchEmployeeName.Text))
                 {
                     lbEmployeeManagementList.Items.Add(fullName);
-                }
-            }
-        }
-
-        private void cbDisplayDeactivated_CheckedChanged(object sender, EventArgs e)
-        {
-            lbEmployeeManagementList.Items.Clear();
-            if (cbDisplayDeactivated.Checked == true)
-            {
-                foreach (Employee employee in employeeManager.GetDeactivatedEmployees())
-                {
-                    lbEmployeeManagementList.Items.Add(employee);
-                }
-            }
-            else if (cbDisplayDeactivated.Checked == false)
-            {
-                foreach (Employee employee in employeeManager.GetAllEmployees())
-                {
-                    lbEmployeeManagementList.Items.Add(employee);
                 }
             }
         }
@@ -396,6 +381,63 @@ namespace MediaBazaarProject
             {
                 lbEmployeeList.Items.Add(employee);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbEmployeeManagementList.Items.Clear();
+
+            foreach (Employee employee in employeeManager.GetAllEmployees())
+            {
+                lbEmployeeManagementList.Items.Add(employee);
+            }
+        }
+
+        private void btnResetEmpManList_Click(object sender, EventArgs e)
+        {
+            tEmployeeLbRefresh.Enabled = true;
+            tbSearchEmployeeName.Text = "";
+            rbDisplayDeactivated.Checked = false;
+            lbEmployeeManagementList.Items.Clear();
+
+            foreach (Employee employee in employeeManager.GetAllEmployees())
+            {
+                lbEmployeeManagementList.Items.Add(employee);
+            }
+        }
+
+        private void rbDisplayDeactivated_CheckedChanged(object sender, EventArgs e)
+        {
+            lbEmployeeManagementList.Items.Clear();
+
+            if (rbDisplayDeactivated.Checked == true)
+            {
+                tEmployeeLbRefresh.Enabled = false;
+                foreach (Employee employee in employeeManager.GetDeactivatedEmployees())
+                {
+                    lbEmployeeManagementList.Items.Add(employee);
+                }
+            }
+        }
+
+        private void tabAdmin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabAdmin.SelectedTab == tabStatistics)
+            {
+                NationalityPieViewModel nationalityPieViewModel = new NationalityPieViewModel();
+                this.plotViewNationality.Model = nationalityPieViewModel.Model1;
+
+                ContractPieViewModel contractPieViewModel = new ContractPieViewModel();
+                this.plotViewContract.Model = contractPieViewModel.Model2;
+
+                lblAverageSalary.Text = $"Average salary: ${employeeManager.GetAverageSalary():f2}";
+                lblNumberOfEmployees.Text = $"Number of employees: {employeeManager.GetAllEmployees().Count}";
+            }
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabStatistics;
         }
     }
 }
