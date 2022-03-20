@@ -37,40 +37,42 @@ namespace MediaBazaarProject
             // lbxShiftEmployeeDay
             // 
             this.lbxShiftEmployeeDay.FormattingEnabled = true;
-            this.lbxShiftEmployeeDay.ItemHeight = 20;
-            this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(316, 147);
+            this.lbxShiftEmployeeDay.ItemHeight = 17;
+            this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(333, 158);
             this.lbxShiftEmployeeDay.Name = "lbxShiftEmployeeDay";
-            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(189, 124);
+            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(212, 106);
             this.lbxShiftEmployeeDay.TabIndex = 12;
             // 
             // lblshift
             // 
             this.lblshift.AutoSize = true;
-            this.lblshift.Location = new System.Drawing.Point(343, 98);
+            this.lblshift.Location = new System.Drawing.Point(365, 106);
             this.lblshift.Name = "lblshift";
-            this.lblshift.Size = new System.Drawing.Size(130, 20);
+            this.lblshift.Size = new System.Drawing.Size(142, 17);
             this.lblshift.TabIndex = 9;
             this.lblshift.Text = "Shifts for the date:";
             // 
             // dateWorker
             // 
-            this.dateWorker.Location = new System.Drawing.Point(280, 34);
+            this.dateWorker.Location = new System.Drawing.Point(294, 42);
             this.dateWorker.MaxDate = new System.DateTime(2022, 3, 22, 0, 0, 0, 0);
             this.dateWorker.MinDate = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dateWorker.Name = "dateWorker";
-            this.dateWorker.Size = new System.Drawing.Size(255, 27);
+            this.dateWorker.Size = new System.Drawing.Size(286, 25);
             this.dateWorker.TabIndex = 8;
             this.dateWorker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dateWorker.ValueChanged += new System.EventHandler(this.dateWorker_ValueChanged);
             // 
             // WorkerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.ClientSize = new System.Drawing.Size(900, 382);
             this.Controls.Add(this.lbxShiftEmployeeDay);
             this.Controls.Add(this.lblshift);
             this.Controls.Add(this.dateWorker);
+            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "WorkerForm";
             this.Text = "WorkerForm";
             this.Load += new System.EventHandler(this.WorkerForm_Load);

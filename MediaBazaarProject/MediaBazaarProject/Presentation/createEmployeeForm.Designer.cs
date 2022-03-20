@@ -446,6 +446,7 @@ namespace MediaBazaarProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(820, 583);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
