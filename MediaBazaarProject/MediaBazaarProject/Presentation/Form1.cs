@@ -25,8 +25,14 @@ namespace MediaBazaarProject
             User user = new User();
             try
             {
-                user = loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
-
+                if (EmailValidation.IsValidEmail(tbEmailLogin.Text) == true)
+                {
+                    user = loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
+                }
+                else {
+                    user = null;
+                    throw new Exception("Email is in the wrong format!");
+                }
                 if (user != null)
                 {
                     if (user.Position == Position.ADMIN)
@@ -47,18 +53,18 @@ namespace MediaBazaarProject
                     }
                     else
                     {
-                        MessageBox.Show("Invalid credentials");
+                        //MessageBox.Show("Invalid credentials");
+                        //throw new Exception("Invalid credentials!");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Invalid credentials");
+                else {
+                    throw new Exception("Invalid credentials!");
                 }
-
             }
-            catch
+            catch(Exception error)
             {
-                MessageBox.Show("Invalid credentials");
+                MessageBox.Show(error.Message);
+                
             }
 
         }

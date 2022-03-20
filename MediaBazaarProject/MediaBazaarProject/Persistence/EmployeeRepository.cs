@@ -41,14 +41,38 @@ namespace MediaBazaarProject.Persistence
             return employees;
         }
         //for creating an employee, gets a user with BSN, if not null, user cant be created
-        public Employee GetEmployeeByBSNProtected(int BSN)
+        public Employee GetEmployeeByBSNProtected(int BSN, string email)
         {
             //database magic
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
             {
-                string sql = "SELECT * FROM employees where BSN=@BSN";
+                string sql = "SELECT * FROM employees where BSN=@BSN and Email=@Email";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("BSN", BSN);
+                cmd.Parameters.AddWithValue("Email", email);
+                conn.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                Employee employee = null;
+                while (dr.Read())
+                {
+                    employee = new Employee();
+                    employee.Id = dr.GetInt32("EmployeeId");
+                    employee.FirstName = dr.GetString("FirstName");
+                    employee.LastName = dr.GetString("LastName");
+                    employee.Bsn1 = dr.GetInt32("BSN");
+                }
+                return employee;
+            }
+        }
+        public Employee GetEmployeeByEmail(string email)
+        {
+            //database magic
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+                string sql = "SELECT * FROM employees where Email=@Email";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("Email", email);
                 conn.Open();
                 MySqlDataReader dr = cmd.ExecuteReader();
 

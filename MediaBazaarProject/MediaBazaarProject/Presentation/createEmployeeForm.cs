@@ -57,11 +57,16 @@ namespace MediaBazaarProject
                 rBTNChecker();
                 if (txbFirstName.Text != string.Empty && txbLastName.Text != string.Empty && tbAge.Text != string.Empty && txbEmail.Text != string.Empty && txbPassword.Text != string.Empty && txbAddress.Text != string.Empty && cbNationality.Text != string.Empty && txbHourlyWage.Text != string.Empty && txbPhone.Text != string.Empty && txbBsn.Text != string.Empty && cbPosition.Text != string.Empty)
                 {
-
-                    employeeManager.CreateEmployee(txbFirstName.Text, txbLastName.Text, Convert.ToInt32(tbAge.Text), txbEmail.Text, txbPassword.Text, txbAddress.Text, cbNationality.Text, Convert.ToDouble(txbHourlyWage.Text), Convert.ToDouble(txbPhone.Text), gender, Convert.ToInt32(txbBsn.Text), permanentContract, cbPosition.SelectedIndex, isActive, covidVaccinated);
+                    if (emailCheck(txbEmail.Text) == true)
+                    {
+                        employeeManager.CreateEmployee(txbFirstName.Text, txbLastName.Text, Convert.ToInt32(tbAge.Text), txbEmail.Text, txbPassword.Text, txbAddress.Text, cbNationality.Text, Convert.ToDouble(txbHourlyWage.Text), Convert.ToDouble(txbPhone.Text), gender, Convert.ToInt32(txbBsn.Text), permanentContract, cbPosition.SelectedIndex, isActive, covidVaccinated);
                     MessageBox.Show("Employee successfully created");
                     this.Close();
-
+                    }
+                    else
+                    {
+                        throw new Exception("Email si not in the right format");
+                    }
                 }
                 else
                 {
@@ -77,32 +82,54 @@ namespace MediaBazaarProject
         {
             rBTNChecker();
 
-            if (txbFirstName.Text != string.Empty && txbLastName.Text != string.Empty && tbAge.Text != string.Empty && txbEmail.Text != string.Empty && txbPassword.Text != string.Empty && txbAddress.Text != string.Empty && cbNationality.Text != string.Empty && txbHourlyWage.Text != string.Empty && txbPhone.Text != string.Empty && txbBsn.Text != string.Empty && cbPosition.Text != string.Empty)
+            try
             {
-                employeeSelected.FirstName = txbFirstName.Text;
-                employeeSelected.LastName = txbLastName.Text;
-                employeeSelected.Age = Convert.ToInt32(tbAge.Text);
-                employeeSelected.Email = txbEmail.Text;
-                employeeSelected.Password = txbPassword.Text;
-                employeeSelected.Address = txbAddress.Text;
-                employeeSelected.Nationality = cbNationality.Text;
-                employeeSelected.Salary = Convert.ToDouble(txbHourlyWage.Text);
-                employeeSelected.PhoneNumber = (long)Convert.ToDouble(txbPhone.Text);
-                employeeSelected.Gender = gender;
-                employeeSelected.Bsn1 = Convert.ToInt32(txbBsn.Text);
-                employeeSelected.PermanentContract = permanentContract;
-                employeeSelected.Position = enumManager.SetPosition(cbPosition.SelectedIndex);
-                employeeSelected.IsAccountActive = isActive;
-                employeeSelected.CovidVaccinated = covidVaccinated;
-                employeeManager.UpdateEmployee(employeeSelected);
-                MessageBox.Show("Employee updated succesfully");
-                this.Close();
+                if (txbFirstName.Text != string.Empty && txbLastName.Text != string.Empty && tbAge.Text != string.Empty && txbEmail.Text != string.Empty && txbPassword.Text != string.Empty && txbAddress.Text != string.Empty && cbNationality.Text != string.Empty && txbHourlyWage.Text != string.Empty && txbPhone.Text != string.Empty && txbBsn.Text != string.Empty && cbPosition.Text != string.Empty)
+                {
+                    employeeSelected.FirstName = txbFirstName.Text;
+                    employeeSelected.LastName = txbLastName.Text;
+                    employeeSelected.Age = Convert.ToInt32(tbAge.Text);
+                    if (emailCheck(txbEmail.Text) == true)
+                    {
+                        employeeSelected.Email = txbEmail.Text;
+                    }
+                    else
+                    {
+                        throw new Exception("Email si not in the right format");
+                    }
+                    employeeSelected.Password = txbPassword.Text;
+                    employeeSelected.Address = txbAddress.Text;
+                    employeeSelected.Nationality = cbNationality.Text;
+                    employeeSelected.Salary = Convert.ToDouble(txbHourlyWage.Text);
+                    employeeSelected.PhoneNumber = (long)Convert.ToDouble(txbPhone.Text);
+                    employeeSelected.Gender = gender;
+                    employeeSelected.Bsn1 = Convert.ToInt32(txbBsn.Text);
+                    employeeSelected.PermanentContract = permanentContract;
+                    employeeSelected.Position = enumManager.SetPosition(cbPosition.SelectedIndex);
+                    employeeSelected.IsAccountActive = isActive;
+                    employeeSelected.CovidVaccinated = covidVaccinated;
+                    employeeManager.UpdateEmployee(employeeSelected);
+                    MessageBox.Show("Employee updated succesfully");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Fill in all boxes!");
+                }
             }
-            else {
-                MessageBox.Show("Fill in all boxes!");
+            catch (Exception error) {
+                MessageBox.Show(error.Message);
             }
 
             
+        }
+        private bool emailCheck(string email) {
+            if (EmailValidation.IsValidEmail(txbEmail.Text) == true) {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
         //checks what for the form is and if for update, fills up the textboxes
         private void idButton(Employee employee, int buttonId) {
