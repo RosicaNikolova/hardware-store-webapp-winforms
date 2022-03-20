@@ -31,14 +31,6 @@ namespace MediaBazaarProject
         public admin_managerForm(string role)
         {
             InitializeComponent();
-            //DateTime today = new DateTime();
-            //today = DateTime.Now;
-            //if (today.DayOfWeek == DayOfWeek.Monday)
-            //{
-            //    dtpDay.MinDate = today;
-            //    dtpDay.MaxDate = today.AddDays(6);
-            //}
-
             this.role = role;
             if (role == "admin")
             {
@@ -451,7 +443,6 @@ namespace MediaBazaarProject
         {
             tabAdmin.SelectedTab = tabStatistics;
         }
-    }
 
         private void btnRemoveFromShift_Click(object sender, EventArgs e)
         {
@@ -610,7 +601,6 @@ namespace MediaBazaarProject
                 }
             }
         }
-
         private void ClearListBoxesSchedule()
         {
             lbMondayMorning.Items.Clear();
@@ -636,5 +626,4 @@ namespace MediaBazaarProject
             lbSundayEvening.Items.Clear();
         }
     }
-
-}
+    }
