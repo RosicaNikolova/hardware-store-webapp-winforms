@@ -28,6 +28,14 @@ namespace MediaBazaarProject
         public admin_managerForm(string role)
         {
             InitializeComponent();
+            //DateTime today = new DateTime();
+            //today = DateTime.Now;
+            //if (today.DayOfWeek == DayOfWeek.Monday)
+            //{
+            //    dtpDay.MinDate = today;
+            //    dtpDay.MaxDate = today.AddDays(6);
+            //}
+
             this.role = role;
             if (role == "admin")
             {
@@ -39,6 +47,8 @@ namespace MediaBazaarProject
                 btnScheduleAdministration.Visible = false;
                 btnEmployeeManagement.Visible = false;
             }
+
+           
         }
 
         private Employee selectedEmployee()
@@ -67,7 +77,7 @@ namespace MediaBazaarProject
 
         private void btnDeactivateEmployee_Click(object sender, EventArgs e)
         {
-            if(lbEmployeeManagementList.SelectedItem != null)
+            if (lbEmployeeManagementList.SelectedItem != null)
             {
                 object selectedEmployee = lbEmployeeManagementList.SelectedItem;
                 Employee employee = ((Employee)selectedEmployee);
@@ -133,58 +143,60 @@ namespace MediaBazaarProject
         {
             DateTime date = new DateTime();
             date = dtpDay.Value;
-
             if (cbShiftSelect.Text != "Select shift" && cbShiftSelect.Text != "" && lbEmployeeShiftList.SelectedItem != null)
             {
-                object worker = lbEmployeeShiftList.SelectedItem;
-                int shift = cbShiftSelect.SelectedIndex + 1;
-                if (shiftManager.AssignShift((Employee)worker, date, (Shifts)shift))
+                try
                 {
-                    MessageBox.Show("Employee successfully assigned to a shift");
+                    object worker = lbEmployeeShiftList.SelectedItem;
+                    int shiftType = cbShiftSelect.SelectedIndex + 1;
+                    Shift shift = shiftManager.AssignShift((Employee)worker, date, (Shifts)shiftType);
+                    if (shift != null)
+                    {
+                        MessageBox.Show("Employee successfully assigned to a shift");
 
-                    if (shift == 1)
-                    {
-                        lbMorningShift.Items.Add(worker);
+                        if (shiftType == 1)
+                        {
+                            lbMorningShift.Items.Add(worker);
+                        }
+                        else if (shiftType == 2)
+                        {
+                            lbMiddayShift.Items.Add(worker);
+                        }
+                        else if (shiftType == 3)
+                        {
+                            lbEveningShift.Items.Add(worker);
+                        }
                     }
-                    else if (shift == 2)
+                    else
                     {
-                        lbMiddayShift.Items.Add(worker);
-                    }
-                    else if (shift == 3)
-                    {
-                        lbEveningShift.Items.Add(worker);
+                        MessageBox.Show("Operation is unsuccessful");
                     }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Try again");
+                    MessageBox.Show("Please, select employee or shift type");
+                }
+
+                EmployeeManager employeeManager = new EmployeeManager();
+                List<Employee> workers = new List<Employee>();
+                workers = employeeManager.GetAllWorkers();
+                workers = shiftManager.GetAvailableWorkersForDate(workers, date);
+                lbEmployeeShiftList.Items.Clear();
+
+                foreach (var w in workers)
+                {
+                    lbEmployeeShiftList.Items.Add(w);
                 }
             }
-            else
-            {
-                MessageBox.Show("Please, select an employee and a shift");
-            }
-
-            EmployeeManager employeeManager = new EmployeeManager();
-
-            List<Employee> workers = new List<Employee>();
-
-            workers = employeeManager.GetAllWorkers();
-            workers = shiftManager.GetAvailableWorkersForDate(workers, date);
-
-            lbEmployeeShiftList.Items.Clear();
-
-
-            foreach (var w in workers)
-            {
-                lbEmployeeShiftList.Items.Add(w);
-            }
-
-
-
         }
 
         private void dtpDay_ValueChanged(object sender, EventArgs e)
+        {
+            DisplayShiftsForDay();
+
+        }
+
+        private void DisplayShiftsForDay()
         {
             lbEmployeeShiftList.Items.Clear();
             lbMorningShift.Items.Clear();
@@ -207,15 +219,15 @@ namespace MediaBazaarProject
             {
                 if (shift.ShiftType == Shifts.MORNING)
                 {
-                    lbMorningShift.Items.Add(shift.Employee.FirstName);
+                    lbMorningShift.Items.Add(shift.Employee);
                 }
                 else if (shift.ShiftType == Shifts.MIDDAY)
                 {
-                    lbMiddayShift.Items.Add(shift.Employee.FirstName);
+                    lbMiddayShift.Items.Add(shift.Employee);
                 }
                 else if (shift.ShiftType == Shifts.EVENING)
                 {
-                    lbEveningShift.Items.Add(shift.Employee.FirstName);
+                    lbEveningShift.Items.Add(shift.Employee);
                 }
             }
         }
@@ -329,7 +341,7 @@ namespace MediaBazaarProject
 
         private void btnDeleteEmployee_Click(object sender, EventArgs e)
         {
-            if(lbEmployeeManagementList.SelectedItem != null )
+            if (lbEmployeeManagementList.SelectedItem != null)
             {
                 object selectedEmployee = lbEmployeeManagementList.SelectedItem;
                 Employee employee = ((Employee)selectedEmployee);
@@ -397,5 +409,189 @@ namespace MediaBazaarProject
                 lbEmployeeList.Items.Add(employee);
             }
         }
+
+        private void btnRemoveFromShift_Click(object sender, EventArgs e)
+        {
+            DateTime date = new DateTime();
+            date = dtpDay.Value;
+            object selectedEmployee;
+            string shift = "";
+            Employee employee = new Employee();
+
+            if (lbMorningShift.SelectedIndex != -1)
+            {
+                selectedEmployee = lbMorningShift.SelectedItem;
+                employee = ((Employee)selectedEmployee);
+                shift = "MORNING";
+            }
+            else if (lbMiddayShift.SelectedIndex != -1)
+            {
+                selectedEmployee = lbMiddayShift.SelectedItem;
+                employee = ((Employee)selectedEmployee);
+                shift = "MIDDAY";
+            }
+            else if (lbEveningShift.SelectedIndex != -1)
+            {
+                selectedEmployee = lbEveningShift.SelectedItem;
+                employee = ((Employee)selectedEmployee);
+                shift = "EVENING";
+            }
+
+            if (shiftManager.RemoveShift(date, shift, employee))
+            {
+                MessageBox.Show("Employee successfully removed");
+            }
+            else
+            {
+                MessageBox.Show("Operation was not successful. Try again");
+            }
+
+            DisplayShiftsForDay();
+        }
+
+        private void btnWeeklyScheduleDisplay_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabWeeklySchedule;
+            List<Shift> schedule = new List<Shift>();
+            schedule = shiftManager.GetAllShifts();
+            DateTime minDate = new DateTime();
+            minDate = dtpDay.MinDate;
+            ClearListBoxesSchedule();
+
+            foreach (Shift shift in schedule)
+            {
+                if (shift.Date.Day == minDate.Day)
+                {
+                    switch (shift.ShiftType)
+                    {
+                        case Shifts.MORNING:
+                            lbMondayMorning.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.MIDDAY:
+                            lbMondayMidday.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.EVENING:
+                            lbMondayEvening.Items.Add(shift.Employee);
+                            break;
+                    }
+                }
+                else if (shift.Date.Day == minDate.Day + 1)
+                {
+                    switch (shift.ShiftType)
+                    {
+                        case Shifts.MORNING:
+                            lbTuesdayMorning.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.MIDDAY:
+                            lbTuesdayMidday.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.EVENING:
+                            lbTuesdayEvening.Items.Add(shift.Employee);
+                            break;
+                    }
+                }
+                else if (shift.Date.Day == minDate.Day + 2)
+                {
+                    switch (shift.ShiftType)
+                    {
+                        case Shifts.MORNING:
+                            lbWednesdayMorning.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.MIDDAY:
+                            lbWednesdayMidday.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.EVENING:
+                            lbWednesdayEvening.Items.Add(shift.Employee);
+                            break;
+                    }
+                }
+                else if (shift.Date.Day == minDate.Day + 3)
+                {
+                    switch (shift.ShiftType)
+                    {
+                        case Shifts.MORNING:
+                            lbThursdayMorning.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.MIDDAY:
+                            lbThursdayMidday.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.EVENING:
+                            lbThursdayEvening.Items.Add(shift.Employee);
+                            break;
+                    }
+                }
+                else if (shift.Date.Day == minDate.Day + 4)
+                {
+                    switch (shift.ShiftType)
+                    {
+                        case Shifts.MORNING:
+                            lbFridayMorning.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.MIDDAY:
+                            lbFridayMidday.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.EVENING:
+                            lbFridayEvening.Items.Add(shift.Employee);
+                            break;
+                    }
+                }
+                else if (shift.Date.Day == minDate.Day + 5)
+                {
+                    switch (shift.ShiftType)
+                    {
+                        case Shifts.MORNING:
+                            lbSaturdayMorning.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.MIDDAY:
+                            lbSaturdayMidday.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.EVENING:
+                            lbSaturdayEvening.Items.Add(shift.Employee);
+                            break;
+                    }
+                }
+                else if (shift.Date.Day == minDate.Day + 6)
+                {
+                    switch (shift.ShiftType)
+                    {
+                        case Shifts.MORNING:
+                            lbSundayMorning.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.MIDDAY:
+                            lbSundayMidday.Items.Add(shift.Employee);
+                            break;
+                        case Shifts.EVENING:
+                            lbSundayEvening.Items.Add(shift.Employee);
+                            break;
+                    }
+                }
+            }
+        }
+
+        private void ClearListBoxesSchedule()
+        {
+            lbMondayMorning.Items.Clear();
+            lbMondayMidday.Items.Clear();
+            lbMondayEvening.Items.Clear();
+            lbTuesdayMorning.Items.Clear();
+            lbTuesdayMidday.Items.Clear();
+            lbTuesdayEvening.Items.Clear();
+            lbWednesdayMorning.Items.Clear();
+            lbWednesdayMidday.Items.Clear();
+            lbWednesdayEvening.Items.Clear();
+            lbThursdayMorning.Items.Clear();
+            lbThursdayMidday.Items.Clear();
+            lbThursdayEvening.Items.Clear();
+            lbFridayMorning.Items.Clear();
+            lbFridayMidday.Items.Clear();
+            lbFridayEvening.Items.Clear();
+            lbSaturdayMorning.Items.Clear();
+            lbSaturdayMidday.Items.Clear();
+            lbSaturdayEvening.Items.Clear();
+            lbSundayMorning.Items.Clear();
+            lbSundayMidday.Items.Clear();
+            lbSundayEvening.Items.Clear();
+        }
     }
+
 }

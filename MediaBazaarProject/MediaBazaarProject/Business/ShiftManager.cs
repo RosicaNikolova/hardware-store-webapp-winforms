@@ -10,67 +10,67 @@ namespace MediaBazaarProject.Business
     class ShiftManager
     {
         ScheduleRepository scheduleRepository = new ScheduleRepository();
-        List<Shift> schedule;
+
+       
 
         public ShiftManager()
         {
-            schedule = new List<Shift>();
-            schedule = scheduleRepository.GetAllShifts();
+           
         }
-
 
         public List<Shift> GetShiftsForDate(DateTime date)
         {
-            List<Shift> shiftForDate = new List<Shift>();
-            foreach (Shift shift in schedule)
-            {
-                if(shift.Date == date)
-                {
-                    shiftForDate.Add(shift);
-                }
-            }
+            List<Shift> shiftForDate = scheduleRepository.GetAllShiftsForDate(date);
             return shiftForDate;
+            
         }
 
-        //public ShiftRepository shiftRepo = new ShiftRepository();
-
-        /*User(string name, emun role)
-        {
-
-        }
-
-        public void AssignShift(Employee e)
-        {
-
-        }
-
-        public void RemoveShift(Employee e)
-        {
         
-        }
-        */
-        public bool AssignShift(Employee worker, DateTime date, Shifts selectedShift)
+        public Shift AssignShift(Employee worker, DateTime date, Shifts selectedShift)
         {
             Shift shift = new Shift();
             shift.Employee = worker;
             shift.Date = date;
             shift.ShiftType = selectedShift;
 
-            if (IsLessThanTenEmployees(shift))
+            if (IsLessThanTenEmployees(shift) && HasTheSameShift(shift))
             {
                 scheduleRepository.CreateShift(shift);
-                schedule.Add(shift);
-                return true;
+                return shift;
             }
             else
             {
-                return false;
+                return null;
             }
+        }
+
+        private bool HasTheSameShift(Shift shift)
+        {
+            List<Shift> schedule = new List<Shift>();
+            schedule = scheduleRepository.GetAllShifts();
+            foreach (Shift sh in schedule)
+            {
+                if (sh.Date == shift.Date)
+                {
+                    if (sh.ShiftType == shift.ShiftType)
+                    {
+                        if(shift.Employee.Id == sh.Employee.Id)
+                        {
+                            return false;
+                        }
+                        
+                    }
+                }
+            }
+            return true;
         }
 
 
         public bool IsLessThanTenEmployees(Shift shift)
         {
+            List<Employee> availableWorkers = new List<Employee>();
+            List<Shift> schedule = new List<Shift>();
+            schedule = scheduleRepository.GetAllShifts();
             int counter = 0;
             foreach (var record in schedule)
             {
@@ -92,6 +92,8 @@ namespace MediaBazaarProject.Business
         public List<Employee> GetAvailableWorkersForDate(List<Employee> workers, DateTime date)
         {
             List<Employee> availableWorkers = new List<Employee>();
+            List <Shift> schedule = new List<Shift>();
+            schedule = scheduleRepository.GetAllShifts();
 
             int counter = 0;
 
@@ -111,7 +113,6 @@ namespace MediaBazaarProject.Business
                 }
                 counter = 0;
             }
-           
             return availableWorkers;
         }
 
@@ -122,7 +123,41 @@ namespace MediaBazaarProject.Business
             shifts = scheduleRepository.GetShiftsForWorker(date, id);
 
             return shifts;
+        }
 
+        public bool RemoveShift(DateTime date, string shift, Employee employee)
+        {
+            List<Shift> schedule = new List<Shift>(); 
+            schedule = scheduleRepository.GetAllShifts();
+            int id = 0;
+            foreach (Shift shif in schedule)
+            {
+                if (shif.Date == date)
+                {
+                    if (shif.ShiftType.ToString() == shift)
+                    {
+                        if (shif.Employee.Id == employee.Id)
+                        {
+                            id = shif.Id;
+                        }
+                    }
+                }
+            }
+
+            if (scheduleRepository.RemoveShift(id))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public List<Shift> GetAllShifts()
+        {
+            List<Shift> shifts = scheduleRepository.GetAllShifts();
+            return shifts;
+            
         }
     }
 }

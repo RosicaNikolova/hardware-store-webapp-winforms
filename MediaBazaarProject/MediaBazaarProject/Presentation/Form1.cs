@@ -22,22 +22,24 @@ namespace MediaBazaarProject
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            User user = new User(); //loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
+            User user = new User();
             try
             {
-                if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text) != null)
+                user = loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
+
+                if (user != null)
                 {
-                    if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.ADMIN)
+                    if (user.Position == Position.ADMIN)
                     {
                         admin_managerForm adminManagerForm = new admin_managerForm("admin");
                         adminManagerForm.Show();
                     }
-                    else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.MANAGER)
+                    else if (user.Position == Position.MANAGER)
                     {
                         admin_managerForm adminManagerForm = new admin_managerForm("manager");
                         adminManagerForm.Show();
                     }
-                    else if (loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text).Position == Position.WORKER)
+                    else if (user.Position == Position.WORKER)
 
                     {
                         WorkerForm employeeForm = new WorkerForm(user);
