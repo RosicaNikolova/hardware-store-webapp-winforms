@@ -141,10 +141,10 @@ namespace MediaBazaarProject
             this.tabAdmin.Controls.Add(this.tabScheduleAdministration);
             this.tabAdmin.Controls.Add(this.tabStatistics);
             this.tabAdmin.Controls.Add(this.tabWeeklySchedule);
-            this.tabAdmin.Location = new System.Drawing.Point(2, -26);
+            this.tabAdmin.Location = new System.Drawing.Point(-8, -29);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.SelectedIndex = 0;
-            this.tabAdmin.Size = new System.Drawing.Size(1238, 462);
+            this.tabAdmin.Size = new System.Drawing.Size(1258, 503);
             this.tabAdmin.TabIndex = 0;
             this.tabAdmin.SelectedIndexChanged += new System.EventHandler(this.tabAdmin_SelectedIndexChanged);
             // 
@@ -165,10 +165,10 @@ namespace MediaBazaarProject
             this.tabAdminHome.Controls.Add(this.btnScheduleAdministration);
             this.tabAdminHome.Controls.Add(this.btnEmployeeManagement);
             this.tabAdminHome.Controls.Add(this.lblRole);
-            this.tabAdminHome.Location = new System.Drawing.Point(4, 26);
+            this.tabAdminHome.Location = new System.Drawing.Point(4, 27);
             this.tabAdminHome.Name = "tabAdminHome";
             this.tabAdminHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminHome.Size = new System.Drawing.Size(1230, 432);
+            this.tabAdminHome.Size = new System.Drawing.Size(1250, 472);
             this.tabAdminHome.TabIndex = 0;
             this.tabAdminHome.Text = "adminHome";
             // 
@@ -186,10 +186,10 @@ namespace MediaBazaarProject
             // lbEmployeeList
             // 
             this.lbEmployeeList.FormattingEnabled = true;
-            this.lbEmployeeList.ItemHeight = 17;
+            this.lbEmployeeList.ItemHeight = 18;
             this.lbEmployeeList.Location = new System.Drawing.Point(364, 144);
             this.lbEmployeeList.Name = "lbEmployeeList";
-            this.lbEmployeeList.Size = new System.Drawing.Size(803, 259);
+            this.lbEmployeeList.Size = new System.Drawing.Size(803, 256);
             this.lbEmployeeList.TabIndex = 13;
             this.lbEmployeeList.DoubleClick += new System.EventHandler(this.lbEmployeeList_DoubleClick);
             // 
@@ -207,7 +207,7 @@ namespace MediaBazaarProject
             // 
             this.tbFilterByName.Location = new System.Drawing.Point(878, 113);
             this.tbFilterByName.Name = "tbFilterByName";
-            this.tbFilterByName.Size = new System.Drawing.Size(177, 25);
+            this.tbFilterByName.Size = new System.Drawing.Size(177, 24);
             this.tbFilterByName.TabIndex = 11;
             this.tbFilterByName.Text = "Search by name...";
             // 
@@ -226,7 +226,7 @@ namespace MediaBazaarProject
             this.rbPermanent.AutoSize = true;
             this.rbPermanent.Location = new System.Drawing.Point(642, 82);
             this.rbPermanent.Name = "rbPermanent";
-            this.rbPermanent.Size = new System.Drawing.Size(109, 21);
+            this.rbPermanent.Size = new System.Drawing.Size(101, 22);
             this.rbPermanent.TabIndex = 8;
             this.rbPermanent.TabStop = true;
             this.rbPermanent.Text = "Permanent";
@@ -238,7 +238,7 @@ namespace MediaBazaarProject
             this.rbTemporary.AutoSize = true;
             this.rbTemporary.Location = new System.Drawing.Point(521, 82);
             this.rbTemporary.Name = "rbTemporary";
-            this.rbTemporary.Size = new System.Drawing.Size(109, 21);
+            this.rbTemporary.Size = new System.Drawing.Size(101, 22);
             this.rbTemporary.TabIndex = 7;
             this.rbTemporary.TabStop = true;
             this.rbTemporary.Text = "Temporary";
@@ -250,7 +250,7 @@ namespace MediaBazaarProject
             this.lblTypeOfContract.AutoSize = true;
             this.lblTypeOfContract.Location = new System.Drawing.Point(367, 83);
             this.lblTypeOfContract.Name = "lblTypeOfContract";
-            this.lblTypeOfContract.Size = new System.Drawing.Size(132, 17);
+            this.lblTypeOfContract.Size = new System.Drawing.Size(119, 18);
             this.lblTypeOfContract.TabIndex = 6;
             this.lblTypeOfContract.Text = "Type of contract:";
             // 
@@ -272,7 +272,7 @@ namespace MediaBazaarProject
             "Italian"});
             this.cbNationality.Location = new System.Drawing.Point(367, 48);
             this.cbNationality.Name = "cbNationality";
-            this.cbNationality.Size = new System.Drawing.Size(169, 25);
+            this.cbNationality.Size = new System.Drawing.Size(169, 26);
             this.cbNationality.TabIndex = 5;
             this.cbNationality.Text = "Nationality...";
             this.cbNationality.SelectedIndexChanged += new System.EventHandler(this.cbNationality_SelectedIndexChanged);
@@ -282,7 +282,7 @@ namespace MediaBazaarProject
             this.lblListOfEmployees.AutoSize = true;
             this.lblListOfEmployees.Location = new System.Drawing.Point(367, 27);
             this.lblListOfEmployees.Name = "lblListOfEmployees";
-            this.lblListOfEmployees.Size = new System.Drawing.Size(139, 17);
+            this.lblListOfEmployees.Size = new System.Drawing.Size(128, 18);
             this.lblListOfEmployees.TabIndex = 4;
             this.lblListOfEmployees.Text = "List of employees:";
             // 
@@ -324,7 +324,7 @@ namespace MediaBazaarProject
             this.lblRole.AutoSize = true;
             this.lblRole.Location = new System.Drawing.Point(19, 21);
             this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(176, 17);
+            this.lblRole.Size = new System.Drawing.Size(157, 18);
             this.lblRole.TabIndex = 0;
             this.lblRole.Text = "Administrator/Manager";
             // 
@@ -344,10 +344,10 @@ namespace MediaBazaarProject
             this.tabEmployeeManagement.Controls.Add(this.btnDeactivateEmployee);
             this.tabEmployeeManagement.Controls.Add(this.btnAddEmployee);
             this.tabEmployeeManagement.Controls.Add(this.lblAdminEmpManagement);
-            this.tabEmployeeManagement.Location = new System.Drawing.Point(4, 26);
+            this.tabEmployeeManagement.Location = new System.Drawing.Point(4, 27);
             this.tabEmployeeManagement.Name = "tabEmployeeManagement";
             this.tabEmployeeManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployeeManagement.Size = new System.Drawing.Size(1230, 432);
+            this.tabEmployeeManagement.Size = new System.Drawing.Size(1230, 431);
             this.tabEmployeeManagement.TabIndex = 1;
             this.tabEmployeeManagement.Text = "employeeManagement";
             // 
@@ -356,7 +356,7 @@ namespace MediaBazaarProject
             this.rbDisplayDeactivated.AutoSize = true;
             this.rbDisplayDeactivated.Location = new System.Drawing.Point(277, 336);
             this.rbDisplayDeactivated.Name = "rbDisplayDeactivated";
-            this.rbDisplayDeactivated.Size = new System.Drawing.Size(253, 21);
+            this.rbDisplayDeactivated.Size = new System.Drawing.Size(231, 22);
             this.rbDisplayDeactivated.TabIndex = 13;
             this.rbDisplayDeactivated.TabStop = true;
             this.rbDisplayDeactivated.Text = "Display deactivated employees";
@@ -397,7 +397,7 @@ namespace MediaBazaarProject
             // 
             this.tbSearchEmployeeName.Location = new System.Drawing.Point(702, 48);
             this.tbSearchEmployeeName.Name = "tbSearchEmployeeName";
-            this.tbSearchEmployeeName.Size = new System.Drawing.Size(140, 25);
+            this.tbSearchEmployeeName.Size = new System.Drawing.Size(140, 24);
             this.tbSearchEmployeeName.TabIndex = 8;
             this.tbSearchEmployeeName.Text = "Employee name...";
             // 
@@ -406,17 +406,17 @@ namespace MediaBazaarProject
             this.lblListOfEmployeesManagement.AutoSize = true;
             this.lblListOfEmployeesManagement.Location = new System.Drawing.Point(277, 50);
             this.lblListOfEmployeesManagement.Name = "lblListOfEmployeesManagement";
-            this.lblListOfEmployeesManagement.Size = new System.Drawing.Size(139, 17);
+            this.lblListOfEmployeesManagement.Size = new System.Drawing.Size(128, 18);
             this.lblListOfEmployeesManagement.TabIndex = 7;
             this.lblListOfEmployeesManagement.Text = "List of employees:";
             // 
             // lbEmployeeManagementList
             // 
             this.lbEmployeeManagementList.FormattingEnabled = true;
-            this.lbEmployeeManagementList.ItemHeight = 17;
+            this.lbEmployeeManagementList.ItemHeight = 18;
             this.lbEmployeeManagementList.Location = new System.Drawing.Point(277, 71);
             this.lbEmployeeManagementList.Name = "lbEmployeeManagementList";
-            this.lbEmployeeManagementList.Size = new System.Drawing.Size(754, 259);
+            this.lbEmployeeManagementList.Size = new System.Drawing.Size(754, 256);
             this.lbEmployeeManagementList.TabIndex = 6;
             // 
             // btnDeleteEmployee
@@ -435,7 +435,7 @@ namespace MediaBazaarProject
             this.lblSelectEmployee.AutoSize = true;
             this.lblSelectEmployee.Location = new System.Drawing.Point(10, 113);
             this.lblSelectEmployee.Name = "lblSelectEmployee";
-            this.lblSelectEmployee.Size = new System.Drawing.Size(161, 17);
+            this.lblSelectEmployee.Size = new System.Drawing.Size(146, 18);
             this.lblSelectEmployee.TabIndex = 4;
             this.lblSelectEmployee.Text = "Select employee to...";
             // 
@@ -477,7 +477,7 @@ namespace MediaBazaarProject
             this.lblAdminEmpManagement.AutoSize = true;
             this.lblAdminEmpManagement.Location = new System.Drawing.Point(10, 6);
             this.lblAdminEmpManagement.Name = "lblAdminEmpManagement";
-            this.lblAdminEmpManagement.Size = new System.Drawing.Size(286, 17);
+            this.lblAdminEmpManagement.Size = new System.Drawing.Size(260, 18);
             this.lblAdminEmpManagement.TabIndex = 0;
             this.lblAdminEmpManagement.Text = "Administrator- Employee management";
             // 
@@ -489,10 +489,10 @@ namespace MediaBazaarProject
             this.tabScheduleAdministration.Controls.Add(this.gbAssignToShift);
             this.tabScheduleAdministration.Controls.Add(this.lblAdministrationSchedule);
             this.tabScheduleAdministration.Controls.Add(this.groupBox1);
-            this.tabScheduleAdministration.Location = new System.Drawing.Point(4, 26);
+            this.tabScheduleAdministration.Location = new System.Drawing.Point(4, 27);
             this.tabScheduleAdministration.Name = "tabScheduleAdministration";
             this.tabScheduleAdministration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScheduleAdministration.Size = new System.Drawing.Size(1230, 432);
+            this.tabScheduleAdministration.Size = new System.Drawing.Size(1230, 431);
             this.tabScheduleAdministration.TabIndex = 2;
             this.tabScheduleAdministration.Text = "scheduleAdministration";
             // 
@@ -523,7 +523,7 @@ namespace MediaBazaarProject
             this.dtpDay.MaxDate = new System.DateTime(2022, 3, 20, 0, 0, 0, 0);
             this.dtpDay.MinDate = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dtpDay.Name = "dtpDay";
-            this.dtpDay.Size = new System.Drawing.Size(292, 25);
+            this.dtpDay.Size = new System.Drawing.Size(292, 24);
             this.dtpDay.TabIndex = 10;
             this.dtpDay.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dtpDay.ValueChanged += new System.EventHandler(this.dtpDay_ValueChanged);
@@ -553,10 +553,10 @@ namespace MediaBazaarProject
             // lbEmployeeShiftList
             // 
             this.lbEmployeeShiftList.FormattingEnabled = true;
-            this.lbEmployeeShiftList.ItemHeight = 17;
+            this.lbEmployeeShiftList.ItemHeight = 18;
             this.lbEmployeeShiftList.Location = new System.Drawing.Point(44, 91);
             this.lbEmployeeShiftList.Name = "lbEmployeeShiftList";
-            this.lbEmployeeShiftList.Size = new System.Drawing.Size(281, 106);
+            this.lbEmployeeShiftList.Size = new System.Drawing.Size(281, 94);
             this.lbEmployeeShiftList.TabIndex = 12;
             // 
             // cbShiftSelect
@@ -568,7 +568,7 @@ namespace MediaBazaarProject
             "Evening"});
             this.cbShiftSelect.Location = new System.Drawing.Point(105, 31);
             this.cbShiftSelect.Name = "cbShiftSelect";
-            this.cbShiftSelect.Size = new System.Drawing.Size(169, 25);
+            this.cbShiftSelect.Size = new System.Drawing.Size(169, 26);
             this.cbShiftSelect.TabIndex = 11;
             this.cbShiftSelect.Text = "Select shift";
             // 
@@ -577,7 +577,7 @@ namespace MediaBazaarProject
             this.lblAdministrationSchedule.AutoSize = true;
             this.lblAdministrationSchedule.Location = new System.Drawing.Point(10, 6);
             this.lblAdministrationSchedule.Name = "lblAdministrationSchedule";
-            this.lblAdministrationSchedule.Size = new System.Drawing.Size(191, 17);
+            this.lblAdministrationSchedule.Size = new System.Drawing.Size(171, 18);
             this.lblAdministrationSchedule.TabIndex = 0;
             this.lblAdministrationSchedule.Text = "Administration- Schedule";
             // 
@@ -605,7 +605,7 @@ namespace MediaBazaarProject
             this.lblEvening1.AutoSize = true;
             this.lblEvening1.Location = new System.Drawing.Point(510, 20);
             this.lblEvening1.Name = "lblEvening1";
-            this.lblEvening1.Size = new System.Drawing.Size(66, 17);
+            this.lblEvening1.Size = new System.Drawing.Size(60, 18);
             this.lblEvening1.TabIndex = 11;
             this.lblEvening1.Text = "Evening";
             // 
@@ -614,7 +614,7 @@ namespace MediaBazaarProject
             this.lblMidday1.AutoSize = true;
             this.lblMidday1.Location = new System.Drawing.Point(297, 20);
             this.lblMidday1.Name = "lblMidday1";
-            this.lblMidday1.Size = new System.Drawing.Size(64, 17);
+            this.lblMidday1.Size = new System.Drawing.Size(60, 18);
             this.lblMidday1.TabIndex = 10;
             this.lblMidday1.Text = "Mid-day";
             // 
@@ -623,17 +623,17 @@ namespace MediaBazaarProject
             this.lblMorning1.AutoSize = true;
             this.lblMorning1.Location = new System.Drawing.Point(82, 20);
             this.lblMorning1.Name = "lblMorning1";
-            this.lblMorning1.Size = new System.Drawing.Size(67, 17);
+            this.lblMorning1.Size = new System.Drawing.Size(62, 18);
             this.lblMorning1.TabIndex = 9;
             this.lblMorning1.Text = "Morning";
             // 
             // lbMorningShift
             // 
             this.lbMorningShift.FormattingEnabled = true;
-            this.lbMorningShift.ItemHeight = 17;
+            this.lbMorningShift.ItemHeight = 18;
             this.lbMorningShift.Location = new System.Drawing.Point(35, 40);
             this.lbMorningShift.Name = "lbMorningShift";
-            this.lbMorningShift.Size = new System.Drawing.Size(172, 157);
+            this.lbMorningShift.Size = new System.Drawing.Size(172, 148);
             this.lbMorningShift.TabIndex = 5;
             // 
             // lblMorning
@@ -641,7 +641,7 @@ namespace MediaBazaarProject
             this.lblMorning.AutoSize = true;
             this.lblMorning.Location = new System.Drawing.Point(62, -20);
             this.lblMorning.Name = "lblMorning";
-            this.lblMorning.Size = new System.Drawing.Size(67, 17);
+            this.lblMorning.Size = new System.Drawing.Size(62, 18);
             this.lblMorning.TabIndex = 2;
             this.lblMorning.Text = "Morning";
             // 
@@ -650,7 +650,7 @@ namespace MediaBazaarProject
             this.lblMiddayShift.AutoSize = true;
             this.lblMiddayShift.Location = new System.Drawing.Point(262, -20);
             this.lblMiddayShift.Name = "lblMiddayShift";
-            this.lblMiddayShift.Size = new System.Drawing.Size(64, 17);
+            this.lblMiddayShift.Size = new System.Drawing.Size(60, 18);
             this.lblMiddayShift.TabIndex = 3;
             this.lblMiddayShift.Text = "Mid-day";
             // 
@@ -669,26 +669,26 @@ namespace MediaBazaarProject
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(474, -20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.Size = new System.Drawing.Size(60, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Evening";
             // 
             // lbEveningShift
             // 
             this.lbEveningShift.FormattingEnabled = true;
-            this.lbEveningShift.ItemHeight = 17;
+            this.lbEveningShift.ItemHeight = 18;
             this.lbEveningShift.Location = new System.Drawing.Point(459, 40);
             this.lbEveningShift.Name = "lbEveningShift";
-            this.lbEveningShift.Size = new System.Drawing.Size(167, 157);
+            this.lbEveningShift.Size = new System.Drawing.Size(167, 148);
             this.lbEveningShift.TabIndex = 7;
             // 
             // lbMiddayShift
             // 
             this.lbMiddayShift.FormattingEnabled = true;
-            this.lbMiddayShift.ItemHeight = 17;
+            this.lbMiddayShift.ItemHeight = 18;
             this.lbMiddayShift.Location = new System.Drawing.Point(240, 40);
             this.lbMiddayShift.Name = "lbMiddayShift";
-            this.lbMiddayShift.Size = new System.Drawing.Size(190, 157);
+            this.lbMiddayShift.Size = new System.Drawing.Size(190, 148);
             this.lbMiddayShift.TabIndex = 6;
             // 
             // tabStatistics
@@ -700,10 +700,10 @@ namespace MediaBazaarProject
             this.tabStatistics.Controls.Add(this.plotViewNationality);
             this.tabStatistics.Controls.Add(this.btnHome2);
             this.tabStatistics.Controls.Add(this.lblAdministrationStatistics);
-            this.tabStatistics.Location = new System.Drawing.Point(4, 26);
+            this.tabStatistics.Location = new System.Drawing.Point(4, 27);
             this.tabStatistics.Name = "tabStatistics";
             this.tabStatistics.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStatistics.Size = new System.Drawing.Size(1230, 432);
+            this.tabStatistics.Size = new System.Drawing.Size(1230, 431);
             this.tabStatistics.TabIndex = 3;
             this.tabStatistics.Text = "statistics";
             // 
@@ -712,7 +712,7 @@ namespace MediaBazaarProject
             this.lblAverageSalary.AutoSize = true;
             this.lblAverageSalary.Location = new System.Drawing.Point(97, 90);
             this.lblAverageSalary.Name = "lblAverageSalary";
-            this.lblAverageSalary.Size = new System.Drawing.Size(137, 17);
+            this.lblAverageSalary.Size = new System.Drawing.Size(120, 18);
             this.lblAverageSalary.TabIndex = 5;
             this.lblAverageSalary.Text = "Average salary: $";
             // 
@@ -721,7 +721,7 @@ namespace MediaBazaarProject
             this.lblNumberOfEmployees.AutoSize = true;
             this.lblNumberOfEmployees.Location = new System.Drawing.Point(97, 53);
             this.lblNumberOfEmployees.Name = "lblNumberOfEmployees";
-            this.lblNumberOfEmployees.Size = new System.Drawing.Size(175, 17);
+            this.lblNumberOfEmployees.Size = new System.Drawing.Size(162, 18);
             this.lblNumberOfEmployees.TabIndex = 4;
             this.lblNumberOfEmployees.Text = "Number of employees: ";
             // 
@@ -766,7 +766,7 @@ namespace MediaBazaarProject
             this.lblAdministrationStatistics.AutoSize = true;
             this.lblAdministrationStatistics.Location = new System.Drawing.Point(9, 3);
             this.lblAdministrationStatistics.Name = "lblAdministrationStatistics";
-            this.lblAdministrationStatistics.Size = new System.Drawing.Size(188, 17);
+            this.lblAdministrationStatistics.Size = new System.Drawing.Size(168, 18);
             this.lblAdministrationStatistics.TabIndex = 0;
             this.lblAdministrationStatistics.Text = "Administration- statistics";
             // 
@@ -785,10 +785,10 @@ namespace MediaBazaarProject
             this.tabWeeklySchedule.Controls.Add(this.lblWeeklyMonday);
             this.tabWeeklySchedule.Controls.Add(this.tableLayoutPanel1);
             this.tabWeeklySchedule.Controls.Add(this.btnHome3);
-            this.tabWeeklySchedule.Location = new System.Drawing.Point(4, 26);
+            this.tabWeeklySchedule.Location = new System.Drawing.Point(4, 27);
             this.tabWeeklySchedule.Name = "tabWeeklySchedule";
             this.tabWeeklySchedule.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWeeklySchedule.Size = new System.Drawing.Size(1230, 432);
+            this.tabWeeklySchedule.Size = new System.Drawing.Size(1230, 431);
             this.tabWeeklySchedule.TabIndex = 4;
             this.tabWeeklySchedule.Text = "weeklySchedule";
             // 
@@ -797,7 +797,7 @@ namespace MediaBazaarProject
             this.lblWeeklyEvening.AutoSize = true;
             this.lblWeeklyEvening.Location = new System.Drawing.Point(3, 315);
             this.lblWeeklyEvening.Name = "lblWeeklyEvening";
-            this.lblWeeklyEvening.Size = new System.Drawing.Size(66, 17);
+            this.lblWeeklyEvening.Size = new System.Drawing.Size(60, 18);
             this.lblWeeklyEvening.TabIndex = 11;
             this.lblWeeklyEvening.Text = "Evening";
             // 
@@ -806,7 +806,7 @@ namespace MediaBazaarProject
             this.lblWeeklyMidday.AutoSize = true;
             this.lblWeeklyMidday.Location = new System.Drawing.Point(3, 201);
             this.lblWeeklyMidday.Name = "lblWeeklyMidday";
-            this.lblWeeklyMidday.Size = new System.Drawing.Size(64, 17);
+            this.lblWeeklyMidday.Size = new System.Drawing.Size(60, 18);
             this.lblWeeklyMidday.TabIndex = 10;
             this.lblWeeklyMidday.Text = "Mid-day";
             // 
@@ -815,7 +815,7 @@ namespace MediaBazaarProject
             this.lblWeeklyMorning.AutoSize = true;
             this.lblWeeklyMorning.Location = new System.Drawing.Point(3, 94);
             this.lblWeeklyMorning.Name = "lblWeeklyMorning";
-            this.lblWeeklyMorning.Size = new System.Drawing.Size(67, 17);
+            this.lblWeeklyMorning.Size = new System.Drawing.Size(62, 18);
             this.lblWeeklyMorning.TabIndex = 9;
             this.lblWeeklyMorning.Text = "Morning";
             // 
@@ -824,7 +824,7 @@ namespace MediaBazaarProject
             this.lblWeeklySunday.AutoSize = true;
             this.lblWeeklySunday.Location = new System.Drawing.Point(1117, 28);
             this.lblWeeklySunday.Name = "lblWeeklySunday";
-            this.lblWeeklySunday.Size = new System.Drawing.Size(62, 17);
+            this.lblWeeklySunday.Size = new System.Drawing.Size(57, 18);
             this.lblWeeklySunday.TabIndex = 8;
             this.lblWeeklySunday.Text = "Sunday";
             // 
@@ -833,7 +833,7 @@ namespace MediaBazaarProject
             this.lblWeeklySaturday.AutoSize = true;
             this.lblWeeklySaturday.Location = new System.Drawing.Point(956, 28);
             this.lblWeeklySaturday.Name = "lblWeeklySaturday";
-            this.lblWeeklySaturday.Size = new System.Drawing.Size(74, 17);
+            this.lblWeeklySaturday.Size = new System.Drawing.Size(66, 18);
             this.lblWeeklySaturday.TabIndex = 7;
             this.lblWeeklySaturday.Text = "Saturday";
             // 
@@ -842,7 +842,7 @@ namespace MediaBazaarProject
             this.lblWeeklyFriday.AutoSize = true;
             this.lblWeeklyFriday.Location = new System.Drawing.Point(795, 28);
             this.lblWeeklyFriday.Name = "lblWeeklyFriday";
-            this.lblWeeklyFriday.Size = new System.Drawing.Size(54, 17);
+            this.lblWeeklyFriday.Size = new System.Drawing.Size(48, 18);
             this.lblWeeklyFriday.TabIndex = 6;
             this.lblWeeklyFriday.Text = "Friday";
             // 
@@ -851,7 +851,7 @@ namespace MediaBazaarProject
             this.lblWeeklyThursday.AutoSize = true;
             this.lblWeeklyThursday.Location = new System.Drawing.Point(623, 28);
             this.lblWeeklyThursday.Name = "lblWeeklyThursday";
-            this.lblWeeklyThursday.Size = new System.Drawing.Size(76, 17);
+            this.lblWeeklyThursday.Size = new System.Drawing.Size(69, 18);
             this.lblWeeklyThursday.TabIndex = 5;
             this.lblWeeklyThursday.Text = "Thursday";
             // 
@@ -860,7 +860,7 @@ namespace MediaBazaarProject
             this.lblWeeklyWednesday.AutoSize = true;
             this.lblWeeklyWednesday.Location = new System.Drawing.Point(456, 28);
             this.lblWeeklyWednesday.Name = "lblWeeklyWednesday";
-            this.lblWeeklyWednesday.Size = new System.Drawing.Size(92, 17);
+            this.lblWeeklyWednesday.Size = new System.Drawing.Size(86, 18);
             this.lblWeeklyWednesday.TabIndex = 4;
             this.lblWeeklyWednesday.Text = "Wednesday";
             // 
@@ -869,7 +869,7 @@ namespace MediaBazaarProject
             this.lblWeeklyTuesday.AutoSize = true;
             this.lblWeeklyTuesday.Location = new System.Drawing.Point(276, 28);
             this.lblWeeklyTuesday.Name = "lblWeeklyTuesday";
-            this.lblWeeklyTuesday.Size = new System.Drawing.Size(69, 17);
+            this.lblWeeklyTuesday.Size = new System.Drawing.Size(64, 18);
             this.lblWeeklyTuesday.TabIndex = 3;
             this.lblWeeklyTuesday.Text = "Tuesday";
             // 
@@ -878,7 +878,7 @@ namespace MediaBazaarProject
             this.lblWeeklyMonday.AutoSize = true;
             this.lblWeeklyMonday.Location = new System.Drawing.Point(118, 28);
             this.lblWeeklyMonday.Name = "lblWeeklyMonday";
-            this.lblWeeklyMonday.Size = new System.Drawing.Size(64, 17);
+            this.lblWeeklyMonday.Size = new System.Drawing.Size(61, 18);
             this.lblWeeklyMonday.TabIndex = 2;
             this.lblWeeklyMonday.Text = "Monday";
             // 
@@ -891,7 +891,7 @@ namespace MediaBazaarProject
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.Controls.Add(this.lbMondayMorning, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbMondayMidday, 0, 1);
@@ -926,190 +926,190 @@ namespace MediaBazaarProject
             // lbMondayMorning
             // 
             this.lbMondayMorning.FormattingEnabled = true;
-            this.lbMondayMorning.ItemHeight = 17;
+            this.lbMondayMorning.ItemHeight = 18;
             this.lbMondayMorning.Location = new System.Drawing.Point(3, 3);
             this.lbMondayMorning.Name = "lbMondayMorning";
-            this.lbMondayMorning.Size = new System.Drawing.Size(137, 89);
+            this.lbMondayMorning.Size = new System.Drawing.Size(137, 76);
             this.lbMondayMorning.TabIndex = 0;
             // 
             // lbMondayMidday
             // 
             this.lbMondayMidday.FormattingEnabled = true;
-            this.lbMondayMidday.ItemHeight = 17;
+            this.lbMondayMidday.ItemHeight = 18;
             this.lbMondayMidday.Location = new System.Drawing.Point(3, 107);
             this.lbMondayMidday.Name = "lbMondayMidday";
-            this.lbMondayMidday.Size = new System.Drawing.Size(137, 106);
+            this.lbMondayMidday.Size = new System.Drawing.Size(137, 94);
             this.lbMondayMidday.TabIndex = 1;
             // 
             // lbMondayEvening
             // 
             this.lbMondayEvening.FormattingEnabled = true;
-            this.lbMondayEvening.ItemHeight = 17;
+            this.lbMondayEvening.ItemHeight = 18;
             this.lbMondayEvening.Location = new System.Drawing.Point(3, 235);
             this.lbMondayEvening.Name = "lbMondayEvening";
-            this.lbMondayEvening.Size = new System.Drawing.Size(137, 106);
+            this.lbMondayEvening.Size = new System.Drawing.Size(137, 94);
             this.lbMondayEvening.TabIndex = 2;
             // 
             // lbTuesdayMorning
             // 
             this.lbTuesdayMorning.FormattingEnabled = true;
-            this.lbTuesdayMorning.ItemHeight = 17;
-            this.lbTuesdayMorning.Location = new System.Drawing.Point(147, 3);
+            this.lbTuesdayMorning.ItemHeight = 18;
+            this.lbTuesdayMorning.Location = new System.Drawing.Point(146, 3);
             this.lbTuesdayMorning.Name = "lbTuesdayMorning";
-            this.lbTuesdayMorning.Size = new System.Drawing.Size(140, 89);
+            this.lbTuesdayMorning.Size = new System.Drawing.Size(140, 76);
             this.lbTuesdayMorning.TabIndex = 3;
             // 
             // lbTuesdayMidday
             // 
             this.lbTuesdayMidday.FormattingEnabled = true;
-            this.lbTuesdayMidday.ItemHeight = 17;
-            this.lbTuesdayMidday.Location = new System.Drawing.Point(147, 107);
+            this.lbTuesdayMidday.ItemHeight = 18;
+            this.lbTuesdayMidday.Location = new System.Drawing.Point(146, 107);
             this.lbTuesdayMidday.Name = "lbTuesdayMidday";
-            this.lbTuesdayMidday.Size = new System.Drawing.Size(140, 106);
+            this.lbTuesdayMidday.Size = new System.Drawing.Size(140, 94);
             this.lbTuesdayMidday.TabIndex = 4;
             // 
             // lbTuesdayEvening
             // 
             this.lbTuesdayEvening.FormattingEnabled = true;
-            this.lbTuesdayEvening.ItemHeight = 17;
-            this.lbTuesdayEvening.Location = new System.Drawing.Point(147, 235);
+            this.lbTuesdayEvening.ItemHeight = 18;
+            this.lbTuesdayEvening.Location = new System.Drawing.Point(146, 235);
             this.lbTuesdayEvening.Name = "lbTuesdayEvening";
-            this.lbTuesdayEvening.Size = new System.Drawing.Size(140, 106);
+            this.lbTuesdayEvening.Size = new System.Drawing.Size(140, 94);
             this.lbTuesdayEvening.TabIndex = 5;
             // 
             // lbWednesdayMorning
             // 
             this.lbWednesdayMorning.FormattingEnabled = true;
-            this.lbWednesdayMorning.ItemHeight = 17;
-            this.lbWednesdayMorning.Location = new System.Drawing.Point(294, 3);
+            this.lbWednesdayMorning.ItemHeight = 18;
+            this.lbWednesdayMorning.Location = new System.Drawing.Point(292, 3);
             this.lbWednesdayMorning.Name = "lbWednesdayMorning";
-            this.lbWednesdayMorning.Size = new System.Drawing.Size(166, 89);
+            this.lbWednesdayMorning.Size = new System.Drawing.Size(166, 76);
             this.lbWednesdayMorning.TabIndex = 6;
             // 
             // lbWednesdayMidday
             // 
             this.lbWednesdayMidday.FormattingEnabled = true;
-            this.lbWednesdayMidday.ItemHeight = 17;
-            this.lbWednesdayMidday.Location = new System.Drawing.Point(294, 107);
+            this.lbWednesdayMidday.ItemHeight = 18;
+            this.lbWednesdayMidday.Location = new System.Drawing.Point(292, 107);
             this.lbWednesdayMidday.Name = "lbWednesdayMidday";
-            this.lbWednesdayMidday.Size = new System.Drawing.Size(166, 106);
+            this.lbWednesdayMidday.Size = new System.Drawing.Size(166, 94);
             this.lbWednesdayMidday.TabIndex = 7;
             // 
             // lbWednesdayEvening
             // 
             this.lbWednesdayEvening.FormattingEnabled = true;
-            this.lbWednesdayEvening.ItemHeight = 17;
-            this.lbWednesdayEvening.Location = new System.Drawing.Point(294, 235);
+            this.lbWednesdayEvening.ItemHeight = 18;
+            this.lbWednesdayEvening.Location = new System.Drawing.Point(292, 235);
             this.lbWednesdayEvening.Name = "lbWednesdayEvening";
-            this.lbWednesdayEvening.Size = new System.Drawing.Size(166, 106);
+            this.lbWednesdayEvening.Size = new System.Drawing.Size(166, 94);
             this.lbWednesdayEvening.TabIndex = 8;
             // 
             // lbThursdayMorning
             // 
             this.lbThursdayMorning.FormattingEnabled = true;
-            this.lbThursdayMorning.ItemHeight = 17;
-            this.lbThursdayMorning.Location = new System.Drawing.Point(468, 3);
+            this.lbThursdayMorning.ItemHeight = 18;
+            this.lbThursdayMorning.Location = new System.Drawing.Point(466, 3);
             this.lbThursdayMorning.Name = "lbThursdayMorning";
-            this.lbThursdayMorning.Size = new System.Drawing.Size(158, 89);
+            this.lbThursdayMorning.Size = new System.Drawing.Size(158, 76);
             this.lbThursdayMorning.TabIndex = 9;
             // 
             // lbThursdayMidday
             // 
             this.lbThursdayMidday.FormattingEnabled = true;
-            this.lbThursdayMidday.ItemHeight = 17;
-            this.lbThursdayMidday.Location = new System.Drawing.Point(468, 107);
+            this.lbThursdayMidday.ItemHeight = 18;
+            this.lbThursdayMidday.Location = new System.Drawing.Point(466, 107);
             this.lbThursdayMidday.Name = "lbThursdayMidday";
-            this.lbThursdayMidday.Size = new System.Drawing.Size(158, 106);
+            this.lbThursdayMidday.Size = new System.Drawing.Size(158, 94);
             this.lbThursdayMidday.TabIndex = 10;
             // 
             // lbThursdayEvening
             // 
             this.lbThursdayEvening.FormattingEnabled = true;
-            this.lbThursdayEvening.ItemHeight = 17;
-            this.lbThursdayEvening.Location = new System.Drawing.Point(468, 235);
+            this.lbThursdayEvening.ItemHeight = 18;
+            this.lbThursdayEvening.Location = new System.Drawing.Point(466, 235);
             this.lbThursdayEvening.Name = "lbThursdayEvening";
-            this.lbThursdayEvening.Size = new System.Drawing.Size(158, 106);
+            this.lbThursdayEvening.Size = new System.Drawing.Size(158, 94);
             this.lbThursdayEvening.TabIndex = 11;
             // 
             // lbFridayMorning
             // 
             this.lbFridayMorning.FormattingEnabled = true;
-            this.lbFridayMorning.ItemHeight = 17;
-            this.lbFridayMorning.Location = new System.Drawing.Point(636, 3);
+            this.lbFridayMorning.ItemHeight = 18;
+            this.lbFridayMorning.Location = new System.Drawing.Point(634, 3);
             this.lbFridayMorning.Name = "lbFridayMorning";
-            this.lbFridayMorning.Size = new System.Drawing.Size(165, 89);
+            this.lbFridayMorning.Size = new System.Drawing.Size(165, 76);
             this.lbFridayMorning.TabIndex = 12;
             // 
             // lbFridayMidday
             // 
             this.lbFridayMidday.FormattingEnabled = true;
-            this.lbFridayMidday.ItemHeight = 17;
-            this.lbFridayMidday.Location = new System.Drawing.Point(636, 107);
+            this.lbFridayMidday.ItemHeight = 18;
+            this.lbFridayMidday.Location = new System.Drawing.Point(634, 107);
             this.lbFridayMidday.Name = "lbFridayMidday";
-            this.lbFridayMidday.Size = new System.Drawing.Size(165, 106);
+            this.lbFridayMidday.Size = new System.Drawing.Size(165, 94);
             this.lbFridayMidday.TabIndex = 13;
             // 
             // lbFridayEvening
             // 
             this.lbFridayEvening.FormattingEnabled = true;
-            this.lbFridayEvening.ItemHeight = 17;
-            this.lbFridayEvening.Location = new System.Drawing.Point(636, 235);
+            this.lbFridayEvening.ItemHeight = 18;
+            this.lbFridayEvening.Location = new System.Drawing.Point(634, 235);
             this.lbFridayEvening.Name = "lbFridayEvening";
-            this.lbFridayEvening.Size = new System.Drawing.Size(165, 106);
+            this.lbFridayEvening.Size = new System.Drawing.Size(165, 94);
             this.lbFridayEvening.TabIndex = 14;
             // 
             // lbSaturdayMorning
             // 
             this.lbSaturdayMorning.FormattingEnabled = true;
-            this.lbSaturdayMorning.ItemHeight = 17;
-            this.lbSaturdayMorning.Location = new System.Drawing.Point(809, 3);
+            this.lbSaturdayMorning.ItemHeight = 18;
+            this.lbSaturdayMorning.Location = new System.Drawing.Point(807, 3);
             this.lbSaturdayMorning.Name = "lbSaturdayMorning";
-            this.lbSaturdayMorning.Size = new System.Drawing.Size(154, 89);
+            this.lbSaturdayMorning.Size = new System.Drawing.Size(154, 76);
             this.lbSaturdayMorning.TabIndex = 15;
             // 
             // lbSaturdayMidday
             // 
             this.lbSaturdayMidday.FormattingEnabled = true;
-            this.lbSaturdayMidday.ItemHeight = 17;
-            this.lbSaturdayMidday.Location = new System.Drawing.Point(809, 107);
+            this.lbSaturdayMidday.ItemHeight = 18;
+            this.lbSaturdayMidday.Location = new System.Drawing.Point(807, 107);
             this.lbSaturdayMidday.Name = "lbSaturdayMidday";
-            this.lbSaturdayMidday.Size = new System.Drawing.Size(154, 106);
+            this.lbSaturdayMidday.Size = new System.Drawing.Size(154, 94);
             this.lbSaturdayMidday.TabIndex = 16;
             // 
             // lbSaturdayEvening
             // 
             this.lbSaturdayEvening.FormattingEnabled = true;
-            this.lbSaturdayEvening.ItemHeight = 17;
-            this.lbSaturdayEvening.Location = new System.Drawing.Point(809, 235);
+            this.lbSaturdayEvening.ItemHeight = 18;
+            this.lbSaturdayEvening.Location = new System.Drawing.Point(807, 235);
             this.lbSaturdayEvening.Name = "lbSaturdayEvening";
-            this.lbSaturdayEvening.Size = new System.Drawing.Size(154, 106);
+            this.lbSaturdayEvening.Size = new System.Drawing.Size(154, 94);
             this.lbSaturdayEvening.TabIndex = 17;
             // 
             // lbSundayMorning
             // 
             this.lbSundayMorning.FormattingEnabled = true;
-            this.lbSundayMorning.ItemHeight = 17;
-            this.lbSundayMorning.Location = new System.Drawing.Point(971, 3);
+            this.lbSundayMorning.ItemHeight = 18;
+            this.lbSundayMorning.Location = new System.Drawing.Point(969, 3);
             this.lbSundayMorning.Name = "lbSundayMorning";
-            this.lbSundayMorning.Size = new System.Drawing.Size(131, 89);
+            this.lbSundayMorning.Size = new System.Drawing.Size(131, 76);
             this.lbSundayMorning.TabIndex = 18;
             // 
             // lbSundayMidday
             // 
             this.lbSundayMidday.FormattingEnabled = true;
-            this.lbSundayMidday.ItemHeight = 17;
-            this.lbSundayMidday.Location = new System.Drawing.Point(971, 107);
+            this.lbSundayMidday.ItemHeight = 18;
+            this.lbSundayMidday.Location = new System.Drawing.Point(969, 107);
             this.lbSundayMidday.Name = "lbSundayMidday";
-            this.lbSundayMidday.Size = new System.Drawing.Size(131, 106);
+            this.lbSundayMidday.Size = new System.Drawing.Size(131, 94);
             this.lbSundayMidday.TabIndex = 19;
             // 
             // lbSundayEvening
             // 
             this.lbSundayEvening.FormattingEnabled = true;
-            this.lbSundayEvening.ItemHeight = 17;
-            this.lbSundayEvening.Location = new System.Drawing.Point(971, 235);
+            this.lbSundayEvening.ItemHeight = 18;
+            this.lbSundayEvening.Location = new System.Drawing.Point(969, 235);
             this.lbSundayEvening.Name = "lbSundayEvening";
-            this.lbSundayEvening.Size = new System.Drawing.Size(131, 106);
+            this.lbSundayEvening.Size = new System.Drawing.Size(131, 94);
             this.lbSundayEvening.TabIndex = 20;
             // 
             // btnHome3
@@ -1130,11 +1130,11 @@ namespace MediaBazaarProject
             // 
             // admin_managerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1240, 438);
             this.Controls.Add(this.tabAdmin);
-            this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "admin_managerForm";
             this.Text = "admin_managerForm";
             this.Load += new System.EventHandler(this.admin_managerForm_Load);
