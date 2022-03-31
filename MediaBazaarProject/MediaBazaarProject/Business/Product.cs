@@ -15,11 +15,16 @@ namespace MediaBazaarProject.Business
         public string ProductDescription { get; set; }
 
         public string ProductManufacturer { get; set; }
+        public EnumCategory ProductCategory { get; set; }
 
-        public string QuantityWarehouse { get; set; }
+        public int QuantityWarehouse { get; set; }
 
-        public string QuantitySales { get; set; }
+        public int QuantitySales { get; set; }
+        public override string ToString()
+        {
+            return $"ProductId: {this.ProductId}, Pr.Name: {this.ProductName}";
+        }
 
-        public string ProductCategory { get; set; }
     }
+
 }

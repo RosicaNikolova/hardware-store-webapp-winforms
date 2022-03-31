@@ -21,6 +21,7 @@ namespace MediaBazaarProject
     {
         EmployeeManager employeeManager = new EmployeeManager();
         ShiftManager shiftManager = new ShiftManager();
+        ProductManager productManager = new ProductManager();
         string role = string.Empty;
 
         public admin_managerForm()
@@ -624,6 +625,49 @@ namespace MediaBazaarProject
             lbSundayMorning.Items.Clear();
             lbSundayMidday.Items.Clear();
             lbSundayEvening.Items.Clear();
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            int option = 1;
+            AddEditProduct addEditProduct = new AddEditProduct(option);
+            addEditProduct.Show();
+        }
+        private void btnEditProduct_Click(object sender, EventArgs e)
+        {
+            object selectedProduct = lbAllProducts.SelectedItem;
+            if (selectedProduct != null)
+            {
+                Product product = ((Product)selectedProduct);
+                int option = 2;
+                AddEditProduct addEditProduct = new AddEditProduct(option, product);
+                addEditProduct.Show();
+            }
+            else {
+                MessageBox.Show("You have to select an item first!!");
+            }
+        }
+        private void btnStockManagment_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabStockManagement;
+            lbAllProducts.Items.Clear();
+            foreach (Product p in productManager.GetAllProductsList()) {
+                lbAllProducts.Items.Add(p);
+            }
+            
+        }
+        private void btnReloadProducts_Click(object sender, EventArgs e)
+        {
+            lbAllProducts.Items.Clear();
+            foreach (Product p in productManager.GetAllProductsList())
+            {
+                lbAllProducts.Items.Add(p);
+            }
+        }
+
+        private void btnHomeStMngmnt_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab =  tabAdminHome;
         }
     }
     }

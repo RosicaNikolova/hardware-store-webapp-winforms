@@ -81,5 +81,28 @@ namespace MediaBazaarProject.Business
 
             return shift;
         }
+        public List<EnumCategory> listCategories() {
+            EnumCategory[] array = (EnumCategory[])Enum.GetValues(typeof(EnumCategory));
+            List<EnumCategory> listCategories = new List<EnumCategory>();
+            foreach (EnumCategory i in array ) {
+                listCategories.Add(i);
+            }
+            return listCategories;
+        }
+        public EnumCategory getProductCategory(string category) {
+            EnumCategory enumCategory = EnumCategory.MOBILE;
+            switch (category) {
+                case "COMPUTER":
+                    enumCategory = EnumCategory.COMPUTER;
+                    break;
+                case "HOSUEHOLD":
+                    enumCategory = EnumCategory.HOUSEHOLD;
+                    break;
+                case "BEAUTYandCARE":
+                    enumCategory = EnumCategory.BEAUTYandCARE;
+                    break;
+            }
+            return enumCategory;
+        }
     }
 }
