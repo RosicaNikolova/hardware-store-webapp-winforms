@@ -45,10 +45,14 @@ namespace MediaBazaarProject
                         admin_managerForm adminManagerForm = new admin_managerForm("manager");
                         adminManagerForm.Show();
                     }
-                    else if (user.Position == Position.WORKER)
-
+                    else if (user.Position == Position.SALES)
                     {
-                        WorkerForm employeeForm = new WorkerForm(user);
+                        WorkerForm employeeForm = new WorkerForm(user, "sales");
+                        employeeForm.Show();
+                    }
+                    else if(user.Position == Position.WAREHOUSE)
+                    {
+                        WorkerForm employeeForm = new WorkerForm(user, "warehouse");
                         employeeForm.Show();
                     }
                     else
@@ -68,7 +72,5 @@ namespace MediaBazaarProject
             }
 
         }
-
-        
     }
 }

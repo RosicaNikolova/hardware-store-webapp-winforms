@@ -10,6 +10,7 @@ namespace MediaBazaarProject
     {
         ADMIN = 1,
         MANAGER = 2,
-        WORKER = 3
+        SALES = 3,
+        WAREHOUSE = 4
     }
 }

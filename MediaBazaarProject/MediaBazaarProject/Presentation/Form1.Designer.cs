@@ -45,7 +45,7 @@ namespace MediaBazaarProject
             this.lblEmail.BackColor = System.Drawing.Color.White;
             this.lblEmail.Location = new System.Drawing.Point(234, 132);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 17);
+            this.lblEmail.Size = new System.Drawing.Size(39, 14);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Email";
             // 
@@ -55,7 +55,7 @@ namespace MediaBazaarProject
             this.lblPassword.BackColor = System.Drawing.Color.White;
             this.lblPassword.Location = new System.Drawing.Point(234, 215);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(80, 17);
+            this.lblPassword.Size = new System.Drawing.Size(66, 14);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password";
             // 
@@ -64,7 +64,7 @@ namespace MediaBazaarProject
             this.tbEmailLogin.Location = new System.Drawing.Point(234, 160);
             this.tbEmailLogin.Name = "tbEmailLogin";
             this.tbEmailLogin.PlaceholderText = "Type email here...";
-            this.tbEmailLogin.Size = new System.Drawing.Size(211, 25);
+            this.tbEmailLogin.Size = new System.Drawing.Size(211, 21);
             this.tbEmailLogin.TabIndex = 2;
             // 
             // tbPasswordLogin
@@ -75,7 +75,7 @@ namespace MediaBazaarProject
             this.tbPasswordLogin.Name = "tbPasswordLogin";
             this.tbPasswordLogin.PasswordChar = '*';
             this.tbPasswordLogin.PlaceholderText = "Type your password here...";
-            this.tbPasswordLogin.Size = new System.Drawing.Size(211, 25);
+            this.tbPasswordLogin.Size = new System.Drawing.Size(211, 21);
             this.tbPasswordLogin.TabIndex = 3;
             // 
             // btnLogin
@@ -108,13 +108,13 @@ namespace MediaBazaarProject
             this.label1.ForeColor = System.Drawing.Color.Coral;
             this.label1.Location = new System.Drawing.Point(261, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 54);
+            this.label1.Size = new System.Drawing.Size(134, 44);
             this.label1.TabIndex = 6;
             this.label1.Text = "Log In";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(703, 456);

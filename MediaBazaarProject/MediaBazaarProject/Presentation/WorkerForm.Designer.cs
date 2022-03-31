@@ -29,61 +29,273 @@ namespace MediaBazaarProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.TabWorker = new System.Windows.Forms.TabControl();
+            this.tabWorkerHome = new System.Windows.Forms.TabPage();
+            this.tabSales = new System.Windows.Forms.TabPage();
+            this.tabWarehouse = new System.Windows.Forms.TabPage();
+            this.btnWarehouse = new System.Windows.Forms.Button();
+            this.btnSales = new System.Windows.Forms.Button();
             this.lbxShiftEmployeeDay = new System.Windows.Forms.ListBox();
             this.lblshift = new System.Windows.Forms.Label();
             this.dateWorker = new System.Windows.Forms.DateTimePicker();
+            this.lbxStockSales = new System.Windows.Forms.ListBox();
+            this.lbxStockWarehouse = new System.Windows.Forms.ListBox();
+            this.btnRequestItem = new System.Windows.Forms.Button();
+            this.btnAddStock = new System.Windows.Forms.Button();
+            this.lblAmountSales = new System.Windows.Forms.Label();
+            this.nudAmountSales = new System.Windows.Forms.NumericUpDown();
+            this.nudAmountWarehouse = new System.Windows.Forms.NumericUpDown();
+            this.lblAmountWarehouse = new System.Windows.Forms.Label();
+            this.btnHomeWarehouse = new System.Windows.Forms.Button();
+            this.btnHomeSales = new System.Windows.Forms.Button();
+            this.TabWorker.SuspendLayout();
+            this.tabWorkerHome.SuspendLayout();
+            this.tabSales.SuspendLayout();
+            this.tabWarehouse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountSales)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountWarehouse)).BeginInit();
             this.SuspendLayout();
+            // 
+            // TabWorker
+            // 
+            this.TabWorker.Controls.Add(this.tabWorkerHome);
+            this.TabWorker.Controls.Add(this.tabSales);
+            this.TabWorker.Controls.Add(this.tabWarehouse);
+            this.TabWorker.Location = new System.Drawing.Point(12, 3);
+            this.TabWorker.Name = "TabWorker";
+            this.TabWorker.SelectedIndex = 0;
+            this.TabWorker.Size = new System.Drawing.Size(876, 367);
+            this.TabWorker.TabIndex = 15;
+            // 
+            // tabWorkerHome
+            // 
+            this.tabWorkerHome.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tabWorkerHome.Controls.Add(this.btnWarehouse);
+            this.tabWorkerHome.Controls.Add(this.btnSales);
+            this.tabWorkerHome.Controls.Add(this.lbxShiftEmployeeDay);
+            this.tabWorkerHome.Controls.Add(this.lblshift);
+            this.tabWorkerHome.Controls.Add(this.dateWorker);
+            this.tabWorkerHome.Location = new System.Drawing.Point(4, 23);
+            this.tabWorkerHome.Name = "tabWorkerHome";
+            this.tabWorkerHome.Padding = new System.Windows.Forms.Padding(3);
+            this.tabWorkerHome.Size = new System.Drawing.Size(868, 340);
+            this.tabWorkerHome.TabIndex = 0;
+            this.tabWorkerHome.Text = "WorkerHome";
+            // 
+            // tabSales
+            // 
+            this.tabSales.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tabSales.Controls.Add(this.btnHomeSales);
+            this.tabSales.Controls.Add(this.nudAmountSales);
+            this.tabSales.Controls.Add(this.lblAmountSales);
+            this.tabSales.Controls.Add(this.btnRequestItem);
+            this.tabSales.Controls.Add(this.lbxStockSales);
+            this.tabSales.Location = new System.Drawing.Point(4, 23);
+            this.tabSales.Name = "tabSales";
+            this.tabSales.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSales.Size = new System.Drawing.Size(868, 340);
+            this.tabSales.TabIndex = 1;
+            this.tabSales.Text = "SalesTab";
+            // 
+            // tabWarehouse
+            // 
+            this.tabWarehouse.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tabWarehouse.Controls.Add(this.btnHomeWarehouse);
+            this.tabWarehouse.Controls.Add(this.nudAmountWarehouse);
+            this.tabWarehouse.Controls.Add(this.lblAmountWarehouse);
+            this.tabWarehouse.Controls.Add(this.btnAddStock);
+            this.tabWarehouse.Controls.Add(this.lbxStockWarehouse);
+            this.tabWarehouse.Location = new System.Drawing.Point(4, 23);
+            this.tabWarehouse.Name = "tabWarehouse";
+            this.tabWarehouse.Padding = new System.Windows.Forms.Padding(3);
+            this.tabWarehouse.Size = new System.Drawing.Size(868, 340);
+            this.tabWarehouse.TabIndex = 2;
+            this.tabWarehouse.Text = "WarehouseTab";
+            // 
+            // btnWarehouse
+            // 
+            this.btnWarehouse.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnWarehouse.Location = new System.Drawing.Point(61, 166);
+            this.btnWarehouse.Name = "btnWarehouse";
+            this.btnWarehouse.Size = new System.Drawing.Size(130, 124);
+            this.btnWarehouse.TabIndex = 24;
+            this.btnWarehouse.Text = "Warehouse requests";
+            this.btnWarehouse.UseVisualStyleBackColor = false;
+            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
+            // 
+            // btnSales
+            // 
+            this.btnSales.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnSales.Location = new System.Drawing.Point(61, 11);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(130, 124);
+            this.btnSales.TabIndex = 23;
+            this.btnSales.Text = "Sales Request";
+            this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // lbxShiftEmployeeDay
             // 
             this.lbxShiftEmployeeDay.FormattingEnabled = true;
-            this.lbxShiftEmployeeDay.ItemHeight = 17;
-            this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(333, 158);
+            this.lbxShiftEmployeeDay.ItemHeight = 14;
+            this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(333, 118);
             this.lbxShiftEmployeeDay.Name = "lbxShiftEmployeeDay";
-            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(212, 106);
-            this.lbxShiftEmployeeDay.TabIndex = 12;
+            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(212, 102);
+            this.lbxShiftEmployeeDay.TabIndex = 22;
             // 
             // lblshift
             // 
             this.lblshift.AutoSize = true;
-            this.lblshift.Location = new System.Drawing.Point(365, 106);
+            this.lblshift.Location = new System.Drawing.Point(365, 66);
             this.lblshift.Name = "lblshift";
-            this.lblshift.Size = new System.Drawing.Size(142, 17);
-            this.lblshift.TabIndex = 9;
+            this.lblshift.Size = new System.Drawing.Size(113, 14);
+            this.lblshift.TabIndex = 21;
             this.lblshift.Text = "Shifts for the date:";
             // 
             // dateWorker
             // 
-            this.dateWorker.Location = new System.Drawing.Point(294, 42);
+            this.dateWorker.Location = new System.Drawing.Point(294, 2);
             this.dateWorker.MaxDate = new System.DateTime(2022, 3, 22, 0, 0, 0, 0);
             this.dateWorker.MinDate = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dateWorker.Name = "dateWorker";
-            this.dateWorker.Size = new System.Drawing.Size(286, 25);
-            this.dateWorker.TabIndex = 8;
+            this.dateWorker.Size = new System.Drawing.Size(286, 21);
+            this.dateWorker.TabIndex = 20;
             this.dateWorker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
-            this.dateWorker.ValueChanged += new System.EventHandler(this.dateWorker_ValueChanged);
+            // 
+            // lbxStockSales
+            // 
+            this.lbxStockSales.FormattingEnabled = true;
+            this.lbxStockSales.ItemHeight = 14;
+            this.lbxStockSales.Location = new System.Drawing.Point(459, 65);
+            this.lbxStockSales.Name = "lbxStockSales";
+            this.lbxStockSales.Size = new System.Drawing.Size(386, 256);
+            this.lbxStockSales.TabIndex = 0;
+            // 
+            // lbxStockWarehouse
+            // 
+            this.lbxStockWarehouse.FormattingEnabled = true;
+            this.lbxStockWarehouse.ItemHeight = 14;
+            this.lbxStockWarehouse.Location = new System.Drawing.Point(459, 65);
+            this.lbxStockWarehouse.Name = "lbxStockWarehouse";
+            this.lbxStockWarehouse.Size = new System.Drawing.Size(386, 256);
+            this.lbxStockWarehouse.TabIndex = 0;
+            // 
+            // btnRequestItem
+            // 
+            this.btnRequestItem.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnRequestItem.Location = new System.Drawing.Point(78, 142);
+            this.btnRequestItem.Name = "btnRequestItem";
+            this.btnRequestItem.Size = new System.Drawing.Size(130, 124);
+            this.btnRequestItem.TabIndex = 24;
+            this.btnRequestItem.Text = "Request Item";
+            this.btnRequestItem.UseVisualStyleBackColor = false;
+            // 
+            // btnAddStock
+            // 
+            this.btnAddStock.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnAddStock.Location = new System.Drawing.Point(78, 142);
+            this.btnAddStock.Name = "btnAddStock";
+            this.btnAddStock.Size = new System.Drawing.Size(130, 124);
+            this.btnAddStock.TabIndex = 24;
+            this.btnAddStock.Text = "Add Stock";
+            this.btnAddStock.UseVisualStyleBackColor = false;
+            // 
+            // lblAmountSales
+            // 
+            this.lblAmountSales.AutoSize = true;
+            this.lblAmountSales.Location = new System.Drawing.Point(78, 49);
+            this.lblAmountSales.Name = "lblAmountSales";
+            this.lblAmountSales.Size = new System.Drawing.Size(56, 14);
+            this.lblAmountSales.TabIndex = 25;
+            this.lblAmountSales.Text = "Amount:";
+            // 
+            // nudAmountSales
+            // 
+            this.nudAmountSales.Location = new System.Drawing.Point(153, 47);
+            this.nudAmountSales.Name = "nudAmountSales";
+            this.nudAmountSales.Size = new System.Drawing.Size(120, 21);
+            this.nudAmountSales.TabIndex = 26;
+            // 
+            // nudAmountWarehouse
+            // 
+            this.nudAmountWarehouse.Location = new System.Drawing.Point(153, 47);
+            this.nudAmountWarehouse.Name = "nudAmountWarehouse";
+            this.nudAmountWarehouse.Size = new System.Drawing.Size(120, 21);
+            this.nudAmountWarehouse.TabIndex = 28;
+            // 
+            // lblAmountWarehouse
+            // 
+            this.lblAmountWarehouse.AutoSize = true;
+            this.lblAmountWarehouse.Location = new System.Drawing.Point(78, 49);
+            this.lblAmountWarehouse.Name = "lblAmountWarehouse";
+            this.lblAmountWarehouse.Size = new System.Drawing.Size(56, 14);
+            this.lblAmountWarehouse.TabIndex = 27;
+            this.lblAmountWarehouse.Text = "Amount:";
+            // 
+            // btnHomeWarehouse
+            // 
+            this.btnHomeWarehouse.Location = new System.Drawing.Point(771, 25);
+            this.btnHomeWarehouse.Name = "btnHomeWarehouse";
+            this.btnHomeWarehouse.Size = new System.Drawing.Size(75, 23);
+            this.btnHomeWarehouse.TabIndex = 29;
+            this.btnHomeWarehouse.Text = "Home";
+            this.btnHomeWarehouse.UseVisualStyleBackColor = true;
+            this.btnHomeWarehouse.Click += new System.EventHandler(this.btnHomeWarehouse_Click);
+            // 
+            // btnHomeSales
+            // 
+            this.btnHomeSales.Location = new System.Drawing.Point(771, 25);
+            this.btnHomeSales.Name = "btnHomeSales";
+            this.btnHomeSales.Size = new System.Drawing.Size(75, 23);
+            this.btnHomeSales.TabIndex = 30;
+            this.btnHomeSales.Text = "Home";
+            this.btnHomeSales.UseVisualStyleBackColor = true;
+            this.btnHomeSales.Click += new System.EventHandler(this.btnHomeSales_Click);
             // 
             // WorkerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(900, 382);
-            this.Controls.Add(this.lbxShiftEmployeeDay);
-            this.Controls.Add(this.lblshift);
-            this.Controls.Add(this.dateWorker);
+            this.Controls.Add(this.TabWorker);
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "WorkerForm";
             this.Text = "WorkerForm";
             this.Load += new System.EventHandler(this.WorkerForm_Load);
+            this.TabWorker.ResumeLayout(false);
+            this.tabWorkerHome.ResumeLayout(false);
+            this.tabWorkerHome.PerformLayout();
+            this.tabSales.ResumeLayout(false);
+            this.tabSales.PerformLayout();
+            this.tabWarehouse.ResumeLayout(false);
+            this.tabWarehouse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountSales)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudAmountWarehouse)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TabControl TabWorker;
+        private System.Windows.Forms.TabPage tabWorkerHome;
+        private System.Windows.Forms.Button btnWarehouse;
+        private System.Windows.Forms.Button btnSales;
         private System.Windows.Forms.ListBox lbxShiftEmployeeDay;
         private System.Windows.Forms.Label lblshift;
         private System.Windows.Forms.DateTimePicker dateWorker;
+        private System.Windows.Forms.TabPage tabSales;
+        private System.Windows.Forms.TabPage tabWarehouse;
+        private System.Windows.Forms.NumericUpDown nudAmountSales;
+        private System.Windows.Forms.Label lblAmountSales;
+        private System.Windows.Forms.Button btnRequestItem;
+        private System.Windows.Forms.ListBox lbxStockSales;
+        private System.Windows.Forms.NumericUpDown nudAmountWarehouse;
+        private System.Windows.Forms.Label lblAmountWarehouse;
+        private System.Windows.Forms.Button btnAddStock;
+        private System.Windows.Forms.ListBox lbxStockWarehouse;
+        private System.Windows.Forms.Button btnHomeSales;
+        private System.Windows.Forms.Button btnHomeWarehouse;
     }
 }

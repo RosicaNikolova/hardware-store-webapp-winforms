@@ -10,7 +10,7 @@ namespace MediaBazaarProject.Business
     {
         public Position SetPosition(int position)
         {
-            Position setPosition = Position.WORKER;
+            Position setPosition = Position.SALES;
 
             switch (position)
             {
@@ -23,9 +23,12 @@ namespace MediaBazaarProject.Business
                     break;
 
                 case 2:
-                    setPosition = Position.WORKER;
+                    setPosition = Position.SALES;
                     break;
 
+                case 3:
+                    setPosition = Position.WAREHOUSE;
+                    break;
 
             }
             return setPosition;
@@ -33,7 +36,7 @@ namespace MediaBazaarProject.Business
         }
         public Position GetPosition(string position)
         {
-            Position setPosition = Position.WORKER;
+            Position setPosition = Position.SALES;
 
             switch (position)
             {
@@ -45,11 +48,13 @@ namespace MediaBazaarProject.Business
                     setPosition = Position.MANAGER;
                     break;
 
-                case "Worker":
-                    setPosition = Position.WORKER;
+                case "Sales":
+                    setPosition = Position.SALES;
                     break;
 
-
+                case "Warehouse":
+                    setPosition = Position.WAREHOUSE;
+                        break;
             }
             return setPosition;
 
