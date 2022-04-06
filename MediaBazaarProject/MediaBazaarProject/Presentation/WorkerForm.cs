@@ -15,6 +15,7 @@ namespace MediaBazaarProject
     {
         User user;
         ShiftManager shiftManager = new ShiftManager();
+        RequestManager requestManager = new RequestManager();
         string role = string.Empty;
         public WorkerForm()
         {

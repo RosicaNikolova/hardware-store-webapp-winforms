@@ -35,7 +35,7 @@ namespace MediaBazaarProject.Persistence
                     product.ProductManufacturer= dr.GetString("ProductManufacturer");
                     product.QuantityWarehouse = dr.GetInt32("QuantityWarehouse");
                     product.QuantitySales= dr.GetInt32("QuantitySales");
-                    product.ProductCategory = enumManager.getProductCategory(dr.GetString("ProductCategory"));
+                    product.ProductCategory = enumManager.GetProductCategory(dr.GetString("ProductCategory"));
                     allProducts.Add(product);
                 }
             }
@@ -54,7 +54,8 @@ namespace MediaBazaarProject.Persistence
         //}
         public void CreateProduct(Product product)
         {
-            try {
+            try 
+            {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
                     string sql = "insert into products (ProductName,ProductDesc,ProductManufacturer,QuantityWarehouse,QuantitySales,ProductCategory) values (@ProductName,@ProductDesc,@ProductManufacturer,@QuantityWarehouse,@QuantitySales,@ProductCategory)";

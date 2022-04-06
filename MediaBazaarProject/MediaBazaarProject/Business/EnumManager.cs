@@ -81,7 +81,8 @@ namespace MediaBazaarProject.Business
 
             return shift;
         }
-        public List<EnumCategory> listCategories() {
+        public List<EnumCategory> ListCategories() 
+        {
             EnumCategory[] array = (EnumCategory[])Enum.GetValues(typeof(EnumCategory));
             List<EnumCategory> listCategories = new List<EnumCategory>();
             foreach (EnumCategory i in array ) {
@@ -89,7 +90,8 @@ namespace MediaBazaarProject.Business
             }
             return listCategories;
         }
-        public EnumCategory getProductCategory(string category) {
+        public EnumCategory GetProductCategory(string category) 
+        {
             EnumCategory enumCategory = EnumCategory.MOBILE;
             switch (category) {
                 case "COMPUTER":
@@ -103,6 +105,26 @@ namespace MediaBazaarProject.Business
                     break;
             }
             return enumCategory;
+        }
+
+        public EnumRequestStatus GetRequestStatus(string status)
+        {
+            EnumRequestStatus enumStatus = EnumRequestStatus.PENDING;
+            switch (status)
+            {
+                case "REJECTED":
+                    enumStatus = EnumRequestStatus.REJECTED;
+                    break;
+
+                case "ACCEPTED":
+                    enumStatus = EnumRequestStatus.ACCEPTED;
+                    break;
+
+                case "PARTIALLY":
+                    enumStatus = EnumRequestStatus.PARTIALLY;
+                    break;
+            }
+            return enumStatus;
         }
     }
 }

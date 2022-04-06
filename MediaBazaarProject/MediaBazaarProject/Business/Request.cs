@@ -16,6 +16,6 @@ namespace MediaBazaarProject.Business
 
         public int RequestedAmount { get; set; }
 
-        public RequestStatus Status { get; set; }
+        public EnumRequestStatus Status { get; set; }
     }
 }

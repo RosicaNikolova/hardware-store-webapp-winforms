@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarProject.Business
 {
-    public enum RequestStatus
+    public enum EnumRequestStatus
     {
         PENDING,
         ACCEPTED,

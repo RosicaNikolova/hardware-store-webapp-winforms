@@ -24,7 +24,7 @@ namespace MediaBazaarProject.Presentation
             InitializeComponent();
             btnAddEdit.Text = "Add";
             lblForm.Text = "Add Product Form";
-            cbCate.Items.Add(enumManager.listCategories());
+            cbCate.Items.Add(enumManager.ListCategories());
         }
         //For editting
         public AddEditProduct(int option, Product product)
@@ -40,7 +40,7 @@ namespace MediaBazaarProject.Presentation
             cbCate.Text = productForUpdate.ProductCategory.ToString();
             tbQWare.Text = productForUpdate.QuantityWarehouse.ToString();
             tbQSale.Text = productForUpdate.QuantitySales.ToString();
-            cbCate.Items.Add(enumManager.listCategories());
+            cbCate.Items.Add(enumManager.ListCategories());
         }
 
         private void btnAddEdit_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace MediaBazaarProject.Presentation
             {
                 if (optionForm == 1)
                 {
-                    productManager.Create(tbName.Text, tbDesc.Text, tbManu.Text, enumManager.getProductCategory(cbCate.Text), Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
+                    productManager.Create(tbName.Text, tbDesc.Text, tbManu.Text, enumManager.GetProductCategory(cbCate.Text), Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
                     MessageBox.Show("Product Added!!!");
                     this.Close();
                 }
@@ -57,7 +57,7 @@ namespace MediaBazaarProject.Presentation
                 {
                     if (productForUpdate != null)
                     {
-                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, tbManu.Text, enumManager.getProductCategory(cbCate.Text), Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
+                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, tbManu.Text, enumManager.GetProductCategory(cbCate.Text), Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
                         MessageBox.Show("Product eddited!!!");
                         this.Close();
                     }
