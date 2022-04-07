@@ -186,7 +186,8 @@ namespace MediaBazaarProject
             this.cbPosition.Items.AddRange(new object[] {
             "Admin",
             "Manager",
-            "Worker"});
+            "Sales",
+            "Warehouse"});
             this.cbPosition.Location = new System.Drawing.Point(168, 459);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(151, 28);
@@ -344,6 +345,17 @@ namespace MediaBazaarProject
             // cbNationality
             // 
             this.cbNationality.FormattingEnabled = true;
+            this.cbNationality.Items.AddRange(new object[] {
+            "Bulgarian",
+            "Greek",
+            "Spanish",
+            "Romanian",
+            "Serbian",
+            "Dutch",
+            "German",
+            "French",
+            "English",
+            "Italian"});
             this.cbNationality.Location = new System.Drawing.Point(168, 253);
             this.cbNationality.Name = "cbNationality";
             this.cbNationality.Size = new System.Drawing.Size(151, 28);
