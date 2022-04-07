@@ -16,7 +16,7 @@ namespace MediaBazaarProject.Persistence
             List<Request> allRequest = new List<Request>();
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "SELECT * FROM requests ORDER BY RequestId";
+                string sql = "SELECT * FROM request ORDER BY RequestId";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();

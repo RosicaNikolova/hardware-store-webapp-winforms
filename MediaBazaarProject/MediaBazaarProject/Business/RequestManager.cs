@@ -16,13 +16,12 @@ namespace MediaBazaarProject.Business
             return requestRepository.GetRequests();
         }
 
-        public void Create(int requestId, int empId, int productId, int requestAmount, EnumRequestStatus status)
+        public void Create(int empId, int productId, int requestAmount, EnumRequestStatus status)
         {
             try
             {
                 Request request = new Request();
                 request.EmployeeId = empId;
-                request.RequestId = requestId;
                 request.ProductId = productId;
                 request.RequestedAmount = requestAmount;
                 request.Status = status;

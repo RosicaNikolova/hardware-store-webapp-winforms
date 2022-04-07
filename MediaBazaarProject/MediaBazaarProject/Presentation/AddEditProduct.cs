@@ -58,7 +58,7 @@ namespace MediaBazaarProject.Presentation
                     if (productForUpdate != null)
                     {
                         productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, tbManu.Text, enumManager.GetProductCategory(cbCate.Text), Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
-                        MessageBox.Show("Product eddited!!!");
+                        MessageBox.Show("Product edited!!!");
                         this.Close();
                     }
                     else

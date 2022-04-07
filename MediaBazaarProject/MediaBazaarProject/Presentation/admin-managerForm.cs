@@ -667,7 +667,7 @@ namespace MediaBazaarProject
 
         private void btnHomeStMngmnt_Click(object sender, EventArgs e)
         {
-            tabAdmin.SelectedTab =  tabAdminHome;
+            tabAdmin.SelectedTab = tabAdminHome;
         }
     }
-    }
+}
