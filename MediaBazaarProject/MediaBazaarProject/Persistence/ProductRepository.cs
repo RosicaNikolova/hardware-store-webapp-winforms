@@ -70,9 +70,29 @@ namespace MediaBazaarProject.Persistence
                     cmd.ExecuteNonQuery();
                 }
             } catch {
-                throw new Exception("There has been an error in ProductRepository");
+                throw new Exception("There has been an error in ProductRepository-CreateProductMethod"); //just for demo, shouldnt say which method
             }
 
+        }
+
+        public void RemoveProduct(Product product)
+        {
+            try
+            {
+                using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+                {
+                    string sql = "Delete from products where ProductId = @ProductId";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("ProductId", product.ProductId);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+                throw new Exception("There has been an error in ProductRepository-RemoveMethod"); //just for demo, shouldnt say which method
+            }
         }
 
         public void UpdateProduct(Product product)

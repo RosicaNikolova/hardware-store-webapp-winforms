@@ -44,7 +44,7 @@ namespace MediaBazaarProject
                 btnEmployeeManagement.Visible = false;
             }
 
-           
+
         }
 
         private Employee selectedEmployee()
@@ -643,31 +643,63 @@ namespace MediaBazaarProject
                 AddEditProduct addEditProduct = new AddEditProduct(option, product);
                 addEditProduct.Show();
             }
-            else {
+            else
+            {
                 MessageBox.Show("You have to select an item first!!");
             }
         }
         private void btnStockManagment_Click(object sender, EventArgs e)
         {
-            tabAdmin.SelectedTab = tabStockManagement;
+            tabAdmin.SelectedTab = tabProductManagement;
             lbAllProducts.Items.Clear();
-            foreach (Product p in productManager.GetAllProductsList()) {
+            foreach (Product p in productManager.GetAllProductsList())
+            {
                 lbAllProducts.Items.Add(p);
             }
-            
+
         }
         private void btnReloadProducts_Click(object sender, EventArgs e)
+        {
+            reloadProductList();
+        }
+
+        private void btnHomeStMngmnt_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAdminHome;
+        }
+
+        private void btnRemoveProduct_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lbAllProducts.SelectedItem != null)
+                {
+                    DialogResult dialogYesNo = MessageBox.Show("You are about to remove the product, are you sure?", "Warning!", MessageBoxButtons.YesNo);
+                    if (dialogYesNo == DialogResult.Yes)
+                    {
+                        productManager.Remove((Product)lbAllProducts.SelectedItem);
+                    MessageBox.Show("Product removed!");
+                    reloadProductList();
+                    }
+                }
+                else
+                {
+                    throw new Exception("First, select product!");
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+        }
+        private void reloadProductList()
         {
             lbAllProducts.Items.Clear();
             foreach (Product p in productManager.GetAllProductsList())
             {
                 lbAllProducts.Items.Add(p);
             }
-        }
-
-        private void btnHomeStMngmnt_Click(object sender, EventArgs e)
-        {
-            tabAdmin.SelectedTab = tabAdminHome;
         }
     }
 }

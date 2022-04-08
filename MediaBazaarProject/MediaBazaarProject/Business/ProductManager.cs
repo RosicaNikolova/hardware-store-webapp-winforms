@@ -33,7 +33,7 @@ namespace MediaBazaarProject.Business
             }
         }
 
-        internal void Edit(Product updatedProduct, string prName, string prDesc, string prManu, EnumCategory prCateg, int qWare, int qSale)
+        public void Edit(Product updatedProduct, string prName, string prDesc, string prManu, EnumCategory prCateg, int qWare, int qSale)
         {
             try
             {
@@ -45,6 +45,18 @@ namespace MediaBazaarProject.Business
                 product.QuantityWarehouse = qWare;
                 product.QuantitySales = qSale;
                 productRepository.UpdateProduct(product);
+            }
+            catch (Exception error)
+            {
+                throw new Exception(error.Message);
+            }
+
+        }
+        public void Remove(Product removeProduct)
+        {
+            try
+            {
+                productRepository.RemoveProduct(removeProduct);
             }
             catch (Exception error)
             {

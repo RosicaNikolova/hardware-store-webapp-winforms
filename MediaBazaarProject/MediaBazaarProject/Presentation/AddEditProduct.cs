@@ -24,7 +24,10 @@ namespace MediaBazaarProject.Presentation
             InitializeComponent();
             btnAddEdit.Text = "Add";
             lblForm.Text = "Add Product Form";
-            cbCate.Items.Add(enumManager.ListCategories());
+            foreach (var item in enumManager.ListCategories())
+            {
+                cbCate.Items.Add(item.ToString());
+            }
         }
         //For editting
         public AddEditProduct(int option, Product product)
@@ -32,6 +35,10 @@ namespace MediaBazaarProject.Presentation
             productForUpdate = product;
             optionForm = option;
             InitializeComponent();
+            foreach (var item in enumManager.ListCategories())
+            {
+                cbCate.Items.Add(item.ToString());
+            }
             btnAddEdit.Text = "Edit";
             lblForm.Text = "Edit Product Form";
             tbName.Text = productForUpdate.ProductName;
@@ -40,7 +47,6 @@ namespace MediaBazaarProject.Presentation
             cbCate.Text = productForUpdate.ProductCategory.ToString();
             tbQWare.Text = productForUpdate.QuantityWarehouse.ToString();
             tbQSale.Text = productForUpdate.QuantitySales.ToString();
-            cbCate.Items.Add(enumManager.ListCategories());
         }
 
         private void btnAddEdit_Click(object sender, EventArgs e)
