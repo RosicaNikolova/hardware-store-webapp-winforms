@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaBazaarProject", "MediaBazaarProject\MediaBazaarProject.csproj", "{9F35531E-8B52-4518-8535-656308114FBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaBazaarProject", "MediaBazaarProject\MediaBazaarProject.csproj", "{9F35531E-8B52-4518-8535-656308114FBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaBazaarWebsite", "MediaBazaarWebsite\MediaBazaarWebsite.csproj", "{0B698722-F69B-4434-B299-20B6CE06FAD3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediaBazaarLibrary", "MediaBazaarLibrary\MediaBazaarLibrary.csproj", "{0F76BDA0-56EE-4571-96B7-0EE162974F52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{9F35531E-8B52-4518-8535-656308114FBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F35531E-8B52-4518-8535-656308114FBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F35531E-8B52-4518-8535-656308114FBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B698722-F69B-4434-B299-20B6CE06FAD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B698722-F69B-4434-B299-20B6CE06FAD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B698722-F69B-4434-B299-20B6CE06FAD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B698722-F69B-4434-B299-20B6CE06FAD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F76BDA0-56EE-4571-96B7-0EE162974F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F76BDA0-56EE-4571-96B7-0EE162974F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F76BDA0-56EE-4571-96B7-0EE162974F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F76BDA0-56EE-4571-96B7-0EE162974F52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

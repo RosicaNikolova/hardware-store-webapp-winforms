@@ -1,0 +1,12 @@
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.deps.json
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\ref\MediaBazaarLibrary.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.pdb
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.AssemblyInfoInputs.cache
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.AssemblyInfo.cs
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\ref\MediaBazaarLibrary.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.pdb
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.csproj.AssemblyReference.cache

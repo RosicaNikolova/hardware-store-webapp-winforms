@@ -1,0 +1,56 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:wght@200;300;400&family=Roboto&display=swap');
+
+/*-------------Log In Page-----------------*/
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+}
+
+.form_container {
+    background-color: aqua;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 50px;
+    width: 300px;
+}
+
+.field {
+    padding: 8px 0px 8px 0px;
+    width: 100%;
+}
+
+.login_heading {
+    text-align: center;
+    margin-top: 0px;
+}
+
+.content_container p {
+    padding-top: 20px;
+    padding-bottom: 5px;
+    margin: 0;
+}
+
+
+.login_buttons {
+    background-color: blue;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+    .login_buttons input {
+        padding: 8px;
+    }
+/*---------------SignedInPage------------------*/
+.navigationBar_buttons {
+    display: flex;
+    align-content: flex-start;
+}
+    .navigationBar_buttons li {
+        padding-right: 20px;
+        text-decoration: none;
+        list-style:none;
+    }

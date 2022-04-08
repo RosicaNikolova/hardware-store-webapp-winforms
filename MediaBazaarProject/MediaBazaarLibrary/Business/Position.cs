@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MediaBazaarLibrary
+{
+    public enum Position
+    {
+        ADMIN = 1,
+        MANAGER = 2,
+        SALES = 3,
+        WAREHOUSE = 4
+    }
+}
