@@ -54,3 +54,42 @@ body {
         text-decoration: none;
         list-style:none;
     }
+
+
+/*---------------Schedule------------------*/
+
+.schedule_container {
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+
+.schedule_row {
+    background-color: lightcoral;
+    text-align: center;
+}
+
+.schedule_days_row {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .schedule_days_row li {
+        margin: 10px;
+    }
+
+.special_empty_day {
+    padding: 12px;
+    padding: 35%;
+}
+
+.shift_box {
+    background-color: blueviolet;
+    
+   
+}
+
+
+
+
