@@ -68,7 +68,7 @@ namespace MediaBazaarProject
             this.TabWorker.Location = new System.Drawing.Point(12, 3);
             this.TabWorker.Name = "TabWorker";
             this.TabWorker.SelectedIndex = 0;
-            this.TabWorker.Size = new System.Drawing.Size(1171, 492);
+            this.TabWorker.Size = new System.Drawing.Size(1359, 546);
             this.TabWorker.TabIndex = 15;
             // 
             // tabWorkerHome
@@ -82,7 +82,7 @@ namespace MediaBazaarProject
             this.tabWorkerHome.Location = new System.Drawing.Point(4, 23);
             this.tabWorkerHome.Name = "tabWorkerHome";
             this.tabWorkerHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWorkerHome.Size = new System.Drawing.Size(1163, 465);
+            this.tabWorkerHome.Size = new System.Drawing.Size(1351, 519);
             this.tabWorkerHome.TabIndex = 0;
             this.tabWorkerHome.Text = "WorkerHome";
             // 
@@ -148,7 +148,7 @@ namespace MediaBazaarProject
             this.tabSales.Location = new System.Drawing.Point(4, 23);
             this.tabSales.Name = "tabSales";
             this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(1163, 465);
+            this.tabSales.Size = new System.Drawing.Size(1351, 519);
             this.tabSales.TabIndex = 1;
             this.tabSales.Text = "SalesTab";
             // 
@@ -156,14 +156,14 @@ namespace MediaBazaarProject
             // 
             this.lbxRequestSales.FormattingEnabled = true;
             this.lbxRequestSales.ItemHeight = 14;
-            this.lbxRequestSales.Location = new System.Drawing.Point(345, 90);
+            this.lbxRequestSales.Location = new System.Drawing.Point(282, 90);
             this.lbxRequestSales.Name = "lbxRequestSales";
-            this.lbxRequestSales.Size = new System.Drawing.Size(376, 354);
+            this.lbxRequestSales.Size = new System.Drawing.Size(629, 396);
             this.lbxRequestSales.TabIndex = 31;
             // 
             // btnHomeSales
             // 
-            this.btnHomeSales.Location = new System.Drawing.Point(1066, 27);
+            this.btnHomeSales.Location = new System.Drawing.Point(1249, 27);
             this.btnHomeSales.Name = "btnHomeSales";
             this.btnHomeSales.Size = new System.Drawing.Size(75, 23);
             this.btnHomeSales.TabIndex = 30;
@@ -202,9 +202,9 @@ namespace MediaBazaarProject
             // 
             this.lbxStockSales.FormattingEnabled = true;
             this.lbxStockSales.ItemHeight = 14;
-            this.lbxStockSales.Location = new System.Drawing.Point(765, 90);
+            this.lbxStockSales.Location = new System.Drawing.Point(948, 90);
             this.lbxStockSales.Name = "lbxStockSales";
-            this.lbxStockSales.Size = new System.Drawing.Size(376, 354);
+            this.lbxStockSales.Size = new System.Drawing.Size(376, 396);
             this.lbxStockSales.TabIndex = 0;
             // 
             // tabWarehouse
@@ -221,14 +221,14 @@ namespace MediaBazaarProject
             this.tabWarehouse.Location = new System.Drawing.Point(4, 23);
             this.tabWarehouse.Name = "tabWarehouse";
             this.tabWarehouse.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWarehouse.Size = new System.Drawing.Size(1163, 465);
+            this.tabWarehouse.Size = new System.Drawing.Size(1351, 519);
             this.tabWarehouse.TabIndex = 2;
             this.tabWarehouse.Text = "WarehouseTab";
             // 
             // btnRejectRequest
             // 
             this.btnRejectRequest.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnRejectRequest.Location = new System.Drawing.Point(181, 153);
+            this.btnRejectRequest.Location = new System.Drawing.Point(153, 153);
             this.btnRejectRequest.Name = "btnRejectRequest";
             this.btnRejectRequest.Size = new System.Drawing.Size(112, 98);
             this.btnRejectRequest.TabIndex = 32;
@@ -251,14 +251,14 @@ namespace MediaBazaarProject
             // 
             this.lbxRequestWarehouse.FormattingEnabled = true;
             this.lbxRequestWarehouse.ItemHeight = 14;
-            this.lbxRequestWarehouse.Location = new System.Drawing.Point(345, 90);
+            this.lbxRequestWarehouse.Location = new System.Drawing.Point(282, 90);
             this.lbxRequestWarehouse.Name = "lbxRequestWarehouse";
-            this.lbxRequestWarehouse.Size = new System.Drawing.Size(376, 354);
+            this.lbxRequestWarehouse.Size = new System.Drawing.Size(629, 396);
             this.lbxRequestWarehouse.TabIndex = 30;
             // 
             // btnHomeWarehouse
             // 
-            this.btnHomeWarehouse.Location = new System.Drawing.Point(1066, 27);
+            this.btnHomeWarehouse.Location = new System.Drawing.Point(1249, 27);
             this.btnHomeWarehouse.Name = "btnHomeWarehouse";
             this.btnHomeWarehouse.Size = new System.Drawing.Size(75, 23);
             this.btnHomeWarehouse.TabIndex = 29;
@@ -285,7 +285,7 @@ namespace MediaBazaarProject
             // btnAddStock
             // 
             this.btnAddStock.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnAddStock.Location = new System.Drawing.Point(99, 311);
+            this.btnAddStock.Location = new System.Drawing.Point(78, 311);
             this.btnAddStock.Name = "btnAddStock";
             this.btnAddStock.Size = new System.Drawing.Size(112, 98);
             this.btnAddStock.TabIndex = 24;
@@ -297,9 +297,9 @@ namespace MediaBazaarProject
             // 
             this.lbxStockWarehouse.FormattingEnabled = true;
             this.lbxStockWarehouse.ItemHeight = 14;
-            this.lbxStockWarehouse.Location = new System.Drawing.Point(765, 90);
+            this.lbxStockWarehouse.Location = new System.Drawing.Point(948, 90);
             this.lbxStockWarehouse.Name = "lbxStockWarehouse";
-            this.lbxStockWarehouse.Size = new System.Drawing.Size(376, 354);
+            this.lbxStockWarehouse.Size = new System.Drawing.Size(376, 396);
             this.lbxStockWarehouse.TabIndex = 0;
             // 
             // WorkerForm
@@ -307,7 +307,7 @@ namespace MediaBazaarProject
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.ClientSize = new System.Drawing.Size(1195, 507);
+            this.ClientSize = new System.Drawing.Size(1383, 561);
             this.Controls.Add(this.TabWorker);
             this.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "WorkerForm";

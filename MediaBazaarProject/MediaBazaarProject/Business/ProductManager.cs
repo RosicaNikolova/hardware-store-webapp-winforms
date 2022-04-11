@@ -11,7 +11,8 @@ namespace MediaBazaarProject.Business
     {
         ProductRepository productRepository = new ProductRepository();
         EnumManager enumManager = new EnumManager();
-        public List<Product> GetAllProductsList() {
+        public List<Product> GetAllProductsList() 
+        {
             return productRepository.GetAllProducts();
         }
         public void Create(string prName, string prDesc, string prManu, EnumCategory prCateg, int qWare, int qSale)

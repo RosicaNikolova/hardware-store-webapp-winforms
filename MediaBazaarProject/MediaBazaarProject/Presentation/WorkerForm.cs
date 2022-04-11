@@ -45,7 +45,7 @@ namespace MediaBazaarProject
                 Product product;
 
                 object selectedProduct = lbxStockSales.SelectedItem;
-                product = ((Product)selectedProduct);
+                product = (Product)selectedProduct;
                 return product;
             }
             else if(TabWorker.SelectedTab == tabWarehouse)
@@ -53,7 +53,7 @@ namespace MediaBazaarProject
                 Product product;
 
                 object selectedProduct = lbxStockWarehouse.SelectedItem;
-                product = ((Product)selectedProduct);
+                product = (Product)selectedProduct;
                 return product;
             }
             return null;
@@ -115,7 +115,7 @@ namespace MediaBazaarProject
             }
             foreach(Product p in products)
             {
-                lbxStockSales.Items.Add(p);
+                lbxStockSales.Items.Add(p/*.ToSales()*/);
             }
         }
 
@@ -132,7 +132,7 @@ namespace MediaBazaarProject
             }
             foreach(Product p in products)
             {
-                lbxStockWarehouse.Items.Add(p);
+                lbxStockWarehouse.Items.Add(p/*.ToWarehouse()*/);
             }
         }
 
@@ -152,7 +152,23 @@ namespace MediaBazaarProject
 
         private void btnAcceptRequest_Click(object sender, EventArgs e)
         {
-
+            //Request request = SelectedRequest();
+            //Product product = SelectedProduct();
+            
+            //if(request.RequestedAmount <= product.QuantityWarehouse)
+            //{
+            //    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
+            //    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount);
+            //    MessageBox.Show("Request has been Accepted");
+            //}
+            //else if(request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
+            //{
+            //    int dif = Math.Abs(product.QuantityWarehouse - request.RequestedAmount);
+            //    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY);
+            //    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif);
+            //    MessageBox.Show("Request has been  partially Accepted");
+            //}
+            
         }
 
         private void btnRejectRequest_Click(object sender, EventArgs e)

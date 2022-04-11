@@ -20,11 +20,17 @@ namespace MediaBazaarProject.Business
         public int QuantityWarehouse { get; set; }
 
         public int QuantitySales { get; set; }
+
+
         public override string ToString()
         {
-            return $"ProductId: {this.ProductId}, Pr.Name: {this.ProductName}";
+            return $"ProductId: {this.ProductId}, Pr.Name: {this.ProductName}, SalesStock: {this.QuantitySales}";
         }
 
+        //public override string ToString()
+        //{
+        //    return $"ProductId: {this.ProductId}, Pr.Name: {this.ProductName}, WarehouseStock: {this.QuantityWarehouse}";
+        //}
     }
 
 }

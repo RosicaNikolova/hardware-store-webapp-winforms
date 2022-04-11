@@ -123,6 +123,10 @@ namespace MediaBazaarProject.Business
                 case "PARTIALLY":
                     enumStatus = EnumRequestStatus.PARTIALLY;
                     break;
+
+                case "PENDING":
+                    enumStatus = EnumRequestStatus.PENDING;
+                    break;
             }
             return enumStatus;
         }

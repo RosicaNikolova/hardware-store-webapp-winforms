@@ -12,12 +12,11 @@ namespace MediaBazaarProject.Business
         private EmployeeRepository employeeRepository = new EmployeeRepository();
 
         public User Login(string email, string password)
-        {        
-              User user = employeeRepository.FindUser(email, password);
-
-              return user;          
+        {
+            User user = employeeRepository.FindUser(email, password);
+            return user;
         }
 
-        
+
     }
 }

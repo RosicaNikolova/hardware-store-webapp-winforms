@@ -17,5 +17,10 @@ namespace MediaBazaarProject.Business
         public int RequestedAmount { get; set; }
 
         public EnumRequestStatus Status { get; set; }
+
+        public override string ToString()
+        {
+            return $"RequestId: {this.RequestId}, Requested by: {this.EmployeeId}, RequestedItem: {this.ProductId}, AmountRequested: {this.RequestedAmount}, Status: {this.Status}";
+        }
     }
 }
