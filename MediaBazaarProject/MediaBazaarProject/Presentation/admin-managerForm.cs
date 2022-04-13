@@ -43,7 +43,10 @@ namespace MediaBazaarProject
                 btnScheduleAdministration.Visible = false;
                 btnEmployeeManagement.Visible = false;
             }
-
+            DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 7);
+            dtpDay.MaxDate = maxDate;
+            dtpDay.MinDate = DateTime.Today;
+            
 
         }
 

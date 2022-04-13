@@ -136,3 +136,4 @@ C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarP
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.pdb
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.genruntimeconfig.cache
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.AddEditProduct.resources
+D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.AddEditProduct.resources

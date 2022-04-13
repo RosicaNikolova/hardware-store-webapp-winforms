@@ -111,6 +111,7 @@ namespace MediaBazaarProject.Business
                 {
                     availableWorkers.Add(worker);
                 }
+
                 counter = 0;
             }
             return availableWorkers;
