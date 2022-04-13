@@ -23,16 +23,16 @@ namespace MediaBazaarProject
             InitializeComponent();
         }
 
-        public WorkerForm(User u,string role)
+        public WorkerForm(User u, string role)
         {
             InitializeComponent();
             this.role = role;
             user = u;
-            if(role == "sales")
+            if (role == "sales")
             {
                 btnWarehouse.Visible = false;
             }
-            else if(role == "warehouse")
+            else if (role == "warehouse")
             {
                 btnSales.Visible = false;
             }
@@ -40,7 +40,7 @@ namespace MediaBazaarProject
 
         private Product SelectedProduct()
         {
-            if(TabWorker.SelectedTab == tabSales)
+            if (TabWorker.SelectedTab == tabSales)
             {
                 Product product;
 
@@ -48,7 +48,7 @@ namespace MediaBazaarProject
                 product = (Product)selectedProduct;
                 return product;
             }
-            else if(TabWorker.SelectedTab == tabWarehouse)
+            else if (TabWorker.SelectedTab == tabWarehouse)
             {
                 Product product;
 
@@ -71,7 +71,7 @@ namespace MediaBazaarProject
         {
             lbxShiftEmployeeDay.Items.Clear();
 
-             DateTime date=dateWorker.Value;
+            DateTime date = dateWorker.Value;
 
             foreach (Shift shift in shiftManager.GetShiftsForWorker(date, user.Id))
             {
@@ -113,7 +113,7 @@ namespace MediaBazaarProject
             {
                 lbxRequestSales.Items.Add(r);
             }
-            foreach(Product p in products)
+            foreach (Product p in products)
             {
                 lbxStockSales.Items.Add(p/*.ToSales()*/);
             }
@@ -130,7 +130,7 @@ namespace MediaBazaarProject
             {
                 lbxRequestWarehouse.Items.Add(r);
             }
-            foreach(Product p in products)
+            foreach (Product p in products)
             {
                 lbxStockWarehouse.Items.Add(p/*.ToWarehouse()*/);
             }
@@ -139,7 +139,7 @@ namespace MediaBazaarProject
         private void btnRequestItem_Click(object sender, EventArgs e)
         {
             Product product = SelectedProduct();
-            requestManager.Create(user.Id,product.ProductId,Convert.ToInt32(nudAmountSales.Value),EnumRequestStatus.PENDING);
+            requestManager.Create(user.Id, product.ProductId, Convert.ToInt32(nudAmountSales.Value), EnumRequestStatus.PENDING);
             MessageBox.Show("Item has been requested");
         }
 
@@ -152,29 +152,39 @@ namespace MediaBazaarProject
 
         private void btnAcceptRequest_Click(object sender, EventArgs e)
         {
-            //Request request = SelectedRequest();
-            //Product product = SelectedProduct();
-            
-            //if(request.RequestedAmount <= product.QuantityWarehouse)
-            //{
-            //    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
-            //    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount);
-            //    MessageBox.Show("Request has been Accepted");
-            //}
-            //else if(request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
-            //{
-            //    int dif = Math.Abs(product.QuantityWarehouse - request.RequestedAmount);
-            //    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY);
-            //    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif);
-            //    MessageBox.Show("Request has been  partially Accepted");
-            //}
-            
+            Request request = SelectedRequest();
+            Product product = SelectedProduct();
+
+
+            if (request != null && product != null)
+            {
+                if (request.RequestedAmount <= product.QuantityWarehouse)
+                {
+                    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
+                    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount);
+                    MessageBox.Show("Request has been Accepted");
+                }
+                else if (request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
+                {
+                    int dif = Math.Abs(product.QuantityWarehouse - request.RequestedAmount);
+                    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY);
+                    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif);
+                    MessageBox.Show("Request has been  partially Accepted");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select request and corresponding product");
+            }
+
+
+
         }
 
         private void btnRejectRequest_Click(object sender, EventArgs e)
         {
             Request request = SelectedRequest();
-            requestManager.Edit(request, request.EmployeeId,request.ProductId,request.RequestedAmount, EnumRequestStatus.REJECTED);
+            requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.REJECTED);
             MessageBox.Show("Request has been denied");
         }
     }
