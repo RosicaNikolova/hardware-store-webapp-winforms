@@ -1,25 +1,22 @@
 ﻿@page
 @model MediaBazaarWebsite.Pages.ScheduleModel
 @{
-
     ViewData["Title"] = "Schedule";
-
-}
-@{
     Layout = "_LayoutSignedIn";
-}
-
-
-
-@{
     bool firstWeekFinish = true;
+
 }
+
+
 
 <div class="scheduleBody">
+
     <div class="navigationButtons">
         <!--Here we should implement the navigation buttons-->
     </div>
+
     <div class="schedule_container">
+
 
         @{
             foreach (var item in Model.daysPerWeekDay)
@@ -28,8 +25,8 @@
 
                     <div>@item.Key</div>
                     <ul class="schedule_days_row">
-                        @{
 
+                        @{
                             if (item.Value[0].Day != 1 && firstWeekFinish)
                             {
                                 <li class="special_empty_day"></li>
@@ -40,18 +37,28 @@
                             }
                         }
 
+
                         @foreach (DateTime day in item.Value)
                         {
                             <div class="scheduleBoxContent">
                             <li> @day.Day</li>
 
                             <!--this is going to be a box with the shif of the employee
-                            should be generated from the business classes-->
-                            <div class="shift_box">Morning</div>
-                    </div>
-                }
-                        </ul>
+        should be generated from the business classes-->
+                            @foreach (var shift in Model.shiftsForEmployee)
+                            {
+                                if (shift.Date == day)
+                                {
+                                    <div class="shift_box">@shift.ShiftType</div>
+                                }
+                               
 
+                            }
+</div>
+
+                }
+
+                        </ul>
                     </div>
                 }
 
@@ -59,4 +66,13 @@
 
 
     </div>
-</div>
+    </div>
+
+
+
+
+
+
+
+
+

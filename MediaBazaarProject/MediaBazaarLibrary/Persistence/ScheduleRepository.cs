@@ -80,6 +80,35 @@ namespace MediaBazaarLibrary.Persistence
             return schedule;
         }
 
+        internal List<Shift> GetShiftsForEmployeeForMonth(int employeeId, int month)
+        {
+            List<Shift> schedule = new List<Shift>();
+
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+
+                string sql = "SELECT Id, ShiftNumber, ShiftDate FROM shifts where EmployeeId = @employeeId AND MONTH(shifts.ShiftDate) = @month;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //string converetedDate = date.ToString("MM-dd-yy");
+                cmd.Parameters.AddWithValue("month", month);
+                cmd.Parameters.AddWithValue("employeeId", employeeId);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Shift shift = new Shift();
+                    shift.Id = dr.GetInt32("Id");
+                    shift.Date = (DateTime)dr.GetMySqlDateTime("ShiftDate");
+                    shift.ShiftType = enumManager.SetShiftType(dr.GetString("ShiftNumber"));
+                    schedule.Add(shift);
+                }
+            }
+            return schedule;
+        }
+
         public void CreateShift(Shift shift)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 

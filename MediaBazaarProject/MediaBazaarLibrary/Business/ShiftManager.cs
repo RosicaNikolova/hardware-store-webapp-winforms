@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarLibrary.Business
 {
-    class ShiftManager
+    public class ShiftManager
     {
         ScheduleRepository scheduleRepository = new ScheduleRepository();
 
@@ -87,6 +87,14 @@ namespace MediaBazaarLibrary.Business
                 }
             }
             return true;
+        }
+
+        public List<Shift> GetShiftsForMonthForEmployee(int employeeId, int month)
+        {
+            List<Shift> shifts = new List<Shift>();
+            shifts = scheduleRepository.GetShiftsForEmployeeForMonth(employeeId, month);
+            return shifts;
+
         }
 
         public List<Employee> GetAvailableWorkersForDate(List<Employee> workers, DateTime date)

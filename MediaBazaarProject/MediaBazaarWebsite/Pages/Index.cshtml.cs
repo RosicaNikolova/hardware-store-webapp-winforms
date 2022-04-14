@@ -45,7 +45,7 @@ namespace MediaBazaarWebsite.Pages
                     {
                         List<Claim> claims = new List<Claim>();
                         claims.Add(new Claim(ClaimTypes.Role, loggingUser.Position.ToString()));
-                        claims.Add(new Claim("id", user.Id.ToString()));
+                        claims.Add(new Claim("id", loggingUser.Id.ToString()));
 
                         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         HttpContext.SignInAsync(new ClaimsPrincipal(claimsIdentity));
