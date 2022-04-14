@@ -52,6 +52,10 @@ namespace MediaBazaarProject
             this.lblAmountWarehouse = new System.Windows.Forms.Label();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.lbxStockWarehouse = new System.Windows.Forms.ListBox();
+            this.lblRequestSales = new System.Windows.Forms.Label();
+            this.lblInventorySales = new System.Windows.Forms.Label();
+            this.lblRequestWarehouse = new System.Windows.Forms.Label();
+            this.lblInventoryWarehouse = new System.Windows.Forms.Label();
             this.TabWorker.SuspendLayout();
             this.tabWorkerHome.SuspendLayout();
             this.tabSales.SuspendLayout();
@@ -65,10 +69,10 @@ namespace MediaBazaarProject
             this.TabWorker.Controls.Add(this.tabWorkerHome);
             this.TabWorker.Controls.Add(this.tabSales);
             this.TabWorker.Controls.Add(this.tabWarehouse);
-            this.TabWorker.Location = new System.Drawing.Point(12, -24);
+            this.TabWorker.Location = new System.Drawing.Point(-6, -25);
             this.TabWorker.Name = "TabWorker";
             this.TabWorker.SelectedIndex = 0;
-            this.TabWorker.Size = new System.Drawing.Size(1359, 573);
+            this.TabWorker.Size = new System.Drawing.Size(1395, 593);
             this.TabWorker.TabIndex = 15;
             // 
             // tabWorkerHome
@@ -82,7 +86,7 @@ namespace MediaBazaarProject
             this.tabWorkerHome.Location = new System.Drawing.Point(4, 23);
             this.tabWorkerHome.Name = "tabWorkerHome";
             this.tabWorkerHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWorkerHome.Size = new System.Drawing.Size(1351, 546);
+            this.tabWorkerHome.Size = new System.Drawing.Size(1351, 520);
             this.tabWorkerHome.TabIndex = 0;
             this.tabWorkerHome.Text = "WorkerHome";
             // 
@@ -139,6 +143,8 @@ namespace MediaBazaarProject
             // tabSales
             // 
             this.tabSales.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tabSales.Controls.Add(this.lblInventorySales);
+            this.tabSales.Controls.Add(this.lblRequestSales);
             this.tabSales.Controls.Add(this.lbxRequestSales);
             this.tabSales.Controls.Add(this.btnHomeSales);
             this.tabSales.Controls.Add(this.nudAmountSales);
@@ -148,7 +154,7 @@ namespace MediaBazaarProject
             this.tabSales.Location = new System.Drawing.Point(4, 23);
             this.tabSales.Name = "tabSales";
             this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(1351, 519);
+            this.tabSales.Size = new System.Drawing.Size(1351, 520);
             this.tabSales.TabIndex = 1;
             this.tabSales.Text = "SalesTab";
             // 
@@ -210,6 +216,8 @@ namespace MediaBazaarProject
             // tabWarehouse
             // 
             this.tabWarehouse.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tabWarehouse.Controls.Add(this.lblInventoryWarehouse);
+            this.tabWarehouse.Controls.Add(this.lblRequestWarehouse);
             this.tabWarehouse.Controls.Add(this.btnRejectRequest);
             this.tabWarehouse.Controls.Add(this.btnAcceptRequest);
             this.tabWarehouse.Controls.Add(this.lbxRequestWarehouse);
@@ -221,7 +229,7 @@ namespace MediaBazaarProject
             this.tabWarehouse.Location = new System.Drawing.Point(4, 23);
             this.tabWarehouse.Name = "tabWarehouse";
             this.tabWarehouse.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWarehouse.Size = new System.Drawing.Size(1351, 519);
+            this.tabWarehouse.Size = new System.Drawing.Size(1387, 566);
             this.tabWarehouse.TabIndex = 2;
             this.tabWarehouse.Text = "WarehouseTab";
             // 
@@ -302,6 +310,42 @@ namespace MediaBazaarProject
             this.lbxStockWarehouse.Size = new System.Drawing.Size(376, 396);
             this.lbxStockWarehouse.TabIndex = 0;
             // 
+            // lblRequestSales
+            // 
+            this.lblRequestSales.AutoSize = true;
+            this.lblRequestSales.Location = new System.Drawing.Point(304, 54);
+            this.lblRequestSales.Name = "lblRequestSales";
+            this.lblRequestSales.Size = new System.Drawing.Size(63, 14);
+            this.lblRequestSales.TabIndex = 32;
+            this.lblRequestSales.Text = "Requests";
+            // 
+            // lblInventorySales
+            // 
+            this.lblInventorySales.AutoSize = true;
+            this.lblInventorySales.Location = new System.Drawing.Point(948, 54);
+            this.lblInventorySales.Name = "lblInventorySales";
+            this.lblInventorySales.Size = new System.Drawing.Size(62, 14);
+            this.lblInventorySales.TabIndex = 33;
+            this.lblInventorySales.Text = "Inventory";
+            // 
+            // lblRequestWarehouse
+            // 
+            this.lblRequestWarehouse.AutoSize = true;
+            this.lblRequestWarehouse.Location = new System.Drawing.Point(304, 54);
+            this.lblRequestWarehouse.Name = "lblRequestWarehouse";
+            this.lblRequestWarehouse.Size = new System.Drawing.Size(63, 14);
+            this.lblRequestWarehouse.TabIndex = 33;
+            this.lblRequestWarehouse.Text = "Requests";
+            // 
+            // lblInventoryWarehouse
+            // 
+            this.lblInventoryWarehouse.AutoSize = true;
+            this.lblInventoryWarehouse.Location = new System.Drawing.Point(948, 54);
+            this.lblInventoryWarehouse.Name = "lblInventoryWarehouse";
+            this.lblInventoryWarehouse.Size = new System.Drawing.Size(62, 14);
+            this.lblInventoryWarehouse.TabIndex = 34;
+            this.lblInventoryWarehouse.Text = "Inventory";
+            // 
             // WorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 14F);
@@ -351,5 +395,9 @@ namespace MediaBazaarProject
         private System.Windows.Forms.ListBox lbxRequestWarehouse;
         private System.Windows.Forms.Button btnRejectRequest;
         private System.Windows.Forms.Button btnAcceptRequest;
+        private System.Windows.Forms.Label lblInventorySales;
+        private System.Windows.Forms.Label lblRequestSales;
+        private System.Windows.Forms.Label lblInventoryWarehouse;
+        private System.Windows.Forms.Label lblRequestWarehouse;
     }
 }
