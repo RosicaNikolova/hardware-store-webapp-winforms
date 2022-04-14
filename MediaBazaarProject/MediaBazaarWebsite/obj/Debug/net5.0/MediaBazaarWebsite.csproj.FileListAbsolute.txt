@@ -173,3 +173,4 @@ D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\D
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\ref\MediaBazaarWebsite.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.pdb
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.genruntimeconfig.cache
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\Schedule.cshtml.g.cs

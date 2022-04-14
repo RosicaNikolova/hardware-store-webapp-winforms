@@ -1,13 +1,19 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:wght@200;300;400&family=Roboto&display=swap');
-
+nav {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
 /*-------------Log In Page-----------------*/
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
+    background-color: #D5E5F2;
+    margin: 0;
+    padding: 0;
 }
 
 .form_container {
-    background-color: aqua;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
@@ -57,38 +63,71 @@ body {
 
 
 /*---------------Schedule------------------*/
-
-.schedule_container {
-    background-color: aqua;
+.scheduleBody {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
+.schedule_container {
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    margin:0;
+    width:90%;
+    /*justify-content: center;*/
+}
+    .schedule_container ul {
+        padding:20px;
+    }
 
-.schedule_row {
-    background-color: lightcoral;
-    text-align: center;
-}
+    .schedule_row {
+        width: 100%;
+        height: 25px;
+        text-align: center;
+    }
 
 .schedule_days_row {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    height: auto;
 }
 
-    .schedule_days_row li {
-        margin: 10px;
+.scheduleBoxContent {
+    margin:2px;
+    padding: 5px;
+    min-height: 130px;
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid white;
+    border-bottom: 2px solid white;
+    background-image: linear-gradient(to bottom, #308695, #d4cfc9);
+}
+    .scheduleBoxContent div {
+        margin: 5px;
+    }
+    .scheduleBoxContent li {
+        text-align: left;
+        color: white;
+
     }
 
 .special_empty_day {
-    padding: 12px;
-    padding: 35%;
+    padding: 5px;
+    margin: 2px;
+    min-height: 130px;
+    border-left: 1px solid white;
+    border-bottom: 2px solid white;
 }
 
 .shift_box {
-    background-color: blueviolet;
-    
-   
+    background-color: #EBEFF2;
+    padding:10px;
+    border-radius: 20px;
 }
+
 
 
 

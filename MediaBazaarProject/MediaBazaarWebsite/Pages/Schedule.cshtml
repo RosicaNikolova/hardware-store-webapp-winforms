@@ -5,6 +5,9 @@
     ViewData["Title"] = "Schedule";
 
 }
+@{
+    Layout = "_LayoutSignedIn";
+}
 
 
 
@@ -12,41 +15,48 @@
     bool firstWeekFinish = true;
 }
 
-<div class="schedule_container">
+<div class="scheduleBody">
+    <div class="navigationButtons">
+        <!--Here we should implement the navigation buttons-->
+    </div>
+    <div class="schedule_container">
 
-    @{
-        foreach (var item in Model.daysPerWeekDay)
-        {
-            <div class="schedule_row">
+        @{
+            foreach (var item in Model.daysPerWeekDay)
+            {
+                <div class="schedule_row">
 
-                <div>@item.Key</div>
-                <ul class="schedule_days_row">
-                    @{
+                    <div>@item.Key</div>
+                    <ul class="schedule_days_row">
+                        @{
 
-                        if (item.Value[0].Day != 1 && firstWeekFinish)
-                        {
-                            <li class="special_empty_day"></li>
+                            if (item.Value[0].Day != 1 && firstWeekFinish)
+                            {
+                                <li class="special_empty_day"></li>
+                            }
+                            else if (item.Value[0].Day == 1)
+                            {
+                                firstWeekFinish = false;
+                            }
                         }
-                        else if (item.Value[0].Day == 1)
+
+                        @foreach (DateTime day in item.Value)
                         {
-                            firstWeekFinish = false;
-                        }
-                    }
+                            <div class="scheduleBoxContent">
+                            <li> @day.Day</li>
 
-                    @foreach (DateTime day in item.Value)
-                    {
-                        <li> @day.Day</li>
+                            <!--this is going to be a box with the shif of the employee
+                            should be generated from the business classes-->
+                            <div class="shift_box">Morning</div>
+                    </div>
+                }
+                        </ul>
 
-                        //this is going to be a box with the shif of the employee
-                        //should be generated from the business classes
-                        <div class="shift_box">Morning</div>
-                    }
-                </ul>
+                    </div>
+                }
 
-            </div>
         }
 
-    }
 
-
+    </div>
 </div>
