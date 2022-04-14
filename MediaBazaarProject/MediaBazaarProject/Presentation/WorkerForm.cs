@@ -115,7 +115,7 @@ namespace MediaBazaarProject
             }
             foreach (Product p in products)
             {
-                lbxStockSales.Items.Add(p/*.ToSales()*/);
+                lbxStockSales.Items.Add(p + $" Sales Stock: {p.QuantitySales}");
             }
         }
 
@@ -132,7 +132,7 @@ namespace MediaBazaarProject
             }
             foreach (Product p in products)
             {
-                lbxStockWarehouse.Items.Add(p/*.ToWarehouse()*/);
+                lbxStockWarehouse.Items.Add(p +$"Warehouse Stock:{p.QuantityWarehouse}");
             }
         }
 
@@ -158,34 +158,55 @@ namespace MediaBazaarProject
 
             if (request != null && product != null)
             {
-                if (request.RequestedAmount <= product.QuantityWarehouse)
+                if (request.Status == EnumRequestStatus.PENDING)
                 {
-                    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
-                    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount);
-                    MessageBox.Show("Request has been Accepted");
-                }
-                else if (request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
-                {
-                    int dif = Math.Abs(product.QuantityWarehouse - request.RequestedAmount);
-                    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY);
-                    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif);
-                    MessageBox.Show("Request has been  partially Accepted");
+                    if(request.ProductId == product.ProductId)
+                    {
+                        if (request.RequestedAmount <= product.QuantityWarehouse)
+                        {
+                            requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
+                            productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount);
+                            MessageBox.Show("Request has been Accepted");
+                        }
+                        else if (request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
+                        {
+                            int dif = Math.Abs(product.QuantityWarehouse - request.RequestedAmount);
+                            requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY);
+                            productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif);
+                            MessageBox.Show("Request has been  partially Accepted");
+                        }
+                        else if (product.QuantityWarehouse == 0)
+                        {
+                            MessageBox.Show("Warehouse out of stock, Please reject request or add more stock");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("product does not match requested product");
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Please select request and corresponding product");
             }
-
-
-
         }
 
         private void btnRejectRequest_Click(object sender, EventArgs e)
         {
             Request request = SelectedRequest();
-            requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.REJECTED);
-            MessageBox.Show("Request has been denied");
+            if(request != null)
+            {
+                if (request.Status == EnumRequestStatus.PENDING)
+                {
+                    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.REJECTED);
+                    MessageBox.Show("Request has been denied");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a request");
+            }
         }
     }
 }

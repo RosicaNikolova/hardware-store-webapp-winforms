@@ -70,9 +70,10 @@ namespace MediaBazaarProject.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "UPDATE request SET EmployeeId=@EmployeeId, ProductId=@ProductId, RequestedAmount=@RequestedAmount, RequestStatus=@RequestStatus "; //add this later where RequestId = @RequestID
+                    string sql = "UPDATE request SET EmployeeId=@EmployeeId, ProductId=@ProductId, RequestedAmount=@RequestedAmount, RequestStatus=@RequestStatus where RequestId = @RequestId";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
+                    cmd.Parameters.AddWithValue("RequestId", request.RequestId);
                     cmd.Parameters.AddWithValue("EmployeeId", request.EmployeeId);
                     cmd.Parameters.AddWithValue("ProductId", request.ProductId);
                     cmd.Parameters.AddWithValue("RequestedAmount", request.RequestedAmount);
