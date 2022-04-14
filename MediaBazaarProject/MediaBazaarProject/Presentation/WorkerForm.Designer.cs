@@ -65,10 +65,10 @@ namespace MediaBazaarProject
             this.TabWorker.Controls.Add(this.tabWorkerHome);
             this.TabWorker.Controls.Add(this.tabSales);
             this.TabWorker.Controls.Add(this.tabWarehouse);
-            this.TabWorker.Location = new System.Drawing.Point(12, 3);
+            this.TabWorker.Location = new System.Drawing.Point(12, -24);
             this.TabWorker.Name = "TabWorker";
             this.TabWorker.SelectedIndex = 0;
-            this.TabWorker.Size = new System.Drawing.Size(1359, 546);
+            this.TabWorker.Size = new System.Drawing.Size(1359, 573);
             this.TabWorker.TabIndex = 15;
             // 
             // tabWorkerHome
@@ -82,7 +82,7 @@ namespace MediaBazaarProject
             this.tabWorkerHome.Location = new System.Drawing.Point(4, 23);
             this.tabWorkerHome.Name = "tabWorkerHome";
             this.tabWorkerHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWorkerHome.Size = new System.Drawing.Size(1351, 519);
+            this.tabWorkerHome.Size = new System.Drawing.Size(1351, 546);
             this.tabWorkerHome.TabIndex = 0;
             this.tabWorkerHome.Text = "WorkerHome";
             // 
