@@ -32,9 +32,9 @@ namespace MediaBazaarLibrary.Persistence
                     product.ProductId = dr.GetInt32("ProductId");
                     product.ProductName = dr.GetString("ProductName");
                     product.ProductDescription = dr.GetString("ProductDesc");
-                    product.ProductManufacturer= dr.GetString("ProductManufacturer");
+                    product.ProductManufacturer = dr.GetString("ProductManufacturer");
                     product.QuantityWarehouse = dr.GetInt32("QuantityWarehouse");
-                    product.QuantitySales= dr.GetInt32("QuantitySales");
+                    product.QuantitySales = dr.GetInt32("QuantitySales");
                     product.ProductCategory = enumManager.GetProductCategory(dr.GetString("ProductCategory"));
                     allProducts.Add(product);
                 }
@@ -54,7 +54,7 @@ namespace MediaBazaarLibrary.Persistence
         //}
         public void CreateProduct(Product product)
         {
-            try 
+            try
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
@@ -69,7 +69,9 @@ namespace MediaBazaarLibrary.Persistence
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
-            } catch {
+            }
+            catch
+            {
                 throw new Exception("There has been an error in ProductRepository-CreateProductMethod"); //just for demo, shouldnt say which method
             }
 
@@ -115,15 +117,36 @@ namespace MediaBazaarLibrary.Persistence
                     cmd.ExecuteNonQuery();
                 }
             }
-            catch {
+            catch
+            {
                 throw new Exception("There has been an error in ProductRepository");
             }
         }
 
-        //public bool DeleteProduct(Product product)
-        //{
+        public Product GetProductById(int id)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "SELECT * FROM products WHERE ProductId=@ProductId";
 
-        //}
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("ProductId", id);
 
+                conn.Open();
+                Product product = new Product();
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+
+                while (dateReader.Read())
+                {
+                    product.ProductId = dateReader.GetInt32("ProductId");
+                    product.ProductName = dateReader.GetString("ProductName");
+                    product.ProductDescription = dateReader.GetString("ProductDesc");
+                    product.ProductManufacturer = dateReader.GetString("ProductManufacturer");
+                    product.QuantitySales = dateReader.GetInt32("QuantitySales");
+                    product.QuantityWarehouse = dateReader.GetInt32("QuantityWarehouse");
+                }
+                return product;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using MediaBazaarProject.Business;
+﻿using MediaBazaarLibrary;
+using MediaBazaarLibrary.Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,9 @@ namespace MediaBazaarProject
         public WorkerForm()
         {
             InitializeComponent();
+            DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 7);
+            dateWorker.MaxDate = maxDate;
+            dateWorker.MinDate = DateTime.Today;
         }
 
         public WorkerForm(User u, string role)
@@ -71,11 +75,17 @@ namespace MediaBazaarProject
         {
             lbxShiftEmployeeDay.Items.Clear();
 
-            DateTime date = dateWorker.Value;
+            DateTime date = dateWorker.MinDate;
+            List<Shift> shiftsForWorker = new List<Shift>();
+            shiftsForWorker = shiftManager.GetShiftsForWorkerForWeek(date, user.Id);
 
-            foreach (Shift shift in shiftManager.GetShiftsForWorker(date, user.Id))
+
+            foreach (Shift shift in shiftsForWorker)
             {
-                lbxShiftEmployeeDay.Items.Add(shift.ShiftType.ToString());
+                if(dateWorker.Value == shift.Date)
+                {
+                    lbxShiftEmployeeDay.Items.Add(shift.ShiftType);
+                }
             }
         }
 
@@ -83,12 +93,17 @@ namespace MediaBazaarProject
         {
             lbxShiftEmployeeDay.Items.Clear();
 
-            DateTime date = new DateTime();
-            date = dateWorker.Value;
+            DateTime date = dateWorker.MinDate;
+            List<Shift> shiftsForWorker = new List<Shift>();
+            shiftsForWorker = shiftManager.GetShiftsForWorkerForWeek(date, user.Id);
 
-            foreach (Shift shift in shiftManager.GetShiftsForWorker(date, user.Id))
+
+            foreach (Shift shift in shiftsForWorker)
             {
-                lbxShiftEmployeeDay.Items.Add(shift.ShiftType.ToString());
+                if (dateWorker.Value == shift.Date)
+                {
+                    lbxShiftEmployeeDay.Items.Add(shift.ShiftType);
+                }
             }
         }
 

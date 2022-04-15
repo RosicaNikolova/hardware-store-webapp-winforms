@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarLibrary.Business
 {
-    class ProductManager
+    public class ProductManager
     {
         ProductRepository productRepository = new ProductRepository();
         EnumManager enumManager = new EnumManager();
@@ -62,7 +62,11 @@ namespace MediaBazaarLibrary.Business
             {
                 throw new Exception(error.Message);
             }
+        }
 
+        public Product GetById(int id)
+        {
+            return productRepository.GetProductById(id);
         }
     }
 }

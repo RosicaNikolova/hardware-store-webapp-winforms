@@ -1,4 +1,4 @@
-﻿using MediaBazaarProject.Business;
+﻿//using MediaBazaarProject.Business;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MediaBazaarLibrary.Business;
+using MediaBazaarLibrary;
+using Position = MediaBazaarLibrary.Position;
 
 namespace MediaBazaarProject
 {
@@ -45,7 +48,7 @@ namespace MediaBazaarProject
                         admin_managerForm adminManagerForm = new admin_managerForm("manager");
                         adminManagerForm.Show();
                     }
-                    else if (user.Position == Position.SALES)
+                    else if (user.Position == MediaBazaarLibrary.Position.SALES)
                     {
                         WorkerForm employeeForm = new WorkerForm(user, "sales");
                         employeeForm.Show();

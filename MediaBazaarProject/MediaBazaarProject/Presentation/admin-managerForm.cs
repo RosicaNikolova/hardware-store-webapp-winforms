@@ -1,7 +1,4 @@
-﻿using MediaBazaarProject.Business;
-using MediaBazaarProject.Persistence;
-using MediaBazaarProject.Presentation;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +11,9 @@ using System.Windows.Forms;
 using OxyPlot;
 using OxyPlot.WindowsForms;
 using OxyPlot.Series;
+using MediaBazaarLibrary;
+using MediaBazaarLibrary.Business;
+using MediaBazaarProject.Presentation;
 
 namespace MediaBazaarProject
 {
@@ -46,8 +46,7 @@ namespace MediaBazaarProject
             DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 7);
             dtpDay.MaxDate = maxDate;
             dtpDay.MinDate = DateTime.Today;
-            
-
+           
         }
 
         private Employee selectedEmployee()
@@ -315,8 +314,8 @@ namespace MediaBazaarProject
                 object selectedEmployee = lbEmployeeList.SelectedItem;
                 employee = ((Employee)selectedEmployee);
                 Employee eInfo = employeeManager.GetEmployeeByID(employee);
-                employeeCard employeeCard = new employeeCard(eInfo);
-                employeeCard.Show();
+                employeeCard empCard = new employeeCard(eInfo);
+                empCard.Show();
             }
         }
 

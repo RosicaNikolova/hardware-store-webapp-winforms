@@ -46,6 +46,39 @@ namespace MediaBazaarLibrary.Persistence
             return schedule;
         }
 
+        public List<Shift> GetShiftsForWorkerForWeek(DateTime date, int id)
+        {
+            List<Shift> schedule = new List<Shift>();
+
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+
+                string sql = "SELECT * FROM shifts WHERE EmployeeId = @EmployeeId AND ShiftDate BETWEEN @startDate AND @endDate;";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+                DateTime endDate = new DateTime(date.Year, date.Month, date.Day + 6);
+                cmd.Parameters.AddWithValue("EmployeeId", id);
+                cmd.Parameters.AddWithValue("startDate", date);
+                cmd.Parameters.AddWithValue("endDate", endDate);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                Shift shift = null;
+
+                while (dr.Read())
+                {
+                    shift = new Shift();
+                    shift.Id = dr.GetInt32("Id");
+                    shift.Date = (DateTime)dr.GetMySqlDateTime("ShiftDate");
+                    shift.ShiftType = enumManager.SetShiftType(dr.GetString("ShiftNumber"));
+                    schedule.Add(shift);
+                }
+            }
+            return schedule;
+        }
+
         public List<Shift> GetAllShiftsForDate(DateTime date)
         {
             List<Shift> schedule = new List<Shift>();

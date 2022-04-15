@@ -26,7 +26,6 @@ D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\D
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\ref\MediaBazaarLibrary.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.pdb
-D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.csproj.AssemblyReference.cache
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.GeneratedMSBuildEditorConfig.editorconfig
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.AssemblyInfoInputs.cache
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.AssemblyInfo.cs

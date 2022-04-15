@@ -11,11 +11,18 @@ namespace MediaBazaarLibrary.Business
     {
         ScheduleRepository scheduleRepository = new ScheduleRepository();
 
-       
-
+      
         public ShiftManager()
         {
            
+        }
+
+        public List<Shift> GetShiftsForWorkerForWeek(DateTime date, int id)
+        {
+
+            List<Shift> shiftForWorker = new List<Shift>();
+            shiftForWorker = scheduleRepository.GetShiftsForWorkerForWeek(date, id);
+            return shiftForWorker;
         }
 
         public List<Shift> GetShiftsForDate(DateTime date)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MediaBazaarLibrary.Business
 {
-    class RequestManager
+    public class RequestManager
     {
         RequestRepository requestRepository = new RequestRepository();
         EnumManager enumManager = new EnumManager();

@@ -114,6 +114,8 @@ D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaB
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\ref\MediaBazaarWebsite.dll
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.pdb
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.genruntimeconfig.cache
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\Schedule.cshtml.g.cs
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\Schedule.cshtml.g.cs
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\bin\Debug\net5.0\appsettings.Development.json
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\bin\Debug\net5.0\appsettings.json
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\bin\Debug\net5.0\MediaBazaarWebsite.exe
@@ -173,5 +175,3 @@ D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\D
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\ref\MediaBazaarWebsite.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.pdb
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.genruntimeconfig.cache
-C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\Schedule.cshtml.g.cs
-D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\Schedule.cshtml.g.cs

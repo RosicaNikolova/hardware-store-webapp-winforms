@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "MediaBazaarProject/1.0.0": {
         "dependencies": {
+          "MediaBazaarLibrary": "1.0.0",
           "MySql.Data": "8.0.28",
           "OxyPlot.Core": "2.1.0",
           "OxyPlot.WindowsForms": "2.1.0"
@@ -157,6 +158,15 @@
       "System.Windows.Extensions/4.7.0": {
         "dependencies": {
           "System.Drawing.Common": "4.7.0"
+        }
+      },
+      "MediaBazaarLibrary/1.0.0": {
+        "dependencies": {
+          "MySql.Data": "8.0.28",
+          "OxyPlot.Core": "2.1.0"
+        },
+        "runtime": {
+          "MediaBazaarLibrary.dll": {}
         }
       }
     }
@@ -313,6 +323,11 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "MediaBazaarLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
