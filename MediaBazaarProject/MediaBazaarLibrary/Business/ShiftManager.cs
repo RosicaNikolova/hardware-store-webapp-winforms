@@ -174,5 +174,12 @@ namespace MediaBazaarLibrary.Business
             return shifts;
             
         }
+
+        public List<Shift> GetShiftsForAllWorkersForWeek(DateTime date)
+        {
+            List<Shift> shifts = new List<Shift>();
+            shifts = scheduleRepository.GetShiftsForAllWorekrsForWeek(date);
+            return shifts;
+        }
     }
 }

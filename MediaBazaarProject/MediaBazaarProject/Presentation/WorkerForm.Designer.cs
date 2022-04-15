@@ -93,7 +93,7 @@ namespace MediaBazaarProject
             this.tabWorkerHome.Location = new System.Drawing.Point(4, 27);
             this.tabWorkerHome.Name = "tabWorkerHome";
             this.tabWorkerHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWorkerHome.Size = new System.Drawing.Size(1991, 562);
+            this.tabWorkerHome.Size = new System.Drawing.Size(1991, 559);
             this.tabWorkerHome.TabIndex = 0;
             this.tabWorkerHome.Text = "WorkerHome";
             // 
@@ -146,6 +146,7 @@ namespace MediaBazaarProject
             this.dateWorker.Size = new System.Drawing.Size(286, 24);
             this.dateWorker.TabIndex = 20;
             this.dateWorker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
+            this.dateWorker.ValueChanged += new System.EventHandler(this.dateWorker_ValueChanged);
             // 
             // tabSales
             // 

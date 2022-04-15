@@ -403,11 +403,11 @@ namespace MediaBazaarLibrary.Persistence
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
             {
 
-                string sql = "SELECT * FROM employees WHERE @Position=Position ORDER BY EmployeeId";
-
-
+                string sql = "SELECT * FROM employees WHERE Position IN (@sales, @warehouse) ORDER BY EmployeeId;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("Position", "Worker");
+                cmd.Parameters.AddWithValue("sales", "Sales");
+                cmd.Parameters.AddWithValue("warehouse", "Warehouse");
+
 
                 conn.Open();
 

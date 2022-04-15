@@ -65,7 +65,9 @@ namespace MediaBazaarLibrary.Business
 
         public List<Employee> GetAllWorkers()
         {
-            return employeeRepository.GetWorkers();
+            List<Employee> workers = new List<Employee>();
+            workers = employeeRepository.GetWorkers();
+            return workers;
         }
 
         public List<NationalityStatistics> GetNationalityStatistics()

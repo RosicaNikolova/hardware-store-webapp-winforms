@@ -25,6 +25,7 @@ namespace MediaBazaarProject
             DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 7);
             dateWorker.MaxDate = maxDate;
             dateWorker.MinDate = DateTime.Today;
+
         }
 
         public WorkerForm(User u, string role)
@@ -40,6 +41,10 @@ namespace MediaBazaarProject
             {
                 btnSales.Visible = false;
             }
+
+            DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 7);
+            dateWorker.MaxDate = maxDate;
+            dateWorker.MinDate = DateTime.Today;
         }
 
         private Product SelectedProduct()
@@ -89,23 +94,7 @@ namespace MediaBazaarProject
             }
         }
 
-        private void dateWorker_ValueChanged(object sender, EventArgs e)
-        {
-            lbxShiftEmployeeDay.Items.Clear();
-
-            DateTime date = dateWorker.MinDate;
-            List<Shift> shiftsForWorker = new List<Shift>();
-            shiftsForWorker = shiftManager.GetShiftsForWorkerForWeek(date, user.Id);
-
-
-            foreach (Shift shift in shiftsForWorker)
-            {
-                if (dateWorker.Value == shift.Date)
-                {
-                    lbxShiftEmployeeDay.Items.Add(shift.ShiftType);
-                }
-            }
-        }
+       
 
         private void btnHomeWarehouse_Click(object sender, EventArgs e)
         {
@@ -273,5 +262,25 @@ namespace MediaBazaarProject
                 MessageBox.Show("Please select a request");
             }
         }
+
+        private void dateWorker_ValueChanged(object sender, EventArgs e)
+        {
+            lbxShiftEmployeeDay.Items.Clear();
+            DateTime date = new DateTime();
+            date = dateWorker.MinDate;
+            List<Shift> shiftsForWorker = new List<Shift>();
+            shiftsForWorker = shiftManager.GetShiftsForWorkerForWeek(date, user.Id);
+            foreach (Shift shift in shiftsForWorker)
+            {
+                if (dateWorker.Value == shift.Date)
+                {
+                    lbxShiftEmployeeDay.Items.Add(shift.ShiftType.ToString());
+                }
+            }
+
+
+        }
+
+      
     }
 }

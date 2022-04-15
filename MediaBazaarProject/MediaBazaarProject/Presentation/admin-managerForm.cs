@@ -49,7 +49,7 @@ namespace MediaBazaarProject
            
         }
 
-        internal Action<object, object> FormClosing()
+        public Action<object, object> FormClosing()
         {
             throw new NotImplementedException();
         }
@@ -497,15 +497,25 @@ namespace MediaBazaarProject
         private void btnWeeklyScheduleDisplay_Click(object sender, EventArgs e)
         {
             tabAdmin.SelectedTab = tabWeeklySchedule;
+            DateTime date = DateTime.Today;
+            DateTime fisrtDayOfWeek;
+            var culture = System.Threading.Thread.CurrentThread.CurrentCulture;
+            var diff = date.DayOfWeek - culture.DateTimeFormat.FirstDayOfWeek;
+            if (diff < 0)
+                diff += 7;
+            fisrtDayOfWeek = date.AddDays(-diff).Date;
+            DateTime lastDayOfWeek = new DateTime(fisrtDayOfWeek.Year, fisrtDayOfWeek.Month, fisrtDayOfWeek.Day + 6);
+
+            lblWeekDays.Text = $"{fisrtDayOfWeek.Day}/{fisrtDayOfWeek.Month}/{fisrtDayOfWeek.Year} - {lastDayOfWeek.Day}/{lastDayOfWeek.Month}/{lastDayOfWeek.Year}";
+            
             List<Shift> schedule = new List<Shift>();
-            schedule = shiftManager.GetAllShifts();
-            DateTime minDate = new DateTime();
-            minDate = dtpDay.MinDate;
+            schedule = shiftManager.GetShiftsForAllWorkersForWeek(date);
+           
             ClearListBoxesSchedule();
 
             foreach (Shift shift in schedule)
             {
-                if (shift.Date.Day == minDate.Day)
+                if (shift.Date.Day == fisrtDayOfWeek.Day)
                 {
                     switch (shift.ShiftType)
                     {
@@ -520,7 +530,7 @@ namespace MediaBazaarProject
                             break;
                     }
                 }
-                else if (shift.Date.Day == minDate.Day + 1)
+                else if (shift.Date.Day == fisrtDayOfWeek.Day + 1)
                 {
                     switch (shift.ShiftType)
                     {
@@ -535,7 +545,7 @@ namespace MediaBazaarProject
                             break;
                     }
                 }
-                else if (shift.Date.Day == minDate.Day + 2)
+                else if (shift.Date.Day == fisrtDayOfWeek.Day + 2)
                 {
                     switch (shift.ShiftType)
                     {
@@ -550,7 +560,7 @@ namespace MediaBazaarProject
                             break;
                     }
                 }
-                else if (shift.Date.Day == minDate.Day + 3)
+                else if (shift.Date.Day == fisrtDayOfWeek.Day + 3)
                 {
                     switch (shift.ShiftType)
                     {
@@ -565,7 +575,7 @@ namespace MediaBazaarProject
                             break;
                     }
                 }
-                else if (shift.Date.Day == minDate.Day + 4)
+                else if (shift.Date.Day == fisrtDayOfWeek.Day + 4)
                 {
                     switch (shift.ShiftType)
                     {
@@ -580,7 +590,7 @@ namespace MediaBazaarProject
                             break;
                     }
                 }
-                else if (shift.Date.Day == minDate.Day + 5)
+                else if (shift.Date.Day == fisrtDayOfWeek.Day + 5)
                 {
                     switch (shift.ShiftType)
                     {
@@ -595,7 +605,7 @@ namespace MediaBazaarProject
                             break;
                     }
                 }
-                else if (shift.Date.Day == minDate.Day + 6)
+                else if (shift.Date.Day == fisrtDayOfWeek.Day + 6)
                 {
                     switch (shift.ShiftType)
                     {
@@ -711,5 +721,7 @@ namespace MediaBazaarProject
                 lbAllProducts.Items.Add(p);
             }
         }
+
+       
     }
 }
