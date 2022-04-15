@@ -1,9 +1,29 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito:wght@200;300;400&family=Roboto&display=swap');
+/* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    background-color: #D5E5F2;
+    margin: 0;
+    padding: 0;
+}*/
 nav {
     background-color: white;
     margin: 0;
     padding: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: end;
 }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #308695;
+    }
+
+header{
+    padding-bottom: 20px
+}
+
 /*-------------Log In Page-----------------*/
 body {
     font-family: 'Roboto', sans-serif;
@@ -20,6 +40,9 @@ body {
     left: 50%;
     padding: 50px;
     width: 300px;
+    background-color: #308695;
+    border-radius: 20px;
+    color: white;
 }
 
 .field {
@@ -40,7 +63,6 @@ body {
 
 
 .login_buttons {
-    background-color: blue;
     margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
@@ -48,13 +70,18 @@ body {
 
 
     .login_buttons input {
-        padding: 8px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: white;
+        border-width: 0;
+        color: #308695;
     }
 /*---------------SignedInPage------------------*/
 .navigationBar_buttons {
     display: flex;
     align-content: flex-start;
 }
+
     .navigationBar_buttons li {
         padding-right: 20px;
         text-decoration: none;
@@ -69,41 +96,53 @@ body {
     align-items: center;
 }
 .schedule_container {
-    background-color: aqua;
+    background-color: #308695;
+    color:white;
     display: grid;
     grid-template-columns: repeat(7, auto);
-    margin:0;
-    width:90%;
+    margin: 0;
+    width: 90%;
     /*justify-content: center;*/
-}
+}/*
     .schedule_container ul {
         padding:20px;
-    }
+    }*/
 
     .schedule_row {
+       /* padding-top:20px;*/
         width: 100%;
         height: 25px;
         text-align: center;
+        padding-top: 10px;
+        padding-bottom:10px;
+
     }
 
 .schedule_days_row {
+    padding:10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
     list-style-type: none;
-    padding: 0;
     margin: 0;
     height: auto;
+    
 }
 
 .scheduleBoxContent {
     margin:2px;
     padding: 5px;
     min-height: 130px;
-    height: auto;
-    width: auto;
+ /*   height: auto;
+    width: 100%;*/
     display: flex;
     flex-direction: column;
     border-left: 1px solid white;
     border-bottom: 2px solid white;
     background-image: linear-gradient(to bottom, #308695, #d4cfc9);
+    width: 180px;
+    
 }
     .scheduleBoxContent div {
         margin: 5px;
@@ -111,23 +150,30 @@ body {
     .scheduleBoxContent li {
         text-align: left;
         color: white;
+        width: 20px;
 
     }
 
 .special_empty_day {
-    padding: 5px;
     margin: 2px;
+    padding: 5px;
     min-height: 130px;
     border-left: 1px solid white;
     border-bottom: 2px solid white;
+    width: 180px;
 }
 
 .shift_box {
     background-color: #EBEFF2;
-    padding:10px;
+    padding: 10px;
     border-radius: 20px;
+    color: #308695;
 }
 
+.homePage {
+    text-align: center;
+    color: #508791;
+}
 
 
 
