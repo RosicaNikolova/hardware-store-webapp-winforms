@@ -120,6 +120,32 @@ namespace MediaBazaarProject.Persistence
             }
         }
 
+        public Product GetProductById(int id)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "SELECT * FROM products WHERE ProductId=@ProductId";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("ProductId", id);
+
+                conn.Open();
+                Product product = new Product();
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+
+                while (dateReader.Read())
+                {
+                    product.ProductId = dateReader.GetInt32("ProductId");
+                    product.ProductName = dateReader.GetString("ProductName");
+                    product.ProductDescription = dateReader.GetString("ProductDesc");
+                    product.ProductManufacturer = dateReader.GetString("ProductManufacturer");
+                    product.QuantitySales = dateReader.GetInt32("QuantitySales");
+                    product.QuantityWarehouse = dateReader.GetInt32("QuantityWarehouse");
+                }
+                return product;
+            }
+        }
+
         //public bool DeleteProduct(Product product)
         //{
 

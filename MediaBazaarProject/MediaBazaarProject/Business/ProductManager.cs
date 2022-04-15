@@ -63,7 +63,11 @@ namespace MediaBazaarProject.Business
             {
                 throw new Exception(error.Message);
             }
+        }
 
+        public Product GetById(int id)
+        {
+            return productRepository.GetProductById(id);
         }
     }
 }
