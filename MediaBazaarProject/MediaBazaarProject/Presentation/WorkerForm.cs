@@ -106,9 +106,10 @@ namespace MediaBazaarProject
         {
             TabWorker.SelectedTab = tabSales;
             List<Product> products = productManager.GetAllProductsList();
-            List<Request> requests = requestManager.GetAllRequestsList();
-            lbxRequestSales.Items.Clear();
             lbxStockSales.Items.Clear();
+            lbSalesQuantity.Items.Clear();
+            List<Request> requests = requestManager.GetAllRequestsList();
+            lbxRequestWarehouse.Items.Clear();
             foreach (Request r in requests)
             {
                 lbxRequestSales.Items.Add(r);
@@ -124,9 +125,10 @@ namespace MediaBazaarProject
         {
             TabWorker.SelectedTab = tabWarehouse;
             List<Product> products = productManager.GetAllProductsList();
+            lbxStockWarehouse.Items.Clear();
+            lbWarehouseQuantity.Items.Clear();
             List<Request> requests = requestManager.GetAllRequestsList();
             lbxRequestWarehouse.Items.Clear();
-            lbxStockWarehouse.Items.Clear();
             foreach (Request r in requests)
             {
                 lbxRequestWarehouse.Items.Add(r);
@@ -140,9 +142,22 @@ namespace MediaBazaarProject
 
         private void btnRequestItem_Click(object sender, EventArgs e)
         {
-            Product product = SelectedProduct();
-            requestManager.Create(user.Id, product.ProductId, Convert.ToInt32(nudAmountSales.Value), EnumRequestStatus.PENDING);
-            MessageBox.Show("Item has been requested");
+            if(nudAmountSales.Value > 0)
+            {
+                Product product = SelectedProduct();
+                requestManager.Create(user.Id, product.ProductId, Convert.ToInt32(nudAmountSales.Value), EnumRequestStatus.PENDING);
+                MessageBox.Show("Item has been requested");
+                List<Request> requests = requestManager.GetAllRequestsList();
+                lbxRequestWarehouse.Items.Clear();
+                foreach (Request r in requests)
+                {
+                    lbxRequestWarehouse.Items.Add(r);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select one or more items");
+            }
         }
 
         private void btnAddStock_Click(object sender, EventArgs e)
@@ -169,6 +184,7 @@ namespace MediaBazaarProject
                             requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
                             productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount);
                             MessageBox.Show("Request has been Accepted");
+
                         }
                         else if (request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
                         {
@@ -192,6 +208,13 @@ namespace MediaBazaarProject
             {
                 MessageBox.Show("Please select request and corresponding product");
             }
+            List<Request> requests = requestManager.GetAllRequestsList();
+            lbxRequestWarehouse.Items.Clear();
+            lbWarehouseQuantity.Items.Clear();
+            foreach (Request r in requests)
+            {
+                lbxRequestWarehouse.Items.Add(r);
+            }
         }
 
         private void btnRejectRequest_Click(object sender, EventArgs e)
@@ -208,6 +231,13 @@ namespace MediaBazaarProject
             else
             {
                 MessageBox.Show("Please select a request");
+            }
+
+            List<Request> requests = requestManager.GetAllRequestsList();
+            lbxRequestWarehouse.Items.Clear();
+            foreach (Request r in requests)
+            {
+                lbxRequestWarehouse.Items.Add(r);
             }
         }
     }
