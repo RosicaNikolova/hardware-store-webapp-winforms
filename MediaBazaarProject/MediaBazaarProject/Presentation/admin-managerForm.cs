@@ -442,6 +442,9 @@ namespace MediaBazaarProject
                 ContractPieViewModel contractPieViewModel = new ContractPieViewModel();
                 this.plotViewContract.Model = contractPieViewModel.Model2;
 
+                RequestedItemsPieViewModel requestedItemsPieViewModel = new RequestedItemsPieViewModel();
+                this.plotViewRequestedItems.Model = requestedItemsPieViewModel.Model3;
+
                 lblAverageSalary.Text = $"Average salary: ${employeeManager.GetAverageSalary():f2}";
                 lblNumberOfEmployees.Text = $"Number of employees: {employeeManager.GetAllEmployees().Count}";
             }

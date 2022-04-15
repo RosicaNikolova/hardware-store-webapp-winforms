@@ -49,5 +49,10 @@ namespace MediaBazaarLibrary.Business
                 throw new Exception(error.Message);
             }
         }
+
+        public List<RequestedItemsStatistics> GetRequestedItemsStatistics()
+        {
+            return requestRepository.GetRequestedItemsStatistics();
+        }
     }
 }
