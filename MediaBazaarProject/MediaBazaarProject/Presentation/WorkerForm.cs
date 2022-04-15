@@ -115,7 +115,8 @@ namespace MediaBazaarProject
             }
             foreach (Product p in products)
             {
-                lbxStockSales.Items.Add(p + $" Sales Stock: {p.QuantitySales}");
+                lbxStockSales.Items.Add(p);
+                lbSalesQuantity.Items.Add(p.QuantitySales);
             }
         }
 
@@ -132,7 +133,8 @@ namespace MediaBazaarProject
             }
             foreach (Product p in products)
             {
-                lbxStockWarehouse.Items.Add(p +$"Warehouse Stock:{p.QuantityWarehouse}");
+                lbxStockWarehouse.Items.Add(p);
+                lbWarehouseQuantity.Items.Add(p.QuantityWarehouse);
             }
         }
 

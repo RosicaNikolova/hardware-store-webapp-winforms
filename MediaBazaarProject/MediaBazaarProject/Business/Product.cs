@@ -24,13 +24,10 @@ namespace MediaBazaarProject.Business
 
         public override string ToString()
         {
-            return $"ProductId: {this.ProductId}, Pr.Name: {this.ProductName},"; // SalesStock: {this.QuantitySales} Warehouse Stock: { this.QuantityWarehouse}
+            return $"Product Id: {this.ProductId}, Product Name: {this.ProductName}, Category: {this.ProductCategory}, Manufacturer: {this.ProductManufacturer}"; // SalesStock: {this.QuantitySales} Warehouse Stock: { this.QuantityWarehouse}
         }
 
-        //public string ToWarehouse()
-        //{   
-        //    return $"ProductId: {this.ProductId}, Pr.Name: {this.ProductName}, WarehouseStock: {this.QuantityWarehouse}";
-        //}
+      
     }
 
 }
