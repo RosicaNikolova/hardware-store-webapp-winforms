@@ -76,10 +76,10 @@ namespace MediaBazaarProject
             this.TabWorker.Controls.Add(this.tabWorkerHome);
             this.TabWorker.Controls.Add(this.tabSales);
             this.TabWorker.Controls.Add(this.tabWarehouse);
-            this.TabWorker.Location = new System.Drawing.Point(-6, -25);
+            this.TabWorker.Location = new System.Drawing.Point(-6, -22);
             this.TabWorker.Name = "TabWorker";
             this.TabWorker.SelectedIndex = 0;
-            this.TabWorker.Size = new System.Drawing.Size(1999, 593);
+            this.TabWorker.Size = new System.Drawing.Size(1999, 590);
             this.TabWorker.TabIndex = 15;
             // 
             // tabWorkerHome
@@ -163,7 +163,7 @@ namespace MediaBazaarProject
             this.tabSales.Location = new System.Drawing.Point(4, 27);
             this.tabSales.Name = "tabSales";
             this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(1991, 562);
+            this.tabSales.Size = new System.Drawing.Size(1991, 559);
             this.tabSales.TabIndex = 1;
             this.tabSales.Text = "SalesTab";
             // 
@@ -184,7 +184,7 @@ namespace MediaBazaarProject
             this.lbSalesQuantity.ItemHeight = 18;
             this.lbSalesQuantity.Location = new System.Drawing.Point(1627, 90);
             this.lbSalesQuantity.Name = "lbSalesQuantity";
-            this.lbSalesQuantity.Size = new System.Drawing.Size(176, 382);
+            this.lbSalesQuantity.Size = new System.Drawing.Size(176, 364);
             this.lbSalesQuantity.TabIndex = 34;
             // 
             // lblInventorySales
@@ -213,7 +213,7 @@ namespace MediaBazaarProject
             this.lbxRequestSales.ItemHeight = 18;
             this.lbxRequestSales.Location = new System.Drawing.Point(282, 90);
             this.lbxRequestSales.Name = "lbxRequestSales";
-            this.lbxRequestSales.Size = new System.Drawing.Size(660, 382);
+            this.lbxRequestSales.Size = new System.Drawing.Size(660, 364);
             this.lbxRequestSales.TabIndex = 31;
             // 
             // btnHomeSales
@@ -261,7 +261,7 @@ namespace MediaBazaarProject
             this.lbxStockSales.ItemHeight = 18;
             this.lbxStockSales.Location = new System.Drawing.Point(948, 90);
             this.lbxStockSales.Name = "lbxStockSales";
-            this.lbxStockSales.Size = new System.Drawing.Size(680, 382);
+            this.lbxStockSales.Size = new System.Drawing.Size(680, 364);
             this.lbxStockSales.TabIndex = 0;
             // 
             // tabWarehouse
@@ -282,7 +282,7 @@ namespace MediaBazaarProject
             this.tabWarehouse.Location = new System.Drawing.Point(4, 27);
             this.tabWarehouse.Name = "tabWarehouse";
             this.tabWarehouse.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWarehouse.Size = new System.Drawing.Size(1991, 562);
+            this.tabWarehouse.Size = new System.Drawing.Size(1991, 559);
             this.tabWarehouse.TabIndex = 2;
             this.tabWarehouse.Text = "WarehouseTab";
             // 
@@ -303,7 +303,7 @@ namespace MediaBazaarProject
             this.lbWarehouseQuantity.ItemHeight = 18;
             this.lbWarehouseQuantity.Location = new System.Drawing.Point(1627, 90);
             this.lbWarehouseQuantity.Name = "lbWarehouseQuantity";
-            this.lbWarehouseQuantity.Size = new System.Drawing.Size(176, 382);
+            this.lbWarehouseQuantity.Size = new System.Drawing.Size(176, 364);
             this.lbWarehouseQuantity.TabIndex = 35;
             // 
             // lblInventoryWarehouse
@@ -354,7 +354,7 @@ namespace MediaBazaarProject
             this.lbxRequestWarehouse.ItemHeight = 18;
             this.lbxRequestWarehouse.Location = new System.Drawing.Point(282, 90);
             this.lbxRequestWarehouse.Name = "lbxRequestWarehouse";
-            this.lbxRequestWarehouse.Size = new System.Drawing.Size(647, 382);
+            this.lbxRequestWarehouse.Size = new System.Drawing.Size(647, 364);
             this.lbxRequestWarehouse.TabIndex = 30;
             // 
             // btnHomeWarehouse
@@ -402,7 +402,7 @@ namespace MediaBazaarProject
             this.lbxStockWarehouse.ItemHeight = 18;
             this.lbxStockWarehouse.Location = new System.Drawing.Point(948, 90);
             this.lbxStockWarehouse.Name = "lbxStockWarehouse";
-            this.lbxStockWarehouse.Size = new System.Drawing.Size(680, 382);
+            this.lbxStockWarehouse.Size = new System.Drawing.Size(680, 364);
             this.lbxStockWarehouse.TabIndex = 0;
             // 
             // WorkerForm

@@ -204,9 +204,7 @@ namespace MediaBazaarProject
         private void btnAcceptRequest_Click(object sender, EventArgs e)
         {
             Request request = SelectedRequest();
-            //Product product = SelectedProduct();
             Product product = productManager.GetById(request.ProductId);
-
 
             if (request != null)
             {
@@ -237,7 +235,7 @@ namespace MediaBazaarProject
             }
             else
             {
-                MessageBox.Show("Please select request and corresponding product");
+                MessageBox.Show("Please select request");
             }
             List<Request> requests = requestManager.GetAllRequestsList();
             List<Product> products = productManager.GetAllProductsList();
@@ -262,18 +260,17 @@ namespace MediaBazaarProject
                 {
                     requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.REJECTED);
                     MessageBox.Show("Request has been denied");
+                    List<Request> requests = requestManager.GetAllRequestsList();
+                    lbxRequestWarehouse.Items.Clear();
+                    foreach (Request r in requests)
+                    {
+                        lbxRequestWarehouse.Items.Add(r);
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Please select a request");
-            }
-
-            List<Request> requests = requestManager.GetAllRequestsList();
-            lbxRequestWarehouse.Items.Clear();
-            foreach (Request r in requests)
-            {
-                lbxRequestWarehouse.Items.Add(r);
             }
         }
     }

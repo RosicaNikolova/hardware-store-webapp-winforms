@@ -140,3 +140,5 @@ D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\D
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\ref\MediaBazaarProject.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.pdb
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.genruntimeconfig.cache
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\MediaBazaarLibrary.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\MediaBazaarLibrary.pdb

@@ -42,21 +42,41 @@ namespace MediaBazaarProject
                     {
                         admin_managerForm adminManagerForm = new admin_managerForm("admin");
                         adminManagerForm.Show();
+                        this.Hide();
+                        adminManagerForm.FormClosed += (s, e) =>
+                        {
+                            this.Show();
+                        };
                     }
                     else if (user.Position == Position.MANAGER)
                     {
                         admin_managerForm adminManagerForm = new admin_managerForm("manager");
                         adminManagerForm.Show();
+                        this.Hide();
+                        adminManagerForm.FormClosed += (s, e) =>
+                        {
+                            this.Show();
+                        };
                     }
-                    else if (user.Position == MediaBazaarLibrary.Position.SALES)
+                    else if (user.Position == Position.SALES)
                     {
                         WorkerForm employeeForm = new WorkerForm(user, "sales");
                         employeeForm.Show();
+                        this.Hide();
+                        employeeForm.FormClosed += (s, e) =>
+                        {
+                            this.Show();
+                        };
                     }
                     else if(user.Position == Position.WAREHOUSE)
                     {
                         WorkerForm employeeForm = new WorkerForm(user, "warehouse");
                         employeeForm.Show();
+                        this.Hide();
+                        employeeForm.FormClosed += (s, e) =>
+                        {
+                            this.Show();
+                        };
                     }
                     else
                     {

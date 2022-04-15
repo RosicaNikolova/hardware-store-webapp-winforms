@@ -22,7 +22,7 @@ namespace MediaBazaarLibrary.Business
         public int QuantitySales { get; set; }
         public override string ToString()
         {
-            return $"ProductId: {this.ProductId}, Pr.Name: {this.ProductName}";
+            return $"Product Id: {this.ProductId}, Product Name: {this.ProductName}, Category: {this.ProductCategory}, Manufacturer: {this.ProductManufacturer}";
         }
 
     }

@@ -11,12 +11,16 @@ namespace MediaBazaarLibrary.Persistence
     public class RequestRepository
     {
         EnumManager enumManager = new EnumManager();
+
         public List<Request> GetRequests()
         {
-            List<Request> allRequest = new List<Request>();
+            List<Request> allRequests = new List<Request>();
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "SELECT * FROM request ORDER BY RequestId";
+                string sql = "SELECT employees.EmployeeId, products.ProductId, products.ProductName, request.RequestId, request.RequestedAmount, request.RequestStatus " +
+                    "FROM request INNER JOIN products INNER JOIN employees " +
+                    "ON request.ProductId = products.ProductId AND request.EmployeeId = employees.EmployeeID " +
+                    "WHERE request.ProductId = products.ProductId";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -32,11 +36,12 @@ namespace MediaBazaarLibrary.Persistence
                     request.ProductId = dr.GetInt32("ProductId");
                     request.RequestedAmount = dr.GetInt32("RequestedAmount");
                     request.Status = enumManager.GetRequestStatus(dr.GetString("RequestStatus"));
-                    allRequest.Add(request);
+                    allRequests.Add(request);
                 }
-                return allRequest;
             }
+            return allRequests;
         }
+
         public void CreateRequest(Request request)
         {
             try
@@ -49,7 +54,7 @@ namespace MediaBazaarLibrary.Persistence
                     cmd.Parameters.AddWithValue("EmployeeId", request.EmployeeId);
                     cmd.Parameters.AddWithValue("ProductId", request.ProductId);
                     cmd.Parameters.AddWithValue("RequestedAmount", request.RequestedAmount);
-                    cmd.Parameters.AddWithValue("RequestStatus", request.Status);
+                    cmd.Parameters.AddWithValue("RequestStatus", request.Status.ToString());
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -67,13 +72,14 @@ namespace MediaBazaarLibrary.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "UPDATE request SET EmployeeId=@EmployeeId, ProductId=@ProductId, RequestedAmount=@RequestedAmount, RequestStatus=@RequestStatus";
+                    string sql = "UPDATE request SET EmployeeId=@EmployeeId, ProductId=@ProductId, RequestedAmount=@RequestedAmount, RequestStatus=@RequestStatus where RequestId = @RequestId";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
+                    cmd.Parameters.AddWithValue("RequestId", request.RequestId);
                     cmd.Parameters.AddWithValue("EmployeeId", request.EmployeeId);
                     cmd.Parameters.AddWithValue("ProductId", request.ProductId);
                     cmd.Parameters.AddWithValue("RequestedAmount", request.RequestedAmount);
-                    cmd.Parameters.AddWithValue("RequestStatus", request.Status);
+                    cmd.Parameters.AddWithValue("RequestStatus", request.Status.ToString());
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }

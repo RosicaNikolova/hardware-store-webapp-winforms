@@ -33,3 +33,15 @@ D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\D
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\ref\MediaBazaarLibrary.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.pdb
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.deps.json
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\ref\MediaBazaarLibrary.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.pdb
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.csproj.AssemblyReference.cache
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.AssemblyInfoInputs.cache
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.AssemblyInfo.cs
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.csproj.CoreCompileInputs.cache
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\ref\MediaBazaarLibrary.dll
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.pdb
