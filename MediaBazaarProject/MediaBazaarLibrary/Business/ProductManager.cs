@@ -14,7 +14,7 @@ namespace MediaBazaarLibrary.Business
         public List<Product> GetAllProductsList() {
             return productRepository.GetAllProducts();
         }
-        public void Create(string prName, string prDesc, string prManu, EnumCategory prCateg, int qWare, int qSale)
+        public void Create(string prName, string prDesc, string prManu, string prCateg, int qWare, int qSale)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace MediaBazaarLibrary.Business
             }
         }
 
-        public void Edit(Product updatedProduct, string prName, string prDesc, string prManu, EnumCategory prCateg, int qWare, int qSale)
+        public void Edit(Product updatedProduct, string prName, string prDesc, string prManu, string prCateg, int qWare, int qSale)
         {
             try
             {
@@ -67,11 +67,6 @@ namespace MediaBazaarLibrary.Business
         public Product GetById(int id)
         {
             return productRepository.GetProductById(id);
-        }
-
-        public List<string> GetAllCategories()
-        {
-            return productRepository.GetAllCategories();
         }
     }
 }

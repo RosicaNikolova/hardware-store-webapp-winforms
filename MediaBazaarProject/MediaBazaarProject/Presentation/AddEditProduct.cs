@@ -14,19 +14,21 @@ namespace MediaBazaarProject.Presentation
     public partial class AddEditProduct : Form
     {
         EnumManager enumManager = new EnumManager();
+        CategoryManager categoryManager = new CategoryManager();
         ProductManager productManager = new ProductManager();
         private int optionForm;
         private Product productForUpdate;
         //for creating product
+
         public AddEditProduct(int option)
         {
             optionForm = option;
             InitializeComponent();
             btnAddEdit.Text = "Add";
             lblForm.Text = "Add Product Form";
-            foreach (var item in enumManager.ListCategories())
+            foreach (Category category in categoryManager.GetCategories())
             {
-                cbCate.Items.Add(item.ToString());
+                cbCate.Items.Add(category.Name);
             }
         }
         //For editting
@@ -35,9 +37,9 @@ namespace MediaBazaarProject.Presentation
             productForUpdate = product;
             optionForm = option;
             InitializeComponent();
-            foreach (var item in enumManager.ListCategories())
+            foreach (Category category in categoryManager.GetCategories())
             {
-                cbCate.Items.Add(item.ToString());
+                cbCate.Items.Add(category.Name);
             }
             btnAddEdit.Text = "Edit";
             lblForm.Text = "Edit Product Form";
@@ -55,7 +57,7 @@ namespace MediaBazaarProject.Presentation
             {
                 if (optionForm == 1)
                 {
-                    productManager.Create(tbName.Text, tbDesc.Text, tbManu.Text, enumManager.GetProductCategory(cbCate.Text), Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
+                    productManager.Create(tbName.Text, tbDesc.Text, tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
                     MessageBox.Show("Product Added!!!");
                     this.Close();
                 }
@@ -63,7 +65,7 @@ namespace MediaBazaarProject.Presentation
                 {
                     if (productForUpdate != null)
                     {
-                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, tbManu.Text, enumManager.GetProductCategory(cbCate.Text), Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
+                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
                         MessageBox.Show("Product edited!!!");
                         this.Close();
                     }

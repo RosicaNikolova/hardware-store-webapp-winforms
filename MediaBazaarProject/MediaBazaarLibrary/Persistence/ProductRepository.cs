@@ -17,7 +17,7 @@ namespace MediaBazaarLibrary.Persistence
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
 
-                string sql = "SELECT * FROM products ORDER BY ProductId";
+                string sql = "SELECT ProductId, ProductName, ProductDesc, ProductManufacturer, QuantityWarehouse, QuantitySales, category.categoryname AS CategoryName FROM products INNER JOIN category on ProductCategoryId=categoryid";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -35,37 +35,12 @@ namespace MediaBazaarLibrary.Persistence
                     product.ProductManufacturer = dr.GetString("ProductManufacturer");
                     product.QuantityWarehouse = dr.GetInt32("QuantityWarehouse");
                     product.QuantitySales = dr.GetInt32("QuantitySales");
-                    product.ProductCategory = enumManager.GetProductCategory(dr.GetString("ProductCategory"));
+                    product.ProductCategory = dr.GetString("CategoryName");
                     allProducts.Add(product);
                 }
             }
 
             return allProducts;
-        }
-
-        public List<string> GetAllCategories()
-        {
-            List<string> allCategories = new List<string>();
-            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
-            {
-
-                string sql = "SELECT ProductCategory FROM products";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                conn.Open();
-
-                MySqlDataReader dr = cmd.ExecuteReader();
-
-
-                string category = String.Empty;
-                while (dr.Read())
-                {
-                    category = dr.GetString("ProductCategory");
-                    allCategories.Add(category);
-                }
-            }
-
-            return allCategories;
         }
 
         public void CreateProduct(Product product)
@@ -74,15 +49,20 @@ namespace MediaBazaarLibrary.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "insert into products (ProductName,ProductDesc,ProductManufacturer,QuantityWarehouse,QuantitySales,ProductCategory) values (@ProductName,@ProductDesc,@ProductManufacturer,@QuantityWarehouse,@QuantitySales,@ProductCategory)";
+                    string sql = "insert into products (ProductName,ProductDesc,ProductManufacturer,QuantityWarehouse,QuantitySales) values (@ProductName,@ProductDesc,@ProductManufacturer,@QuantityWarehouse,@QuantitySales)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("ProductName", product.ProductName);
                     cmd.Parameters.AddWithValue("ProductDesc", product.ProductDescription);
                     cmd.Parameters.AddWithValue("ProductManufacturer", product.ProductManufacturer);
-                    cmd.Parameters.AddWithValue("ProductCategory", product.ProductCategory);
                     cmd.Parameters.AddWithValue("QuantityWarehouse", product.QuantityWarehouse);
                     cmd.Parameters.AddWithValue("QuantitySales", product.QuantitySales);
                     conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    sql = "UPDATE products, category SET products.ProductCategoryId=category.categoryid WHERE products.ProductCategoryId=0 AND category.categoryname=@ProdCategoryName";
+                    cmd = new MySqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("ProdCategoryName", product.ProductCategory);
                     cmd.ExecuteNonQuery();
                 }
             }

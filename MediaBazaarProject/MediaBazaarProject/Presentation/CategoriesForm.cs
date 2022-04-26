@@ -13,20 +13,25 @@ namespace MediaBazaarProject.Presentation
 {
     public partial class CategoriesForm : Form
     {
-        ProductManager productManager = new ProductManager();
+        CategoryManager categoryManager = new CategoryManager();
 
         public CategoriesForm()
         {
             InitializeComponent();
-            foreach (string category in productManager.GetAllCategories())
+            foreach (Category category in categoryManager.GetCategories())
             {
-                lbCategories.Items.Add(category);
+                lbCategories.Items.Add(category.Name);
             }
         }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            
+            lbCategories.Items.Clear();
+            categoryManager.AddCategory(tbCategoryName.Text);
+            foreach (Category category in categoryManager.GetCategories())
+            {
+                lbCategories.Items.Add(category.Name);
+            }
         }
     }
 }

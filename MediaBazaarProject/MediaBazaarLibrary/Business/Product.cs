@@ -15,7 +15,8 @@ namespace MediaBazaarLibrary.Business
         public string ProductDescription { get; set; }
 
         public string ProductManufacturer { get; set; }
-        public EnumCategory ProductCategory { get; set; }
+
+        public string ProductCategory { get; set; }
 
         public int QuantityWarehouse { get; set; }
 
