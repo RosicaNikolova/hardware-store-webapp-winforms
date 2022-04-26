@@ -43,15 +43,31 @@ namespace MediaBazaarLibrary.Persistence
             return allProducts;
         }
 
-        //public List<Product> GetProductsByCategory()
-        //{
+        public List<string> GetAllCategories()
+        {
+            List<string> allCategories = new List<string>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
 
-        //}
+                string sql = "SELECT ProductCategory FROM products";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-        //public Product GetProduct(int id)
-        //{
+                conn.Open();
 
-        //}
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+
+                string category = String.Empty;
+                while (dr.Read())
+                {
+                    category = dr.GetString("ProductCategory");
+                    allCategories.Add(category);
+                }
+            }
+
+            return allCategories;
+        }
+
         public void CreateProduct(Product product)
         {
             try

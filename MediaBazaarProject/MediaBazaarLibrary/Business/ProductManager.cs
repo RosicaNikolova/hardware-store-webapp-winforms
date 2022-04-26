@@ -68,5 +68,10 @@ namespace MediaBazaarLibrary.Business
         {
             return productRepository.GetProductById(id);
         }
+
+        public List<string> GetAllCategories()
+        {
+            return productRepository.GetAllCategories();
+        }
     }
 }

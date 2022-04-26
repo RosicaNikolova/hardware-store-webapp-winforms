@@ -7,6 +7,9 @@
     <Compile Update="Presentation\admin-managerForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentation\CategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentation\employeeCard.cs">
       <SubType>Form</SubType>
     </Compile>

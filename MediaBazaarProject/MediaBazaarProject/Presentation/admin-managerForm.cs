@@ -43,7 +43,8 @@ namespace MediaBazaarProject
                 btnScheduleAdministration.Visible = false;
                 btnEmployeeManagement.Visible = false;
             }
-            DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 7);
+            DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+            maxDate = DateTime.Today.AddDays(7);
             dtpDay.MaxDate = maxDate;
             dtpDay.MinDate = DateTime.Today;
            
@@ -722,6 +723,10 @@ namespace MediaBazaarProject
             }
         }
 
-       
+        private void btnProductCategories_Click(object sender, EventArgs e)
+        {
+            CategoriesForm categoriesForm = new CategoriesForm();
+            categoriesForm.Show();
+        }
     }
 }
