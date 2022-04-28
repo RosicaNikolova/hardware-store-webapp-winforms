@@ -14,16 +14,14 @@ namespace MediaBazaarLibrary.Persistence
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "insert into leave_requests (RequestID, RequestedDate, EmployeeID, RequestStatus) values (@RequestID, @RequestedDate, @EmployeeID, @RequestStatus)";
+                string sql = "insert into leave_requests (RequestedDate, EmployeeID, RequestStatus) values (@RequestedDate, @EmployeeID, @RequestStatus)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("RequestID", leaveRequest.RequestID);
                 cmd.Parameters.AddWithValue("RequestedDate", leaveRequest.RequestedDate);
                 cmd.Parameters.AddWithValue("EmployeeID", leaveRequest.EmployeeID);
                 cmd.Parameters.AddWithValue("RequestStatus", leaveRequest.RequestStatus);
 
                 conn.Open();
 
-                MySqlDataReader dr = cmd.ExecuteReader();
                 cmd.ExecuteNonQuery();
             }
         }
@@ -32,7 +30,7 @@ namespace MediaBazaarLibrary.Persistence
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "update leave_requests set (RequestID, RequestedDate, EmployeeID, )";
+                string sql = "update leave_requests set (RequestID=@RequestID, RequestedDate=@RequestedDate, EmployeeID=@EmployeeID, RequestStatus=@RequestStatus)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("RequestID", leaveRequest.RequestID);
                 cmd.Parameters.AddWithValue("RequestedDate", leaveRequest.RequestedDate);
@@ -47,9 +45,63 @@ namespace MediaBazaarLibrary.Persistence
         }
 
 
-        //public LeaveRequest getLeaveRequest(int leaveRequestID)
-        //{
+        public List<LeaveRequest> getLeaveRequests()
+        {
+            List<LeaveRequest> allLeaveRequests = new List<LeaveRequest>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+
+                string sql = "SELECT e.EmployeeID, RequestID, RequestStatus, RequestedDate " +
+                    "from employees as e left join leave_requests as l_s on" +
+                    " e.EmployeeID = l_s.EmployeeID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+
+                LeaveRequest leaveRequest = null;
+                while (dr.Read())
+                {
+                    leaveRequest = new LeaveRequest();
+                    leaveRequest.EmployeeID = dr.GetInt32("EmployeeID");
+                    leaveRequest.RequestID = dr.GetInt32("RequestID");
+                    leaveRequest.RequestedDate = dr.GetDateTime("RequestedDate");
+                    leaveRequest.RequestStatus = dr.GetString("RequestStatus");
+                    allLeaveRequests.Add(leaveRequest);
+                }
+            }
+            return allLeaveRequests;
+        }
+        public LeaveRequest getLeaveRequest(int requestID)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+
+                string sql = "SELECT e.EmployeeID, RequestID, RequestStatus, RequestedDate " +
+                    "from employees as e left join" +
+                    " leave_requests as l_s on e.EmployeeID = l_s.EmployeeID " +
+                    "where RequestID=@requestID ";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("RequestID", requestID);
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                
+
+                LeaveRequest leaveRequest = null;
+                while (dr.Read())
+                {
+                    leaveRequest = new LeaveRequest();
+                    leaveRequest.EmployeeID = dr.GetInt32("EmployeeID");
+                    leaveRequest.RequestID = dr.GetInt32("RequestID");
+                    leaveRequest.RequestedDate = dr.GetDateTime("RequestedDate");
+                    leaveRequest.RequestStatus = dr.GetString("RequestStatus");
+                }
+                return leaveRequest;
+            }
             
-        //}
+        }
     }
 }
