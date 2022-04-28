@@ -1,0 +1,16 @@
+﻿@page
+@model MediaBazaarWebsite.Pages.LeaveRequestPageModel
+@{
+    ViewData["Title"] = "Schedule";
+    Layout = "_LayoutSignedIn";
+}
+<div class="leaveRequestContainer">
+    <form method="post">
+        <label>
+            <p>Select date for leave request</p>
+            <input type="date">
+        </label>
+
+        <input type="submit" value="Confirm request" />
+    </form>
+</div>

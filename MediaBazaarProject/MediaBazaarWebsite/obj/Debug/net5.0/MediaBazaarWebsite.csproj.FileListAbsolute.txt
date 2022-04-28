@@ -234,3 +234,4 @@ C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaar
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\ref\MediaBazaarWebsite.dll
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.pdb
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\MediaBazaarWebsite.genruntimeconfig.cache
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\LeaveRequestPage.cshtml.g.cs

@@ -17,7 +17,9 @@ namespace MediaBazaarWebsite.Pages
         public Dictionary<string, List<DateTime>> daysPerWeekDay = new Dictionary<string, List<DateTime>>();
         public List<Shift> shiftsForEmployee = new List<Shift>();
         ShiftManager shiftManager = new ShiftManager();
-     
+        public string currentMonthHeading = getFullName(DateTime.Today.Month);
+
+
         public void OnGet()
         {
             
@@ -58,6 +60,12 @@ namespace MediaBazaarWebsite.Pages
 
             shiftsForEmployee = shiftManager.GetShiftsForMonthForEmployee(employeeId,currentMonth);
 
+        }
+        static string getFullName(int month)
+        {
+            DateTime date = new DateTime(2020, month, 1);
+
+            return date.ToString("MMMM");
         }
     }
 }

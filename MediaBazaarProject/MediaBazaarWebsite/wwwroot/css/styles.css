@@ -92,12 +92,16 @@ body {
 /*---------------Schedule------------------*/
 .scheduleBody {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.navigationButtons {
+    display: flex;
+}
 .schedule_container {
     background-color: #308695;
-    color:white;
+    color: white;
     display: grid;
     grid-template-columns: repeat(7, auto);
     margin: 0;
@@ -173,6 +177,13 @@ body {
 .homePage {
     text-align: center;
     color: #508791;
+}
+/*--------------------Leave Request-------------------*/
+.leaveRequestContainer {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
 }
 
 
