@@ -58,7 +58,8 @@ namespace MediaBazaarLibrary.Persistence
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
-                DateTime endDate = new DateTime(date.Year, date.Month, date.Day + 6);
+                DateTime endDate;
+                endDate = DateTime.Today.AddDays(6);
                 cmd.Parameters.AddWithValue("EmployeeId", id);
                 cmd.Parameters.AddWithValue("startDate", date);
                 cmd.Parameters.AddWithValue("endDate", endDate);
@@ -154,7 +155,8 @@ namespace MediaBazaarLibrary.Persistence
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
-                DateTime endDate = new DateTime(date.Year, date.Month, date.Day + 6);
+                DateTime endDate;
+                endDate = DateTime.Today.AddDays(6);
                 cmd.Parameters.AddWithValue("startDate", date);
                 cmd.Parameters.AddWithValue("endDate", endDate);
 

@@ -19,18 +19,21 @@ namespace MediaBazaarProject
         RequestManager requestManager = new RequestManager();
         ProductManager productManager = new ProductManager();
         string role = string.Empty;
+
         public WorkerForm()
         {
             InitializeComponent();
-            DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 7);
+
+            DateTime maxDate;
+            maxDate = DateTime.Today.AddDays(7);
             dateWorker.MaxDate = maxDate;
             dateWorker.MinDate = DateTime.Today;
-
         }
 
         public WorkerForm(User u, string role)
         {
             InitializeComponent();
+
             this.role = role;
             user = u;
             if (role == "sales")
@@ -42,7 +45,8 @@ namespace MediaBazaarProject
                 btnSales.Visible = false;
             }
 
-            DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day + 7);
+            DateTime maxDate;
+            maxDate = DateTime.Today.AddDays(7);
             dateWorker.MaxDate = maxDate;
             dateWorker.MinDate = DateTime.Today;
         }
@@ -277,10 +281,6 @@ namespace MediaBazaarProject
                     lbxShiftEmployeeDay.Items.Add(shift.ShiftType.ToString());
                 }
             }
-
-
         }
-
-      
     }
 }

@@ -99,7 +99,7 @@ namespace MediaBazaarLibrary.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "UPDATE products SET ProductName=@ProductName,ProductDesc=@ProductDesc,ProductManufacturer=@ProductManufacturer,QuantityWarehouse=@QuantityWarehouse,QuantitySales=@QuantitySales,ProductCategory=@ProductCategory where ProductId=@ProductId";
+                    string sql = "UPDATE products SET ProductName=@ProductName,ProductDesc=@ProductDesc,ProductManufacturer=@ProductManufacturer,QuantityWarehouse=@QuantityWarehouse,QuantitySales=@QuantitySales,ProductCategoryId=0 where ProductId=@ProductId";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("ProductName", product.ProductName);
                     cmd.Parameters.AddWithValue("ProductDesc", product.ProductDescription);
@@ -110,6 +110,12 @@ namespace MediaBazaarLibrary.Persistence
                     cmd.Parameters.AddWithValue("ProductId", product.ProductId);
 
                     conn.Open();
+                    cmd.ExecuteNonQuery();
+
+                    sql = "UPDATE products, category SET products.ProductCategoryId=category.categoryid WHERE products.ProductCategoryId=0 AND category.categoryname=@ProdCategoryName";
+                    cmd = new MySqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("ProdCategoryName", product.ProductCategory);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -123,7 +129,7 @@ namespace MediaBazaarLibrary.Persistence
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "SELECT * FROM products WHERE ProductId=@ProductId";
+                string sql = "SELECT ProductId, ProductName, ProductDesc, ProductManufacturer, QuantityWarehouse, QuantitySales, category.categoryname AS CategoryName FROM products INNER JOIN category on ProductCategoryId=categoryid WHERE ProductId=@ProductId";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("ProductId", id);
@@ -138,6 +144,7 @@ namespace MediaBazaarLibrary.Persistence
                     product.ProductName = dateReader.GetString("ProductName");
                     product.ProductDescription = dateReader.GetString("ProductDesc");
                     product.ProductManufacturer = dateReader.GetString("ProductManufacturer");
+                    product.ProductCategory = dateReader.GetString("CategoryName");
                     product.QuantitySales = dateReader.GetInt32("QuantitySales");
                     product.QuantityWarehouse = dateReader.GetInt32("QuantityWarehouse");
                 }

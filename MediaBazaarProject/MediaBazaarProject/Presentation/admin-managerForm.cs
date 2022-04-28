@@ -32,6 +32,7 @@ namespace MediaBazaarProject
         public admin_managerForm(string role)
         {
             InitializeComponent();
+
             this.role = role;
             if (role == "admin")
             {
@@ -43,11 +44,11 @@ namespace MediaBazaarProject
                 btnScheduleAdministration.Visible = false;
                 btnEmployeeManagement.Visible = false;
             }
-            DateTime maxDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+
+            DateTime maxDate;
             maxDate = DateTime.Today.AddDays(7);
             dtpDay.MaxDate = maxDate;
             dtpDay.MinDate = DateTime.Today;
-           
         }
 
         public Action<object, object> FormClosing()
