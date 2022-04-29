@@ -22,6 +22,7 @@ namespace MediaBazaarProject
         EmployeeManager employeeManager = new EmployeeManager();
         ShiftManager shiftManager = new ShiftManager();
         ProductManager productManager = new ProductManager();
+        LeaveRequestManager leaveRequestManager = new LeaveRequestManager();
         string role = string.Empty;
 
         public admin_managerForm()
@@ -728,6 +729,29 @@ namespace MediaBazaarProject
         {
             CategoriesForm categoriesForm = new CategoriesForm();
             categoriesForm.Show();
+        }
+
+        private void btnLeaveRequests_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabLeaveRequests;
+            dgAllLeaveRequests.DataSource = leaveRequestManager.GetLeaveRequestsTable();
+        }
+
+        private void dgAllLeaveRequests_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Approve")
+            {
+                DataGridViewRow row = dgAllLeaveRequests.Rows[e.RowIndex];
+                int requestID = Convert.ToInt32(row.Cells[3].Value);
+                leaveRequestManager.approveRequest(requestID);
+                dgAllLeaveRequests.DataSource = leaveRequestManager.GetLeaveRequestsTable();
+            }
+            else if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Disapprove") {
+                DataGridViewRow row = dgAllLeaveRequests.Rows[e.RowIndex];
+                int requestID = Convert.ToInt32(row.Cells[3].Value);
+                leaveRequestManager.disapproveRequest(requestID);
+                dgAllLeaveRequests.DataSource = leaveRequestManager.GetLeaveRequestsTable();
+            }
         }
     }
 }
