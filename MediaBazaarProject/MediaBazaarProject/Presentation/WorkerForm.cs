@@ -282,5 +282,71 @@ namespace MediaBazaarProject
                 }
             }
         }
+
+        private void btnFilterProductsWarehouse_Click(object sender, EventArgs e)
+        {
+            if (tbFilterProductsWarehouse.Text == "")
+            {
+                MessageBox.Show("Please provide input to filter by");
+            }
+            else
+            {
+                if (rbFilterProductsByNameWarehouse.Checked)
+                {
+                    lbxStockWarehouse.Items.Clear();
+                    lbWarehouseQuantity.Items.Clear();
+                    foreach (Product product in productManager.GetAllProductsList())
+                    {
+                        if (product.ProductName.Contains(tbFilterProductsWarehouse.Text))
+                        {
+                            lbxStockWarehouse.Items.Add(product);
+                            lbWarehouseQuantity.Items.Add(product.QuantityWarehouse);
+                        }
+                    }
+                }
+                else if (rbFilterProductsByCategoryWarehouse.Checked)
+                {
+                    lbxStockWarehouse.Items.Clear();
+                    lbWarehouseQuantity.Items.Clear();
+                    foreach (Product product in productManager.GetAllProductsList())
+                    {
+                        if (product.ProductCategory.Contains(tbFilterProductsWarehouse.Text))
+                        {
+                            lbxStockWarehouse.Items.Add(product);
+                            lbWarehouseQuantity.Items.Add(product.QuantityWarehouse);
+                        }
+                    }
+                }
+                else if (rbFilterProductsByBrandWarehouse.Checked)
+                {
+                    lbxStockWarehouse.Items.Clear();
+                    lbWarehouseQuantity.Items.Clear();
+                    foreach (Product product in productManager.GetAllProductsList())
+                    {
+                        if (product.ProductManufacturer.Contains(tbFilterProductsWarehouse.Text))
+                        {
+                            lbxStockWarehouse.Items.Add(product);
+                            lbWarehouseQuantity.Items.Add(product.QuantityWarehouse);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnResetFiltersWarehouse_Click(object sender, EventArgs e)
+        {
+            rbFilterProductsByNameWarehouse.Checked = false;
+            rbFilterProductsByCategoryWarehouse.Checked = false;
+            rbFilterProductsByBrandWarehouse.Checked = false;
+            tbFilterProductsWarehouse.Text = "";
+            lbxStockWarehouse.Items.Clear();
+            lbWarehouseQuantity.Items.Clear();
+
+            foreach (Product product in productManager.GetAllProductsList())
+            {
+                lbxStockWarehouse.Items.Add(product);
+                lbWarehouseQuantity.Items.Add(product.QuantityWarehouse);
+            }
+        }
     }
 }
