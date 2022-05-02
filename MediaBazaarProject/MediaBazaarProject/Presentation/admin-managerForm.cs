@@ -510,10 +510,10 @@ namespace MediaBazaarProject
             DateTime lastDayOfWeek = new DateTime(fisrtDayOfWeek.Year, fisrtDayOfWeek.Month, fisrtDayOfWeek.Day + 6);
 
             lblWeekDays.Text = $"{fisrtDayOfWeek.Day}/{fisrtDayOfWeek.Month}/{fisrtDayOfWeek.Year} - {lastDayOfWeek.Day}/{lastDayOfWeek.Month}/{lastDayOfWeek.Year}";
-            
+
             List<Shift> schedule = new List<Shift>();
             schedule = shiftManager.GetShiftsForAllWorkersForWeek(date);
-           
+
             ClearListBoxesSchedule();
 
             foreach (Shift shift in schedule)
@@ -701,8 +701,8 @@ namespace MediaBazaarProject
                     if (dialogYesNo == DialogResult.Yes)
                     {
                         productManager.Remove((Product)lbAllProducts.SelectedItem);
-                    MessageBox.Show("Product removed!");
-                    reloadProductList();
+                        MessageBox.Show("Product removed!");
+                        reloadProductList();
                     }
                 }
                 else
@@ -746,11 +746,70 @@ namespace MediaBazaarProject
                 leaveRequestManager.approveRequest(requestID);
                 dgAllLeaveRequests.DataSource = leaveRequestManager.GetLeaveRequestsTable();
             }
-            else if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Disapprove") {
+            else if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Disapprove")
+            {
                 DataGridViewRow row = dgAllLeaveRequests.Rows[e.RowIndex];
                 int requestID = Convert.ToInt32(row.Cells[3].Value);
                 leaveRequestManager.disapproveRequest(requestID);
                 dgAllLeaveRequests.DataSource = leaveRequestManager.GetLeaveRequestsTable();
+            }
+        }
+
+        private void btnFilterProducts_Click(object sender, EventArgs e)
+        {
+            if (tbFilterProductsInput.Text == "")
+            {
+                MessageBox.Show("Please provide input to filter by");
+            }
+            else
+            {
+                if (rbFilterByName.Checked)
+                {
+                    lbAllProducts.Items.Clear();
+                    foreach (Product product in productManager.GetAllProductsList())
+                    {
+                        if (product.ProductName.Contains(tbFilterProductsInput.Text))
+                        {
+                            lbAllProducts.Items.Add(product);
+                        }
+                    }
+                }
+                else if (rbFilterByCategory.Checked)
+                {
+                    lbAllProducts.Items.Clear();
+                    foreach (Product product in productManager.GetAllProductsList())
+                    {
+                        if (product.ProductCategory.Contains(tbFilterProductsInput.Text))
+                        {
+                            lbAllProducts.Items.Add(product);
+                        }
+                    }
+                }
+                else if (rbFilterByBrand.Checked)
+                {
+                    lbAllProducts.Items.Clear();
+                    foreach (Product product in productManager.GetAllProductsList())
+                    {
+                        if (product.ProductManufacturer.Contains(tbFilterProductsInput.Text))
+                        {
+                            lbAllProducts.Items.Add(product);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnResetProductFilters_Click(object sender, EventArgs e)
+        {
+            rbFilterByName.Checked = false;
+            rbFilterByCategory.Checked = false;
+            rbFilterByBrand.Checked = false;
+            tbFilterProductsInput.Text = "";
+            lbAllProducts.Items.Clear();
+
+            foreach (Product product in productManager.GetAllProductsList())
+            {
+                lbAllProducts.Items.Add(product);
             }
         }
     }
