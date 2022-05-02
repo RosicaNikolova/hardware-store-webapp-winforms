@@ -113,5 +113,29 @@ namespace MediaBazaarLibrary.Persistence
             }
             return requestedItemsStatisticsList;
         }
+
+        public List<RequestedCategoriesStatistics> GetRequestedCategoriesStatistics()
+        {
+            List<RequestedCategoriesStatistics> requestedCategoriesStatisticsList = new List<RequestedCategoriesStatistics>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "SELECT category.categoryname AS 'categoryName', COUNT(products.ProductCategoryId) AS 'Times requested' FROM request INNER JOIN products ON request.ProductId=products.ProductId INNER JOIN category ON products.ProductCategoryId=category.categoryid GROUP BY category.categoryname";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                RequestedCategoriesStatistics requestedCategoriesStatistics = null;
+                while (dr.Read())
+                {
+                    requestedCategoriesStatistics = new RequestedCategoriesStatistics();
+                    requestedCategoriesStatistics.CategoryName = dr.GetString("categoryName");
+                    requestedCategoriesStatistics.Count = dr.GetInt32("Times requested");
+                    requestedCategoriesStatisticsList.Add(requestedCategoriesStatistics);
+                }
+            }
+            return requestedCategoriesStatisticsList;
+        }
     }
 }

@@ -54,5 +54,10 @@ namespace MediaBazaarLibrary.Business
         {
             return requestRepository.GetRequestedItemsStatistics();
         }
+
+        public List<RequestedCategoriesStatistics> GetRequestedCategoriesStatistics()
+        {
+            return requestRepository.GetRequestedCategoriesStatistics();
+        }
     }
 }

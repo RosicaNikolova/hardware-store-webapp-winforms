@@ -440,13 +440,16 @@ namespace MediaBazaarProject
             if (tabAdmin.SelectedTab == tabStatistics)
             {
                 NationalityPieViewModel nationalityPieViewModel = new NationalityPieViewModel();
-                this.plotViewNationality.Model = nationalityPieViewModel.Model1;
+                this.plotView1.Model = nationalityPieViewModel.Model1;
 
                 ContractPieViewModel contractPieViewModel = new ContractPieViewModel();
-                this.plotViewContract.Model = contractPieViewModel.Model2;
+                this.plotView2.Model = contractPieViewModel.Model2;
 
                 RequestedItemsPieViewModel requestedItemsPieViewModel = new RequestedItemsPieViewModel();
-                this.plotViewRequestedItems.Model = requestedItemsPieViewModel.Model3;
+                this.plotView3.Model = requestedItemsPieViewModel.Model3;
+
+                RequestedCategoriesPieViewModel requestedCategoriesPieViewModel = new RequestedCategoriesPieViewModel();
+                this.plotView4.Model = requestedCategoriesPieViewModel.Model4;
 
                 lblAverageSalary.Text = $"Average salary: ${employeeManager.GetAverageSalary():f2}";
                 lblNumberOfEmployees.Text = $"Number of employees: {employeeManager.GetAllEmployees().Count}";
