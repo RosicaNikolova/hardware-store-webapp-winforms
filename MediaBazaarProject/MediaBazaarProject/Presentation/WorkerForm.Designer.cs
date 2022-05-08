@@ -31,6 +31,7 @@ namespace MediaBazaarProject
         {
             this.TabWorker = new System.Windows.Forms.TabControl();
             this.tabWorkerHome = new System.Windows.Forms.TabPage();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnWarehouse = new System.Windows.Forms.Button();
             this.btnSales = new System.Windows.Forms.Button();
             this.lbxShiftEmployeeDay = new System.Windows.Forms.ListBox();
@@ -48,6 +49,13 @@ namespace MediaBazaarProject
             this.btnRequestItem = new System.Windows.Forms.Button();
             this.lbxStockSales = new System.Windows.Forms.ListBox();
             this.tabWarehouse = new System.Windows.Forms.TabPage();
+            this.btnResetFiltersWarehouse = new System.Windows.Forms.Button();
+            this.btnFilterProductsWarehouse = new System.Windows.Forms.Button();
+            this.tbFilterProductsWarehouse = new System.Windows.Forms.TextBox();
+            this.lblFilterProductsByWarehouse = new System.Windows.Forms.Label();
+            this.rbFilterProductsByBrandWarehouse = new System.Windows.Forms.RadioButton();
+            this.rbFilterProductsByCategoryWarehouse = new System.Windows.Forms.RadioButton();
+            this.rbFilterProductsByNameWarehouse = new System.Windows.Forms.RadioButton();
             this.lblWarehouseQuantity = new System.Windows.Forms.Label();
             this.lbWarehouseQuantity = new System.Windows.Forms.ListBox();
             this.lblInventoryWarehouse = new System.Windows.Forms.Label();
@@ -60,13 +68,6 @@ namespace MediaBazaarProject
             this.lblAmountWarehouse = new System.Windows.Forms.Label();
             this.btnAddStock = new System.Windows.Forms.Button();
             this.lbxStockWarehouse = new System.Windows.Forms.ListBox();
-            this.rbFilterProductsByNameWarehouse = new System.Windows.Forms.RadioButton();
-            this.rbFilterProductsByCategoryWarehouse = new System.Windows.Forms.RadioButton();
-            this.rbFilterProductsByBrandWarehouse = new System.Windows.Forms.RadioButton();
-            this.lblFilterProductsByWarehouse = new System.Windows.Forms.Label();
-            this.tbFilterProductsWarehouse = new System.Windows.Forms.TextBox();
-            this.btnFilterProductsWarehouse = new System.Windows.Forms.Button();
-            this.btnResetFiltersWarehouse = new System.Windows.Forms.Button();
             this.TabWorker.SuspendLayout();
             this.tabWorkerHome.SuspendLayout();
             this.tabSales.SuspendLayout();
@@ -92,17 +93,29 @@ namespace MediaBazaarProject
             // tabWorkerHome
             // 
             this.tabWorkerHome.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tabWorkerHome.Controls.Add(this.btnLogOut);
             this.tabWorkerHome.Controls.Add(this.btnWarehouse);
             this.tabWorkerHome.Controls.Add(this.btnSales);
             this.tabWorkerHome.Controls.Add(this.lbxShiftEmployeeDay);
             this.tabWorkerHome.Controls.Add(this.lblshift);
             this.tabWorkerHome.Controls.Add(this.dateWorker);
-            this.tabWorkerHome.Location = new System.Drawing.Point(4, 27);
+            this.tabWorkerHome.Location = new System.Drawing.Point(4, 24);
             this.tabWorkerHome.Name = "tabWorkerHome";
             this.tabWorkerHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWorkerHome.Size = new System.Drawing.Size(1991, 552);
+            this.tabWorkerHome.Size = new System.Drawing.Size(1991, 555);
             this.tabWorkerHome.TabIndex = 0;
             this.tabWorkerHome.Text = "WorkerHome";
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnLogOut.Location = new System.Drawing.Point(926, 178);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(130, 124);
+            this.btnLogOut.TabIndex = 25;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnWarehouse
             // 
@@ -129,7 +142,7 @@ namespace MediaBazaarProject
             // lbxShiftEmployeeDay
             // 
             this.lbxShiftEmployeeDay.FormattingEnabled = true;
-            this.lbxShiftEmployeeDay.ItemHeight = 18;
+            this.lbxShiftEmployeeDay.ItemHeight = 15;
             this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(495, 166);
             this.lbxShiftEmployeeDay.Name = "lbxShiftEmployeeDay";
             this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(212, 94);
@@ -140,7 +153,7 @@ namespace MediaBazaarProject
             this.lblshift.AutoSize = true;
             this.lblshift.Location = new System.Drawing.Point(527, 114);
             this.lblshift.Name = "lblshift";
-            this.lblshift.Size = new System.Drawing.Size(127, 18);
+            this.lblshift.Size = new System.Drawing.Size(104, 15);
             this.lblshift.TabIndex = 21;
             this.lblshift.Text = "Shifts for the date:";
             // 
@@ -150,7 +163,7 @@ namespace MediaBazaarProject
             this.dateWorker.MaxDate = new System.DateTime(2022, 3, 22, 0, 0, 0, 0);
             this.dateWorker.MinDate = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dateWorker.Name = "dateWorker";
-            this.dateWorker.Size = new System.Drawing.Size(286, 24);
+            this.dateWorker.Size = new System.Drawing.Size(286, 21);
             this.dateWorker.TabIndex = 20;
             this.dateWorker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dateWorker.ValueChanged += new System.EventHandler(this.dateWorker_ValueChanged);
@@ -168,10 +181,10 @@ namespace MediaBazaarProject
             this.tabSales.Controls.Add(this.lblAmountSales);
             this.tabSales.Controls.Add(this.btnRequestItem);
             this.tabSales.Controls.Add(this.lbxStockSales);
-            this.tabSales.Location = new System.Drawing.Point(4, 27);
+            this.tabSales.Location = new System.Drawing.Point(4, 24);
             this.tabSales.Name = "tabSales";
             this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(1991, 559);
+            this.tabSales.Size = new System.Drawing.Size(1991, 555);
             this.tabSales.TabIndex = 1;
             this.tabSales.Text = "SalesTab";
             // 
@@ -180,7 +193,7 @@ namespace MediaBazaarProject
             this.lblSalesQuantity.AutoSize = true;
             this.lblSalesQuantity.Location = new System.Drawing.Point(1627, 69);
             this.lblSalesQuantity.Name = "lblSalesQuantity";
-            this.lblSalesQuantity.Size = new System.Drawing.Size(99, 18);
+            this.lblSalesQuantity.Size = new System.Drawing.Size(83, 15);
             this.lblSalesQuantity.TabIndex = 35;
             this.lblSalesQuantity.Text = "Sales quantity";
             // 
@@ -189,7 +202,7 @@ namespace MediaBazaarProject
             this.lbSalesQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbSalesQuantity.FormattingEnabled = true;
-            this.lbSalesQuantity.ItemHeight = 18;
+            this.lbSalesQuantity.ItemHeight = 15;
             this.lbSalesQuantity.Location = new System.Drawing.Point(1627, 90);
             this.lbSalesQuantity.Name = "lbSalesQuantity";
             this.lbSalesQuantity.Size = new System.Drawing.Size(176, 364);
@@ -200,7 +213,7 @@ namespace MediaBazaarProject
             this.lblInventorySales.AutoSize = true;
             this.lblInventorySales.Location = new System.Drawing.Point(948, 69);
             this.lblInventorySales.Name = "lblInventorySales";
-            this.lblInventorySales.Size = new System.Drawing.Size(67, 18);
+            this.lblInventorySales.Size = new System.Drawing.Size(55, 15);
             this.lblInventorySales.TabIndex = 33;
             this.lblInventorySales.Text = "Inventory";
             // 
@@ -209,7 +222,7 @@ namespace MediaBazaarProject
             this.lblRequestSales.AutoSize = true;
             this.lblRequestSales.Location = new System.Drawing.Point(282, 69);
             this.lblRequestSales.Name = "lblRequestSales";
-            this.lblRequestSales.Size = new System.Drawing.Size(71, 18);
+            this.lblRequestSales.Size = new System.Drawing.Size(59, 15);
             this.lblRequestSales.TabIndex = 32;
             this.lblRequestSales.Text = "Requests";
             // 
@@ -218,7 +231,7 @@ namespace MediaBazaarProject
             this.lbxRequestSales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbxRequestSales.FormattingEnabled = true;
-            this.lbxRequestSales.ItemHeight = 18;
+            this.lbxRequestSales.ItemHeight = 15;
             this.lbxRequestSales.Location = new System.Drawing.Point(282, 90);
             this.lbxRequestSales.Name = "lbxRequestSales";
             this.lbxRequestSales.Size = new System.Drawing.Size(660, 364);
@@ -238,7 +251,7 @@ namespace MediaBazaarProject
             // 
             this.nudAmountSales.Location = new System.Drawing.Point(153, 47);
             this.nudAmountSales.Name = "nudAmountSales";
-            this.nudAmountSales.Size = new System.Drawing.Size(120, 24);
+            this.nudAmountSales.Size = new System.Drawing.Size(120, 21);
             this.nudAmountSales.TabIndex = 26;
             // 
             // lblAmountSales
@@ -246,7 +259,7 @@ namespace MediaBazaarProject
             this.lblAmountSales.AutoSize = true;
             this.lblAmountSales.Location = new System.Drawing.Point(78, 49);
             this.lblAmountSales.Name = "lblAmountSales";
-            this.lblAmountSales.Size = new System.Drawing.Size(63, 18);
+            this.lblAmountSales.Size = new System.Drawing.Size(52, 15);
             this.lblAmountSales.TabIndex = 25;
             this.lblAmountSales.Text = "Amount:";
             // 
@@ -266,7 +279,7 @@ namespace MediaBazaarProject
             this.lbxStockSales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbxStockSales.FormattingEnabled = true;
-            this.lbxStockSales.ItemHeight = 18;
+            this.lbxStockSales.ItemHeight = 15;
             this.lbxStockSales.Location = new System.Drawing.Point(948, 90);
             this.lbxStockSales.Name = "lbxStockSales";
             this.lbxStockSales.Size = new System.Drawing.Size(680, 364);
@@ -294,19 +307,88 @@ namespace MediaBazaarProject
             this.tabWarehouse.Controls.Add(this.lblAmountWarehouse);
             this.tabWarehouse.Controls.Add(this.btnAddStock);
             this.tabWarehouse.Controls.Add(this.lbxStockWarehouse);
-            this.tabWarehouse.Location = new System.Drawing.Point(4, 27);
+            this.tabWarehouse.Location = new System.Drawing.Point(4, 24);
             this.tabWarehouse.Name = "tabWarehouse";
             this.tabWarehouse.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWarehouse.Size = new System.Drawing.Size(1991, 552);
+            this.tabWarehouse.Size = new System.Drawing.Size(1991, 555);
             this.tabWarehouse.TabIndex = 2;
             this.tabWarehouse.Text = "WarehouseTab";
+            // 
+            // btnResetFiltersWarehouse
+            // 
+            this.btnResetFiltersWarehouse.Location = new System.Drawing.Point(1514, 63);
+            this.btnResetFiltersWarehouse.Name = "btnResetFiltersWarehouse";
+            this.btnResetFiltersWarehouse.Size = new System.Drawing.Size(94, 24);
+            this.btnResetFiltersWarehouse.TabIndex = 43;
+            this.btnResetFiltersWarehouse.Text = "Reset filters";
+            this.btnResetFiltersWarehouse.UseVisualStyleBackColor = true;
+            this.btnResetFiltersWarehouse.Click += new System.EventHandler(this.btnResetFiltersWarehouse_Click);
+            // 
+            // btnFilterProductsWarehouse
+            // 
+            this.btnFilterProductsWarehouse.Location = new System.Drawing.Point(1414, 63);
+            this.btnFilterProductsWarehouse.Name = "btnFilterProductsWarehouse";
+            this.btnFilterProductsWarehouse.Size = new System.Drawing.Size(94, 24);
+            this.btnFilterProductsWarehouse.TabIndex = 42;
+            this.btnFilterProductsWarehouse.Text = "Filter";
+            this.btnFilterProductsWarehouse.UseVisualStyleBackColor = true;
+            this.btnFilterProductsWarehouse.Click += new System.EventHandler(this.btnFilterProductsWarehouse_Click);
+            // 
+            // tbFilterProductsWarehouse
+            // 
+            this.tbFilterProductsWarehouse.Location = new System.Drawing.Point(1283, 63);
+            this.tbFilterProductsWarehouse.Name = "tbFilterProductsWarehouse";
+            this.tbFilterProductsWarehouse.Size = new System.Drawing.Size(125, 21);
+            this.tbFilterProductsWarehouse.TabIndex = 41;
+            // 
+            // lblFilterProductsByWarehouse
+            // 
+            this.lblFilterProductsByWarehouse.AutoSize = true;
+            this.lblFilterProductsByWarehouse.Location = new System.Drawing.Point(1039, 46);
+            this.lblFilterProductsByWarehouse.Name = "lblFilterProductsByWarehouse";
+            this.lblFilterProductsByWarehouse.Size = new System.Drawing.Size(53, 15);
+            this.lblFilterProductsByWarehouse.TabIndex = 40;
+            this.lblFilterProductsByWarehouse.Text = "Filter By:";
+            // 
+            // rbFilterProductsByBrandWarehouse
+            // 
+            this.rbFilterProductsByBrandWarehouse.AutoSize = true;
+            this.rbFilterProductsByBrandWarehouse.Location = new System.Drawing.Point(1209, 67);
+            this.rbFilterProductsByBrandWarehouse.Name = "rbFilterProductsByBrandWarehouse";
+            this.rbFilterProductsByBrandWarehouse.Size = new System.Drawing.Size(58, 19);
+            this.rbFilterProductsByBrandWarehouse.TabIndex = 39;
+            this.rbFilterProductsByBrandWarehouse.TabStop = true;
+            this.rbFilterProductsByBrandWarehouse.Text = "Brand";
+            this.rbFilterProductsByBrandWarehouse.UseVisualStyleBackColor = true;
+            // 
+            // rbFilterProductsByCategoryWarehouse
+            // 
+            this.rbFilterProductsByCategoryWarehouse.AutoSize = true;
+            this.rbFilterProductsByCategoryWarehouse.Location = new System.Drawing.Point(1114, 67);
+            this.rbFilterProductsByCategoryWarehouse.Name = "rbFilterProductsByCategoryWarehouse";
+            this.rbFilterProductsByCategoryWarehouse.Size = new System.Drawing.Size(73, 19);
+            this.rbFilterProductsByCategoryWarehouse.TabIndex = 38;
+            this.rbFilterProductsByCategoryWarehouse.TabStop = true;
+            this.rbFilterProductsByCategoryWarehouse.Text = "Category";
+            this.rbFilterProductsByCategoryWarehouse.UseVisualStyleBackColor = true;
+            // 
+            // rbFilterProductsByNameWarehouse
+            // 
+            this.rbFilterProductsByNameWarehouse.AutoSize = true;
+            this.rbFilterProductsByNameWarehouse.Location = new System.Drawing.Point(1039, 67);
+            this.rbFilterProductsByNameWarehouse.Name = "rbFilterProductsByNameWarehouse";
+            this.rbFilterProductsByNameWarehouse.Size = new System.Drawing.Size(59, 19);
+            this.rbFilterProductsByNameWarehouse.TabIndex = 37;
+            this.rbFilterProductsByNameWarehouse.TabStop = true;
+            this.rbFilterProductsByNameWarehouse.Text = "Name";
+            this.rbFilterProductsByNameWarehouse.UseVisualStyleBackColor = true;
             // 
             // lblWarehouseQuantity
             // 
             this.lblWarehouseQuantity.AutoSize = true;
             this.lblWarehouseQuantity.Location = new System.Drawing.Point(1627, 69);
             this.lblWarehouseQuantity.Name = "lblWarehouseQuantity";
-            this.lblWarehouseQuantity.Size = new System.Drawing.Size(139, 18);
+            this.lblWarehouseQuantity.Size = new System.Drawing.Size(115, 15);
             this.lblWarehouseQuantity.TabIndex = 36;
             this.lblWarehouseQuantity.Text = "Warehouse quantity";
             // 
@@ -315,10 +397,10 @@ namespace MediaBazaarProject
             this.lbWarehouseQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbWarehouseQuantity.FormattingEnabled = true;
-            this.lbWarehouseQuantity.ItemHeight = 18;
+            this.lbWarehouseQuantity.ItemHeight = 15;
             this.lbWarehouseQuantity.Location = new System.Drawing.Point(1627, 90);
             this.lbWarehouseQuantity.Name = "lbWarehouseQuantity";
-            this.lbWarehouseQuantity.Size = new System.Drawing.Size(176, 346);
+            this.lbWarehouseQuantity.Size = new System.Drawing.Size(176, 334);
             this.lbWarehouseQuantity.TabIndex = 35;
             // 
             // lblInventoryWarehouse
@@ -326,7 +408,7 @@ namespace MediaBazaarProject
             this.lblInventoryWarehouse.AutoSize = true;
             this.lblInventoryWarehouse.Location = new System.Drawing.Point(948, 54);
             this.lblInventoryWarehouse.Name = "lblInventoryWarehouse";
-            this.lblInventoryWarehouse.Size = new System.Drawing.Size(67, 18);
+            this.lblInventoryWarehouse.Size = new System.Drawing.Size(55, 15);
             this.lblInventoryWarehouse.TabIndex = 34;
             this.lblInventoryWarehouse.Text = "Inventory";
             // 
@@ -335,7 +417,7 @@ namespace MediaBazaarProject
             this.lblRequestWarehouse.AutoSize = true;
             this.lblRequestWarehouse.Location = new System.Drawing.Point(304, 54);
             this.lblRequestWarehouse.Name = "lblRequestWarehouse";
-            this.lblRequestWarehouse.Size = new System.Drawing.Size(71, 18);
+            this.lblRequestWarehouse.Size = new System.Drawing.Size(59, 15);
             this.lblRequestWarehouse.TabIndex = 33;
             this.lblRequestWarehouse.Text = "Requests";
             // 
@@ -366,11 +448,12 @@ namespace MediaBazaarProject
             this.lbxRequestWarehouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbxRequestWarehouse.FormattingEnabled = true;
-            this.lbxRequestWarehouse.ItemHeight = 18;
+            this.lbxRequestWarehouse.ItemHeight = 15;
             this.lbxRequestWarehouse.Location = new System.Drawing.Point(282, 90);
             this.lbxRequestWarehouse.Name = "lbxRequestWarehouse";
-            this.lbxRequestWarehouse.Size = new System.Drawing.Size(647, 346);
+            this.lbxRequestWarehouse.Size = new System.Drawing.Size(647, 334);
             this.lbxRequestWarehouse.TabIndex = 30;
+            this.lbxRequestWarehouse.SelectedIndexChanged += new System.EventHandler(this.lbxRequestWarehouse_SelectedIndexChanged);
             // 
             // btnHomeWarehouse
             // 
@@ -386,7 +469,7 @@ namespace MediaBazaarProject
             // 
             this.nudAmountWarehouse.Location = new System.Drawing.Point(153, 47);
             this.nudAmountWarehouse.Name = "nudAmountWarehouse";
-            this.nudAmountWarehouse.Size = new System.Drawing.Size(120, 24);
+            this.nudAmountWarehouse.Size = new System.Drawing.Size(120, 21);
             this.nudAmountWarehouse.TabIndex = 28;
             // 
             // lblAmountWarehouse
@@ -394,7 +477,7 @@ namespace MediaBazaarProject
             this.lblAmountWarehouse.AutoSize = true;
             this.lblAmountWarehouse.Location = new System.Drawing.Point(78, 49);
             this.lblAmountWarehouse.Name = "lblAmountWarehouse";
-            this.lblAmountWarehouse.Size = new System.Drawing.Size(63, 18);
+            this.lblAmountWarehouse.Size = new System.Drawing.Size(52, 15);
             this.lblAmountWarehouse.TabIndex = 27;
             this.lblAmountWarehouse.Text = "Amount:";
             // 
@@ -414,84 +497,15 @@ namespace MediaBazaarProject
             this.lbxStockWarehouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbxStockWarehouse.FormattingEnabled = true;
-            this.lbxStockWarehouse.ItemHeight = 18;
+            this.lbxStockWarehouse.ItemHeight = 15;
             this.lbxStockWarehouse.Location = new System.Drawing.Point(948, 90);
             this.lbxStockWarehouse.Name = "lbxStockWarehouse";
-            this.lbxStockWarehouse.Size = new System.Drawing.Size(680, 346);
+            this.lbxStockWarehouse.Size = new System.Drawing.Size(680, 334);
             this.lbxStockWarehouse.TabIndex = 0;
-            // 
-            // rbFilterProductsByNameWarehouse
-            // 
-            this.rbFilterProductsByNameWarehouse.AutoSize = true;
-            this.rbFilterProductsByNameWarehouse.Location = new System.Drawing.Point(1039, 67);
-            this.rbFilterProductsByNameWarehouse.Name = "rbFilterProductsByNameWarehouse";
-            this.rbFilterProductsByNameWarehouse.Size = new System.Drawing.Size(69, 22);
-            this.rbFilterProductsByNameWarehouse.TabIndex = 37;
-            this.rbFilterProductsByNameWarehouse.TabStop = true;
-            this.rbFilterProductsByNameWarehouse.Text = "Name";
-            this.rbFilterProductsByNameWarehouse.UseVisualStyleBackColor = true;
-            // 
-            // rbFilterProductsByCategoryWarehouse
-            // 
-            this.rbFilterProductsByCategoryWarehouse.AutoSize = true;
-            this.rbFilterProductsByCategoryWarehouse.Location = new System.Drawing.Point(1114, 67);
-            this.rbFilterProductsByCategoryWarehouse.Name = "rbFilterProductsByCategoryWarehouse";
-            this.rbFilterProductsByCategoryWarehouse.Size = new System.Drawing.Size(89, 22);
-            this.rbFilterProductsByCategoryWarehouse.TabIndex = 38;
-            this.rbFilterProductsByCategoryWarehouse.TabStop = true;
-            this.rbFilterProductsByCategoryWarehouse.Text = "Category";
-            this.rbFilterProductsByCategoryWarehouse.UseVisualStyleBackColor = true;
-            // 
-            // rbFilterProductsByBrandWarehouse
-            // 
-            this.rbFilterProductsByBrandWarehouse.AutoSize = true;
-            this.rbFilterProductsByBrandWarehouse.Location = new System.Drawing.Point(1209, 67);
-            this.rbFilterProductsByBrandWarehouse.Name = "rbFilterProductsByBrandWarehouse";
-            this.rbFilterProductsByBrandWarehouse.Size = new System.Drawing.Size(68, 22);
-            this.rbFilterProductsByBrandWarehouse.TabIndex = 39;
-            this.rbFilterProductsByBrandWarehouse.TabStop = true;
-            this.rbFilterProductsByBrandWarehouse.Text = "Brand";
-            this.rbFilterProductsByBrandWarehouse.UseVisualStyleBackColor = true;
-            // 
-            // lblFilterProductsByWarehouse
-            // 
-            this.lblFilterProductsByWarehouse.AutoSize = true;
-            this.lblFilterProductsByWarehouse.Location = new System.Drawing.Point(1039, 46);
-            this.lblFilterProductsByWarehouse.Name = "lblFilterProductsByWarehouse";
-            this.lblFilterProductsByWarehouse.Size = new System.Drawing.Size(65, 18);
-            this.lblFilterProductsByWarehouse.TabIndex = 40;
-            this.lblFilterProductsByWarehouse.Text = "Filter By:";
-            // 
-            // tbFilterProductsWarehouse
-            // 
-            this.tbFilterProductsWarehouse.Location = new System.Drawing.Point(1283, 63);
-            this.tbFilterProductsWarehouse.Name = "tbFilterProductsWarehouse";
-            this.tbFilterProductsWarehouse.Size = new System.Drawing.Size(125, 24);
-            this.tbFilterProductsWarehouse.TabIndex = 41;
-            // 
-            // btnFilterProductsWarehouse
-            // 
-            this.btnFilterProductsWarehouse.Location = new System.Drawing.Point(1414, 63);
-            this.btnFilterProductsWarehouse.Name = "btnFilterProductsWarehouse";
-            this.btnFilterProductsWarehouse.Size = new System.Drawing.Size(94, 24);
-            this.btnFilterProductsWarehouse.TabIndex = 42;
-            this.btnFilterProductsWarehouse.Text = "Filter";
-            this.btnFilterProductsWarehouse.UseVisualStyleBackColor = true;
-            this.btnFilterProductsWarehouse.Click += new System.EventHandler(this.btnFilterProductsWarehouse_Click);
-            // 
-            // btnResetFiltersWarehouse
-            // 
-            this.btnResetFiltersWarehouse.Location = new System.Drawing.Point(1514, 63);
-            this.btnResetFiltersWarehouse.Name = "btnResetFiltersWarehouse";
-            this.btnResetFiltersWarehouse.Size = new System.Drawing.Size(94, 24);
-            this.btnResetFiltersWarehouse.TabIndex = 43;
-            this.btnResetFiltersWarehouse.Text = "Reset filters";
-            this.btnResetFiltersWarehouse.UseVisualStyleBackColor = true;
-            this.btnResetFiltersWarehouse.Click += new System.EventHandler(this.btnResetFiltersWarehouse_Click);
             // 
             // WorkerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(1813, 561);
@@ -553,5 +567,6 @@ namespace MediaBazaarProject
         private System.Windows.Forms.RadioButton rbFilterProductsByBrandWarehouse;
         private System.Windows.Forms.RadioButton rbFilterProductsByCategoryWarehouse;
         private System.Windows.Forms.RadioButton rbFilterProductsByNameWarehouse;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

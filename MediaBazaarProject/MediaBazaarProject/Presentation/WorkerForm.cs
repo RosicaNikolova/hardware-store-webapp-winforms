@@ -91,14 +91,14 @@ namespace MediaBazaarProject
 
             foreach (Shift shift in shiftsForWorker)
             {
-                if(dateWorker.Value == shift.Date)
+                if (dateWorker.Value == shift.Date)
                 {
                     lbxShiftEmployeeDay.Items.Add(shift.ShiftType);
                 }
             }
         }
 
-       
+
 
         private void btnHomeWarehouse_Click(object sender, EventArgs e)
         {
@@ -238,7 +238,7 @@ namespace MediaBazaarProject
             {
                 lbxRequestWarehouse.Items.Add(r);
             }
-            foreach(Product p in products)
+            foreach (Product p in products)
             {
                 lbWarehouseQuantity.Items.Add(p.QuantityWarehouse);
             }
@@ -341,9 +341,28 @@ namespace MediaBazaarProject
             tbFilterProductsWarehouse.Text = "";
             lbxStockWarehouse.Items.Clear();
             lbWarehouseQuantity.Items.Clear();
+            lbxRequestWarehouse.ClearSelected();
 
             foreach (Product product in productManager.GetAllProductsList())
             {
+                lbxStockWarehouse.Items.Add(product);
+                lbWarehouseQuantity.Items.Add(product.QuantityWarehouse);
+            }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lbxRequestWarehouse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Request request = SelectedRequest();
+            if (request != null)
+            {
+                Product product = productManager.GetById(request.ProductId);
+                lbxStockWarehouse.Items.Clear();
+                lbWarehouseQuantity.Items.Clear();
                 lbxStockWarehouse.Items.Add(product);
                 lbWarehouseQuantity.Items.Add(product.QuantityWarehouse);
             }
