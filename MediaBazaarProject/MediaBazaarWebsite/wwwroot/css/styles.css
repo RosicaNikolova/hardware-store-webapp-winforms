@@ -186,6 +186,24 @@ body {
     flex-direction: column;
 }
 
+.navigationButtons a {
+    text-decoration: none;
+    margin-top: 15px;
+    color: #308695;
+}
+.navigationButtons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.navigationButtons h1{
+    margin: 0;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom:20px;
+    font-size: 40px;
+
+}
+
 
 
 

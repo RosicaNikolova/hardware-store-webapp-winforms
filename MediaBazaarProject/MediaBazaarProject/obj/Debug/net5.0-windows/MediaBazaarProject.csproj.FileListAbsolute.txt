@@ -149,3 +149,4 @@ C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarP
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\MediaBazaarLibrary.dll
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\MediaBazaarLibrary.pdb
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.CategoriesForm.resources
+D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.CategoriesForm.resources

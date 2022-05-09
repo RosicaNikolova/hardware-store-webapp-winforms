@@ -13,8 +13,26 @@
 
     <div class="navigationButtons">
         <!--Here we should implement the navigation buttons-->
+        @{
+            int previuosMonth = Model.selectedMonth - 1;
+            if (previuosMonth == 0)
+            {
+                previuosMonth = 1;
+            }
+            int nextMonth = Model.selectedMonth + 1;
+
+            if (nextMonth == 13)
+            {
+                nextMonth = 12;
+            }
+        }
+        <a asp-page="/Schedule" asp-route-id="@previuosMonth">Previous</a>
         <h1>@Model.currentMonthHeading</h1>
+
+        <a asp-page="/Schedule" asp-route-id="@nextMonth">Next</a>
+
     </div>
+
 
     <div class="schedule_container">
 
@@ -44,17 +62,17 @@
                             <li> @day.Day</li>
 
                             <!--this is going to be a box with the shif of the employee
-        should be generated from the business classes-->
+                            should be generated from the business classes-->
                             @foreach (var shift in Model.shiftsForEmployee)
                             {
                                 if (shift.Date == day)
                                 {
                                     <div class="shift_box">@shift.ShiftType</div>
                                 }
-                               
+
 
                             }
-</div>
+                    </div>
 
                 }
 

@@ -17,21 +17,21 @@ namespace MediaBazaarWebsite.Pages
         public Dictionary<string, List<DateTime>> daysPerWeekDay = new Dictionary<string, List<DateTime>>();
         public List<Shift> shiftsForEmployee = new List<Shift>();
         ShiftManager shiftManager = new ShiftManager();
-        public string currentMonthHeading = getFullName(DateTime.Today.Month);
+        public string currentMonthHeading = "";
+        public int selectedMonth = 0;
 
-
-        public void OnGet()
+        public void OnGet(int id)
         {
-            
-             List<DateTime> month = new List<DateTime>();
+            selectedMonth = id;
+            currentMonthHeading = getFullName(selectedMonth);
+            List<DateTime> month = new List<DateTime>();
          
-
             int year = DateTime.Today.Year;
       
-            int daysInMonth = DateTime.DaysInMonth(year, DateTime.Today.Month);
+            int daysInMonth = DateTime.DaysInMonth(year, id);
             for (int i = 1; i <= daysInMonth; i++)
             {
-                DateTime day = new DateTime(DateTime.Today.Year, DateTime.Today.Month, i);
+                DateTime day = new DateTime(DateTime.Today.Year, id, i);
                 month.Add(day);
             }
 
@@ -56,10 +56,9 @@ namespace MediaBazaarWebsite.Pages
             //daysPerWeekDay = daysPerWeekDay.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
 
             int employeeId = Convert.ToInt32(User.FindFirst("id").Value);
-            int currentMonth = DateTime.Today.Month;
+            int currentMonth = id;
 
             shiftsForEmployee = shiftManager.GetShiftsForMonthForEmployee(employeeId,currentMonth);
-
         }
         static string getFullName(int month)
         {
