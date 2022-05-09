@@ -57,39 +57,29 @@ namespace MediaBazaarProject
 
         private void SendMail()
         {
-            SmtpClient Client = new SmtpClient()
-            {
-                Host = "smtp.office365.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential()
-                {
-                    UserName ="479958@student.fontys.nl",
-                    Password = "Vligflatker4"
-                }
-            };
-
-            MailAddress FromEmail = new MailAddress("479958@student.fontys.nl");
-            MailAddress ToEmail = new MailAddress(txbEmail.Text);
-            MailMessage Message = new MailMessage()
-            {
-                From = FromEmail,
-                Subject = "Welcome to MediaBazaar",
-                Body = $"Welcome {txbFirstName.Text} to MediaBazaar" +
-                        $"Your first time login password is {txbPassword.Text}"
-            };
-            Message.To.Add(ToEmail);
-            
             try
             {
-                Client.SendMailAsync(Message);
-                MessageBox.Show("Employee successfully created");
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("danito22231@gmail.com");
+                message.To.Add(new MailAddress(txbEmail.Text));
+                message.Subject = "Welcome to MediaBazaar!";
+                message.IsBodyHtml = false;
+                message.Body = $"Dear {txbFirstName.Text}, " +
+                    $"Welcome to MediaBazaar! " +
+                    $"These are your login details: Email: {txbEmail.Text} Password: Employee";
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("danito22231@gmail.com", "aimgfqepemfqgkgn");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+                MessageBox.Show("Employee added successfully");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("Something Wrong \n" + ex.Message, "Error");
+                MessageBox.Show("Oops! We ran into a problem: " + ex.Message);
             }
         }
 
