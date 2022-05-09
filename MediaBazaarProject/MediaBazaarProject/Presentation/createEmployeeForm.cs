@@ -6,6 +6,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,7 +35,8 @@ namespace MediaBazaarProject
             employeeSelected = employee;
             idButton(employee, buttonId);
         }
-        private void rBTNChecker() {
+        private void rBTNChecker()
+        {
             if (!rBtnYes.Checked)
             {
                 covidVaccinated = false;
@@ -51,6 +54,45 @@ namespace MediaBazaarProject
                 gender = "Female";
             }
         }
+
+        private void SendMail()
+        {
+            SmtpClient Client = new SmtpClient()
+            {
+                Host = "smtp.office365.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential()
+                {
+                    UserName ="479958@student.fontys.nl",
+                    Password = "Vligflatker4"
+                }
+            };
+
+            MailAddress FromEmail = new MailAddress("479958@student.fontys.nl");
+            MailAddress ToEmail = new MailAddress(txbEmail.Text);
+            MailMessage Message = new MailMessage()
+            {
+                From = FromEmail,
+                Subject = "Welcome to MediaBazaar",
+                Body = $"Welcome {txbFirstName.Text} to MediaBazaar" +
+                        $"Your first time login password is {txbPassword.Text}"
+            };
+            Message.To.Add(ToEmail);
+            
+            try
+            {
+                Client.SendMailAsync(Message);
+                MessageBox.Show("Employee successfully created");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something Wrong \n" + ex.Message, "Error");
+            }
+        }
+
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             try
@@ -61,12 +103,13 @@ namespace MediaBazaarProject
                     if (emailCheck(txbEmail.Text) == true)
                     {
                         employeeManager.CreateEmployee(txbFirstName.Text, txbLastName.Text, Convert.ToInt32(tbAge.Text), txbEmail.Text, txbPassword.Text, txbAddress.Text, cbNationality.Text, Convert.ToDouble(txbHourlyWage.Text), Convert.ToDouble(txbPhone.Text), gender, Convert.ToInt32(txbBsn.Text), permanentContract, cbPosition.SelectedIndex, isActive, covidVaccinated);
-                    MessageBox.Show("Employee successfully created");
-                    this.Close();
+                        SendMail();
+
+                        this.Close();
                     }
                     else
                     {
-                        throw new Exception("Email si not in the right format");
+                        throw new Exception("Email is  not in the right format");
                     }
                 }
                 else
@@ -74,7 +117,8 @@ namespace MediaBazaarProject
                     MessageBox.Show("Please fill in all fields");
                 }
             }
-            catch (Exception error) {
+            catch (Exception error)
+            {
                 MessageBox.Show(error.Message);
             }
         }
@@ -96,7 +140,7 @@ namespace MediaBazaarProject
                     }
                     else
                     {
-                        throw new Exception("Email si not in the right format");
+                        throw new Exception("Email is not in the right format");
                     }
                     employeeSelected.Password = txbPassword.Text;
                     employeeSelected.Address = txbAddress.Text;
@@ -118,26 +162,33 @@ namespace MediaBazaarProject
                     MessageBox.Show("Fill in all boxes!");
                 }
             }
-            catch (Exception error) {
+            catch (Exception error)
+            {
                 MessageBox.Show(error.Message);
             }
 
-            
+
         }
-        private bool emailCheck(string email) {
-            if (EmailValidation.IsValidEmail(txbEmail.Text) == true) {
+        private bool emailCheck(string email)
+        {
+            if (EmailValidation.IsValidEmail(txbEmail.Text) == true)
+            {
                 return true;
             }
-            else {
+            else
+            {
                 return false;
             }
         }
         //checks what for the form is and if for update, fills up the textboxes
-        private void idButton(Employee employee, int buttonId) {
-            if(buttonId == 1) {
+        private void idButton(Employee employee, int buttonId)
+        {
+            if (buttonId == 1)
+            {
                 btnUpdateEmployee.Enabled = false;
             }
-            if (buttonId == 2) {
+            if (buttonId == 2)
+            {
                 btnAddEmployee.Enabled = false;
                 txbBsn.Text = employee.Bsn1.ToString();
                 txbFirstName.Text = employee.FirstName;
@@ -149,7 +200,8 @@ namespace MediaBazaarProject
                 {
                     rBtnYesPermanent.Checked = true;
                 }
-                else {
+                else
+                {
                     rBtnNotPermanent.Checked = true;
                 }
                 txbAddress.Text = employee.Address;
@@ -178,7 +230,8 @@ namespace MediaBazaarProject
                 {
                     rBtnActive.Checked = true;
                 }
-                else {
+                else
+                {
                     rBtnNotActive.Checked = true;
                 }
             }
