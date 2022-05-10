@@ -10,6 +10,25 @@ namespace MediaBazaarLibrary.Persistence
 {
     public class LeaveRequestRepository
     {
+        public int checkForNrOfRequestsAMonth(int employeeID, DateTime requestedDateMonth) {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "select COUNT(RequestID) as nrRequests from leave_requests where EmployeeID = @EmployeeID and EXTRACT(MONTH from RequestedDate) = EXTRACT(MONTH FROM @RequestedDateMonth)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("RequestedDateMonth", requestedDateMonth);
+                cmd.Parameters.AddWithValue("EmployeeID", employeeID);
+
+                conn.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                int nrOFRequestsAMonth = 0;
+                while (dr.Read())
+                {
+                    nrOFRequestsAMonth = dr.GetInt32("nrRequests");
+                }
+                return nrOFRequestsAMonth;
+            }
+        }
         public void saveRequest(LeaveRequest leaveRequest)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
@@ -42,7 +61,6 @@ namespace MediaBazaarLibrary.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
-
 
         public List<LeaveRequest> getLeaveRequests()
         {
@@ -99,6 +117,33 @@ namespace MediaBazaarLibrary.Persistence
                 return leaveRequest;
             }
             
+        }
+        public List<LeaveRequest> getLeaveRequestsEmployee(int employeeID)
+        {
+            List<LeaveRequest> allLeaveRequests = new List<LeaveRequest>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+
+                string sql = "SELECT e.EmployeeID, RequestID, RequestStatus, RequestedDate from employees as e right join leave_requests as l_s on e.EmployeeID = l_s.EmployeeID where e.EmployeeID=@employeeID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("EmployeeID", employeeID);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+
+                LeaveRequest leaveRequest = null;
+                while (dr.Read())
+                {
+                    leaveRequest = new LeaveRequest();
+                    leaveRequest.RequestID = dr.GetInt32("RequestID");
+                    leaveRequest.RequestedDate = dr.GetDateTime("RequestedDate");
+                    leaveRequest.RequestStatus = dr.GetString("RequestStatus");
+                    allLeaveRequests.Add(leaveRequest);
+                }
+            }
+            return allLeaveRequests;
         }
     }
 }

@@ -18,6 +18,7 @@ namespace MediaBazaarProject
         ShiftManager shiftManager = new ShiftManager();
         RequestManager requestManager = new RequestManager();
         ProductManager productManager = new ProductManager();
+        LeaveRequestManager leaveRequestManager = new LeaveRequestManager();
         string role = string.Empty;
 
         public WorkerForm()
@@ -366,6 +367,17 @@ namespace MediaBazaarProject
                 lbxStockWarehouse.Items.Add(product);
                 lbWarehouseQuantity.Items.Add(product.QuantityWarehouse);
             }
+        }
+
+        private void btnMyLeaveRequests_Click(object sender, EventArgs e)
+        {
+            TabWorker.SelectedTab = tabLeaveRequestsOverview;
+            dgEmployeesRequests.DataSource = leaveRequestManager.GetLeaveRequestsTableEmployee(user.Id);
+        }
+
+        private void btnHomeFromLeaveRequests_Click(object sender, EventArgs e)
+        {
+            TabWorker.SelectedTab = tabWorkerHome;
         }
     }
 }

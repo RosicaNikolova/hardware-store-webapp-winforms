@@ -15,13 +15,21 @@ namespace MediaBazaarWebsite.Pages
         [BindProperty]
         public LeaveRequest LeaveRequest { get; set; }
         LeaveRequestManager leaveRequestManager = new LeaveRequestManager();
+        public string Message { get; set; }
         public void OnGet()
         {
         }
         public void OnPost() {
             //will finish this method tonight
-            int employeeId = Convert.ToInt32(User.FindFirst("id").Value);
-            leaveRequestManager.sendRequest(employeeId, LeaveRequest.RequestedDate);
+            try
+            {
+                int employeeId = Convert.ToInt32(User.FindFirst("id").Value);
+                leaveRequestManager.sendRequest(employeeId, LeaveRequest.RequestedDate);
+                Message = "Succesfully requested!";
+            }
+            catch (Exception error) {
+                Message = error.Message;
+            }
         }
     }
 }
