@@ -40,6 +40,20 @@ namespace MediaBazaarLibrary.Persistence
 
             return employees;
         }
+
+        public void SavePasswordForEmployee(string password, int employeeId)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+                string sql = "UPDATE employees SET Password=@Password, FirstLogin = @FirstLogin where EmployeeId=@EmployeeId";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("EmployeeId", employeeId);
+                cmd.Parameters.AddWithValue("Password", password);
+                cmd.Parameters.AddWithValue("FirstLogin", 1);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
         //for creating an employee, gets a user with BSN, if not null, user cant be created
         public Employee GetEmployeeByBSNProtected(int BSN, string email)
         {
@@ -90,9 +104,9 @@ namespace MediaBazaarLibrary.Persistence
         }
         public void Create(string firstName, string lastName, int age, string email, string password, string address, string nationality, double salary, double phoneNumber, string gender, int BSN, bool permanentContract, int position, bool isAccountActive, bool covidVaccinated)
         {
-            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place   
             {
-                string sql = "insert into employees (FirstName,LastName,Age,Email,Password,Address,Nationality,Salary,PhoneNumber,Gender,BSN,PermanentContract,Position,IsAccountActive,CovidVaccinated) values (@FirstName,@LastName,@Age,@Email,@Password,@Address,@Nationality,@Salary,@PhoneNumber,@Gender,@BSN,@PermanentContract,@Position,@IsAccountActive,@CovidVaccinated)";
+                string sql = "insert into employees (FirstName,LastName,Age,Email,Password,Address,Nationality,Salary,PhoneNumber,Gender,BSN,PermanentContract,Position,IsAccountActive,CovidVaccinated, FirstLogin) values (@FirstName,@LastName,@Age,@Email,@Password,@Address,@Nationality,@Salary,@PhoneNumber,@Gender,@BSN,@PermanentContract,@Position,@IsAccountActive,@CovidVaccinated, 0)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("FirstName", firstName);
                 cmd.Parameters.AddWithValue("LastName", lastName);
@@ -146,7 +160,7 @@ namespace MediaBazaarLibrary.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "select FirstName, Email, Password, Position, EmployeeId from employees where Email=@Email and Password=@Password;";
+                    string sql = "select FirstName, Email, Password, Position, EmployeeId, FirstLogin from employees where Email=@Email and Password=@Password;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("Email", email);
@@ -163,6 +177,7 @@ namespace MediaBazaarLibrary.Persistence
                         user.FirstName = dateReader.GetString("FirstName");
                         user.Position = user.SetPosition(dateReader.GetString("Position").ToUpper());
                         user.Id = dateReader.GetInt32("EmployeeId");
+                        user.FirstLogin = dateReader.GetInt32("FirstLogin");
                     }
                     return user;
                 }
@@ -203,7 +218,7 @@ namespace MediaBazaarLibrary.Persistence
                     employee.Age = dateReader.GetInt32("Age");
                     employee.Nationality = dateReader.GetString("Nationality");
                     employee.Gender = dateReader.GetString("Gender");
-                    employee.IsAccountActive = dateReader.GetBoolean("IsAccountActive");                    
+                    employee.IsAccountActive = dateReader.GetBoolean("IsAccountActive");
                 }
                 return employee;
             }
@@ -497,6 +512,26 @@ namespace MediaBazaarLibrary.Persistence
             }
 
             return averageSalary;
+        }
+
+        public string GetPassword(int employeeId)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "select Password from employees where EmployeeId=@EmployeeId;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("EmployeeId", employeeId);
+                conn.Open();
+                string password = string.Empty;
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+
+                while (dateReader.Read())
+                {
+                    password = dateReader.GetString("Password");
+                }
+                return password;
+            }
+
         }
     }
 }

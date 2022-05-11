@@ -16,10 +16,13 @@ namespace MediaBazaarLibrary.Business
 
         public string FirstName { get; set; }
         public Position Position { get; set; }
+
         [Required][DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
         [Required]
         public string Password { get; set; }
+        public int FirstLogin { get; set; }
 
         public User(string firstName, Position position)
         {

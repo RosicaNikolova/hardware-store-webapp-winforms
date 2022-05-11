@@ -28,6 +28,12 @@ namespace MediaBazaarLibrary.Business
         {
             return employeeRepository.FilterEmployeesByPermanentContract();
         }
+
+        public void SavePassword(string password, int employeeId)
+        {
+            employeeRepository.SavePasswordForEmployee(password, employeeId);
+        }
+
         public List<Employee> GetTemporaryContractEmployees()
         {
             return employeeRepository.FilterEmployeesByTemporaryContract();
@@ -83,6 +89,10 @@ namespace MediaBazaarLibrary.Business
         public double GetAverageSalary()
         {
             return employeeRepository.GetAverageSalary();
+        }
+        public string GetPassword(int employeeId)
+        {
+            return employeeRepository.GetPassword(employeeId);
         }
     }
 }

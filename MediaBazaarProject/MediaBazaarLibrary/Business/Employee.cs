@@ -70,6 +70,7 @@ namespace MediaBazaarLibrary.Business
         public Position Position { get ; set; }
         public bool CovidVaccinated { get ; set; }
         public int Bsn1 { get => Bsn; set => Bsn = value; }
+    
 
         public override string ToString()
         {

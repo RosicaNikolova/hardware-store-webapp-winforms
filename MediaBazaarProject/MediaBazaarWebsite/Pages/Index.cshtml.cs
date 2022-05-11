@@ -37,9 +37,10 @@ namespace MediaBazaarWebsite.Pages
             LoginManager loginManager = new LoginManager();
             try
             {
+                User loggingUser = null;
                 if (ModelState.IsValid)
                 {
-                    User loggingUser = null;
+                   
                     loggingUser = loginManager.Login(user.Email, user.Password);
                     if (loggingUser != null)
                     {
@@ -62,7 +63,14 @@ namespace MediaBazaarWebsite.Pages
                 }
                 else
                 {
-                    return RedirectToPage("HomePage");
+                    if (loggingUser.FirstLogin != 0)
+                    {
+                        return RedirectToPage("HomePage");
+                    }
+                    else
+                    {
+                        return RedirectToPage("ChangePassword");
+                    }
                 }
             }
             catch (Exception error)
