@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using MediaBazaarLibrary.Business;
 using Microsoft.AspNetCore.Authorization;
@@ -28,7 +29,15 @@ namespace MediaBazaarWebsite.Pages
         }
         public IActionResult OnPost()
         {
-            if (user.Password != string.Empty)
+            var input = user.Password;
+
+            var hasNumber = new Regex(@"[0-9]+");
+            var hasUpperChar = new Regex(@"[A-Z]+");
+            var hasMinimum8Chars = new Regex(@".{8,}");
+
+            var isValidated = hasNumber.IsMatch(input) && hasUpperChar.IsMatch(input) && hasMinimum8Chars.IsMatch(input);
+
+            if (user.Password != null && isValidated)
             {
                 int employeeId = Convert.ToInt32(User.FindFirst("id").Value);
                 employeeManager.SavePassword(user.Password, employeeId);
@@ -36,7 +45,7 @@ namespace MediaBazaarWebsite.Pages
             } 
             else
             {
-                ViewData["errorMessage"] = "Password should be at least 9 characters long. It should contain at least one digit.";
+                ViewData["errorMessage"] = "Password should be at least 8 characters long. It should contain at least one digit and one uppercase letter.";
                 return Page();
             }
         }
