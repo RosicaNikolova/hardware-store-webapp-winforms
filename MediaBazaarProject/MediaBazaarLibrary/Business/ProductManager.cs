@@ -14,7 +14,7 @@ namespace MediaBazaarLibrary.Business
         public List<Product> GetAllProductsList() {
             return productRepository.GetAllProducts();
         }
-        public void Create(string prName, string prDesc, string prManu, string prCateg, int qWare, int qSale)
+        public void Create(string prName, string prDesc, string prManu, string prCateg, int qWare, int qSale, int prBarcode)
         {
             try
             {
@@ -25,6 +25,7 @@ namespace MediaBazaarLibrary.Business
                 product.ProductCategory = prCateg;
                 product.QuantityWarehouse = qWare;
                 product.QuantitySales = qSale;
+                product.Barcode = prBarcode;
                 productRepository.CreateProduct(product);
             }
             catch (Exception error)
@@ -33,7 +34,7 @@ namespace MediaBazaarLibrary.Business
             }
         }
 
-        public void Edit(Product updatedProduct, string prName, string prDesc, string prManu, string prCateg, int qWare, int qSale)
+        public void Edit(Product updatedProduct, string prName, string prDesc, string prManu, string prCateg, int qWare, int qSale, int prBarcode)
         {
             try
             {
@@ -44,6 +45,7 @@ namespace MediaBazaarLibrary.Business
                 product.ProductCategory = prCateg;
                 product.QuantityWarehouse = qWare;
                 product.QuantitySales = qSale;
+                product.Barcode = prBarcode;
                 productRepository.UpdateProduct(product);
             }
             catch (Exception error)

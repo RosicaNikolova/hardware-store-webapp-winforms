@@ -43,6 +43,8 @@ namespace MediaBazaarProject.Presentation
             this.tbQSale = new System.Windows.Forms.TextBox();
             this.cbCate = new System.Windows.Forms.ComboBox();
             this.btnAddEdit = new System.Windows.Forms.Button();
+            this.lblBarcode = new System.Windows.Forms.Label();
+            this.tbBarcode = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblForm
@@ -168,20 +170,38 @@ namespace MediaBazaarProject.Presentation
             // btnAddEdit
             // 
             this.btnAddEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.btnAddEdit.Location = new System.Drawing.Point(201, 418);
+            this.btnAddEdit.Location = new System.Drawing.Point(201, 478);
             this.btnAddEdit.Name = "btnAddEdit";
-            this.btnAddEdit.Size = new System.Drawing.Size(121, 53);
+            this.btnAddEdit.Size = new System.Drawing.Size(121, 54);
             this.btnAddEdit.TabIndex = 14;
             this.btnAddEdit.Text = "Add/Edit";
             this.btnAddEdit.UseVisualStyleBackColor = true;
             this.btnAddEdit.Click += new System.EventHandler(this.btnAddEdit_Click);
+            // 
+            // lblBarcode
+            // 
+            this.lblBarcode.AutoSize = true;
+            this.lblBarcode.Location = new System.Drawing.Point(60, 399);
+            this.lblBarcode.Name = "lblBarcode";
+            this.lblBarcode.Size = new System.Drawing.Size(87, 20);
+            this.lblBarcode.TabIndex = 15;
+            this.lblBarcode.Text = "Pr. Barcode:";
+            // 
+            // tbBarcode
+            // 
+            this.tbBarcode.Location = new System.Drawing.Point(274, 399);
+            this.tbBarcode.Name = "tbBarcode";
+            this.tbBarcode.Size = new System.Drawing.Size(201, 27);
+            this.tbBarcode.TabIndex = 16;
             // 
             // AddEditProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(545, 509);
+            this.ClientSize = new System.Drawing.Size(545, 597);
+            this.Controls.Add(this.tbBarcode);
+            this.Controls.Add(this.lblBarcode);
             this.Controls.Add(this.btnAddEdit);
             this.Controls.Add(this.cbCate);
             this.Controls.Add(this.tbQSale);
@@ -219,5 +239,7 @@ namespace MediaBazaarProject.Presentation
         private System.Windows.Forms.TextBox tbQSale;
         private System.Windows.Forms.ComboBox cbCate;
         private System.Windows.Forms.Button btnAddEdit;
+        private System.Windows.Forms.Label lblBarcode;
+        private System.Windows.Forms.TextBox tbBarcode;
     }
 }

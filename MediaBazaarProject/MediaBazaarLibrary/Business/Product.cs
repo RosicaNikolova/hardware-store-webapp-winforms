@@ -21,6 +21,7 @@ namespace MediaBazaarLibrary.Business
         public int QuantityWarehouse { get; set; }
 
         public int QuantitySales { get; set; }
+        public int Barcode { get; set; }
         public override string ToString()
         {
             return $"Product Id: {this.ProductId}, Product Name: {this.ProductName}, Category: {this.ProductCategory}, Manufacturer: {this.ProductManufacturer}";

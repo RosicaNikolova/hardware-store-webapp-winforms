@@ -177,7 +177,7 @@ namespace MediaBazaarProject
                 if (nudAmountWarehouse.Value > 0)
                 {
                     lbWarehouseQuantity.Items.Clear();
-                    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse + Convert.ToInt32(nudAmountWarehouse.Value), product.QuantitySales);
+                    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse + Convert.ToInt32(nudAmountWarehouse.Value), product.QuantitySales, product.Barcode);
                     foreach (Product p in productManager.GetAllProductsList())
                     {
                         lbWarehouseQuantity.Items.Add(p.QuantityWarehouse);
@@ -207,14 +207,14 @@ namespace MediaBazaarProject
                     if (request.RequestedAmount <= product.QuantityWarehouse)
                     {
                         requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
-                        productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount);
+                        productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount, product.Barcode);
                         MessageBox.Show("Request has been Accepted");
                     }
                     else if (request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
                     {
                         int dif = Math.Abs(product.QuantityWarehouse - request.RequestedAmount);
                         requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY);
-                        productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif);
+                        productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif, product.Barcode);
                         MessageBox.Show("Request has been  partially Accepted");
                     }
                     else if (product.QuantityWarehouse == 0)

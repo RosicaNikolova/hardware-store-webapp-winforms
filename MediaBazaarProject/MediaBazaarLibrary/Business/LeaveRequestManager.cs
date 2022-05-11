@@ -13,19 +13,26 @@ namespace MediaBazaarLibrary.Business
         LeaveRequestRepository leaveRequestRepository = new LeaveRequestRepository();
         public void sendRequest(int employeeID, DateTime requestedDate) {
             DateTime today = DateTime.Today;
-            if (requestedDate.Day >= today.Day + 2 || requestedDate.Month >= DateTime.Today.Month)
+            if (requestedDate.Day >= today.Day + 2)
             {
-                if (leaveRequestRepository.checkForNrOfRequestsAMonth(employeeID, requestedDate) < 2)
+                if (requestedDate.Month >= DateTime.Today.Month)
                 {
-                    LeaveRequest leaveRequest = new LeaveRequest();
-                    leaveRequest.EmployeeID = employeeID;
-                    leaveRequest.RequestedDate = requestedDate;
-                    leaveRequest.RequestStatus = "PENDING";
-                    leaveRequestRepository.saveRequest(leaveRequest);
+                    if (leaveRequestRepository.checkForNrOfRequestsAMonth(employeeID, requestedDate) < 2)
+                    {
+                        LeaveRequest leaveRequest = new LeaveRequest();
+                        leaveRequest.EmployeeID = employeeID;
+                        leaveRequest.RequestedDate = requestedDate;
+                        leaveRequest.RequestStatus = "PENDING";
+                        leaveRequestRepository.saveRequest(leaveRequest);
+                    }
+                    else
+                    {
+                        throw new Exception("You have already requested max limit(2)");
+                    }
                 }
                 else
                 {
-                    throw new Exception("You have already requested max limit(2)");
+                    throw new Exception("Requested date must be atleast two days in advance");
                 }
             }
             else

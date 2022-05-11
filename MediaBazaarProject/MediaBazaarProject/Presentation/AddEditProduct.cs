@@ -49,15 +49,16 @@ namespace MediaBazaarProject.Presentation
             cbCate.Text = productForUpdate.ProductCategory.ToString();
             tbQWare.Text = productForUpdate.QuantityWarehouse.ToString();
             tbQSale.Text = productForUpdate.QuantitySales.ToString();
+            tbBarcode.Text = productForUpdate.Barcode.ToString();
         }
 
         private void btnAddEdit_Click(object sender, EventArgs e)
         {
-            if (tbName.Text != string.Empty && tbDesc.Text != string.Empty && tbManu.Text != string.Empty && cbCate.Text != string.Empty && tbQWare.Text != string.Empty && tbQSale.Text != string.Empty)
+            if (tbName.Text != string.Empty && tbDesc.Text != string.Empty && tbManu.Text != string.Empty && cbCate.Text != string.Empty && tbQWare.Text != string.Empty && tbQSale.Text != string.Empty && tbBarcode.Text != string.Empty)
             {
                 if (optionForm == 1)
                 {
-                    productManager.Create(tbName.Text, tbDesc.Text, tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
+                    productManager.Create(tbName.Text, tbDesc.Text, tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
                     MessageBox.Show("Product Added!!!");
                     this.Close();
                 }
@@ -65,7 +66,7 @@ namespace MediaBazaarProject.Presentation
                 {
                     if (productForUpdate != null)
                     {
-                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text));
+                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
                         MessageBox.Show("Product edited!!!");
                         this.Close();
                     }

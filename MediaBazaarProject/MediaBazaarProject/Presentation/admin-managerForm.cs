@@ -815,5 +815,10 @@ namespace MediaBazaarProject
                 lbAllProducts.Items.Add(product);
             }
         }
+
+        private void btnHomeLeaveRequest_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAdminHome;
+        }
     }
 }
