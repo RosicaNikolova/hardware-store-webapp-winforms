@@ -239,3 +239,4 @@ D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\D
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\LeaveRequestPage.cshtml.g.cs
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\ChangePassword.cshtml.g.cs
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\ChangePassword.cshtml.g.cs
+C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\ChangePassword.cshtml.g.cs
