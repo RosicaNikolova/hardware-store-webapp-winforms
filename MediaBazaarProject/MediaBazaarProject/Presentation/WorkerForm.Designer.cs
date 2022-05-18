@@ -31,13 +31,15 @@ namespace MediaBazaarProject
         {
             this.TabWorker = new System.Windows.Forms.TabControl();
             this.tabWorkerHome = new System.Windows.Forms.TabPage();
-            this.btnMyLeaveRequests = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBarcodeScanner = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnWarehouse = new System.Windows.Forms.Button();
-            this.btnSales = new System.Windows.Forms.Button();
-            this.lbxShiftEmployeeDay = new System.Windows.Forms.ListBox();
-            this.lblshift = new System.Windows.Forms.Label();
+            this.btnMyLeaveRequests = new System.Windows.Forms.Button();
             this.dateWorker = new System.Windows.Forms.DateTimePicker();
+            this.lblshift = new System.Windows.Forms.Label();
+            this.btnWarehouse = new System.Windows.Forms.Button();
+            this.lbxShiftEmployeeDay = new System.Windows.Forms.ListBox();
+            this.btnSales = new System.Windows.Forms.Button();
             this.tabSales = new System.Windows.Forms.TabPage();
             this.lblSalesQuantity = new System.Windows.Forms.Label();
             this.lbSalesQuantity = new System.Windows.Forms.ListBox();
@@ -70,13 +72,22 @@ namespace MediaBazaarProject
             this.btnAddStock = new System.Windows.Forms.Button();
             this.lbxStockWarehouse = new System.Windows.Forms.ListBox();
             this.tabLeaveRequestsOverview = new System.Windows.Forms.TabPage();
+            this.lblLeaveRequestsOverview = new System.Windows.Forms.Label();
             this.btnHomeFromLeaveRequests = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgEmployeesRequests = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblLeaveRequestsOverview = new System.Windows.Forms.Label();
+            this.tabBarcodeScanner = new System.Windows.Forms.TabPage();
+            this.tbScannedItemBarcode = new System.Windows.Forms.TextBox();
+            this.btnClearScannedItemsList = new System.Windows.Forms.Button();
+            this.lblSelectedItemBarcode = new System.Windows.Forms.Label();
+            this.lblScannedItems = new System.Windows.Forms.Label();
+            this.lblSalesProducts = new System.Windows.Forms.Label();
+            this.lbScannedItems = new System.Windows.Forms.ListBox();
+            this.pbSelectedItemBarcode = new System.Windows.Forms.PictureBox();
+            this.lbProductsInSales = new System.Windows.Forms.ListBox();
             this.TabWorker.SuspendLayout();
             this.tabWorkerHome.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tabSales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmountSales)).BeginInit();
             this.tabWarehouse.SuspendLayout();
@@ -84,7 +95,8 @@ namespace MediaBazaarProject
             this.tabLeaveRequestsOverview.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgEmployeesRequests)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.tabBarcodeScanner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSelectedItemBarcode)).BeginInit();
             this.SuspendLayout();
             // 
             // TabWorker
@@ -96,6 +108,7 @@ namespace MediaBazaarProject
             this.TabWorker.Controls.Add(this.tabSales);
             this.TabWorker.Controls.Add(this.tabWarehouse);
             this.TabWorker.Controls.Add(this.tabLeaveRequestsOverview);
+            this.TabWorker.Controls.Add(this.tabBarcodeScanner);
             this.TabWorker.Location = new System.Drawing.Point(-6, -15);
             this.TabWorker.Name = "TabWorker";
             this.TabWorker.SelectedIndex = 0;
@@ -113,15 +126,31 @@ namespace MediaBazaarProject
             this.tabWorkerHome.TabIndex = 0;
             this.tabWorkerHome.Text = "WorkerHome";
             // 
-            // btnMyLeaveRequests
+            // panel2
             // 
-            this.btnMyLeaveRequests.Location = new System.Drawing.Point(521, 305);
-            this.btnMyLeaveRequests.Name = "btnMyLeaveRequests";
-            this.btnMyLeaveRequests.Size = new System.Drawing.Size(286, 49);
-            this.btnMyLeaveRequests.TabIndex = 26;
-            this.btnMyLeaveRequests.Text = "My Leave Requests";
-            this.btnMyLeaveRequests.UseVisualStyleBackColor = true;
-            this.btnMyLeaveRequests.Click += new System.EventHandler(this.btnMyLeaveRequests_Click);
+            this.panel2.Controls.Add(this.btnBarcodeScanner);
+            this.panel2.Controls.Add(this.btnLogOut);
+            this.panel2.Controls.Add(this.btnMyLeaveRequests);
+            this.panel2.Controls.Add(this.dateWorker);
+            this.panel2.Controls.Add(this.lblshift);
+            this.panel2.Controls.Add(this.btnWarehouse);
+            this.panel2.Controls.Add(this.lbxShiftEmployeeDay);
+            this.panel2.Controls.Add(this.btnSales);
+            this.panel2.Location = new System.Drawing.Point(290, 49);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1224, 456);
+            this.panel2.TabIndex = 27;
+            // 
+            // btnBarcodeScanner
+            // 
+            this.btnBarcodeScanner.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnBarcodeScanner.Location = new System.Drawing.Point(105, 303);
+            this.btnBarcodeScanner.Name = "btnBarcodeScanner";
+            this.btnBarcodeScanner.Size = new System.Drawing.Size(130, 126);
+            this.btnBarcodeScanner.TabIndex = 27;
+            this.btnBarcodeScanner.Text = "Barcode scanner";
+            this.btnBarcodeScanner.UseVisualStyleBackColor = false;
+            this.btnBarcodeScanner.Click += new System.EventHandler(this.btnBarcodeScanner_Click);
             // 
             // btnLogOut
             // 
@@ -134,45 +163,15 @@ namespace MediaBazaarProject
             this.btnLogOut.UseVisualStyleBackColor = false;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // btnWarehouse
+            // btnMyLeaveRequests
             // 
-            this.btnWarehouse.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnWarehouse.Location = new System.Drawing.Point(105, 172);
-            this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Size = new System.Drawing.Size(130, 124);
-            this.btnWarehouse.TabIndex = 24;
-            this.btnWarehouse.Text = "Warehouse requests";
-            this.btnWarehouse.UseVisualStyleBackColor = false;
-            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
-            // 
-            // btnSales
-            // 
-            this.btnSales.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnSales.Location = new System.Drawing.Point(285, 172);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(130, 124);
-            this.btnSales.TabIndex = 23;
-            this.btnSales.Text = "Sales Request";
-            this.btnSales.UseVisualStyleBackColor = false;
-            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
-            // 
-            // lbxShiftEmployeeDay
-            // 
-            this.lbxShiftEmployeeDay.FormattingEnabled = true;
-            this.lbxShiftEmployeeDay.ItemHeight = 18;
-            this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(560, 172);
-            this.lbxShiftEmployeeDay.Name = "lbxShiftEmployeeDay";
-            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(212, 94);
-            this.lbxShiftEmployeeDay.TabIndex = 22;
-            // 
-            // lblshift
-            // 
-            this.lblshift.AutoSize = true;
-            this.lblshift.Location = new System.Drawing.Point(592, 120);
-            this.lblshift.Name = "lblshift";
-            this.lblshift.Size = new System.Drawing.Size(127, 18);
-            this.lblshift.TabIndex = 21;
-            this.lblshift.Text = "Shifts for the date:";
+            this.btnMyLeaveRequests.Location = new System.Drawing.Point(521, 305);
+            this.btnMyLeaveRequests.Name = "btnMyLeaveRequests";
+            this.btnMyLeaveRequests.Size = new System.Drawing.Size(286, 49);
+            this.btnMyLeaveRequests.TabIndex = 26;
+            this.btnMyLeaveRequests.Text = "My Leave Requests";
+            this.btnMyLeaveRequests.UseVisualStyleBackColor = true;
+            this.btnMyLeaveRequests.Click += new System.EventHandler(this.btnMyLeaveRequests_Click);
             // 
             // dateWorker
             // 
@@ -184,6 +183,46 @@ namespace MediaBazaarProject
             this.dateWorker.TabIndex = 20;
             this.dateWorker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dateWorker.ValueChanged += new System.EventHandler(this.dateWorker_ValueChanged);
+            // 
+            // lblshift
+            // 
+            this.lblshift.AutoSize = true;
+            this.lblshift.Location = new System.Drawing.Point(592, 120);
+            this.lblshift.Name = "lblshift";
+            this.lblshift.Size = new System.Drawing.Size(127, 18);
+            this.lblshift.TabIndex = 21;
+            this.lblshift.Text = "Shifts for the date:";
+            // 
+            // btnWarehouse
+            // 
+            this.btnWarehouse.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnWarehouse.Location = new System.Drawing.Point(105, 172);
+            this.btnWarehouse.Name = "btnWarehouse";
+            this.btnWarehouse.Size = new System.Drawing.Size(130, 124);
+            this.btnWarehouse.TabIndex = 24;
+            this.btnWarehouse.Text = "Warehouse requests";
+            this.btnWarehouse.UseVisualStyleBackColor = false;
+            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
+            // 
+            // lbxShiftEmployeeDay
+            // 
+            this.lbxShiftEmployeeDay.FormattingEnabled = true;
+            this.lbxShiftEmployeeDay.ItemHeight = 18;
+            this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(560, 172);
+            this.lbxShiftEmployeeDay.Name = "lbxShiftEmployeeDay";
+            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(212, 94);
+            this.lbxShiftEmployeeDay.TabIndex = 22;
+            // 
+            // btnSales
+            // 
+            this.btnSales.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnSales.Location = new System.Drawing.Point(285, 172);
+            this.btnSales.Name = "btnSales";
+            this.btnSales.Size = new System.Drawing.Size(130, 124);
+            this.btnSales.TabIndex = 23;
+            this.btnSales.Text = "Sales Request";
+            this.btnSales.UseVisualStyleBackColor = false;
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // tabSales
             // 
@@ -532,6 +571,16 @@ namespace MediaBazaarProject
             this.tabLeaveRequestsOverview.TabIndex = 3;
             this.tabLeaveRequestsOverview.Text = "MyLeaveRequests";
             // 
+            // lblLeaveRequestsOverview
+            // 
+            this.lblLeaveRequestsOverview.AutoSize = true;
+            this.lblLeaveRequestsOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblLeaveRequestsOverview.Location = new System.Drawing.Point(437, 31);
+            this.lblLeaveRequestsOverview.Name = "lblLeaveRequestsOverview";
+            this.lblLeaveRequestsOverview.Size = new System.Drawing.Size(293, 29);
+            this.lblLeaveRequestsOverview.TabIndex = 3;
+            this.lblLeaveRequestsOverview.Text = "Leave Requests Overview";
+            // 
             // btnHomeFromLeaveRequests
             // 
             this.btnHomeFromLeaveRequests.Location = new System.Drawing.Point(1590, 31);
@@ -562,29 +611,95 @@ namespace MediaBazaarProject
             this.dgEmployeesRequests.Size = new System.Drawing.Size(1035, 480);
             this.dgEmployeesRequests.TabIndex = 0;
             // 
-            // panel2
+            // tabBarcodeScanner
             // 
-            this.panel2.Controls.Add(this.btnLogOut);
-            this.panel2.Controls.Add(this.btnMyLeaveRequests);
-            this.panel2.Controls.Add(this.dateWorker);
-            this.panel2.Controls.Add(this.lblshift);
-            this.panel2.Controls.Add(this.btnWarehouse);
-            this.panel2.Controls.Add(this.lbxShiftEmployeeDay);
-            this.panel2.Controls.Add(this.btnSales);
-            this.panel2.Location = new System.Drawing.Point(290, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1224, 456);
-            this.panel2.TabIndex = 27;
+            this.tabBarcodeScanner.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tabBarcodeScanner.Controls.Add(this.tbScannedItemBarcode);
+            this.tabBarcodeScanner.Controls.Add(this.btnClearScannedItemsList);
+            this.tabBarcodeScanner.Controls.Add(this.lblSelectedItemBarcode);
+            this.tabBarcodeScanner.Controls.Add(this.lblScannedItems);
+            this.tabBarcodeScanner.Controls.Add(this.lblSalesProducts);
+            this.tabBarcodeScanner.Controls.Add(this.lbScannedItems);
+            this.tabBarcodeScanner.Controls.Add(this.pbSelectedItemBarcode);
+            this.tabBarcodeScanner.Controls.Add(this.lbProductsInSales);
+            this.tabBarcodeScanner.Location = new System.Drawing.Point(4, 27);
+            this.tabBarcodeScanner.Name = "tabBarcodeScanner";
+            this.tabBarcodeScanner.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBarcodeScanner.Size = new System.Drawing.Size(1991, 552);
+            this.tabBarcodeScanner.TabIndex = 4;
+            this.tabBarcodeScanner.Text = "BarcodeScanner";
             // 
-            // lblLeaveRequestsOverview
+            // tbScannedItemBarcode
             // 
-            this.lblLeaveRequestsOverview.AutoSize = true;
-            this.lblLeaveRequestsOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblLeaveRequestsOverview.Location = new System.Drawing.Point(437, 31);
-            this.lblLeaveRequestsOverview.Name = "lblLeaveRequestsOverview";
-            this.lblLeaveRequestsOverview.Size = new System.Drawing.Size(293, 29);
-            this.lblLeaveRequestsOverview.TabIndex = 3;
-            this.lblLeaveRequestsOverview.Text = "Leave Requests Overview";
+            this.tbScannedItemBarcode.Location = new System.Drawing.Point(403, 333);
+            this.tbScannedItemBarcode.Name = "tbScannedItemBarcode";
+            this.tbScannedItemBarcode.Size = new System.Drawing.Size(335, 24);
+            this.tbScannedItemBarcode.TabIndex = 7;
+            this.tbScannedItemBarcode.TextChanged += new System.EventHandler(this.tbScannedItemBarcode_TextChanged);
+            // 
+            // btnClearScannedItemsList
+            // 
+            this.btnClearScannedItemsList.Location = new System.Drawing.Point(1118, 406);
+            this.btnClearScannedItemsList.Name = "btnClearScannedItemsList";
+            this.btnClearScannedItemsList.Size = new System.Drawing.Size(94, 29);
+            this.btnClearScannedItemsList.TabIndex = 6;
+            this.btnClearScannedItemsList.Text = "Clear list";
+            this.btnClearScannedItemsList.UseVisualStyleBackColor = true;
+            this.btnClearScannedItemsList.Click += new System.EventHandler(this.btnClearScannedItemsList_Click);
+            // 
+            // lblSelectedItemBarcode
+            // 
+            this.lblSelectedItemBarcode.AutoSize = true;
+            this.lblSelectedItemBarcode.Location = new System.Drawing.Point(403, 120);
+            this.lblSelectedItemBarcode.Name = "lblSelectedItemBarcode";
+            this.lblSelectedItemBarcode.Size = new System.Drawing.Size(166, 18);
+            this.lblSelectedItemBarcode.TabIndex = 5;
+            this.lblSelectedItemBarcode.Text = "Selected item\'s barcode";
+            // 
+            // lblScannedItems
+            // 
+            this.lblScannedItems.AutoSize = true;
+            this.lblScannedItems.Location = new System.Drawing.Point(914, 69);
+            this.lblScannedItems.Name = "lblScannedItems";
+            this.lblScannedItems.Size = new System.Drawing.Size(106, 18);
+            this.lblScannedItems.TabIndex = 4;
+            this.lblScannedItems.Text = "Scanned items";
+            // 
+            // lblSalesProducts
+            // 
+            this.lblSalesProducts.AutoSize = true;
+            this.lblSalesProducts.Location = new System.Drawing.Point(85, 69);
+            this.lblSalesProducts.Name = "lblSalesProducts";
+            this.lblSalesProducts.Size = new System.Drawing.Size(122, 18);
+            this.lblSalesProducts.TabIndex = 3;
+            this.lblSalesProducts.Text = "Products in sales";
+            // 
+            // lbScannedItems
+            // 
+            this.lbScannedItems.FormattingEnabled = true;
+            this.lbScannedItems.ItemHeight = 18;
+            this.lbScannedItems.Location = new System.Drawing.Point(914, 90);
+            this.lbScannedItems.Name = "lbScannedItems";
+            this.lbScannedItems.Size = new System.Drawing.Size(298, 310);
+            this.lbScannedItems.TabIndex = 2;
+            // 
+            // pbSelectedItemBarcode
+            // 
+            this.pbSelectedItemBarcode.Location = new System.Drawing.Point(403, 141);
+            this.pbSelectedItemBarcode.Name = "pbSelectedItemBarcode";
+            this.pbSelectedItemBarcode.Size = new System.Drawing.Size(335, 186);
+            this.pbSelectedItemBarcode.TabIndex = 1;
+            this.pbSelectedItemBarcode.TabStop = false;
+            // 
+            // lbProductsInSales
+            // 
+            this.lbProductsInSales.FormattingEnabled = true;
+            this.lbProductsInSales.ItemHeight = 18;
+            this.lbProductsInSales.Location = new System.Drawing.Point(85, 90);
+            this.lbProductsInSales.Name = "lbProductsInSales";
+            this.lbProductsInSales.Size = new System.Drawing.Size(298, 310);
+            this.lbProductsInSales.TabIndex = 0;
+            this.lbProductsInSales.SelectedIndexChanged += new System.EventHandler(this.lbProductsInSales_SelectedIndexChanged);
             // 
             // WorkerForm
             // 
@@ -599,6 +714,8 @@ namespace MediaBazaarProject
             this.Load += new System.EventHandler(this.WorkerForm_Load);
             this.TabWorker.ResumeLayout(false);
             this.tabWorkerHome.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tabSales.ResumeLayout(false);
             this.tabSales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAmountSales)).EndInit();
@@ -609,8 +726,9 @@ namespace MediaBazaarProject
             this.tabLeaveRequestsOverview.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgEmployeesRequests)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.tabBarcodeScanner.ResumeLayout(false);
+            this.tabBarcodeScanner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSelectedItemBarcode)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,5 +781,15 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Button btnHomeFromLeaveRequests;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblLeaveRequestsOverview;
+        private System.Windows.Forms.Button btnBarcodeScanner;
+        private System.Windows.Forms.TabPage tabBarcodeScanner;
+        private System.Windows.Forms.TextBox tbScannedItemBarcode;
+        private System.Windows.Forms.Button btnClearScannedItemsList;
+        private System.Windows.Forms.Label lblSelectedItemBarcode;
+        private System.Windows.Forms.Label lblScannedItems;
+        private System.Windows.Forms.Label lblSalesProducts;
+        private System.Windows.Forms.ListBox lbScannedItems;
+        private System.Windows.Forms.PictureBox pbSelectedItemBarcode;
+        private System.Windows.Forms.ListBox lbProductsInSales;
     }
 }

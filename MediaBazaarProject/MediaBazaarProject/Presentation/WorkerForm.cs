@@ -1,4 +1,5 @@
-﻿using MediaBazaarLibrary;
+﻿using IronBarCode;
+using MediaBazaarLibrary;
 using MediaBazaarLibrary.Business;
 using System;
 using System.Collections.Generic;
@@ -67,6 +68,14 @@ namespace MediaBazaarProject
                 Product product;
 
                 object selectedProduct = lbxStockWarehouse.SelectedItem;
+                product = (Product)selectedProduct;
+                return product;
+            }
+            else if (TabWorker.SelectedTab == tabBarcodeScanner)
+            {
+                Product product;
+
+                object selectedProduct = lbProductsInSales.SelectedItem;
                 product = (Product)selectedProduct;
                 return product;
             }
@@ -378,6 +387,45 @@ namespace MediaBazaarProject
         private void btnHomeFromLeaveRequests_Click(object sender, EventArgs e)
         {
             TabWorker.SelectedTab = tabWorkerHome;
+        }
+
+        private void btnBarcodeScanner_Click(object sender, EventArgs e)
+        {
+            TabWorker.SelectedTab = tabBarcodeScanner;
+
+            List<Product> products = productManager.GetAllProductsList();
+            lbProductsInSales.Items.Clear();
+
+            foreach (Product product in products)
+            {
+                lbProductsInSales.Items.Add(product);
+            }
+        }
+
+        int counter = 0;
+        private void lbProductsInSales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tbScannedItemBarcode.Text = "";
+            GeneratedBarcode MyBarCode = BarcodeWriter.CreateBarcode($"{SelectedProduct().Barcode}", BarcodeWriterEncoding.Code128);
+            MyBarCode.SaveAsPng($"MyBarCode.png{counter}");
+            tbScannedItemBarcode.Focus();
+
+            pbSelectedItemBarcode.Image = Image.FromFile($"MyBarCode.png{counter}");
+
+            counter++;
+        }
+
+        private void tbScannedItemBarcode_TextChanged(object sender, EventArgs e)
+        {
+            if (tbScannedItemBarcode.Text.Length == SelectedProduct().Barcode.ToString().Length)
+            {
+                lbScannedItems.Items.Add($"Name: {SelectedProduct().ProductName}, Sales quantity: {SelectedProduct().QuantitySales}");
+            }
+        }
+
+        private void btnClearScannedItemsList_Click(object sender, EventArgs e)
+        {
+            lbScannedItems.Items.Clear();
         }
     }
 }

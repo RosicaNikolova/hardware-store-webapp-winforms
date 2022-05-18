@@ -45,6 +45,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "BarCode": {
+              "target": "Package",
+              "version": "[2022.3.0, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.28, )"
@@ -118,6 +122,10 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "BarCode": {
+              "target": "Package",
+              "version": "[2022.3.0, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.28, )"
