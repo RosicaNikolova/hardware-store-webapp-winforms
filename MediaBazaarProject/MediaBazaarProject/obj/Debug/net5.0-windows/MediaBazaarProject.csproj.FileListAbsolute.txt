@@ -154,3 +154,7 @@ C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaar
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\System.Drawing.Common.dll
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\IronBarCode.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\System.Drawing.Common.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

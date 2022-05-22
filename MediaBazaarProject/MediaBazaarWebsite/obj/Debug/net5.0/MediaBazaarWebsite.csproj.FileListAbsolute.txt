@@ -240,3 +240,7 @@ C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaar
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\ChangePassword.cshtml.g.cs
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\ChangePassword.cshtml.g.cs
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\obj\Debug\net5.0\Razor\Pages\ChangePassword.cshtml.g.cs
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\bin\Debug\net5.0\IronBarCode.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarWebsite\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

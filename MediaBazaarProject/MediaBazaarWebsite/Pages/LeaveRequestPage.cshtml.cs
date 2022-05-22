@@ -14,21 +14,44 @@ namespace MediaBazaarWebsite.Pages
     {
         [BindProperty]
         public LeaveRequest LeaveRequest { get; set; }
-        LeaveRequestManager leaveRequestManager = new LeaveRequestManager();
-        public string Message { get; set; }
+        [BindProperty]
+        public PreferedShift PreferedShift { get; set; }
+        Leave_Preference_RequestManager leaveRequestManager = new Leave_Preference_RequestManager();
+        public string MessageLeave { get; set; }
+        public string MessagePreference { get; set; }
         public void OnGet()
         {
+
         }
-        public void OnPost() {
-            //will finish this method tonight
+        public IActionResult OnPostLEAVEREQUEST() {
+            
             try
             {
                 int employeeId = Convert.ToInt32(User.FindFirst("id").Value);
                 leaveRequestManager.sendRequest(employeeId, LeaveRequest.RequestedDate);
-                Message = "Succesfully requested!";
+                MessageLeave = "Succesfully requested!";
+                return Page();
             }
             catch (Exception error) {
-                Message = error.Message;
+                MessageLeave = error.Message;
+                return Page();
+            }
+        }
+        public IActionResult OnPostPREFERENCEREQUEST()
+        {
+            //need to be finished
+            try
+            {
+                int employeeId = Convert.ToInt32(User.FindFirst("id").Value);
+                leaveRequestManager.AddPreferenceRequest(employeeId, PreferedShift.RequestedDate);
+                MessagePreference = "Succesfully requested!";
+                return Page();
+            }
+            catch (Exception error)
+            {
+                MessagePreference = error.Message;
+                return Page();
+                
             }
         }
     }

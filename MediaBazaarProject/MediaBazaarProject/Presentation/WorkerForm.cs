@@ -19,7 +19,7 @@ namespace MediaBazaarProject
         ShiftManager shiftManager = new ShiftManager();
         RequestManager requestManager = new RequestManager();
         ProductManager productManager = new ProductManager();
-        LeaveRequestManager leaveRequestManager = new LeaveRequestManager();
+        Leave_Preference_RequestManager leaveRequestManager = new Leave_Preference_RequestManager();
         string role = string.Empty;
 
         public WorkerForm()

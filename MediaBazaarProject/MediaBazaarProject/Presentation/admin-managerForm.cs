@@ -22,7 +22,7 @@ namespace MediaBazaarProject
         EmployeeManager employeeManager = new EmployeeManager();
         ShiftManager shiftManager = new ShiftManager();
         ProductManager productManager = new ProductManager();
-        LeaveRequestManager leaveRequestManager = new LeaveRequestManager();
+        Leave_Preference_RequestManager leaveRequestManager = new Leave_Preference_RequestManager();
         string role = string.Empty;
 
         public admin_managerForm()
