@@ -34,6 +34,7 @@ namespace MediaBazaarLibrary.Persistence
                     employee.Id = dr.GetInt32("EmployeeId");
                     employee.FirstName = dr.GetString("FirstName");
                     employee.LastName = dr.GetString("LastName");
+                    employee.Email = dr.GetString("Email");
                     employees.Add(employee);
                 }
             }

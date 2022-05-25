@@ -14,6 +14,8 @@ using OxyPlot.Series;
 using MediaBazaarLibrary;
 using MediaBazaarLibrary.Business;
 using MediaBazaarProject.Presentation;
+using System.Net.Mail;
+using System.Net;
 
 namespace MediaBazaarProject
 {
@@ -81,6 +83,33 @@ namespace MediaBazaarProject
             addEmployeeForm.Show();
         }
 
+        private void SendMail()
+        {
+            try
+            {
+                MailMessage message = new MailMessage();
+                SmtpClient smtp = new SmtpClient();
+                message.From = new MailAddress("danito22231@gmail.com");
+                message.To.Add(new MailAddress(selectedEmployee().Email));
+                message.Subject = "Welcome to MediaBazaar!";
+                message.IsBodyHtml = false;
+                message.Body = $"Dear {selectedEmployee().FirstName}, " +
+                    $"we regret to inform you that we've decided to let you go";
+                smtp.Port = 587;
+                smtp.Host = "smtp.gmail.com";
+                smtp.EnableSsl = true;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("danito22231@gmail.com", "aimgfqepemfqgkgn");
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(message);
+                MessageBox.Show("Employee has been fired successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Oops! We ran into a problem: " + ex.Message);
+            }
+        }
+
         private void btnDeactivateEmployee_Click(object sender, EventArgs e)
         {
             if (lbEmployeeManagementList.SelectedItem != null)
@@ -88,6 +117,7 @@ namespace MediaBazaarProject
                 object selectedEmployee = lbEmployeeManagementList.SelectedItem;
                 Employee employee = ((Employee)selectedEmployee);
                 employeeManager.DeactivateEmployee((Employee)employee);
+                SendMail();
                 MessageBox.Show("Employee deactivated");
             }
             else

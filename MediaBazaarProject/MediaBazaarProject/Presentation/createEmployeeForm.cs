@@ -67,7 +67,8 @@ namespace MediaBazaarProject
                 message.IsBodyHtml = false;
                 message.Body = $"Dear {txbFirstName.Text}, " +
                     $"Welcome to MediaBazaar! " +
-                    $"These are your login details: Email: {txbEmail.Text} Password: Employee";
+                    $"These are your login details: Email: {txbEmail.Text} Password: {txbPassword.Text} " +
+                    $"please use it on our website: https://localhost:44366/";
                 smtp.Port = 587;
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
