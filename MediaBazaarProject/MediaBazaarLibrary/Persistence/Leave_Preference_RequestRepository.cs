@@ -118,14 +118,14 @@ namespace MediaBazaarLibrary.Persistence
             }
             
         }
-        //Adds a record to preferenceShifts table
-        public void AddPreference(int employeeID, DateTime requestedDate)
+        //Adds a row to preferenceShifts table
+        public void AddPreference(int employeeID, string requestedDateDay)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection()) {
-                string sql = "Insert into prefered_shifts (EmployeeID, RequestedDate) values (@EmployeeID, @RequestedDate)";
+                string sql = "Insert into prefered_shifts (EmployeeID, RequestedDateDay) values (@EmployeeID, @RequestedDateDay)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("EmployeeID", employeeID);
-                cmd.Parameters.AddWithValue("RequestedDate", requestedDate);
+                cmd.Parameters.AddWithValue("RequestedDateDay", requestedDateDay);
                 
                 conn.Open();
                 

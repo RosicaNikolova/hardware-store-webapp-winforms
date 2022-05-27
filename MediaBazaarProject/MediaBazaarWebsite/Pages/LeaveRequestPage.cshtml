@@ -11,7 +11,7 @@
     <div class="requestContainer_leaveRequest">
         <form method="post">
             <h2>Select date for leave request</h2>
-            <input type="date" asp-for="LeaveRequest.RequestedDate">
+            <input type="text" asp-for="@Model.LeaveRequest.RequestedDate">
 
             <input type="submit" asp-page-handler="LEAVEREQUEST" value="Confirm LEAVE request" />
         </form>
@@ -20,8 +20,12 @@
     <div class="requestContainer_preferenceRequest">
         <form method="post">
             <h2>Select date of your prefered shift for next week</h2>
-            <input type="date" asp-for="PreferedShift.RequestedDate">
-
+            <select asp-for="PreferedShift.RequestedDateDay" required>
+                @foreach (var select in @Model.listDays)
+                {
+                <option asp-for="PreferedShift.RequestedDateDay">@select.ToString()</option>
+                }
+            </select>
             <input type="submit" asp-page-handler="PREFERENCEREQUEST" value="Confirm PREFERENCE request" />
         </form>
         <p class="notificationMessage">@Model.MessagePreference</p>

@@ -98,20 +98,25 @@ namespace MediaBazaarLibrary.Business
             return dt;
         }
         //Add preference request
-        public void AddPreferenceRequest(int employeeID, DateTime requestedDate)
+        public void AddPreferenceRequest(int employeeID, string requestedDateDay)
         {
-            DateTime today = DateTime.Today;
-
-            if (requestedDate.Day > today.Day + 7 && requestedDate.Month >= DateTime.Today.Month)
+            string today = DateTime.Today.ToString("dddd");
+            //You can ask for the prefered shift any day but Friday
+            if(today != "Thursday")
             {
-                leave_preference_RequestRepository.AddPreference(employeeID, requestedDate);
+                leave_preference_RequestRepository.AddPreference(employeeID, requestedDateDay);
             }
-            else if (requestedDate.Month > DateTime.Today.Month)
-            {
-                leave_preference_RequestRepository.AddPreference(employeeID, requestedDate);
-            }
+            //if (requestedDate.Day > today.Day + 7 && requestedDate.Month >= DateTime.Today.Month)
+            //{
+            //    leave_preference_RequestRepository.AddPreference(employeeID, requestedDate);
+            //}
+            //else if (requestedDate.Month > DateTime.Today.Month)
+            //{
+            //    leave_preference_RequestRepository.AddPreference(employeeID, requestedDate);
+            //}
             else {
-                throw new Exception("You have to ask for prefered shift in advance(at least 7 days in advance)!");
+                //throw new Exception("You have to ask for prefered shift in advance(at least 7 days in advance)!");
+                throw new Exception("You cannot request for prefered shift today, the schedule is being made, try tomorrow!");
             }
 
         }

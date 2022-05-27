@@ -6,6 +6,7 @@ using MediaBazaarLibrary.Business;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace MediaBazaarWebsite.Pages
 {
@@ -16,6 +17,7 @@ namespace MediaBazaarWebsite.Pages
         public LeaveRequest LeaveRequest { get; set; }
         [BindProperty]
         public PreferedShift PreferedShift { get; set; }
+        public List<string> listDays = new List<string>() {"Moday", "Tuesday", "Wednesday","Thursday", "Friday"};
         Leave_Preference_RequestManager leaveRequestManager = new Leave_Preference_RequestManager();
         public string MessageLeave { get; set; }
         public string MessagePreference { get; set; }
@@ -43,7 +45,7 @@ namespace MediaBazaarWebsite.Pages
             try
             {
                 int employeeId = Convert.ToInt32(User.FindFirst("id").Value);
-                leaveRequestManager.AddPreferenceRequest(employeeId, PreferedShift.RequestedDate);
+                leaveRequestManager.AddPreferenceRequest(employeeId, PreferedShift.RequestedDateDay);
                 MessagePreference = "Succesfully requested!";
                 return Page();
             }
