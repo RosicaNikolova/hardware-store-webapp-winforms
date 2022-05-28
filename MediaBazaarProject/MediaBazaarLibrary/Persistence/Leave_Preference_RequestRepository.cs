@@ -29,6 +29,7 @@ namespace MediaBazaarLibrary.Persistence
                 return nrOFRequestsAMonth;
             }
         }
+        //save leave request
         public void saveRequest(LeaveRequest leaveRequest)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
@@ -44,7 +45,7 @@ namespace MediaBazaarLibrary.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
-
+        //update leaveRequest
         public void updateRequest(LeaveRequest leaveRequest)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
@@ -60,6 +61,103 @@ namespace MediaBazaarLibrary.Persistence
 
                 cmd.ExecuteNonQuery();
             }
+        }
+        //update preferedShift status CHECKKKKK!!!! - ADMIN FORM, selects accept or reject
+        public void updatePreferedShiftStatus(PreferedShift preferedShift) {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {//check if the column is RequestID or which one it is
+                string sql = "update prefered_shifts set Status=@Status where RequestID=@RequestID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("RequestID", preferedShift.RequestID);
+                cmd.Parameters.AddWithValue("Status", preferedShift.Status);
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+        //gets specific prefered shift so admin can update the status
+        public PreferedShift getPreferedShift(int preferedShiftID)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+
+                string sql = "SELECT e.EmployeeID, RequestID, Status, RequestedDateDay from employees as e right join prefered_shifts as p_s on e.EmployeeID = p_s.EmployeeID where RequestID=@RequestID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("RequestID", preferedShiftID);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+
+                PreferedShift preferedShift = null;
+                if (dr.Read())
+                {
+                    preferedShift = new PreferedShift();
+                    preferedShift.EmployeeID = dr.GetInt32("EmployeeID");
+                    preferedShift.RequestID = dr.GetInt32("RequestID");
+                    preferedShift.RequestedDateDay = dr.GetString("RequestedDateDay");
+                    preferedShift.Status = dr.GetString("Status");
+                }
+                return preferedShift;
+            }
+        }
+        //list of all prefered shifts requests for admin form, CHECK IF WOOOOOOOORKS!!!!!!
+        public List<PreferedShift> getPreferedShifts() {
+            List<PreferedShift> allPreferedShifts = new List<PreferedShift>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+
+                string sql = "SELECT e.EmployeeID, RequestID, Status, RequestedDateDay from employees as e right join prefered_shifts as p_s on e.EmployeeID = p_s.EmployeeID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+
+                PreferedShift preferedShift = null;
+                while (dr.Read())
+                {
+                    preferedShift = new PreferedShift();
+                    preferedShift.EmployeeID = dr.GetInt32("EmployeeID");
+                    preferedShift.RequestID = dr.GetInt32("RequestID");
+                    preferedShift.RequestedDateDay = dr.GetString("RequestedDateDay");
+                    preferedShift.Status = dr.GetString("Status");
+                    allPreferedShifts.Add(preferedShift);
+                }
+            }
+            return allPreferedShifts;
+        }
+        //lists all prefered requests per employeeID, WORKSSSSSSS!!!!
+        public List<PreferedShift> getPreferedShiftsEmployee(int employeeID)
+        {
+            List<PreferedShift> allPreferedShifts = new List<PreferedShift>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+
+                string sql = "SELECT e.EmployeeID, RequestID, Status, RequestedDateDay from employees as e right join prefered_shifts as p_s on e.EmployeeID = p_s.EmployeeID where EmployeeID=@EmployeeID";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("EmployeeID", employeeID);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+
+                PreferedShift preferedShift = null;
+                while (dr.Read())
+                {
+                    preferedShift = new PreferedShift();
+                    preferedShift.EmployeeID = dr.GetInt32("EmployeeID");
+                    preferedShift.RequestID = dr.GetInt32("RequestID");
+                    preferedShift.RequestedDateDay = dr.GetString("RequestedDateDay");
+                    preferedShift.Status = dr.GetString("Status");
+                    allPreferedShifts.Add(preferedShift);
+                }
+            }
+            return allPreferedShifts;
         }
 
         public List<LeaveRequest> getLeaveRequests()
@@ -89,6 +187,7 @@ namespace MediaBazaarLibrary.Persistence
             }
             return allLeaveRequests;
         }
+
         public LeaveRequest getLeaveRequest(int requestID)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
@@ -118,8 +217,8 @@ namespace MediaBazaarLibrary.Persistence
             }
             
         }
-        //Adds a row to preferenceShifts table
-        public void AddPreference(int employeeID, string requestedDateDay)
+        //save prefered shift request
+        public void savePreference(int employeeID, string requestedDateDay)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection()) {
                 string sql = "Insert into prefered_shifts (EmployeeID, RequestedDateDay) values (@EmployeeID, @RequestedDateDay)";

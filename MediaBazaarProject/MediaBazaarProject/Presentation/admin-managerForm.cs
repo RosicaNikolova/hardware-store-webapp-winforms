@@ -24,7 +24,7 @@ namespace MediaBazaarProject
         EmployeeManager employeeManager = new EmployeeManager();
         ShiftManager shiftManager = new ShiftManager();
         ProductManager productManager = new ProductManager();
-        Leave_Preference_RequestManager leaveRequestManager = new Leave_Preference_RequestManager();
+        Leave_Preference_RequestManager leavePreferenceRequestManager = new Leave_Preference_RequestManager();
         string role = string.Empty;
 
         public admin_managerForm()
@@ -767,7 +767,8 @@ namespace MediaBazaarProject
         private void btnLeaveRequests_Click(object sender, EventArgs e)
         {
             tabAdmin.SelectedTab = tabLeaveRequests;
-            dgAllLeaveRequests.DataSource = leaveRequestManager.GetLeaveRequestsTable();
+            dgAllLeaveRequests.DataSource = leavePreferenceRequestManager.GetLeaveRequestsTable();
+            dataGridViewPreferedShifts.DataSource = leavePreferenceRequestManager.GetPreferedShiftsRequestsTable();
         }
 
         private void dgAllLeaveRequests_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -776,15 +777,15 @@ namespace MediaBazaarProject
             {
                 DataGridViewRow row = dgAllLeaveRequests.Rows[e.RowIndex];
                 int requestID = Convert.ToInt32(row.Cells[3].Value);
-                leaveRequestManager.approveRequest(requestID);
-                dgAllLeaveRequests.DataSource = leaveRequestManager.GetLeaveRequestsTable();
+                leavePreferenceRequestManager.approveRequest(requestID);
+                dgAllLeaveRequests.DataSource = leavePreferenceRequestManager.GetLeaveRequestsTable();
             }
             else if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Disapprove")
             {
                 DataGridViewRow row = dgAllLeaveRequests.Rows[e.RowIndex];
                 int requestID = Convert.ToInt32(row.Cells[3].Value);
-                leaveRequestManager.disapproveRequest(requestID);
-                dgAllLeaveRequests.DataSource = leaveRequestManager.GetLeaveRequestsTable();
+                leavePreferenceRequestManager.disapproveRequest(requestID);
+                dgAllLeaveRequests.DataSource = leavePreferenceRequestManager.GetLeaveRequestsTable();
             }
         }
 
@@ -849,6 +850,24 @@ namespace MediaBazaarProject
         private void btnHomeLeaveRequest_Click(object sender, EventArgs e)
         {
             tabAdmin.SelectedTab = tabAdminHome;
+        }
+
+        private void dataGridViewPreferedShifts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Approve")
+            {
+                DataGridViewRow row = dataGridViewPreferedShifts.Rows[e.RowIndex];
+                int requestID = Convert.ToInt32(row.Cells[3].Value);
+                leavePreferenceRequestManager.approvePreferedShift(requestID);
+                dataGridViewPreferedShifts.DataSource = leavePreferenceRequestManager.GetPreferedShiftsRequestsTable();
+            }
+            else if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Disapprove")
+            {
+                DataGridViewRow row = dataGridViewPreferedShifts.Rows[e.RowIndex];
+                int requestID = Convert.ToInt32(row.Cells[3].Value);
+                leavePreferenceRequestManager.disapprovePreferedShift(requestID);
+                dataGridViewPreferedShifts.DataSource = leavePreferenceRequestManager.GetPreferedShiftsRequestsTable();
+            }
         }
     }
 }

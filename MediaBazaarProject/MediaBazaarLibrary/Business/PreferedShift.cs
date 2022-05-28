@@ -9,12 +9,12 @@ namespace MediaBazaarLibrary.Business
     public class PreferedShift
     {
         string status;
+        public int RequestID { get; set; }
         public int EmployeeID { get; set; }
         public string RequestedDateDay { get; set; }
         public string Status 
-        { 
-            get { return status; } 
-            set { status = "Pending"; } 
+        {
+            get; set; 
         }
     }
 }

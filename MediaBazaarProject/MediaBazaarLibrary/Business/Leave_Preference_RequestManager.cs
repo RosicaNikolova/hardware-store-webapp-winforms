@@ -61,6 +61,18 @@ namespace MediaBazaarLibrary.Business
             leaveRequest.RequestStatus = "DISAPPROVED";
             leave_preference_RequestRepository.updateRequest(leaveRequest);
         }
+        public void approvePreferedShift(int preferedShiftID)
+        {
+            PreferedShift preferedShift = leave_preference_RequestRepository.getPreferedShift(preferedShiftID);
+            preferedShift.Status = "APPROVED";
+            leave_preference_RequestRepository.updatePreferedShiftStatus(preferedShift);
+        }
+        public void disapprovePreferedShift(int preferedShiftID)
+        {
+            PreferedShift preferedShift = leave_preference_RequestRepository.getPreferedShift(preferedShiftID);
+            preferedShift.Status = "DISAPPROVED";
+            leave_preference_RequestRepository.updatePreferedShiftStatus(preferedShift);
+        }
         //this one is for admin, sees all employee requests
         public DataTable GetLeaveRequestsTable()
         {
@@ -104,7 +116,7 @@ namespace MediaBazaarLibrary.Business
             //You can ask for the prefered shift any day but Friday
             if(today != "Thursday")
             {
-                leave_preference_RequestRepository.AddPreference(employeeID, requestedDateDay);
+                leave_preference_RequestRepository.savePreference(employeeID, requestedDateDay);
             }
             //if (requestedDate.Day > today.Day + 7 && requestedDate.Month >= DateTime.Today.Month)
             //{
@@ -119,6 +131,25 @@ namespace MediaBazaarLibrary.Business
                 throw new Exception("You cannot request for prefered shift today, the schedule is being made, try tomorrow!");
             }
 
+        }
+        //Yable of all prefered shifts, admin form
+        public DataTable GetPreferedShiftsRequestsTable()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("EmployeeID".ToString());
+            dt.Columns.Add("RequestID".ToString());
+            dt.Columns.Add("RequestedDateDay".ToString());
+            dt.Columns.Add("Status".ToString());
+            foreach (var preferedShift in leave_preference_RequestRepository.getPreferedShifts())
+            {
+                DataRow dr = dt.NewRow();
+                dr["EmployeeID"] = preferedShift.EmployeeID;
+                dr["RequestID"] = preferedShift.RequestID;
+                dr["RequestedDateDay"] = preferedShift.RequestedDateDay;
+                dr["Status"] = preferedShift.Status;
+                dt.Rows.Add(dr);
+            }
+            return dt;
         }
     }
 }

@@ -32,7 +32,7 @@ namespace MediaBazaarProject
             this.components = new System.ComponentModel.Container();
             this.tabAdmin = new System.Windows.Forms.TabControl();
             this.tabAdminHome = new System.Windows.Forms.TabPage();
-            this.btnLeaveRequests = new System.Windows.Forms.Button();
+            this.btnLeavePreferedShiftsRequests = new System.Windows.Forms.Button();
             this.btnProductManagment = new System.Windows.Forms.Button();
             this.btnWeeklyScheduleDisplay = new System.Windows.Forms.Button();
             this.lbEmployeeList = new System.Windows.Forms.ListBox();
@@ -83,10 +83,13 @@ namespace MediaBazaarProject
             this.lbEveningShift = new System.Windows.Forms.ListBox();
             this.lbMiddayShift = new System.Windows.Forms.ListBox();
             this.tabStatistics = new System.Windows.Forms.TabPage();
-            this.plotView4 = new OxyPlot.WindowsForms.PlotView();
-            this.plotView3 = new OxyPlot.WindowsForms.PlotView();
-            this.plotView2 = new OxyPlot.WindowsForms.PlotView();
+            this.tcStatistics = new System.Windows.Forms.TabControl();
+            this.tabEmployeeStatistics = new System.Windows.Forms.TabPage();
             this.plotView1 = new OxyPlot.WindowsForms.PlotView();
+            this.plotView2 = new OxyPlot.WindowsForms.PlotView();
+            this.tabProductStatistics = new System.Windows.Forms.TabPage();
+            this.plotView3 = new OxyPlot.WindowsForms.PlotView();
+            this.plotView4 = new OxyPlot.WindowsForms.PlotView();
             this.lblAverageSalary = new System.Windows.Forms.Label();
             this.lblNumberOfEmployees = new System.Windows.Forms.Label();
             this.btnHome2 = new System.Windows.Forms.Button();
@@ -143,20 +146,22 @@ namespace MediaBazaarProject
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.tabLeaveRequests = new System.Windows.Forms.TabPage();
-            this.btnHomeLeaveRequest = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPageLeaveRequests = new System.Windows.Forms.TabPage();
             this.dgAllLeaveRequests = new System.Windows.Forms.DataGridView();
             this.Approve = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Disapprove = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.tabPagePreferedShifts = new System.Windows.Forms.TabPage();
+            this.dataGridViewPreferedShifts = new System.Windows.Forms.DataGridView();
+            this.btnHomeLeaveRequest = new System.Windows.Forms.Button();
             this.tEmployeeLbRefresh = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.tcStatistics = new System.Windows.Forms.TabControl();
-            this.tabEmployeeStatistics = new System.Windows.Forms.TabPage();
-            this.tabProductStatistics = new System.Windows.Forms.TabPage();
+            this.ApproveButton = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DisapproveButton = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabAdmin.SuspendLayout();
             this.tabAdminHome.SuspendLayout();
             this.tabEmployeeManagement.SuspendLayout();
@@ -165,16 +170,19 @@ namespace MediaBazaarProject
             this.gbAssignToShift.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabStatistics.SuspendLayout();
+            this.tcStatistics.SuspendLayout();
+            this.tabEmployeeStatistics.SuspendLayout();
+            this.tabProductStatistics.SuspendLayout();
             this.tabWeeklySchedule.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabProductManagement.SuspendLayout();
             this.tabLeaveRequests.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPageLeaveRequests.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgAllLeaveRequests)).BeginInit();
+            this.tabPagePreferedShifts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreferedShifts)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tcStatistics.SuspendLayout();
-            this.tabEmployeeStatistics.SuspendLayout();
-            this.tabProductStatistics.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabAdmin
@@ -197,7 +205,7 @@ namespace MediaBazaarProject
             // tabAdminHome
             // 
             this.tabAdminHome.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabAdminHome.Controls.Add(this.btnLeaveRequests);
+            this.tabAdminHome.Controls.Add(this.btnLeavePreferedShiftsRequests);
             this.tabAdminHome.Controls.Add(this.btnProductManagment);
             this.tabAdminHome.Controls.Add(this.btnWeeklyScheduleDisplay);
             this.tabAdminHome.Controls.Add(this.lbEmployeeList);
@@ -220,15 +228,15 @@ namespace MediaBazaarProject
             this.tabAdminHome.TabIndex = 0;
             this.tabAdminHome.Text = "adminHome";
             // 
-            // btnLeaveRequests
+            // btnLeavePreferedShiftsRequests
             // 
-            this.btnLeaveRequests.Location = new System.Drawing.Point(173, 385);
-            this.btnLeaveRequests.Name = "btnLeaveRequests";
-            this.btnLeaveRequests.Size = new System.Drawing.Size(130, 125);
-            this.btnLeaveRequests.TabIndex = 16;
-            this.btnLeaveRequests.Text = "Leave Requests";
-            this.btnLeaveRequests.UseVisualStyleBackColor = true;
-            this.btnLeaveRequests.Click += new System.EventHandler(this.btnLeaveRequests_Click);
+            this.btnLeavePreferedShiftsRequests.Location = new System.Drawing.Point(24, 525);
+            this.btnLeavePreferedShiftsRequests.Name = "btnLeavePreferedShiftsRequests";
+            this.btnLeavePreferedShiftsRequests.Size = new System.Drawing.Size(279, 61);
+            this.btnLeavePreferedShiftsRequests.TabIndex = 16;
+            this.btnLeavePreferedShiftsRequests.Text = "Leave/Prefered shifts Requests";
+            this.btnLeavePreferedShiftsRequests.UseVisualStyleBackColor = true;
+            this.btnLeavePreferedShiftsRequests.Click += new System.EventHandler(this.btnLeaveRequests_Click);
             // 
             // btnProductManagment
             // 
@@ -258,7 +266,7 @@ namespace MediaBazaarProject
             this.lbEmployeeList.ItemHeight = 18;
             this.lbEmployeeList.Location = new System.Drawing.Point(364, 144);
             this.lbEmployeeList.Name = "lbEmployeeList";
-            this.lbEmployeeList.Size = new System.Drawing.Size(803, 400);
+            this.lbEmployeeList.Size = new System.Drawing.Size(803, 436);
             this.lbEmployeeList.TabIndex = 13;
             this.lbEmployeeList.DoubleClick += new System.EventHandler(this.lbEmployeeList_DoubleClick);
             // 
@@ -775,29 +783,39 @@ namespace MediaBazaarProject
             this.tabStatistics.TabIndex = 3;
             this.tabStatistics.Text = "statistics";
             // 
-            // plotView4
+            // tcStatistics
             // 
-            this.plotView4.Location = new System.Drawing.Point(605, 47);
-            this.plotView4.Name = "plotView4";
-            this.plotView4.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.plotView4.Size = new System.Drawing.Size(418, 348);
-            this.plotView4.TabIndex = 9;
-            this.plotView4.Text = "plotViewRequestedCategories";
-            this.plotView4.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
-            this.plotView4.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.plotView4.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            this.tcStatistics.Controls.Add(this.tabEmployeeStatistics);
+            this.tcStatistics.Controls.Add(this.tabProductStatistics);
+            this.tcStatistics.Location = new System.Drawing.Point(109, 93);
+            this.tcStatistics.Name = "tcStatistics";
+            this.tcStatistics.SelectedIndex = 0;
+            this.tcStatistics.Size = new System.Drawing.Size(1056, 495);
+            this.tcStatistics.TabIndex = 10;
             // 
-            // plotView3
+            // tabEmployeeStatistics
             // 
-            this.plotView3.Location = new System.Drawing.Point(32, 47);
-            this.plotView3.Name = "plotView3";
-            this.plotView3.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.plotView3.Size = new System.Drawing.Size(418, 348);
-            this.plotView3.TabIndex = 8;
-            this.plotView3.Text = "plotViewRequestedItems";
-            this.plotView3.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
-            this.plotView3.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.plotView3.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            this.tabEmployeeStatistics.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabEmployeeStatistics.Controls.Add(this.plotView1);
+            this.tabEmployeeStatistics.Controls.Add(this.plotView2);
+            this.tabEmployeeStatistics.Location = new System.Drawing.Point(4, 27);
+            this.tabEmployeeStatistics.Name = "tabEmployeeStatistics";
+            this.tabEmployeeStatistics.Padding = new System.Windows.Forms.Padding(3);
+            this.tabEmployeeStatistics.Size = new System.Drawing.Size(1048, 464);
+            this.tabEmployeeStatistics.TabIndex = 0;
+            this.tabEmployeeStatistics.Text = "Employee statistics";
+            // 
+            // plotView1
+            // 
+            this.plotView1.Location = new System.Drawing.Point(51, 59);
+            this.plotView1.Name = "plotView1";
+            this.plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plotView1.Size = new System.Drawing.Size(411, 328);
+            this.plotView1.TabIndex = 6;
+            this.plotView1.Text = "plotViewNat";
+            this.plotView1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plotView1.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plotView1.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
             // 
             // plotView2
             // 
@@ -811,17 +829,41 @@ namespace MediaBazaarProject
             this.plotView2.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
             this.plotView2.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
             // 
-            // plotView1
+            // tabProductStatistics
             // 
-            this.plotView1.Location = new System.Drawing.Point(51, 59);
-            this.plotView1.Name = "plotView1";
-            this.plotView1.PanCursor = System.Windows.Forms.Cursors.Hand;
-            this.plotView1.Size = new System.Drawing.Size(411, 328);
-            this.plotView1.TabIndex = 6;
-            this.plotView1.Text = "plotViewNat";
-            this.plotView1.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
-            this.plotView1.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
-            this.plotView1.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            this.tabProductStatistics.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabProductStatistics.Controls.Add(this.plotView3);
+            this.tabProductStatistics.Controls.Add(this.plotView4);
+            this.tabProductStatistics.Location = new System.Drawing.Point(4, 27);
+            this.tabProductStatistics.Name = "tabProductStatistics";
+            this.tabProductStatistics.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProductStatistics.Size = new System.Drawing.Size(1048, 464);
+            this.tabProductStatistics.TabIndex = 1;
+            this.tabProductStatistics.Text = "Product statistics";
+            // 
+            // plotView3
+            // 
+            this.plotView3.Location = new System.Drawing.Point(32, 47);
+            this.plotView3.Name = "plotView3";
+            this.plotView3.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plotView3.Size = new System.Drawing.Size(418, 348);
+            this.plotView3.TabIndex = 8;
+            this.plotView3.Text = "plotViewRequestedItems";
+            this.plotView3.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plotView3.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plotView3.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
+            // 
+            // plotView4
+            // 
+            this.plotView4.Location = new System.Drawing.Point(605, 47);
+            this.plotView4.Name = "plotView4";
+            this.plotView4.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plotView4.Size = new System.Drawing.Size(418, 348);
+            this.plotView4.TabIndex = 9;
+            this.plotView4.Text = "plotViewRequestedCategories";
+            this.plotView4.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plotView4.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plotView4.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
             // 
             // lblAverageSalary
             // 
@@ -991,7 +1033,7 @@ namespace MediaBazaarProject
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 204F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 207F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.Controls.Add(this.lbMondayMidday, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbMondayEvening, 0, 2);
@@ -1029,7 +1071,7 @@ namespace MediaBazaarProject
             this.lbMondayMidday.ItemHeight = 18;
             this.lbMondayMidday.Location = new System.Drawing.Point(3, 107);
             this.lbMondayMidday.Name = "lbMondayMidday";
-            this.lbMondayMidday.Size = new System.Drawing.Size(121, 94);
+            this.lbMondayMidday.Size = new System.Drawing.Size(120, 94);
             this.lbMondayMidday.TabIndex = 1;
             // 
             // lbMondayEvening
@@ -1038,41 +1080,41 @@ namespace MediaBazaarProject
             this.lbMondayEvening.ItemHeight = 18;
             this.lbMondayEvening.Location = new System.Drawing.Point(3, 235);
             this.lbMondayEvening.Name = "lbMondayEvening";
-            this.lbMondayEvening.Size = new System.Drawing.Size(121, 94);
+            this.lbMondayEvening.Size = new System.Drawing.Size(120, 94);
             this.lbMondayEvening.TabIndex = 2;
             // 
             // lbTuesdayMorning
             // 
             this.lbTuesdayMorning.FormattingEnabled = true;
             this.lbTuesdayMorning.ItemHeight = 18;
-            this.lbTuesdayMorning.Location = new System.Drawing.Point(130, 3);
+            this.lbTuesdayMorning.Location = new System.Drawing.Point(129, 3);
             this.lbTuesdayMorning.Name = "lbTuesdayMorning";
-            this.lbTuesdayMorning.Size = new System.Drawing.Size(125, 40);
+            this.lbTuesdayMorning.Size = new System.Drawing.Size(123, 40);
             this.lbTuesdayMorning.TabIndex = 3;
             // 
             // lbTuesdayMidday
             // 
             this.lbTuesdayMidday.FormattingEnabled = true;
             this.lbTuesdayMidday.ItemHeight = 18;
-            this.lbTuesdayMidday.Location = new System.Drawing.Point(130, 107);
+            this.lbTuesdayMidday.Location = new System.Drawing.Point(129, 107);
             this.lbTuesdayMidday.Name = "lbTuesdayMidday";
-            this.lbTuesdayMidday.Size = new System.Drawing.Size(125, 94);
+            this.lbTuesdayMidday.Size = new System.Drawing.Size(123, 94);
             this.lbTuesdayMidday.TabIndex = 4;
             // 
             // lbTuesdayEvening
             // 
             this.lbTuesdayEvening.FormattingEnabled = true;
             this.lbTuesdayEvening.ItemHeight = 18;
-            this.lbTuesdayEvening.Location = new System.Drawing.Point(130, 235);
+            this.lbTuesdayEvening.Location = new System.Drawing.Point(129, 235);
             this.lbTuesdayEvening.Name = "lbTuesdayEvening";
-            this.lbTuesdayEvening.Size = new System.Drawing.Size(125, 94);
+            this.lbTuesdayEvening.Size = new System.Drawing.Size(123, 94);
             this.lbTuesdayEvening.TabIndex = 5;
             // 
             // lbWednesdayMidday
             // 
             this.lbWednesdayMidday.FormattingEnabled = true;
             this.lbWednesdayMidday.ItemHeight = 18;
-            this.lbWednesdayMidday.Location = new System.Drawing.Point(261, 107);
+            this.lbWednesdayMidday.Location = new System.Drawing.Point(258, 107);
             this.lbWednesdayMidday.Name = "lbWednesdayMidday";
             this.lbWednesdayMidday.Size = new System.Drawing.Size(166, 94);
             this.lbWednesdayMidday.TabIndex = 7;
@@ -1081,7 +1123,7 @@ namespace MediaBazaarProject
             // 
             this.lbWednesdayEvening.FormattingEnabled = true;
             this.lbWednesdayEvening.ItemHeight = 18;
-            this.lbWednesdayEvening.Location = new System.Drawing.Point(261, 235);
+            this.lbWednesdayEvening.Location = new System.Drawing.Point(258, 235);
             this.lbWednesdayEvening.Name = "lbWednesdayEvening";
             this.lbWednesdayEvening.Size = new System.Drawing.Size(166, 94);
             this.lbWednesdayEvening.TabIndex = 8;
@@ -1090,7 +1132,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayMorning.FormattingEnabled = true;
             this.lbThursdayMorning.ItemHeight = 18;
-            this.lbThursdayMorning.Location = new System.Drawing.Point(435, 3);
+            this.lbThursdayMorning.Location = new System.Drawing.Point(432, 3);
             this.lbThursdayMorning.Name = "lbThursdayMorning";
             this.lbThursdayMorning.Size = new System.Drawing.Size(158, 40);
             this.lbThursdayMorning.TabIndex = 9;
@@ -1099,7 +1141,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayMidday.FormattingEnabled = true;
             this.lbThursdayMidday.ItemHeight = 18;
-            this.lbThursdayMidday.Location = new System.Drawing.Point(435, 107);
+            this.lbThursdayMidday.Location = new System.Drawing.Point(432, 107);
             this.lbThursdayMidday.Name = "lbThursdayMidday";
             this.lbThursdayMidday.Size = new System.Drawing.Size(158, 94);
             this.lbThursdayMidday.TabIndex = 10;
@@ -1108,7 +1150,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayEvening.FormattingEnabled = true;
             this.lbThursdayEvening.ItemHeight = 18;
-            this.lbThursdayEvening.Location = new System.Drawing.Point(435, 235);
+            this.lbThursdayEvening.Location = new System.Drawing.Point(432, 235);
             this.lbThursdayEvening.Name = "lbThursdayEvening";
             this.lbThursdayEvening.Size = new System.Drawing.Size(158, 94);
             this.lbThursdayEvening.TabIndex = 11;
@@ -1117,7 +1159,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayMorning.FormattingEnabled = true;
             this.lbFridayMorning.ItemHeight = 18;
-            this.lbFridayMorning.Location = new System.Drawing.Point(603, 3);
+            this.lbFridayMorning.Location = new System.Drawing.Point(600, 3);
             this.lbFridayMorning.Name = "lbFridayMorning";
             this.lbFridayMorning.Size = new System.Drawing.Size(165, 40);
             this.lbFridayMorning.TabIndex = 12;
@@ -1126,7 +1168,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayMidday.FormattingEnabled = true;
             this.lbFridayMidday.ItemHeight = 18;
-            this.lbFridayMidday.Location = new System.Drawing.Point(603, 107);
+            this.lbFridayMidday.Location = new System.Drawing.Point(600, 107);
             this.lbFridayMidday.Name = "lbFridayMidday";
             this.lbFridayMidday.Size = new System.Drawing.Size(165, 94);
             this.lbFridayMidday.TabIndex = 13;
@@ -1135,7 +1177,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayEvening.FormattingEnabled = true;
             this.lbFridayEvening.ItemHeight = 18;
-            this.lbFridayEvening.Location = new System.Drawing.Point(603, 235);
+            this.lbFridayEvening.Location = new System.Drawing.Point(600, 235);
             this.lbFridayEvening.Name = "lbFridayEvening";
             this.lbFridayEvening.Size = new System.Drawing.Size(165, 94);
             this.lbFridayEvening.TabIndex = 14;
@@ -1144,7 +1186,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayMorning.FormattingEnabled = true;
             this.lbSaturdayMorning.ItemHeight = 18;
-            this.lbSaturdayMorning.Location = new System.Drawing.Point(776, 3);
+            this.lbSaturdayMorning.Location = new System.Drawing.Point(773, 3);
             this.lbSaturdayMorning.Name = "lbSaturdayMorning";
             this.lbSaturdayMorning.Size = new System.Drawing.Size(154, 40);
             this.lbSaturdayMorning.TabIndex = 15;
@@ -1153,7 +1195,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayMidday.FormattingEnabled = true;
             this.lbSaturdayMidday.ItemHeight = 18;
-            this.lbSaturdayMidday.Location = new System.Drawing.Point(776, 107);
+            this.lbSaturdayMidday.Location = new System.Drawing.Point(773, 107);
             this.lbSaturdayMidday.Name = "lbSaturdayMidday";
             this.lbSaturdayMidday.Size = new System.Drawing.Size(154, 94);
             this.lbSaturdayMidday.TabIndex = 16;
@@ -1162,7 +1204,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayEvening.FormattingEnabled = true;
             this.lbSaturdayEvening.ItemHeight = 18;
-            this.lbSaturdayEvening.Location = new System.Drawing.Point(776, 235);
+            this.lbSaturdayEvening.Location = new System.Drawing.Point(773, 235);
             this.lbSaturdayEvening.Name = "lbSaturdayEvening";
             this.lbSaturdayEvening.Size = new System.Drawing.Size(154, 94);
             this.lbSaturdayEvening.TabIndex = 17;
@@ -1171,7 +1213,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayMorning.FormattingEnabled = true;
             this.lbSundayMorning.ItemHeight = 18;
-            this.lbSundayMorning.Location = new System.Drawing.Point(938, 3);
+            this.lbSundayMorning.Location = new System.Drawing.Point(935, 3);
             this.lbSundayMorning.Name = "lbSundayMorning";
             this.lbSundayMorning.Size = new System.Drawing.Size(131, 40);
             this.lbSundayMorning.TabIndex = 18;
@@ -1180,7 +1222,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayMidday.FormattingEnabled = true;
             this.lbSundayMidday.ItemHeight = 18;
-            this.lbSundayMidday.Location = new System.Drawing.Point(938, 107);
+            this.lbSundayMidday.Location = new System.Drawing.Point(935, 107);
             this.lbSundayMidday.Name = "lbSundayMidday";
             this.lbSundayMidday.Size = new System.Drawing.Size(131, 94);
             this.lbSundayMidday.TabIndex = 19;
@@ -1189,7 +1231,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayEvening.FormattingEnabled = true;
             this.lbSundayEvening.ItemHeight = 18;
-            this.lbSundayEvening.Location = new System.Drawing.Point(938, 235);
+            this.lbSundayEvening.Location = new System.Drawing.Point(935, 235);
             this.lbSundayEvening.Name = "lbSundayEvening";
             this.lbSundayEvening.Size = new System.Drawing.Size(131, 94);
             this.lbSundayEvening.TabIndex = 20;
@@ -1200,14 +1242,14 @@ namespace MediaBazaarProject
             this.lbMondayMorning.ItemHeight = 18;
             this.lbMondayMorning.Location = new System.Drawing.Point(3, 3);
             this.lbMondayMorning.Name = "lbMondayMorning";
-            this.lbMondayMorning.Size = new System.Drawing.Size(121, 40);
+            this.lbMondayMorning.Size = new System.Drawing.Size(120, 40);
             this.lbMondayMorning.TabIndex = 0;
             // 
             // lbWednesdayMorning
             // 
             this.lbWednesdayMorning.FormattingEnabled = true;
             this.lbWednesdayMorning.ItemHeight = 18;
-            this.lbWednesdayMorning.Location = new System.Drawing.Point(261, 3);
+            this.lbWednesdayMorning.Location = new System.Drawing.Point(258, 3);
             this.lbWednesdayMorning.Name = "lbWednesdayMorning";
             this.lbWednesdayMorning.Size = new System.Drawing.Size(166, 40);
             this.lbWednesdayMorning.TabIndex = 6;
@@ -1396,14 +1438,102 @@ namespace MediaBazaarProject
             // 
             // tabLeaveRequests
             // 
+            this.tabLeaveRequests.Controls.Add(this.tabControl1);
             this.tabLeaveRequests.Controls.Add(this.btnHomeLeaveRequest);
-            this.tabLeaveRequests.Controls.Add(this.panel1);
             this.tabLeaveRequests.Location = new System.Drawing.Point(4, 27);
             this.tabLeaveRequests.Name = "tabLeaveRequests";
             this.tabLeaveRequests.Size = new System.Drawing.Size(1268, 726);
             this.tabLeaveRequests.TabIndex = 6;
             this.tabLeaveRequests.Text = "tabLeaveRequests";
             this.tabLeaveRequests.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPageLeaveRequests);
+            this.tabControl1.Controls.Add(this.tabPagePreferedShifts);
+            this.tabControl1.Location = new System.Drawing.Point(72, 56);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1128, 533);
+            this.tabControl1.TabIndex = 3;
+            // 
+            // tabPageLeaveRequests
+            // 
+            this.tabPageLeaveRequests.BackColor = System.Drawing.Color.Transparent;
+            this.tabPageLeaveRequests.Controls.Add(this.dgAllLeaveRequests);
+            this.tabPageLeaveRequests.Location = new System.Drawing.Point(4, 27);
+            this.tabPageLeaveRequests.Name = "tabPageLeaveRequests";
+            this.tabPageLeaveRequests.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLeaveRequests.Size = new System.Drawing.Size(1120, 502);
+            this.tabPageLeaveRequests.TabIndex = 0;
+            this.tabPageLeaveRequests.Text = "Leave requests";
+            // 
+            // dgAllLeaveRequests
+            // 
+            this.dgAllLeaveRequests.AllowUserToAddRows = false;
+            this.dgAllLeaveRequests.AllowUserToDeleteRows = false;
+            this.dgAllLeaveRequests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgAllLeaveRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgAllLeaveRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Approve,
+            this.Disapprove});
+            this.dgAllLeaveRequests.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgAllLeaveRequests.Location = new System.Drawing.Point(3, 3);
+            this.dgAllLeaveRequests.Name = "dgAllLeaveRequests";
+            this.dgAllLeaveRequests.ReadOnly = true;
+            this.dgAllLeaveRequests.RowHeadersWidth = 51;
+            this.dgAllLeaveRequests.RowTemplate.Height = 29;
+            this.dgAllLeaveRequests.Size = new System.Drawing.Size(1114, 496);
+            this.dgAllLeaveRequests.TabIndex = 0;
+            this.dgAllLeaveRequests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAllLeaveRequests_CellContentClick);
+            // 
+            // Approve
+            // 
+            this.Approve.HeaderText = "Approve";
+            this.Approve.MinimumWidth = 6;
+            this.Approve.Name = "Approve";
+            this.Approve.ReadOnly = true;
+            this.Approve.Text = "Approve";
+            this.Approve.UseColumnTextForButtonValue = true;
+            // 
+            // Disapprove
+            // 
+            this.Disapprove.HeaderText = "Disapprove";
+            this.Disapprove.MinimumWidth = 6;
+            this.Disapprove.Name = "Disapprove";
+            this.Disapprove.ReadOnly = true;
+            this.Disapprove.Text = "Disapprove";
+            this.Disapprove.UseColumnTextForButtonValue = true;
+            // 
+            // tabPagePreferedShifts
+            // 
+            this.tabPagePreferedShifts.Controls.Add(this.dataGridViewPreferedShifts);
+            this.tabPagePreferedShifts.Location = new System.Drawing.Point(4, 27);
+            this.tabPagePreferedShifts.Name = "tabPagePreferedShifts";
+            this.tabPagePreferedShifts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePreferedShifts.Size = new System.Drawing.Size(1120, 502);
+            this.tabPagePreferedShifts.TabIndex = 1;
+            this.tabPagePreferedShifts.Text = "Prefered shifts";
+            this.tabPagePreferedShifts.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewPreferedShifts
+            // 
+            this.dataGridViewPreferedShifts.AllowUserToAddRows = false;
+            this.dataGridViewPreferedShifts.AllowUserToDeleteRows = false;
+            this.dataGridViewPreferedShifts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewPreferedShifts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPreferedShifts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ApproveButton,
+            this.DisapproveButton});
+            this.dataGridViewPreferedShifts.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewPreferedShifts.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewPreferedShifts.Name = "dataGridViewPreferedShifts";
+            this.dataGridViewPreferedShifts.ReadOnly = true;
+            this.dataGridViewPreferedShifts.RowHeadersWidth = 51;
+            this.dataGridViewPreferedShifts.RowTemplate.Height = 29;
+            this.dataGridViewPreferedShifts.Size = new System.Drawing.Size(1114, 496);
+            this.dataGridViewPreferedShifts.TabIndex = 0;
+            this.dataGridViewPreferedShifts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPreferedShifts_CellContentClick);
             // 
             // btnHomeLeaveRequest
             // 
@@ -1415,48 +1545,6 @@ namespace MediaBazaarProject
             this.btnHomeLeaveRequest.Text = "Home";
             this.btnHomeLeaveRequest.UseVisualStyleBackColor = true;
             this.btnHomeLeaveRequest.Click += new System.EventHandler(this.btnHomeLeaveRequest_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.Controls.Add(this.dgAllLeaveRequests);
-            this.panel1.Location = new System.Drawing.Point(51, 68);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1112, 560);
-            this.panel1.TabIndex = 1;
-            // 
-            // dgAllLeaveRequests
-            // 
-            this.dgAllLeaveRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgAllLeaveRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Approve,
-            this.Disapprove});
-            this.dgAllLeaveRequests.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgAllLeaveRequests.Location = new System.Drawing.Point(0, 0);
-            this.dgAllLeaveRequests.Name = "dgAllLeaveRequests";
-            this.dgAllLeaveRequests.RowHeadersWidth = 51;
-            this.dgAllLeaveRequests.RowTemplate.Height = 29;
-            this.dgAllLeaveRequests.Size = new System.Drawing.Size(1112, 560);
-            this.dgAllLeaveRequests.TabIndex = 0;
-            this.dgAllLeaveRequests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAllLeaveRequests_CellContentClick);
-            // 
-            // Approve
-            // 
-            this.Approve.HeaderText = "Approve";
-            this.Approve.MinimumWidth = 6;
-            this.Approve.Name = "Approve";
-            this.Approve.Text = "Approve";
-            this.Approve.UseColumnTextForButtonValue = true;
-            this.Approve.Width = 150;
-            // 
-            // Disapprove
-            // 
-            this.Disapprove.HeaderText = "Disapprove";
-            this.Disapprove.MinimumWidth = 6;
-            this.Disapprove.Name = "Disapprove";
-            this.Disapprove.Text = "Disapprove";
-            this.Disapprove.UseColumnTextForButtonValue = true;
-            this.Disapprove.Width = 150;
             // 
             // tEmployeeLbRefresh
             // 
@@ -1523,39 +1611,21 @@ namespace MediaBazaarProject
             this.listBox3.Size = new System.Drawing.Size(1, 44);
             this.listBox3.TabIndex = 3;
             // 
-            // tcStatistics
+            // ApproveButton
             // 
-            this.tcStatistics.Controls.Add(this.tabEmployeeStatistics);
-            this.tcStatistics.Controls.Add(this.tabProductStatistics);
-            this.tcStatistics.Location = new System.Drawing.Point(109, 93);
-            this.tcStatistics.Name = "tcStatistics";
-            this.tcStatistics.SelectedIndex = 0;
-            this.tcStatistics.Size = new System.Drawing.Size(1056, 495);
-            this.tcStatistics.TabIndex = 10;
+            this.ApproveButton.HeaderText = "Approve";
+            this.ApproveButton.MinimumWidth = 6;
+            this.ApproveButton.Name = "ApproveButton";
+            this.ApproveButton.ReadOnly = true;
+            this.ApproveButton.UseColumnTextForButtonValue = true;
             // 
-            // tabEmployeeStatistics
+            // DisapproveButton
             // 
-            this.tabEmployeeStatistics.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabEmployeeStatistics.Controls.Add(this.plotView1);
-            this.tabEmployeeStatistics.Controls.Add(this.plotView2);
-            this.tabEmployeeStatistics.Location = new System.Drawing.Point(4, 27);
-            this.tabEmployeeStatistics.Name = "tabEmployeeStatistics";
-            this.tabEmployeeStatistics.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployeeStatistics.Size = new System.Drawing.Size(1048, 464);
-            this.tabEmployeeStatistics.TabIndex = 0;
-            this.tabEmployeeStatistics.Text = "Employee statistics";
-            // 
-            // tabProductStatistics
-            // 
-            this.tabProductStatistics.BackColor = System.Drawing.Color.AliceBlue;
-            this.tabProductStatistics.Controls.Add(this.plotView3);
-            this.tabProductStatistics.Controls.Add(this.plotView4);
-            this.tabProductStatistics.Location = new System.Drawing.Point(4, 27);
-            this.tabProductStatistics.Name = "tabProductStatistics";
-            this.tabProductStatistics.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProductStatistics.Size = new System.Drawing.Size(1048, 464);
-            this.tabProductStatistics.TabIndex = 1;
-            this.tabProductStatistics.Text = "Product statistics";
+            this.DisapproveButton.HeaderText = "Disapprove";
+            this.DisapproveButton.MinimumWidth = 6;
+            this.DisapproveButton.Name = "DisapproveButton";
+            this.DisapproveButton.ReadOnly = true;
+            this.DisapproveButton.UseColumnTextForButtonValue = true;
             // 
             // admin_managerForm
             // 
@@ -1580,18 +1650,21 @@ namespace MediaBazaarProject
             this.groupBox1.PerformLayout();
             this.tabStatistics.ResumeLayout(false);
             this.tabStatistics.PerformLayout();
+            this.tcStatistics.ResumeLayout(false);
+            this.tabEmployeeStatistics.ResumeLayout(false);
+            this.tabProductStatistics.ResumeLayout(false);
             this.tabWeeklySchedule.ResumeLayout(false);
             this.tabWeeklySchedule.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tabProductManagement.ResumeLayout(false);
             this.tabProductManagement.PerformLayout();
             this.tabLeaveRequests.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPageLeaveRequests.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgAllLeaveRequests)).EndInit();
+            this.tabPagePreferedShifts.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreferedShifts)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tcStatistics.ResumeLayout(false);
-            this.tabEmployeeStatistics.ResumeLayout(false);
-            this.tabProductStatistics.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1708,11 +1781,8 @@ namespace MediaBazaarProject
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Button btnProductCategories;
-        private System.Windows.Forms.Button btnLeaveRequests;
+        private System.Windows.Forms.Button btnLeavePreferedShiftsRequests;
         private System.Windows.Forms.TabPage tabLeaveRequests;
-        private System.Windows.Forms.DataGridView dgAllLeaveRequests;
-        private System.Windows.Forms.DataGridViewButtonColumn Approve;
-        private System.Windows.Forms.DataGridViewButtonColumn Disapprove;
         private System.Windows.Forms.RadioButton rbFilterByBrand;
         private System.Windows.Forms.RadioButton rbFilterByCategory;
         private System.Windows.Forms.RadioButton rbFilterByName;
@@ -1724,9 +1794,17 @@ namespace MediaBazaarProject
         private OxyPlot.WindowsForms.PlotView plotView3;
         private OxyPlot.WindowsForms.PlotView plotView4;
         private System.Windows.Forms.Button btnHomeLeaveRequest;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tcStatistics;
         private System.Windows.Forms.TabPage tabEmployeeStatistics;
         private System.Windows.Forms.TabPage tabProductStatistics;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPageLeaveRequests;
+        private System.Windows.Forms.DataGridView dgAllLeaveRequests;
+        private System.Windows.Forms.DataGridViewButtonColumn Approve;
+        private System.Windows.Forms.DataGridViewButtonColumn Disapprove;
+        private System.Windows.Forms.TabPage tabPagePreferedShifts;
+        private System.Windows.Forms.DataGridView dataGridViewPreferedShifts;
+        private System.Windows.Forms.DataGridViewButtonColumn ApproveButton;
+        private System.Windows.Forms.DataGridViewButtonColumn DisapproveButton;
     }
 }
