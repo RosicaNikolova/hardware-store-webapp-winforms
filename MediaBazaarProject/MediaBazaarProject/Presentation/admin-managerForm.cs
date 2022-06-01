@@ -979,7 +979,8 @@ namespace MediaBazaarProject
 
         private void btnSeeSchedule_Click(object sender, EventArgs e)
         {
-
+            AutomatedSchedule automatedSchedule = new AutomatedSchedule();
+            automatedSchedule.Show();
         }
     }
 }

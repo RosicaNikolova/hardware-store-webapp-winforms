@@ -274,7 +274,7 @@ namespace MediaBazaarLibrary.Persistence
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
             {
 
-                string sql = "SELECT shifts.Id, shifts.EmployeeId, shifts.ShiftDate, shifts.ShiftNumber, employees.FirstName, employees.LastName FROM shifts INNER JOIN employees ON shifts.EmployeeId = employees.EmployeeId where ShiftDate= @date and ShiftDate BETWEEN @StartDate AND @EndDate;";
+                string sql = "SELECT shifts.Id, shifts.EmployeeId, shifts.ShiftDate, shifts.ShiftNumber, employees.FirstName, employees.LastName FROM shifts INNER JOIN employees ON shifts.EmployeeId = employees.EmployeeId where ShiftDate BETWEEN @StartDate AND @EndDate;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("StartDate", startDate);

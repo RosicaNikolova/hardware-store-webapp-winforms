@@ -39,334 +39,354 @@ namespace MediaBazaarProject.Presentation
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.listBox5 = new System.Windows.Forms.ListBox();
-            this.listBox6 = new System.Windows.Forms.ListBox();
-            this.listBox7 = new System.Windows.Forms.ListBox();
-            this.listBox8 = new System.Windows.Forms.ListBox();
-            this.listBox9 = new System.Windows.Forms.ListBox();
-            this.listBox10 = new System.Windows.Forms.ListBox();
-            this.listBox11 = new System.Windows.Forms.ListBox();
-            this.listBox12 = new System.Windows.Forms.ListBox();
-            this.listBox13 = new System.Windows.Forms.ListBox();
-            this.listBox14 = new System.Windows.Forms.ListBox();
-            this.listBox15 = new System.Windows.Forms.ListBox();
-            this.listBox16 = new System.Windows.Forms.ListBox();
-            this.listBox17 = new System.Windows.Forms.ListBox();
-            this.listBox18 = new System.Windows.Forms.ListBox();
-            this.listBox19 = new System.Windows.Forms.ListBox();
-            this.listBox20 = new System.Windows.Forms.ListBox();
-            this.listBox21 = new System.Windows.Forms.ListBox();
+            this.lbMondayEvening = new System.Windows.Forms.ListBox();
+            this.lbMondayMidday = new System.Windows.Forms.ListBox();
+            this.lbMondayMorning = new System.Windows.Forms.ListBox();
+            this.lbTuesdayEvening = new System.Windows.Forms.ListBox();
+            this.lbTuesdayMidday = new System.Windows.Forms.ListBox();
+            this.lbTuesdayMorning = new System.Windows.Forms.ListBox();
+            this.lbWednesdayEvening = new System.Windows.Forms.ListBox();
+            this.lbWednesdayMidday = new System.Windows.Forms.ListBox();
+            this.lbWednesdayMorning = new System.Windows.Forms.ListBox();
+            this.lbThursdayEvening = new System.Windows.Forms.ListBox();
+            this.lbThursdayMidday = new System.Windows.Forms.ListBox();
+            this.lbThursdayMorning = new System.Windows.Forms.ListBox();
+            this.lbFridayEvening = new System.Windows.Forms.ListBox();
+            this.lbFridayMidday = new System.Windows.Forms.ListBox();
+            this.lbFridayMorning = new System.Windows.Forms.ListBox();
+            this.lbSaturdayEvening = new System.Windows.Forms.ListBox();
+            this.lbSaturdayMidday = new System.Windows.Forms.ListBox();
+            this.lbSaturdayMorning = new System.Windows.Forms.ListBox();
+            this.lbSundayMorning = new System.Windows.Forms.ListBox();
+            this.lbSundayMidday = new System.Windows.Forms.ListBox();
+            this.lbSundayEvening = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 51);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(216, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
+            this.label1.Size = new System.Drawing.Size(80, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Moday";
+            this.label1.Text = "Monday";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(429, 51);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(380, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(79, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tuesday";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(587, 51);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(537, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 20);
+            this.label3.Size = new System.Drawing.Size(108, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Wednesday";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(754, 51);
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(712, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 20);
+            this.label4.Size = new System.Drawing.Size(87, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Thursday";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(923, 51);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(888, 52);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(62, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Friday";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1100, 51);
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(1056, 52);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 20);
+            this.label6.Size = new System.Drawing.Size(85, 25);
             this.label6.TabIndex = 5;
             this.label6.Text = "Saturday";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1272, 51);
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(1240, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.Size = new System.Drawing.Size(73, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "Sunday";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(106, 150);
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(69, 167);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 20);
+            this.label8.Size = new System.Drawing.Size(74, 23);
             this.label8.TabIndex = 7;
             this.label8.Text = "Morning";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(106, 391);
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(73, 384);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 20);
+            this.label9.Size = new System.Drawing.Size(68, 23);
             this.label9.TabIndex = 8;
             this.label9.Text = "Midday";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(106, 652);
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(73, 620);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 20);
+            this.label10.Size = new System.Drawing.Size(72, 23);
             this.label10.TabIndex = 9;
             this.label10.Text = "Evening";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // listBox1
+            // lbMondayEvening
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(213, 543);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(150, 184);
-            this.listBox1.TabIndex = 10;
+            this.lbMondayEvening.FormattingEnabled = true;
+            this.lbMondayEvening.ItemHeight = 20;
+            this.lbMondayEvening.Location = new System.Drawing.Point(180, 543);
+            this.lbMondayEvening.Name = "lbMondayEvening";
+            this.lbMondayEvening.Size = new System.Drawing.Size(150, 184);
+            this.lbMondayEvening.TabIndex = 10;
             // 
-            // listBox2
+            // lbMondayMidday
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 20;
-            this.listBox2.Location = new System.Drawing.Point(213, 308);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(150, 184);
-            this.listBox2.TabIndex = 11;
+            this.lbMondayMidday.FormattingEnabled = true;
+            this.lbMondayMidday.ItemHeight = 20;
+            this.lbMondayMidday.Location = new System.Drawing.Point(180, 308);
+            this.lbMondayMidday.Name = "lbMondayMidday";
+            this.lbMondayMidday.Size = new System.Drawing.Size(150, 184);
+            this.lbMondayMidday.TabIndex = 11;
             // 
-            // listBox3
+            // lbMondayMorning
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 20;
-            this.listBox3.Location = new System.Drawing.Point(213, 104);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(150, 164);
-            this.listBox3.TabIndex = 12;
+            this.lbMondayMorning.FormattingEnabled = true;
+            this.lbMondayMorning.ItemHeight = 20;
+            this.lbMondayMorning.Location = new System.Drawing.Point(180, 104);
+            this.lbMondayMorning.Name = "lbMondayMorning";
+            this.lbMondayMorning.Size = new System.Drawing.Size(150, 164);
+            this.lbMondayMorning.TabIndex = 12;
             // 
-            // listBox4
+            // lbTuesdayEvening
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.ItemHeight = 20;
-            this.listBox4.Location = new System.Drawing.Point(381, 543);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(150, 184);
-            this.listBox4.TabIndex = 13;
+            this.lbTuesdayEvening.FormattingEnabled = true;
+            this.lbTuesdayEvening.ItemHeight = 20;
+            this.lbTuesdayEvening.Location = new System.Drawing.Point(348, 543);
+            this.lbTuesdayEvening.Name = "lbTuesdayEvening";
+            this.lbTuesdayEvening.Size = new System.Drawing.Size(150, 184);
+            this.lbTuesdayEvening.TabIndex = 13;
             // 
-            // listBox5
+            // lbTuesdayMidday
             // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 20;
-            this.listBox5.Location = new System.Drawing.Point(381, 308);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(150, 184);
-            this.listBox5.TabIndex = 14;
+            this.lbTuesdayMidday.FormattingEnabled = true;
+            this.lbTuesdayMidday.ItemHeight = 20;
+            this.lbTuesdayMidday.Location = new System.Drawing.Point(348, 308);
+            this.lbTuesdayMidday.Name = "lbTuesdayMidday";
+            this.lbTuesdayMidday.Size = new System.Drawing.Size(150, 184);
+            this.lbTuesdayMidday.TabIndex = 14;
             // 
-            // listBox6
+            // lbTuesdayMorning
             // 
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.ItemHeight = 20;
-            this.listBox6.Location = new System.Drawing.Point(381, 104);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(150, 164);
-            this.listBox6.TabIndex = 15;
+            this.lbTuesdayMorning.FormattingEnabled = true;
+            this.lbTuesdayMorning.ItemHeight = 20;
+            this.lbTuesdayMorning.Location = new System.Drawing.Point(348, 104);
+            this.lbTuesdayMorning.Name = "lbTuesdayMorning";
+            this.lbTuesdayMorning.Size = new System.Drawing.Size(150, 164);
+            this.lbTuesdayMorning.TabIndex = 15;
             // 
-            // listBox7
+            // lbWednesdayEvening
             // 
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.ItemHeight = 20;
-            this.listBox7.Location = new System.Drawing.Point(549, 543);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(150, 184);
-            this.listBox7.TabIndex = 16;
+            this.lbWednesdayEvening.FormattingEnabled = true;
+            this.lbWednesdayEvening.ItemHeight = 20;
+            this.lbWednesdayEvening.Location = new System.Drawing.Point(516, 543);
+            this.lbWednesdayEvening.Name = "lbWednesdayEvening";
+            this.lbWednesdayEvening.Size = new System.Drawing.Size(150, 184);
+            this.lbWednesdayEvening.TabIndex = 16;
             // 
-            // listBox8
+            // lbWednesdayMidday
             // 
-            this.listBox8.FormattingEnabled = true;
-            this.listBox8.ItemHeight = 20;
-            this.listBox8.Location = new System.Drawing.Point(549, 308);
-            this.listBox8.Name = "listBox8";
-            this.listBox8.Size = new System.Drawing.Size(150, 184);
-            this.listBox8.TabIndex = 17;
+            this.lbWednesdayMidday.FormattingEnabled = true;
+            this.lbWednesdayMidday.ItemHeight = 20;
+            this.lbWednesdayMidday.Location = new System.Drawing.Point(516, 308);
+            this.lbWednesdayMidday.Name = "lbWednesdayMidday";
+            this.lbWednesdayMidday.Size = new System.Drawing.Size(150, 184);
+            this.lbWednesdayMidday.TabIndex = 17;
             // 
-            // listBox9
+            // lbWednesdayMorning
             // 
-            this.listBox9.FormattingEnabled = true;
-            this.listBox9.ItemHeight = 20;
-            this.listBox9.Location = new System.Drawing.Point(549, 104);
-            this.listBox9.Name = "listBox9";
-            this.listBox9.Size = new System.Drawing.Size(150, 164);
-            this.listBox9.TabIndex = 18;
+            this.lbWednesdayMorning.FormattingEnabled = true;
+            this.lbWednesdayMorning.ItemHeight = 20;
+            this.lbWednesdayMorning.Location = new System.Drawing.Point(516, 104);
+            this.lbWednesdayMorning.Name = "lbWednesdayMorning";
+            this.lbWednesdayMorning.Size = new System.Drawing.Size(150, 164);
+            this.lbWednesdayMorning.TabIndex = 18;
             // 
-            // listBox10
+            // lbThursdayEvening
             // 
-            this.listBox10.FormattingEnabled = true;
-            this.listBox10.ItemHeight = 20;
-            this.listBox10.Location = new System.Drawing.Point(718, 543);
-            this.listBox10.Name = "listBox10";
-            this.listBox10.Size = new System.Drawing.Size(150, 184);
-            this.listBox10.TabIndex = 19;
+            this.lbThursdayEvening.FormattingEnabled = true;
+            this.lbThursdayEvening.ItemHeight = 20;
+            this.lbThursdayEvening.Location = new System.Drawing.Point(685, 543);
+            this.lbThursdayEvening.Name = "lbThursdayEvening";
+            this.lbThursdayEvening.Size = new System.Drawing.Size(150, 184);
+            this.lbThursdayEvening.TabIndex = 19;
             // 
-            // listBox11
+            // lbThursdayMidday
             // 
-            this.listBox11.FormattingEnabled = true;
-            this.listBox11.ItemHeight = 20;
-            this.listBox11.Location = new System.Drawing.Point(718, 308);
-            this.listBox11.Name = "listBox11";
-            this.listBox11.Size = new System.Drawing.Size(150, 184);
-            this.listBox11.TabIndex = 20;
+            this.lbThursdayMidday.FormattingEnabled = true;
+            this.lbThursdayMidday.ItemHeight = 20;
+            this.lbThursdayMidday.Location = new System.Drawing.Point(685, 308);
+            this.lbThursdayMidday.Name = "lbThursdayMidday";
+            this.lbThursdayMidday.Size = new System.Drawing.Size(150, 184);
+            this.lbThursdayMidday.TabIndex = 20;
             // 
-            // listBox12
+            // lbThursdayMorning
             // 
-            this.listBox12.FormattingEnabled = true;
-            this.listBox12.ItemHeight = 20;
-            this.listBox12.Location = new System.Drawing.Point(718, 104);
-            this.listBox12.Name = "listBox12";
-            this.listBox12.Size = new System.Drawing.Size(150, 164);
-            this.listBox12.TabIndex = 21;
+            this.lbThursdayMorning.FormattingEnabled = true;
+            this.lbThursdayMorning.ItemHeight = 20;
+            this.lbThursdayMorning.Location = new System.Drawing.Point(685, 104);
+            this.lbThursdayMorning.Name = "lbThursdayMorning";
+            this.lbThursdayMorning.Size = new System.Drawing.Size(150, 164);
+            this.lbThursdayMorning.TabIndex = 21;
             // 
-            // listBox13
+            // lbFridayEvening
             // 
-            this.listBox13.FormattingEnabled = true;
-            this.listBox13.ItemHeight = 20;
-            this.listBox13.Location = new System.Drawing.Point(884, 543);
-            this.listBox13.Name = "listBox13";
-            this.listBox13.Size = new System.Drawing.Size(150, 184);
-            this.listBox13.TabIndex = 22;
+            this.lbFridayEvening.FormattingEnabled = true;
+            this.lbFridayEvening.ItemHeight = 20;
+            this.lbFridayEvening.Location = new System.Drawing.Point(851, 543);
+            this.lbFridayEvening.Name = "lbFridayEvening";
+            this.lbFridayEvening.Size = new System.Drawing.Size(150, 184);
+            this.lbFridayEvening.TabIndex = 22;
             // 
-            // listBox14
+            // lbFridayMidday
             // 
-            this.listBox14.FormattingEnabled = true;
-            this.listBox14.ItemHeight = 20;
-            this.listBox14.Location = new System.Drawing.Point(884, 308);
-            this.listBox14.Name = "listBox14";
-            this.listBox14.Size = new System.Drawing.Size(150, 184);
-            this.listBox14.TabIndex = 23;
+            this.lbFridayMidday.FormattingEnabled = true;
+            this.lbFridayMidday.ItemHeight = 20;
+            this.lbFridayMidday.Location = new System.Drawing.Point(851, 308);
+            this.lbFridayMidday.Name = "lbFridayMidday";
+            this.lbFridayMidday.Size = new System.Drawing.Size(150, 184);
+            this.lbFridayMidday.TabIndex = 23;
             // 
-            // listBox15
+            // lbFridayMorning
             // 
-            this.listBox15.FormattingEnabled = true;
-            this.listBox15.ItemHeight = 20;
-            this.listBox15.Location = new System.Drawing.Point(884, 104);
-            this.listBox15.Name = "listBox15";
-            this.listBox15.Size = new System.Drawing.Size(150, 164);
-            this.listBox15.TabIndex = 24;
+            this.lbFridayMorning.FormattingEnabled = true;
+            this.lbFridayMorning.ItemHeight = 20;
+            this.lbFridayMorning.Location = new System.Drawing.Point(851, 104);
+            this.lbFridayMorning.Name = "lbFridayMorning";
+            this.lbFridayMorning.Size = new System.Drawing.Size(150, 164);
+            this.lbFridayMorning.TabIndex = 24;
             // 
-            // listBox16
+            // lbSaturdayEvening
             // 
-            this.listBox16.FormattingEnabled = true;
-            this.listBox16.ItemHeight = 20;
-            this.listBox16.Location = new System.Drawing.Point(1059, 543);
-            this.listBox16.Name = "listBox16";
-            this.listBox16.Size = new System.Drawing.Size(150, 184);
-            this.listBox16.TabIndex = 25;
+            this.lbSaturdayEvening.FormattingEnabled = true;
+            this.lbSaturdayEvening.ItemHeight = 20;
+            this.lbSaturdayEvening.Location = new System.Drawing.Point(1026, 543);
+            this.lbSaturdayEvening.Name = "lbSaturdayEvening";
+            this.lbSaturdayEvening.Size = new System.Drawing.Size(150, 184);
+            this.lbSaturdayEvening.TabIndex = 25;
             // 
-            // listBox17
+            // lbSaturdayMidday
             // 
-            this.listBox17.FormattingEnabled = true;
-            this.listBox17.ItemHeight = 20;
-            this.listBox17.Location = new System.Drawing.Point(1059, 308);
-            this.listBox17.Name = "listBox17";
-            this.listBox17.Size = new System.Drawing.Size(150, 184);
-            this.listBox17.TabIndex = 26;
+            this.lbSaturdayMidday.FormattingEnabled = true;
+            this.lbSaturdayMidday.ItemHeight = 20;
+            this.lbSaturdayMidday.Location = new System.Drawing.Point(1026, 308);
+            this.lbSaturdayMidday.Name = "lbSaturdayMidday";
+            this.lbSaturdayMidday.Size = new System.Drawing.Size(150, 184);
+            this.lbSaturdayMidday.TabIndex = 26;
             // 
-            // listBox18
+            // lbSaturdayMorning
             // 
-            this.listBox18.FormattingEnabled = true;
-            this.listBox18.ItemHeight = 20;
-            this.listBox18.Location = new System.Drawing.Point(1059, 104);
-            this.listBox18.Name = "listBox18";
-            this.listBox18.Size = new System.Drawing.Size(150, 164);
-            this.listBox18.TabIndex = 27;
+            this.lbSaturdayMorning.FormattingEnabled = true;
+            this.lbSaturdayMorning.ItemHeight = 20;
+            this.lbSaturdayMorning.Location = new System.Drawing.Point(1026, 104);
+            this.lbSaturdayMorning.Name = "lbSaturdayMorning";
+            this.lbSaturdayMorning.Size = new System.Drawing.Size(150, 164);
+            this.lbSaturdayMorning.TabIndex = 27;
             // 
-            // listBox19
+            // lbSundayMorning
             // 
-            this.listBox19.FormattingEnabled = true;
-            this.listBox19.ItemHeight = 20;
-            this.listBox19.Location = new System.Drawing.Point(1241, 104);
-            this.listBox19.Name = "listBox19";
-            this.listBox19.Size = new System.Drawing.Size(150, 164);
-            this.listBox19.TabIndex = 28;
+            this.lbSundayMorning.FormattingEnabled = true;
+            this.lbSundayMorning.ItemHeight = 20;
+            this.lbSundayMorning.Location = new System.Drawing.Point(1208, 104);
+            this.lbSundayMorning.Name = "lbSundayMorning";
+            this.lbSundayMorning.Size = new System.Drawing.Size(150, 164);
+            this.lbSundayMorning.TabIndex = 28;
             // 
-            // listBox20
+            // lbSundayMidday
             // 
-            this.listBox20.FormattingEnabled = true;
-            this.listBox20.ItemHeight = 20;
-            this.listBox20.Location = new System.Drawing.Point(1241, 308);
-            this.listBox20.Name = "listBox20";
-            this.listBox20.Size = new System.Drawing.Size(150, 184);
-            this.listBox20.TabIndex = 29;
+            this.lbSundayMidday.FormattingEnabled = true;
+            this.lbSundayMidday.ItemHeight = 20;
+            this.lbSundayMidday.Location = new System.Drawing.Point(1208, 308);
+            this.lbSundayMidday.Name = "lbSundayMidday";
+            this.lbSundayMidday.Size = new System.Drawing.Size(150, 184);
+            this.lbSundayMidday.TabIndex = 29;
             // 
-            // listBox21
+            // lbSundayEvening
             // 
-            this.listBox21.FormattingEnabled = true;
-            this.listBox21.ItemHeight = 20;
-            this.listBox21.Location = new System.Drawing.Point(1241, 543);
-            this.listBox21.Name = "listBox21";
-            this.listBox21.Size = new System.Drawing.Size(150, 184);
-            this.listBox21.TabIndex = 30;
+            this.lbSundayEvening.FormattingEnabled = true;
+            this.lbSundayEvening.ItemHeight = 20;
+            this.lbSundayEvening.Location = new System.Drawing.Point(1208, 543);
+            this.lbSundayEvening.Name = "lbSundayEvening";
+            this.lbSundayEvening.Size = new System.Drawing.Size(150, 184);
+            this.lbSundayEvening.TabIndex = 30;
             // 
             // AutomatedSchedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1449, 766);
-            this.Controls.Add(this.listBox21);
-            this.Controls.Add(this.listBox20);
-            this.Controls.Add(this.listBox19);
-            this.Controls.Add(this.listBox18);
-            this.Controls.Add(this.listBox17);
-            this.Controls.Add(this.listBox16);
-            this.Controls.Add(this.listBox15);
-            this.Controls.Add(this.listBox14);
-            this.Controls.Add(this.listBox13);
-            this.Controls.Add(this.listBox12);
-            this.Controls.Add(this.listBox11);
-            this.Controls.Add(this.listBox10);
-            this.Controls.Add(this.listBox9);
-            this.Controls.Add(this.listBox8);
-            this.Controls.Add(this.listBox7);
-            this.Controls.Add(this.listBox6);
-            this.Controls.Add(this.listBox5);
-            this.Controls.Add(this.listBox4);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbSundayEvening);
+            this.Controls.Add(this.lbSundayMidday);
+            this.Controls.Add(this.lbSundayMorning);
+            this.Controls.Add(this.lbSaturdayMorning);
+            this.Controls.Add(this.lbSaturdayMidday);
+            this.Controls.Add(this.lbSaturdayEvening);
+            this.Controls.Add(this.lbFridayMorning);
+            this.Controls.Add(this.lbFridayMidday);
+            this.Controls.Add(this.lbFridayEvening);
+            this.Controls.Add(this.lbThursdayMorning);
+            this.Controls.Add(this.lbThursdayMidday);
+            this.Controls.Add(this.lbThursdayEvening);
+            this.Controls.Add(this.lbWednesdayMorning);
+            this.Controls.Add(this.lbWednesdayMidday);
+            this.Controls.Add(this.lbWednesdayEvening);
+            this.Controls.Add(this.lbTuesdayMorning);
+            this.Controls.Add(this.lbTuesdayMidday);
+            this.Controls.Add(this.lbTuesdayEvening);
+            this.Controls.Add(this.lbMondayMorning);
+            this.Controls.Add(this.lbMondayMidday);
+            this.Controls.Add(this.lbMondayEvening);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -396,26 +416,26 @@ namespace MediaBazaarProject.Presentation
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ListBox listBox5;
-        private System.Windows.Forms.ListBox listBox6;
-        private System.Windows.Forms.ListBox listBox7;
-        private System.Windows.Forms.ListBox listBox8;
-        private System.Windows.Forms.ListBox listBox9;
-        private System.Windows.Forms.ListBox listBox10;
-        private System.Windows.Forms.ListBox listBox11;
-        private System.Windows.Forms.ListBox listBox12;
-        private System.Windows.Forms.ListBox listBox13;
-        private System.Windows.Forms.ListBox listBox14;
-        private System.Windows.Forms.ListBox listBox15;
-        private System.Windows.Forms.ListBox listBox16;
-        private System.Windows.Forms.ListBox listBox17;
-        private System.Windows.Forms.ListBox listBox18;
-        private System.Windows.Forms.ListBox listBox19;
-        private System.Windows.Forms.ListBox listBox20;
-        private System.Windows.Forms.ListBox listBox21;
+        private System.Windows.Forms.ListBox lbMondayEvening;
+        private System.Windows.Forms.ListBox lbMondayMidday;
+        private System.Windows.Forms.ListBox lbMondayMorning;
+        private System.Windows.Forms.ListBox lbTuesdayEvening;
+        private System.Windows.Forms.ListBox lbTuesdayMidday;
+        private System.Windows.Forms.ListBox lbTuesdayMorning;
+        private System.Windows.Forms.ListBox lbWednesdayEvening;
+        private System.Windows.Forms.ListBox lbWednesdayMidday;
+        private System.Windows.Forms.ListBox lbWednesdayMorning;
+        private System.Windows.Forms.ListBox lbThursdayEvening;
+        private System.Windows.Forms.ListBox lbThursdayMidday;
+        private System.Windows.Forms.ListBox lbThursdayMorning;
+        private System.Windows.Forms.ListBox lbFridayEvening;
+        private System.Windows.Forms.ListBox lbFridayMidday;
+        private System.Windows.Forms.ListBox lbFridayMorning;
+        private System.Windows.Forms.ListBox lbSaturdayEvening;
+        private System.Windows.Forms.ListBox lbSaturdayMidday;
+        private System.Windows.Forms.ListBox lbSaturdayMorning;
+        private System.Windows.Forms.ListBox lbSundayMorning;
+        private System.Windows.Forms.ListBox lbSundayMidday;
+        private System.Windows.Forms.ListBox lbSundayEvening;
     }
 }

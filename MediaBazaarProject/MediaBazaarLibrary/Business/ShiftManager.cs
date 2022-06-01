@@ -403,7 +403,11 @@ namespace MediaBazaarLibrary.Business
         {
             return scheduleRepository.ScheduleForWeekAlreadyGenerated(nextMonday);
         }
-       
+        public List<Shift> getAutomatedScheduleShiftsForSelectedWeek(DateTime startDate, DateTime endDate) {
+            return scheduleRepository.getAutomatedScheduleShiftsForSelectedWeek(startDate, endDate);
+        }
+
+
 
     }
 }
