@@ -35,6 +35,7 @@ namespace MediaBazaarLibrary.Persistence
                     employee.FirstName = dr.GetString("FirstName");
                     employee.LastName = dr.GetString("LastName");
                     employee.Email = dr.GetString("Email");
+                    employee.IsAccountActive = dr.GetBoolean("IsAccountActive");
                     employees.Add(employee);
                 }
             }

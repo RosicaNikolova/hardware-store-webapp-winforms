@@ -73,7 +73,10 @@ namespace MediaBazaarProject
             List<Employee> employees = employeeManager.GetAllEmployees();
             foreach (Employee u in employees)
             {
-                lbEmployeeList.Items.Add(u);
+                if (u.IsAccountActive == true)
+                {
+                    lbEmployeeList.Items.Add(u);
+                }
             }
         }
 
@@ -91,7 +94,7 @@ namespace MediaBazaarProject
                 SmtpClient smtp = new SmtpClient();
                 message.From = new MailAddress("danito22231@gmail.com");
                 message.To.Add(new MailAddress(selectedEmployee().Email));
-                message.Subject = "Welcome to MediaBazaar!";
+                message.Subject = "You have been sacked";
                 message.IsBodyHtml = false;
                 message.Body = $"Dear {selectedEmployee().FirstName}, " +
                     $"we regret to inform you that we've decided to let you go" +
@@ -119,8 +122,8 @@ namespace MediaBazaarProject
                 Employee employee = ((Employee)selectedEmployee);
                 SendMail();
                 employeeManager.DeactivateEmployee((Employee)employee);
-                
-                
+
+
                 MessageBox.Show("Employee deactivated");
             }
             else
@@ -136,7 +139,10 @@ namespace MediaBazaarProject
             lbEmployeeManagementList.Items.Clear();
             foreach (Employee em in employees)
             {
-                lbEmployeeManagementList.Items.Add(em);
+                if (em.IsAccountActive == true)
+                {
+                    lbEmployeeManagementList.Items.Add(em);
+                }
             }
         }
 
@@ -437,7 +443,10 @@ namespace MediaBazaarProject
 
             foreach (Employee employee in employeeManager.GetAllEmployees())
             {
-                lbEmployeeManagementList.Items.Add(employee);
+                if (employee.IsAccountActive == true)
+                {
+                    lbEmployeeManagementList.Items.Add(employee);
+                }
             }
         }
 
@@ -450,7 +459,10 @@ namespace MediaBazaarProject
 
             foreach (Employee employee in employeeManager.GetAllEmployees())
             {
-                lbEmployeeManagementList.Items.Add(employee);
+                if (employee.IsAccountActive == true)
+                {
+                    lbEmployeeManagementList.Items.Add(employee);
+                }
             }
         }
 
@@ -487,7 +499,7 @@ namespace MediaBazaarProject
                 lblAverageSalary.Text = $"Average salary: ${employeeManager.GetAverageSalary():f2}";
                 lblNumberOfEmployees.Text = $"Number of employees: {employeeManager.GetAllEmployees().Count}";
             }
-            if(tabAdmin.SelectedTab == tabAutomatedSchedule)
+            if (tabAdmin.SelectedTab == tabAutomatedSchedule)
             {
 
                 DateTime nextMonday = GetNextMonday();
@@ -941,16 +953,16 @@ namespace MediaBazaarProject
                 {
                     MessageBox.Show("Schedule for this week already generated");
                 }
-                    //foreach (var weekday in scheduleGenerated)
-                    //{
-                    //    foreach (var shiftType in scheduleGenerated[weekday.Key])
-                    //    {
-                    //        foreach (var shift in scheduleGenerated[weekday.Key][shiftType.Key])
-                    //        {
-                    //            scheduleTest.Items.Add($"{weekday.Key} {shiftType.Key} - {shift.EmployeeId}");
-                    //        }
-                    //    }
-                    //}
+                //foreach (var weekday in scheduleGenerated)
+                //{
+                //    foreach (var shiftType in scheduleGenerated[weekday.Key])
+                //    {
+                //        foreach (var shift in scheduleGenerated[weekday.Key][shiftType.Key])
+                //        {
+                //            scheduleTest.Items.Add($"{weekday.Key} {shiftType.Key} - {shift.EmployeeId}");
+                //        }
+                //    }
+                //}
                 //}
                 //catch (Exception)
                 //{
