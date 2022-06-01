@@ -267,6 +267,37 @@ namespace MediaBazaarLibrary.Persistence
                 }
             }
         }
+        //we get a list of shifts for next week, this list is recycled into listboxes
+        public List<Shift> getAutomatedScheduleShiftsForSelectedWeek(DateTime startDate, DateTime endDate) {
+            List<Shift> schedule = new List<Shift>();
+
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+
+                string sql = "SELECT shifts.Id, shifts.EmployeeId, shifts.ShiftDate, shifts.ShiftNumber, employees.FirstName, employees.LastName FROM shifts INNER JOIN employees ON shifts.EmployeeId = employees.EmployeeId where ShiftDate= @date and ShiftDate BETWEEN @StartDate AND @EndDate;";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("StartDate", startDate);
+                cmd.Parameters.AddWithValue("EndDate", endDate);
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Shift shift = new Shift();
+                    shift.Id = dr.GetInt32("Id");
+                    shift.Date = (DateTime)dr.GetMySqlDateTime("ShiftDate");
+                    shift.ShiftType = enumManager.SetShiftType(dr.GetString("ShiftNumber"));
+                    shift.Employee.Id = dr.GetInt32("EmployeeId");
+                    shift.Employee.LastName = dr.GetString("LastName");
+
+                    schedule.Add(shift);
+                }
+            }
+            return schedule;
+        }
 
         public bool ScheduleForWeekAlreadyGenerated(DateTime nextMonday)
         {

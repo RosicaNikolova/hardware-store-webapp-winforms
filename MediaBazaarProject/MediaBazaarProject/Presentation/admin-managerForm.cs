@@ -583,7 +583,13 @@ namespace MediaBazaarProject
             if (diff < 0)
                 diff += 7;
             fisrtDayOfWeek = date.AddDays(-diff).Date;
-            DateTime lastDayOfWeek = new DateTime(fisrtDayOfWeek.Year, fisrtDayOfWeek.Month, fisrtDayOfWeek.Day + 6);
+            //DateTime lastDayOfWeek = new DateTime(fisrtDayOfWeek.Year, fisrtDayOfWeek.Month, fisrtDayOfWeek.Day + 6); THIS ONE WAS THROWING ERRORS SO I CREATED NEW ONE!!!
+            
+            //NEW BELOW
+            DateTime baseDate = DateTime.Now;
+            var thisWeekStart = baseDate.AddDays(-(int)baseDate.DayOfWeek);
+            DateTime lastDayOfWeek = thisWeekStart.AddDays(7).AddSeconds(-1);
+            //NEW ABOVE
 
             lblWeekDays.Text = $"{fisrtDayOfWeek.Day}/{fisrtDayOfWeek.Month}/{fisrtDayOfWeek.Year} - {lastDayOfWeek.Day}/{lastDayOfWeek.Month}/{lastDayOfWeek.Year}";
 
@@ -969,6 +975,11 @@ namespace MediaBazaarProject
                 //    MessageBox.Show("An error occurred. Please, try again later.");
                 //}
             }
+        }
+
+        private void btnSeeSchedule_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
