@@ -248,5 +248,63 @@ namespace MediaBazaarLibrary.Persistence
                 return false;
             }
         }
+
+        public void SaveAutomatedSchedule(List<Shift> shiftsList)
+        {
+            foreach (Shift shift in shiftsList)
+            {
+                using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+                {
+                    string sql = "insert into shifts (EmployeeId, ShiftDate, ShiftNumber) values (@EmployeeId,@ShiftDate,@ShiftNumber);";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("EmployeeId", shift.EmployeeId);
+                    cmd.Parameters.AddWithValue("ShiftDate", shift.Date);
+                    cmd.Parameters.AddWithValue("ShiftNumber", shift.ShiftType.ToString());
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public bool ScheduleForWeekAlreadyGenerated(DateTime nextMonday)
+        {
+
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+
+                string sql = "SELECT startDate FROM automatedscheduleweeks where startDate=@startDate;";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                conn.Open();
+                cmd.Parameters.AddWithValue("startDate", nextMonday);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    return true;
+                }
+
+                return false;
+            }
+        }
+
+        public void SaveWeekAsGenerated(DateTime startDate)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "insert into automatedscheduleweeks (startDate) values (@startDate);";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+
+                cmd.Parameters.AddWithValue("startDate", startDate);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

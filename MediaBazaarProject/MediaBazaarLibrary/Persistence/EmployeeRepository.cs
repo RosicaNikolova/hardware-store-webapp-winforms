@@ -103,6 +103,9 @@ namespace MediaBazaarLibrary.Persistence
                 return employee;
             }
         }
+
+       
+
         public void Create(string firstName, string lastName, int age, string email, string password, string address, string nationality, double salary, double phoneNumber, string gender, int BSN, bool permanentContract, int position, bool isAccountActive, bool covidVaccinated)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place   
@@ -533,6 +536,28 @@ namespace MediaBazaarLibrary.Persistence
                 return password;
             }
 
+        }
+
+        public List<int> GetAllEmployeesIds()
+        {
+            List<int> employeesIds = new List<int>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())//guys, here go to definition and change the string, any other time we will use connection, u change it just on one place 
+            {
+                string sql = "SELECT EmployeeId FROM employees WHERE Position IN (@sales, @warehouse) ORDER BY EmployeeId;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("sales", "Sales");
+                cmd.Parameters.AddWithValue("warehouse", "Warehouse");
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {             
+                    employeesIds.Add(dr.GetInt32("EmployeeId"));                 
+                }
+            }
+
+            return employeesIds;
         }
     }
 }

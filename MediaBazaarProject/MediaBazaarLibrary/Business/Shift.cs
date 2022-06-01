@@ -16,6 +16,8 @@ namespace MediaBazaarLibrary
 
         public Employee Employee { get; set; }
 
+        public int EmployeeId { get; set; }
+
         public Shift()
         {
             Employee = new Employee();

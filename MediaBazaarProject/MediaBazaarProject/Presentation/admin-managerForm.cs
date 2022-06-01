@@ -484,8 +484,36 @@ namespace MediaBazaarProject
                 lblAverageSalary.Text = $"Average salary: ${employeeManager.GetAverageSalary():f2}";
                 lblNumberOfEmployees.Text = $"Number of employees: {employeeManager.GetAllEmployees().Count}";
             }
+            if(tabAdmin.SelectedTab == tabAutomatedSchedule)
+            {
+
+                DateTime nextMonday = GetNextMonday();
+                DateTime nextSunday = new DateTime(nextMonday.Year, nextMonday.Month, nextMonday.Day + 6);
+                lblDates.Text = $"{nextMonday.Day}.{nextMonday.Month}.{nextMonday.Year} - {nextSunday.Day}.{nextSunday.Month}.{nextSunday.Year}";
+                tbxEmployeesPerShift.Text = string.Empty;
+            }
         }
 
+
+        private DateTime GetNextMonday()
+        {
+            DateTime today = DateTime.Today;
+
+            DateTime nextMonday;
+            if (today.DayOfWeek == DayOfWeek.Monday)
+            {
+                int daysUntilMonday = 7;
+                nextMonday = today.AddDays(daysUntilMonday);
+            }
+            else
+            {
+                int daysUntilMonday = ((int)DayOfWeek.Monday - (int)today.DayOfWeek + 7) % 7;
+                nextMonday = today.AddDays(daysUntilMonday);
+
+            }
+            return nextMonday;
+
+        }
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             tabAdmin.SelectedTab = tabStatistics;
@@ -867,6 +895,64 @@ namespace MediaBazaarProject
                 int requestID = Convert.ToInt32(row.Cells[3].Value);
                 leavePreferenceRequestManager.disapprovePreferedShift(requestID);
                 dataGridViewPreferedShifts.DataSource = leavePreferenceRequestManager.GetPreferedShiftsRequestsTable();
+            }
+        }
+
+        private void btnAutomatedSchedule_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAutomatedSchedule;
+        }
+
+        private void btnHomeSchedule_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAdminHome;
+        }
+
+        private void btnGenerateSchedule_Click(object sender, EventArgs e)
+        {
+            if (tbxEmployeesPerShift.Text == string.Empty)
+            {
+                MessageBox.Show("Employees per shift filed cannot be empty");
+            }
+            else
+            {
+                //try
+                //{
+                DateTime nextMonday = GetNextMonday();
+                bool alreadyGenerated = shiftManager.ScheduleForWeekAlreadyGenerated(nextMonday);
+                if (!alreadyGenerated)
+                {
+                    int employeesPerShift = Convert.ToInt32(tbxEmployeesPerShift.Text);
+                    List<int> employeesIds = new List<int>();
+                    employeesIds = employeeManager.GetWorkersIds();
+                    List<PreferedShift> preferences = new List<PreferedShift>();
+                    preferences = leavePreferenceRequestManager.GetAllPreferences();
+                    List<Shift> scheduleGenerated = shiftManager.GenerateSchedule(employeesPerShift, employeesIds, preferences);
+
+                    foreach (Shift shift in scheduleGenerated)
+                    {
+                        scheduleTest.Items.Add($"{shift.Date.Day}.{shift.Date.Month} {shift.ShiftType} - {shift.EmployeeId}");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Schedule for this week already generated");
+                }
+                    //foreach (var weekday in scheduleGenerated)
+                    //{
+                    //    foreach (var shiftType in scheduleGenerated[weekday.Key])
+                    //    {
+                    //        foreach (var shift in scheduleGenerated[weekday.Key][shiftType.Key])
+                    //        {
+                    //            scheduleTest.Items.Add($"{weekday.Key} {shiftType.Key} - {shift.EmployeeId}");
+                    //        }
+                    //    }
+                    //}
+                //}
+                //catch (Exception)
+                //{
+                //    MessageBox.Show("An error occurred. Please, try again later.");
+                //}
             }
         }
     }

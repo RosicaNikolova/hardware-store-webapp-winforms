@@ -94,5 +94,10 @@ namespace MediaBazaarLibrary.Business
         {
             return employeeRepository.GetPassword(employeeId);
         }
+
+        public List<int> GetWorkersIds()
+        {
+            return employeeRepository.GetAllEmployeesIds();
+        }
     }
 }

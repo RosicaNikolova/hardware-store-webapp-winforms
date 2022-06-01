@@ -8,13 +8,10 @@ namespace MediaBazaarLibrary.Business
 {
     public class PreferedShift
     {
-        string status;
+        //string status;
         public int RequestID { get; set; }
         public int EmployeeID { get; set; }
         public string RequestedDateDay { get; set; }
-        public string Status 
-        {
-            get; set; 
-        }
+        public string Status {get; set; }
     }
 }

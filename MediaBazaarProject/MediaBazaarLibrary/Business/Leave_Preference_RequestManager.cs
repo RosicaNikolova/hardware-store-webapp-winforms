@@ -151,5 +151,10 @@ namespace MediaBazaarLibrary.Business
             }
             return dt;
         }
+
+        public List<PreferedShift> GetAllPreferences()
+        {
+            return leave_preference_RequestRepository.GetAllPreferedShifts();
+        }
     }
 }

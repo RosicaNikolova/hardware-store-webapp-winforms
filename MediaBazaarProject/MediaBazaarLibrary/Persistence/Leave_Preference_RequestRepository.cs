@@ -160,6 +160,33 @@ namespace MediaBazaarLibrary.Persistence
             return allPreferedShifts;
         }
 
+        public List<PreferedShift> GetAllPreferedShifts()
+        {
+            List<PreferedShift> allPreferedShifts = new List<PreferedShift>();
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "select RequestID, EmployeeID, RequestedDateDay from prefered_shifts where status=@status;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("status", "APPROVED");
+
+                conn.Open();
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+
+                PreferedShift preferedShift = null;
+                while (dr.Read())
+                {
+                    preferedShift = new PreferedShift();
+                    preferedShift.EmployeeID = dr.GetInt32("EmployeeID");
+                    preferedShift.RequestID = dr.GetInt32("RequestID");
+                    preferedShift.RequestedDateDay = dr.GetString("RequestedDateDay");
+                    allPreferedShifts.Add(preferedShift);
+                }
+            }
+            return allPreferedShifts;
+        }
+
         public List<LeaveRequest> getLeaveRequests()
         {
             List<LeaveRequest> allLeaveRequests = new List<LeaveRequest>();
