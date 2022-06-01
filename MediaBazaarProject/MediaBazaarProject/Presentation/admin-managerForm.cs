@@ -158,7 +158,8 @@ namespace MediaBazaarProject
             date = dtpDay.Value;
             List<Employee> workers = new List<Employee>();
             workers = employeeManager.GetAllWorkers();
-            workers = shiftManager.GetAvailableWorkersForDate(workers, date);
+            List<LeaveRequest> leaves = leavePreferenceRequestManager.GetAllApprovedLeaveRequests();
+            workers = shiftManager.GetAvailableWorkersForDate(workers, date, leaves);
 
             foreach (var w in workers)
             {
@@ -225,7 +226,8 @@ namespace MediaBazaarProject
                 EmployeeManager employeeManager = new EmployeeManager();
                 List<Employee> workers = new List<Employee>();
                 workers = employeeManager.GetAllWorkers();
-                workers = shiftManager.GetAvailableWorkersForDate(workers, date);
+                List<LeaveRequest> leaves = leavePreferenceRequestManager.GetAllApprovedLeaveRequests();
+                workers = shiftManager.GetAvailableWorkersForDate(workers, date, leaves);
                 lbEmployeeShiftList.Items.Clear();
 
                 foreach (var w in workers)
@@ -253,7 +255,8 @@ namespace MediaBazaarProject
             DateTime date = new DateTime();
             date = dtpDay.Value;
             workers = employeeManager.GetAllWorkers();
-            workers = shiftManager.GetAvailableWorkersForDate(workers, date);
+            List<LeaveRequest> leaves = leavePreferenceRequestManager.GetAllApprovedLeaveRequests();
+            workers = shiftManager.GetAvailableWorkersForDate(workers, date, leaves);
 
             foreach (var w in workers)
             {
@@ -584,7 +587,7 @@ namespace MediaBazaarProject
                 diff += 7;
             fisrtDayOfWeek = date.AddDays(-diff).Date;
             //DateTime lastDayOfWeek = new DateTime(fisrtDayOfWeek.Year, fisrtDayOfWeek.Month, fisrtDayOfWeek.Day + 6); THIS ONE WAS THROWING ERRORS SO I CREATED NEW ONE!!!
-            
+
             //NEW BELOW
             DateTime baseDate = DateTime.Now;
             var thisWeekStart = baseDate.AddDays(-(int)baseDate.DayOfWeek);
@@ -937,43 +940,38 @@ namespace MediaBazaarProject
             }
             else
             {
-                //try
-                //{
-                DateTime nextMonday = GetNextMonday();
-                bool alreadyGenerated = shiftManager.ScheduleForWeekAlreadyGenerated(nextMonday);
-                if (!alreadyGenerated)
+                try
                 {
-                    int employeesPerShift = Convert.ToInt32(tbxEmployeesPerShift.Text);
-                    List<int> employeesIds = new List<int>();
-                    employeesIds = employeeManager.GetWorkersIds();
-                    List<PreferedShift> preferences = new List<PreferedShift>();
-                    preferences = leavePreferenceRequestManager.GetAllPreferences();
-                    List<Shift> scheduleGenerated = shiftManager.GenerateSchedule(employeesPerShift, employeesIds, preferences);
-
-                    foreach (Shift shift in scheduleGenerated)
+                    DateTime nextMonday = GetNextMonday();
+                    bool alreadyGenerated = shiftManager.ScheduleForWeekAlreadyGenerated(nextMonday);
+                    if (!alreadyGenerated)
                     {
-                        scheduleTest.Items.Add($"{shift.Date.Day}.{shift.Date.Month} {shift.ShiftType} - {shift.EmployeeId}");
+                        int employeesPerShift = Convert.ToInt32(tbxEmployeesPerShift.Text);
+                        List<int> employeesIds = new List<int>();
+                        employeesIds = employeeManager.GetWorkersIds();
+                        List<PreferedShift> preferences = new List<PreferedShift>();
+                        preferences = leavePreferenceRequestManager.GetAllPreferences();
+                        List<Shift> scheduleGenerated = shiftManager.GenerateSchedule(employeesPerShift, employeesIds, preferences);
+                        if (scheduleGenerated.Count != 0)
+                        {
+                            MessageBox.Show("Schedule generated successfully");
+                        }
+                        else
+                        {
+                            MessageBox.Show("An error occurred while generating the schedule. Please, try again");
+                        }
+
                     }
+                    else
+                    {
+                        MessageBox.Show("Schedule for this week already generated");
+                    }
+
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Schedule for this week already generated");
+                    MessageBox.Show("An error occurred. Please, try again later.");
                 }
-                //foreach (var weekday in scheduleGenerated)
-                //{
-                //    foreach (var shiftType in scheduleGenerated[weekday.Key])
-                //    {
-                //        foreach (var shift in scheduleGenerated[weekday.Key][shiftType.Key])
-                //        {
-                //            scheduleTest.Items.Add($"{weekday.Key} {shiftType.Key} - {shift.EmployeeId}");
-                //        }
-                //    }
-                //}
-                //}
-                //catch (Exception)
-                //{
-                //    MessageBox.Show("An error occurred. Please, try again later.");
-                //}
             }
         }
 

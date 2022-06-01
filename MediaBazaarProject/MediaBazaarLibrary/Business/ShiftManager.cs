@@ -104,11 +104,13 @@ namespace MediaBazaarLibrary.Business
 
         }
 
-        public List<Employee> GetAvailableWorkersForDate(List<Employee> workers, DateTime date)
+        public List<Employee> GetAvailableWorkersForDate(List<Employee> workers, DateTime date, List<LeaveRequest> leaveRequests)
         {
             List<Employee> availableWorkers = new List<Employee>();
             List<Shift> schedule = new List<Shift>();
             schedule = scheduleRepository.GetAllShifts();
+
+           
 
             int counter = 0;
 
@@ -128,7 +130,30 @@ namespace MediaBazaarLibrary.Business
                 }
                 counter = 0;
             }
-            return availableWorkers;
+
+            List<Employee> availableWorkersWithNoLeaves = new List<Employee>();
+            bool flag = true;
+
+            foreach (Employee employee in availableWorkers)
+            {
+                foreach (var leave in leaveRequests)
+                {
+                    if(employee.Id == leave.EmployeeID)
+                    {
+                        flag = false;
+                        break;
+                    }
+                    else
+                    {
+                        flag = true;
+                    }
+                }
+                if (flag)
+                {
+                    availableWorkersWithNoLeaves.Add(employee);
+                }
+            }
+            return availableWorkersWithNoLeaves;
         }
 
         public List<Shift> GetShiftsForWorker(DateTime date, int id)

@@ -132,6 +132,13 @@ namespace MediaBazaarLibrary.Business
             }
 
         }
+
+        public List<LeaveRequest> GetAllApprovedLeaveRequests()
+        {
+            List<LeaveRequest> leaves = leave_preference_RequestRepository.GetAllApprovedLeaveRequests();
+            return leaves;
+        }
+
         //Yable of all prefered shifts, admin form
         public DataTable GetPreferedShiftsRequestsTable()
         {
