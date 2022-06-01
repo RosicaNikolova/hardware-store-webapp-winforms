@@ -77,6 +77,8 @@ namespace MediaBazaarProject
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgEmployeesRequests = new System.Windows.Forms.DataGridView();
             this.tabBarcodeScanner = new System.Windows.Forms.TabPage();
+            this.lblOverallPrice = new System.Windows.Forms.Label();
+            this.tbOverallPrice = new System.Windows.Forms.TextBox();
             this.tbScannedItemBarcode = new System.Windows.Forms.TextBox();
             this.btnClearScannedItemsList = new System.Windows.Forms.Button();
             this.lblSelectedItemBarcode = new System.Windows.Forms.Label();
@@ -614,6 +616,8 @@ namespace MediaBazaarProject
             // tabBarcodeScanner
             // 
             this.tabBarcodeScanner.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.tabBarcodeScanner.Controls.Add(this.lblOverallPrice);
+            this.tabBarcodeScanner.Controls.Add(this.tbOverallPrice);
             this.tabBarcodeScanner.Controls.Add(this.tbScannedItemBarcode);
             this.tabBarcodeScanner.Controls.Add(this.btnClearScannedItemsList);
             this.tabBarcodeScanner.Controls.Add(this.lblSelectedItemBarcode);
@@ -629,6 +633,22 @@ namespace MediaBazaarProject
             this.tabBarcodeScanner.TabIndex = 4;
             this.tabBarcodeScanner.Text = "BarcodeScanner";
             // 
+            // lblOverallPrice
+            // 
+            this.lblOverallPrice.AutoSize = true;
+            this.lblOverallPrice.Location = new System.Drawing.Point(1143, 408);
+            this.lblOverallPrice.Name = "lblOverallPrice";
+            this.lblOverallPrice.Size = new System.Drawing.Size(94, 18);
+            this.lblOverallPrice.TabIndex = 9;
+            this.lblOverallPrice.Text = "Overall price:";
+            // 
+            // tbOverallPrice
+            // 
+            this.tbOverallPrice.Location = new System.Drawing.Point(1243, 405);
+            this.tbOverallPrice.Name = "tbOverallPrice";
+            this.tbOverallPrice.Size = new System.Drawing.Size(84, 24);
+            this.tbOverallPrice.TabIndex = 8;
+            // 
             // tbScannedItemBarcode
             // 
             this.tbScannedItemBarcode.Location = new System.Drawing.Point(403, 333);
@@ -639,7 +659,7 @@ namespace MediaBazaarProject
             // 
             // btnClearScannedItemsList
             // 
-            this.btnClearScannedItemsList.Location = new System.Drawing.Point(1118, 406);
+            this.btnClearScannedItemsList.Location = new System.Drawing.Point(914, 406);
             this.btnClearScannedItemsList.Name = "btnClearScannedItemsList";
             this.btnClearScannedItemsList.Size = new System.Drawing.Size(94, 29);
             this.btnClearScannedItemsList.TabIndex = 6;
@@ -680,7 +700,7 @@ namespace MediaBazaarProject
             this.lbScannedItems.ItemHeight = 18;
             this.lbScannedItems.Location = new System.Drawing.Point(914, 90);
             this.lbScannedItems.Name = "lbScannedItems";
-            this.lbScannedItems.Size = new System.Drawing.Size(298, 310);
+            this.lbScannedItems.Size = new System.Drawing.Size(413, 310);
             this.lbScannedItems.TabIndex = 2;
             // 
             // pbSelectedItemBarcode
@@ -791,5 +811,7 @@ namespace MediaBazaarProject
         private System.Windows.Forms.ListBox lbScannedItems;
         private System.Windows.Forms.PictureBox pbSelectedItemBarcode;
         private System.Windows.Forms.ListBox lbProductsInSales;
+        private System.Windows.Forms.Label lblOverallPrice;
+        private System.Windows.Forms.TextBox tbOverallPrice;
     }
 }

@@ -14,13 +14,14 @@ namespace MediaBazaarLibrary.Business
         public List<Product> GetAllProductsList() {
             return productRepository.GetAllProducts();
         }
-        public void Create(string prName, string prDesc, string prManu, string prCateg, int qWare, int qSale, int prBarcode)
+        public void Create(string prName, string prDesc, double prPrice, string prManu, string prCateg, int qWare, int qSale, int prBarcode)
         {
             try
             {
                 Product product = new Product();
                 product.ProductName = prName;
                 product.ProductDescription = prDesc;
+                product.ProductPrice = prPrice;
                 product.ProductManufacturer = prManu;
                 product.ProductCategory = prCateg;
                 product.QuantityWarehouse = qWare;
@@ -34,13 +35,14 @@ namespace MediaBazaarLibrary.Business
             }
         }
 
-        public void Edit(Product updatedProduct, string prName, string prDesc, string prManu, string prCateg, int qWare, int qSale, int prBarcode)
+        public void Edit(Product updatedProduct, string prName, string prDesc, double prPrice, string prManu, string prCateg, int qWare, int qSale, int prBarcode)
         {
             try
             {
                 Product product = updatedProduct;
                 product.ProductName = prName;
                 product.ProductDescription = prDesc;
+                product.ProductPrice = prPrice;
                 product.ProductManufacturer = prManu;
                 product.ProductCategory = prCateg;
                 product.QuantityWarehouse = qWare;

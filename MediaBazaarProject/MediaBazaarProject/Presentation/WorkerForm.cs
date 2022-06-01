@@ -21,6 +21,7 @@ namespace MediaBazaarProject
         ProductManager productManager = new ProductManager();
         Leave_Preference_RequestManager leaveRequestManager = new Leave_Preference_RequestManager();
         string role = string.Empty;
+        double overallScannedPrice;
 
         public WorkerForm()
         {
@@ -30,6 +31,7 @@ namespace MediaBazaarProject
             maxDate = DateTime.Today.AddDays(7);
             dateWorker.MaxDate = maxDate;
             dateWorker.MinDate = DateTime.Today;
+            overallScannedPrice = 0;
         }
 
         public WorkerForm(User u, string role)
@@ -51,6 +53,8 @@ namespace MediaBazaarProject
             maxDate = DateTime.Today.AddDays(7);
             dateWorker.MaxDate = maxDate;
             dateWorker.MinDate = DateTime.Today;
+            overallScannedPrice = 0;
+            tbOverallPrice.Enabled = false;
         }
 
         private Product SelectedProduct()
@@ -186,7 +190,7 @@ namespace MediaBazaarProject
                 if (nudAmountWarehouse.Value > 0)
                 {
                     lbWarehouseQuantity.Items.Clear();
-                    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse + Convert.ToInt32(nudAmountWarehouse.Value), product.QuantitySales, product.Barcode);
+                    productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductPrice, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse + Convert.ToInt32(nudAmountWarehouse.Value), product.QuantitySales, product.Barcode);
                     foreach (Product p in productManager.GetAllProductsList())
                     {
                         lbWarehouseQuantity.Items.Add(p.QuantityWarehouse);
@@ -216,14 +220,14 @@ namespace MediaBazaarProject
                     if (request.RequestedAmount <= product.QuantityWarehouse)
                     {
                         requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
-                        productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount, product.Barcode);
+                        productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductPrice, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount, product.Barcode);
                         MessageBox.Show("Request has been Accepted");
                     }
                     else if (request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
                     {
                         int dif = Math.Abs(product.QuantityWarehouse - request.RequestedAmount);
                         requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY);
-                        productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif, product.Barcode);
+                        productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductPrice, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif, product.Barcode);
                         MessageBox.Show("Request has been  partially Accepted");
                     }
                     else if (product.QuantityWarehouse == 0)
@@ -419,7 +423,10 @@ namespace MediaBazaarProject
         {
             if (tbScannedItemBarcode.Text.Length == SelectedProduct().Barcode.ToString().Length)
             {
-                lbScannedItems.Items.Add($"Name: {SelectedProduct().ProductName}, Sales quantity: {SelectedProduct().QuantitySales}");
+                overallScannedPrice += SelectedProduct().ProductPrice;
+                tbOverallPrice.Text = $"€{overallScannedPrice}";
+                lbScannedItems.Items.Add($"Name: {SelectedProduct().ProductName}, Price: {SelectedProduct().ProductPrice}, Sales quantity: {SelectedProduct().QuantitySales}");
+
             }
         }
 

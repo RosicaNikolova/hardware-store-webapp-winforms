@@ -14,6 +14,8 @@ namespace MediaBazaarLibrary.Business
 
         public string ProductDescription { get; set; }
 
+        public double ProductPrice { get; set; }
+
         public string ProductManufacturer { get; set; }
 
         public string ProductCategory { get; set; }
@@ -24,7 +26,7 @@ namespace MediaBazaarLibrary.Business
         public int Barcode { get; set; }
         public override string ToString()
         {
-            return $"Product Id: {this.ProductId}, Product Name: {this.ProductName}, Category: {this.ProductCategory}, Manufacturer: {this.ProductManufacturer}";
+            return $"Product Id: {this.ProductId}, Product Name: {this.ProductName}, Price: {this.ProductPrice}, Category: {this.ProductCategory}, Manufacturer: {this.ProductManufacturer}";
         }
 
     }

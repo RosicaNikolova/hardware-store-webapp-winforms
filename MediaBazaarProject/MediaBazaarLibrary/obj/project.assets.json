@@ -123,15 +123,6 @@
           "lib/net5.0/ZstdNet.dll": {}
         }
       },
-      "MySqlConnector/2.1.9": {
-        "type": "package",
-        "compile": {
-          "lib/net5.0/MySqlConnector.dll": {}
-        },
-        "runtime": {
-          "lib/net5.0/MySqlConnector.dll": {}
-        }
-      },
       "OxyPlot.Core/2.1.0": {
         "type": "package",
         "compile": {
@@ -508,35 +499,6 @@
         "lib/netstandard2.1/ZstdNet.dll",
         "mysql.data.8.0.28.nupkg.sha512",
         "mysql.data.nuspec"
-      ]
-    },
-    "MySqlConnector/2.1.9": {
-      "sha512": "72fgNLG3qVRaVkvjQOnY4jfbs7mukrMSWfu9b4l9LRwy5EKnPybRcDuaKtNI775c8FaeWgy/wEtV408opinAGQ==",
-      "type": "package",
-      "path": "mysqlconnector/2.1.9",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "lib/net45/MySqlConnector.dll",
-        "lib/net45/MySqlConnector.xml",
-        "lib/net461/MySqlConnector.dll",
-        "lib/net461/MySqlConnector.xml",
-        "lib/net471/MySqlConnector.dll",
-        "lib/net471/MySqlConnector.xml",
-        "lib/net5.0/MySqlConnector.dll",
-        "lib/net5.0/MySqlConnector.xml",
-        "lib/net6.0/MySqlConnector.dll",
-        "lib/net6.0/MySqlConnector.xml",
-        "lib/netcoreapp3.1/MySqlConnector.dll",
-        "lib/netcoreapp3.1/MySqlConnector.xml",
-        "lib/netstandard2.0/MySqlConnector.dll",
-        "lib/netstandard2.0/MySqlConnector.xml",
-        "lib/netstandard2.1/MySqlConnector.dll",
-        "lib/netstandard2.1/MySqlConnector.xml",
-        "logo.png",
-        "mysqlconnector.2.1.9.nupkg.sha512",
-        "mysqlconnector.nuspec"
       ]
     },
     "OxyPlot.Core/2.1.0": {
@@ -950,28 +912,27 @@
     "net5.0": [
       "BarCode >= 2022.3.0",
       "MySql.Data >= 8.0.28",
-      "MySqlConnector >= 2.1.9",
       "OxyPlot.Core >= 2.1.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rositsa\\.nuget\\packages\\": {},
+    "C:\\Users\\35988\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\media_bazar\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
+      "projectUniqueName": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
       "projectName": "MediaBazaarLibrary",
-      "projectPath": "D:\\media_bazar\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
-      "packagesPath": "C:\\Users\\Rositsa\\.nuget\\packages\\",
-      "outputPath": "D:\\media_bazar\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\obj\\",
+      "projectPath": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
+      "packagesPath": "C:\\Users\\35988\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\35988\\source\\repos\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rositsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\35988\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -980,7 +941,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.emzi0767.com/api/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -1005,10 +967,6 @@
           "MySql.Data": {
             "target": "Package",
             "version": "[8.0.28, )"
-          },
-          "MySqlConnector": {
-            "target": "Package",
-            "version": "[2.1.9, )"
           },
           "OxyPlot.Core": {
             "target": "Package",

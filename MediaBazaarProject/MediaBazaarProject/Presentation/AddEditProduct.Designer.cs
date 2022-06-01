@@ -45,6 +45,8 @@ namespace MediaBazaarProject.Presentation
             this.btnAddEdit = new System.Windows.Forms.Button();
             this.lblBarcode = new System.Windows.Forms.Label();
             this.tbBarcode = new System.Windows.Forms.TextBox();
+            this.lblPrPrice = new System.Windows.Forms.Label();
+            this.tbPrPrice = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblForm
@@ -82,7 +84,7 @@ namespace MediaBazaarProject.Presentation
             // 
             this.lblPrManu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblPrManu.AutoSize = true;
-            this.lblPrManu.Location = new System.Drawing.Point(60, 212);
+            this.lblPrManu.Location = new System.Drawing.Point(60, 245);
             this.lblPrManu.Name = "lblPrManu";
             this.lblPrManu.Size = new System.Drawing.Size(120, 20);
             this.lblPrManu.TabIndex = 3;
@@ -92,7 +94,7 @@ namespace MediaBazaarProject.Presentation
             // 
             this.lblPrCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblPrCategory.AutoSize = true;
-            this.lblPrCategory.Location = new System.Drawing.Point(60, 258);
+            this.lblPrCategory.Location = new System.Drawing.Point(60, 291);
             this.lblPrCategory.Name = "lblPrCategory";
             this.lblPrCategory.Size = new System.Drawing.Size(92, 20);
             this.lblPrCategory.TabIndex = 4;
@@ -102,7 +104,7 @@ namespace MediaBazaarProject.Presentation
             // 
             this.lblPrQWare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblPrQWare.AutoSize = true;
-            this.lblPrQWare.Location = new System.Drawing.Point(60, 306);
+            this.lblPrQWare.Location = new System.Drawing.Point(60, 339);
             this.lblPrQWare.Name = "lblPrQWare";
             this.lblPrQWare.Size = new System.Drawing.Size(165, 20);
             this.lblPrQWare.TabIndex = 5;
@@ -112,7 +114,7 @@ namespace MediaBazaarProject.Presentation
             // 
             this.lblPrQSale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblPrQSale.AutoSize = true;
-            this.lblPrQSale.Location = new System.Drawing.Point(60, 356);
+            this.lblPrQSale.Location = new System.Drawing.Point(60, 389);
             this.lblPrQSale.Name = "lblPrQSale";
             this.lblPrQSale.Size = new System.Drawing.Size(126, 20);
             this.lblPrQSale.TabIndex = 6;
@@ -137,7 +139,7 @@ namespace MediaBazaarProject.Presentation
             // tbManu
             // 
             this.tbManu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tbManu.Location = new System.Drawing.Point(274, 209);
+            this.tbManu.Location = new System.Drawing.Point(274, 242);
             this.tbManu.Name = "tbManu";
             this.tbManu.Size = new System.Drawing.Size(201, 27);
             this.tbManu.TabIndex = 9;
@@ -145,7 +147,7 @@ namespace MediaBazaarProject.Presentation
             // tbQWare
             // 
             this.tbQWare.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tbQWare.Location = new System.Drawing.Point(274, 304);
+            this.tbQWare.Location = new System.Drawing.Point(274, 337);
             this.tbQWare.Name = "tbQWare";
             this.tbQWare.Size = new System.Drawing.Size(201, 27);
             this.tbQWare.TabIndex = 11;
@@ -153,7 +155,7 @@ namespace MediaBazaarProject.Presentation
             // tbQSale
             // 
             this.tbQSale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.tbQSale.Location = new System.Drawing.Point(274, 354);
+            this.tbQSale.Location = new System.Drawing.Point(274, 387);
             this.tbQSale.Name = "tbQSale";
             this.tbQSale.Size = new System.Drawing.Size(201, 27);
             this.tbQSale.TabIndex = 12;
@@ -162,7 +164,7 @@ namespace MediaBazaarProject.Presentation
             // 
             this.cbCate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbCate.FormattingEnabled = true;
-            this.cbCate.Location = new System.Drawing.Point(274, 256);
+            this.cbCate.Location = new System.Drawing.Point(274, 289);
             this.cbCate.Name = "cbCate";
             this.cbCate.Size = new System.Drawing.Size(201, 28);
             this.cbCate.TabIndex = 13;
@@ -181,7 +183,7 @@ namespace MediaBazaarProject.Presentation
             // lblBarcode
             // 
             this.lblBarcode.AutoSize = true;
-            this.lblBarcode.Location = new System.Drawing.Point(60, 399);
+            this.lblBarcode.Location = new System.Drawing.Point(60, 432);
             this.lblBarcode.Name = "lblBarcode";
             this.lblBarcode.Size = new System.Drawing.Size(87, 20);
             this.lblBarcode.TabIndex = 15;
@@ -189,10 +191,26 @@ namespace MediaBazaarProject.Presentation
             // 
             // tbBarcode
             // 
-            this.tbBarcode.Location = new System.Drawing.Point(274, 399);
+            this.tbBarcode.Location = new System.Drawing.Point(274, 432);
             this.tbBarcode.Name = "tbBarcode";
             this.tbBarcode.Size = new System.Drawing.Size(201, 27);
             this.tbBarcode.TabIndex = 16;
+            // 
+            // lblPrPrice
+            // 
+            this.lblPrPrice.AutoSize = true;
+            this.lblPrPrice.Location = new System.Drawing.Point(60, 208);
+            this.lblPrPrice.Name = "lblPrPrice";
+            this.lblPrPrice.Size = new System.Drawing.Size(61, 20);
+            this.lblPrPrice.TabIndex = 17;
+            this.lblPrPrice.Text = "Pr. Price";
+            // 
+            // tbPrPrice
+            // 
+            this.tbPrPrice.Location = new System.Drawing.Point(274, 201);
+            this.tbPrPrice.Name = "tbPrPrice";
+            this.tbPrPrice.Size = new System.Drawing.Size(201, 27);
+            this.tbPrPrice.TabIndex = 18;
             // 
             // AddEditProduct
             // 
@@ -200,6 +218,8 @@ namespace MediaBazaarProject.Presentation
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(545, 597);
+            this.Controls.Add(this.tbPrPrice);
+            this.Controls.Add(this.lblPrPrice);
             this.Controls.Add(this.tbBarcode);
             this.Controls.Add(this.lblBarcode);
             this.Controls.Add(this.btnAddEdit);
@@ -241,5 +261,7 @@ namespace MediaBazaarProject.Presentation
         private System.Windows.Forms.Button btnAddEdit;
         private System.Windows.Forms.Label lblBarcode;
         private System.Windows.Forms.TextBox tbBarcode;
+        private System.Windows.Forms.Label lblPrPrice;
+        private System.Windows.Forms.TextBox tbPrPrice;
     }
 }

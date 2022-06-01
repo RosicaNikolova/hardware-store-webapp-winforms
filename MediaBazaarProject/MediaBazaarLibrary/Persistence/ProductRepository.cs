@@ -17,7 +17,7 @@ namespace MediaBazaarLibrary.Persistence
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
 
-                string sql = "SELECT ProductId, ProductName, ProductDesc, ProductManufacturer, QuantityWarehouse, QuantitySales, Barcode, category.categoryname AS CategoryName FROM products INNER JOIN category on ProductCategoryId=categoryid";
+                string sql = "SELECT ProductId, ProductName, ProductDesc, ProductPrice, ProductManufacturer, QuantityWarehouse, QuantitySales, Barcode, category.categoryname AS CategoryName FROM products INNER JOIN category on ProductCategoryId=categoryid";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -32,6 +32,7 @@ namespace MediaBazaarLibrary.Persistence
                     product.ProductId = dr.GetInt32("ProductId");
                     product.ProductName = dr.GetString("ProductName");
                     product.ProductDescription = dr.GetString("ProductDesc");
+                    product.ProductPrice = dr.GetDouble("ProductPrice");
                     product.ProductManufacturer = dr.GetString("ProductManufacturer");
                     product.QuantityWarehouse = dr.GetInt32("QuantityWarehouse");
                     product.QuantitySales = dr.GetInt32("QuantitySales");
@@ -50,10 +51,11 @@ namespace MediaBazaarLibrary.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "insert into products (ProductName,ProductDesc,ProductManufacturer,QuantityWarehouse,QuantitySales, Barcode) values (@ProductName,@ProductDesc,@ProductManufacturer,@QuantityWarehouse,@QuantitySales, @Barcode)";
+                    string sql = "insert into products (ProductName,ProductDesc,ProductPrice,ProductManufacturer,QuantityWarehouse,QuantitySales, Barcode) values (@ProductName,@ProductDesc,@ProductPrice,@ProductManufacturer,@QuantityWarehouse,@QuantitySales, @Barcode)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("ProductName", product.ProductName);
                     cmd.Parameters.AddWithValue("ProductDesc", product.ProductDescription);
+                    cmd.Parameters.AddWithValue("ProductPrice", product.ProductPrice);
                     cmd.Parameters.AddWithValue("ProductManufacturer", product.ProductManufacturer);
                     cmd.Parameters.AddWithValue("QuantityWarehouse", product.QuantityWarehouse);
                     cmd.Parameters.AddWithValue("QuantitySales", product.QuantitySales);
@@ -101,10 +103,11 @@ namespace MediaBazaarLibrary.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "UPDATE products SET ProductName=@ProductName,ProductDesc=@ProductDesc,ProductManufacturer=@ProductManufacturer,QuantityWarehouse=@QuantityWarehouse,QuantitySales=@QuantitySales, Barcode=@Barcode, ProductCategoryId=0 where ProductId=@ProductId";
+                    string sql = "UPDATE products SET ProductName=@ProductName,ProductDesc=@ProductDesc,ProductPrice=@ProductPrice,ProductManufacturer=@ProductManufacturer,QuantityWarehouse=@QuantityWarehouse,QuantitySales=@QuantitySales, Barcode=@Barcode, ProductCategoryId=0 where ProductId=@ProductId";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("ProductName", product.ProductName);
                     cmd.Parameters.AddWithValue("ProductDesc", product.ProductDescription);
+                    cmd.Parameters.AddWithValue("ProductPrice", product.ProductPrice);
                     cmd.Parameters.AddWithValue("ProductManufacturer", product.ProductManufacturer);
                     cmd.Parameters.AddWithValue("ProductCategory", product.ProductCategory);
                     cmd.Parameters.AddWithValue("QuantityWarehouse", product.QuantityWarehouse);
@@ -132,7 +135,7 @@ namespace MediaBazaarLibrary.Persistence
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "SELECT ProductId, ProductName, ProductDesc, ProductManufacturer, QuantityWarehouse, QuantitySales, Barcode, category.categoryname AS CategoryName FROM products INNER JOIN category on ProductCategoryId=categoryid WHERE ProductId=@ProductId";
+                string sql = "SELECT ProductId, ProductName, ProductDesc, ProductPrice, ProductManufacturer, QuantityWarehouse, QuantitySales, Barcode, category.categoryname AS CategoryName FROM products INNER JOIN category on ProductCategoryId=categoryid WHERE ProductId=@ProductId";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("ProductId", id);
@@ -146,6 +149,7 @@ namespace MediaBazaarLibrary.Persistence
                     product.ProductId = dateReader.GetInt32("ProductId");
                     product.ProductName = dateReader.GetString("ProductName");
                     product.ProductDescription = dateReader.GetString("ProductDesc");
+                    product.ProductPrice = dateReader.GetDouble("ProductPrice");
                     product.ProductManufacturer = dateReader.GetString("ProductManufacturer");
                     product.ProductCategory = dateReader.GetString("CategoryName");
                     product.QuantitySales = dateReader.GetInt32("QuantitySales");

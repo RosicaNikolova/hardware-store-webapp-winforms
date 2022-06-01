@@ -45,6 +45,7 @@ namespace MediaBazaarProject.Presentation
             lblForm.Text = "Edit Product Form";
             tbName.Text = productForUpdate.ProductName;
             tbDesc.Text = productForUpdate.ProductDescription;
+            tbPrPrice.Text = productForUpdate.ProductPrice.ToString();
             tbManu.Text = productForUpdate.ProductManufacturer;
             cbCate.Text = productForUpdate.ProductCategory.ToString();
             tbQWare.Text = productForUpdate.QuantityWarehouse.ToString();
@@ -58,7 +59,7 @@ namespace MediaBazaarProject.Presentation
             {
                 if (optionForm == 1)
                 {
-                    productManager.Create(tbName.Text, tbDesc.Text, tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
+                    productManager.Create(tbName.Text, tbDesc.Text, Convert.ToDouble(tbPrPrice.Text), tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
                     MessageBox.Show("Product Added!!!");
                     this.Close();
                 }
@@ -66,7 +67,7 @@ namespace MediaBazaarProject.Presentation
                 {
                     if (productForUpdate != null)
                     {
-                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
+                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, Convert.ToDouble(tbPrPrice.Text), tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
                         MessageBox.Show("Product edited!!!");
                         this.Close();
                     }
