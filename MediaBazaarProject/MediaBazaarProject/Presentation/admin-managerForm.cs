@@ -94,7 +94,8 @@ namespace MediaBazaarProject
                 message.Subject = "Welcome to MediaBazaar!";
                 message.IsBodyHtml = false;
                 message.Body = $"Dear {selectedEmployee().FirstName}, " +
-                    $"we regret to inform you that we've decided to let you go";
+                    $"we regret to inform you that we've decided to let you go" +
+                    $"Because of {tbxReason.Text}";
                 smtp.Port = 587;
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
@@ -112,17 +113,19 @@ namespace MediaBazaarProject
 
         private void btnDeactivateEmployee_Click(object sender, EventArgs e)
         {
-            if (lbEmployeeManagementList.SelectedItem != null)
+            if (lbEmployeeManagementList.SelectedItem != null && tbxReason.Text != string.Empty)
             {
                 object selectedEmployee = lbEmployeeManagementList.SelectedItem;
                 Employee employee = ((Employee)selectedEmployee);
-                employeeManager.DeactivateEmployee((Employee)employee);
                 SendMail();
+                employeeManager.DeactivateEmployee((Employee)employee);
+                
+                
                 MessageBox.Show("Employee deactivated");
             }
             else
             {
-                MessageBox.Show("Please select an employee");
+                MessageBox.Show("Please select an employee and give a reason for firing");
             }
         }
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sgJPwFSPZzyi2G6vjotQSFcHOlEFDL1OmIkh2J8Cj6Q+th38toiTxTk+xKKq/H7Xwc5m17QepGIdVSAy3645Qg==",
+  "dgSpecHash": "rSLRsdMgod1AknU9evkzrEtF1Rsnr44gOzAbXw7GuvLCl5/t9IM0pWTeEcs6eoAvvedIwaar1PTal2qGxkMLPw==",
   "success": true,
   "projectFilePath": "D:\\media_bazar\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\Rositsa\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\Rositsa\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\Rositsa\\.nuget\\packages\\mysql.data\\8.0.28\\mysql.data.8.0.28.nupkg.sha512",
+    "C:\\Users\\Rositsa\\.nuget\\packages\\mysqlconnector\\2.1.9\\mysqlconnector.2.1.9.nupkg.sha512",
     "C:\\Users\\Rositsa\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512",
     "C:\\Users\\Rositsa\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Rositsa\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",

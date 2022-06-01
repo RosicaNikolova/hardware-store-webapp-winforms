@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[8.0.28, )"
             },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.1.9, )"
+            },
             "OxyPlot.Core": {
               "target": "Package",
               "version": "[2.1.0, )"

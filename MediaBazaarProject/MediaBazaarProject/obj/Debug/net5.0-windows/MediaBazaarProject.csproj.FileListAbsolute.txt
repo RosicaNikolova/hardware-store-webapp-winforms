@@ -158,7 +158,14 @@ C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarP
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\System.Drawing.Common.dll
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+<<<<<<< HEAD
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\IronBarCode.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\System.Drawing.Common.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+=======
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\IronBarCode.dll
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\System.Drawing.Common.dll
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+>>>>>>> b8af0cca380d5495fc6678711bb7677ed9108f60
