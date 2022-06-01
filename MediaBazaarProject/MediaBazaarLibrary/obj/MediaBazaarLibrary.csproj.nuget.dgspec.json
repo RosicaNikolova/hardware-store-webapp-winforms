@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj": {}
+    "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj": {
+    "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
+        "projectUniqueName": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
         "projectName": "MediaBazaarLibrary",
-        "projectPath": "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
-        "packagesPath": "C:\\Users\\Jakub Jelinek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\obj\\",
+        "projectPath": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj",
+        "packagesPath": "C:\\Users\\renne\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jakub Jelinek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\renne\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

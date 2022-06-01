@@ -971,19 +971,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jakub Jelinek\\.nuget\\packages\\": {}
+    "C:\\Users\\renne\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
+      "projectUniqueName": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
       "projectName": "MediaBazaarProject",
-      "projectPath": "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
-      "packagesPath": "C:\\Users\\Jakub Jelinek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarProject\\obj\\",
+      "projectPath": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarProject\\MediaBazaarProject.csproj",
+      "packagesPath": "C:\\Users\\renne\\.nuget\\packages\\",
+      "outputPath": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jakub Jelinek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\renne\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -997,8 +997,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj": {
-              "projectPath": "C:\\Users\\Jakub Jelinek\\GIT\\group04-hardwarestore\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj"
+            "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj": {
+              "projectPath": "D:\\Git\\MediaBazaar\\MediaBazaarProject\\MediaBazaarLibrary\\MediaBazaarLibrary.csproj"
             }
           }
         }
@@ -1048,7 +1048,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
