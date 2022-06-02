@@ -114,7 +114,7 @@ namespace MediaBazaarLibrary.Business
         {
             string today = DateTime.Today.ToString("dddd");
             //You can ask for the prefered shift any day but Friday
-            if(today != "Thursday")
+            if(today != "Friday")
             {
                 leave_preference_RequestRepository.savePreference(employeeID, requestedDateDay);
             }
