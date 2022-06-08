@@ -11,7 +11,7 @@
     <div class="requestContainer_leaveRequest">
         <form method="post">
             <h2>Select date for leave request</h2>
-            <input type="text" asp-for="@Model.LeaveRequest.RequestedDate">
+            <input type="date" asp-for="@Model.LeaveRequest.RequestedDate">
 
             <input type="submit" asp-page-handler="LEAVEREQUEST" value="Confirm LEAVE request" />
         </form>
