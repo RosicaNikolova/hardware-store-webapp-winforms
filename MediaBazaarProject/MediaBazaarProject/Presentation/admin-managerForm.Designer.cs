@@ -44,18 +44,21 @@ namespace MediaBazaarProject
             this.lblListOfEmployees = new System.Windows.Forms.Label();
             this.lblRole = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnProductManagment = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnEmployeeManagement = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLeavePreferedShiftsRequests = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnAutomatedSchedule = new System.Windows.Forms.Button();
-            this.btnProductManagment = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnStatistics = new System.Windows.Forms.Button();
-            this.btnWeeklyScheduleDisplay = new System.Windows.Forms.Button();
-            this.btnScheduleAdministration = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnStatistics = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnWeeklyScheduleDisplay = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnAutomatedSchedule = new System.Windows.Forms.Button();
+            this.btnScheduleAdministration = new System.Windows.Forms.Button();
             this.tabEmployeeManagement = new System.Windows.Forms.TabPage();
             this.gbxFiring = new System.Windows.Forms.GroupBox();
             this.tbxReason = new System.Windows.Forms.TextBox();
@@ -181,16 +184,17 @@ namespace MediaBazaarProject
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabAdmin.SuspendLayout();
             this.tabAdminHome.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabEmployeeManagement.SuspendLayout();
             this.gbxFiring.SuspendLayout();
             this.tabScheduleAdministration.SuspendLayout();
@@ -212,8 +216,6 @@ namespace MediaBazaarProject
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreferedShifts)).BeginInit();
             this.tabAutomatedSchedule.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // tabAdmin
@@ -230,7 +232,7 @@ namespace MediaBazaarProject
             this.tabAdmin.Location = new System.Drawing.Point(1, 8);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.SelectedIndex = 0;
-            this.tabAdmin.Size = new System.Drawing.Size(1276, 848);
+            this.tabAdmin.Size = new System.Drawing.Size(1276, 803);
             this.tabAdmin.TabIndex = 0;
             this.tabAdmin.SelectedIndexChanged += new System.EventHandler(this.tabAdmin_SelectedIndexChanged);
             // 
@@ -251,7 +253,7 @@ namespace MediaBazaarProject
             this.tabAdminHome.Location = new System.Drawing.Point(4, 27);
             this.tabAdminHome.Name = "tabAdminHome";
             this.tabAdminHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminHome.Size = new System.Drawing.Size(1268, 817);
+            this.tabAdminHome.Size = new System.Drawing.Size(1268, 772);
             this.tabAdminHome.TabIndex = 0;
             this.tabAdminHome.Text = "adminHome";
             // 
@@ -361,7 +363,7 @@ namespace MediaBazaarProject
             // lblRole
             // 
             this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(446, 114);
+            this.lblRole.Location = new System.Drawing.Point(449, 35);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(157, 18);
             this.lblRole.TabIndex = 0;
@@ -369,18 +371,48 @@ namespace MediaBazaarProject
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.btnAutomatedSchedule);
-            this.panel1.Controls.Add(this.btnProductManagment);
-            this.panel1.Controls.Add(this.btnScheduleAdministration);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Location = new System.Drawing.Point(7, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(423, 763);
+            this.panel1.Size = new System.Drawing.Size(423, 722);
             this.panel1.TabIndex = 21;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(191)))), ((int)(((byte)(69)))));
+            this.panel5.Controls.Add(this.btnProductManagment);
+            this.panel5.Controls.Add(this.pictureBox3);
+            this.panel5.Location = new System.Drawing.Point(14, 214);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(393, 111);
+            this.panel5.TabIndex = 24;
+            // 
+            // btnProductManagment
+            // 
+            this.btnProductManagment.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnProductManagment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnProductManagment.ForeColor = System.Drawing.Color.White;
+            this.btnProductManagment.Location = new System.Drawing.Point(118, 27);
+            this.btnProductManagment.Name = "btnProductManagment";
+            this.btnProductManagment.Size = new System.Drawing.Size(260, 56);
+            this.btnProductManagment.TabIndex = 15;
+            this.btnProductManagment.Text = "Product management";
+            this.btnProductManagment.UseVisualStyleBackColor = false;
+            this.btnProductManagment.Click += new System.EventHandler(this.btnStockManagment_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(16, 22);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(88, 64);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 20;
+            this.pictureBox3.TabStop = false;
             // 
             // panel2
             // 
@@ -388,7 +420,7 @@ namespace MediaBazaarProject
             this.panel2.Controls.Add(this.btnEmployeeManagement);
             this.panel2.Controls.Add(this.btnLeavePreferedShiftsRequests);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(14, 11);
+            this.panel2.Location = new System.Drawing.Point(14, 29);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(393, 179);
             this.panel2.TabIndex = 21;
@@ -396,6 +428,8 @@ namespace MediaBazaarProject
             // btnEmployeeManagement
             // 
             this.btnEmployeeManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(138)))), ((int)(((byte)(191)))));
+            this.btnEmployeeManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnEmployeeManagement.ForeColor = System.Drawing.Color.White;
             this.btnEmployeeManagement.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmployeeManagement.Location = new System.Drawing.Point(118, 21);
             this.btnEmployeeManagement.Name = "btnEmployeeManagement";
@@ -405,19 +439,11 @@ namespace MediaBazaarProject
             this.btnEmployeeManagement.UseVisualStyleBackColor = false;
             this.btnEmployeeManagement.Click += new System.EventHandler(this.btnEmployeeManagement_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 9);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnLeavePreferedShiftsRequests
             // 
             this.btnLeavePreferedShiftsRequests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(187)))), ((int)(((byte)(242)))));
+            this.btnLeavePreferedShiftsRequests.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLeavePreferedShiftsRequests.ForeColor = System.Drawing.Color.White;
             this.btnLeavePreferedShiftsRequests.Location = new System.Drawing.Point(17, 100);
             this.btnLeavePreferedShiftsRequests.Name = "btnLeavePreferedShiftsRequests";
             this.btnLeavePreferedShiftsRequests.Size = new System.Drawing.Size(361, 61);
@@ -426,89 +452,109 @@ namespace MediaBazaarProject
             this.btnLeavePreferedShiftsRequests.UseVisualStyleBackColor = false;
             this.btnLeavePreferedShiftsRequests.Click += new System.EventHandler(this.btnLeaveRequests_Click);
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(156, 635);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(43, 45);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 20;
-            this.pictureBox3.TabStop = false;
-            // 
-            // btnAutomatedSchedule
-            // 
-            this.btnAutomatedSchedule.Location = new System.Drawing.Point(29, 546);
-            this.btnAutomatedSchedule.Name = "btnAutomatedSchedule";
-            this.btnAutomatedSchedule.Size = new System.Drawing.Size(279, 56);
-            this.btnAutomatedSchedule.TabIndex = 17;
-            this.btnAutomatedSchedule.Text = "Automated Schedule";
-            this.btnAutomatedSchedule.UseVisualStyleBackColor = true;
-            this.btnAutomatedSchedule.Click += new System.EventHandler(this.btnAutomatedSchedule_Click);
-            // 
-            // btnProductManagment
-            // 
-            this.btnProductManagment.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnProductManagment.Location = new System.Drawing.Point(31, 689);
-            this.btnProductManagment.Name = "btnProductManagment";
-            this.btnProductManagment.Size = new System.Drawing.Size(277, 56);
-            this.btnProductManagment.TabIndex = 15;
-            this.btnProductManagment.Text = "Product management";
-            this.btnProductManagment.UseVisualStyleBackColor = false;
-            this.btnProductManagment.Click += new System.EventHandler(this.btnStockManagment_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(142, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(43, 41);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnStatistics
-            // 
-            this.btnStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(186)))), ((int)(((byte)(48)))));
-            this.btnStatistics.Location = new System.Drawing.Point(109, 29);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(279, 59);
-            this.btnStatistics.TabIndex = 3;
-            this.btnStatistics.Text = "Statistics";
-            this.btnStatistics.UseVisualStyleBackColor = false;
-            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
-            // 
-            // btnWeeklyScheduleDisplay
-            // 
-            this.btnWeeklyScheduleDisplay.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnWeeklyScheduleDisplay.Location = new System.Drawing.Point(17, 50);
-            this.btnWeeklyScheduleDisplay.Name = "btnWeeklyScheduleDisplay";
-            this.btnWeeklyScheduleDisplay.Size = new System.Drawing.Size(277, 62);
-            this.btnWeeklyScheduleDisplay.TabIndex = 14;
-            this.btnWeeklyScheduleDisplay.Text = "Weekly schedule display";
-            this.btnWeeklyScheduleDisplay.UseVisualStyleBackColor = false;
-            this.btnWeeklyScheduleDisplay.Click += new System.EventHandler(this.btnWeeklyScheduleDisplay_Click);
-            // 
-            // btnScheduleAdministration
-            // 
-            this.btnScheduleAdministration.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnScheduleAdministration.Location = new System.Drawing.Point(29, 484);
-            this.btnScheduleAdministration.Name = "btnScheduleAdministration";
-            this.btnScheduleAdministration.Size = new System.Drawing.Size(279, 56);
-            this.btnScheduleAdministration.TabIndex = 2;
-            this.btnScheduleAdministration.Text = "Schedule administration";
-            this.btnScheduleAdministration.UseVisualStyleBackColor = false;
-            this.btnScheduleAdministration.Click += new System.EventHandler(this.btnScheduleAdministration_Click);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(20, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(80, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(74)))));
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.btnStatistics);
-            this.panel3.Location = new System.Drawing.Point(14, 196);
+            this.panel3.Location = new System.Drawing.Point(14, 594);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(393, 126);
+            this.panel3.Size = new System.Drawing.Size(393, 101);
             this.panel3.TabIndex = 22;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(22, 16);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 22;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btnStatistics
+            // 
+            this.btnStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(186)))), ((int)(((byte)(48)))));
+            this.btnStatistics.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnStatistics.Location = new System.Drawing.Point(118, 23);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(260, 64);
+            this.btnStatistics.TabIndex = 3;
+            this.btnStatistics.Text = "Statistics";
+            this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(0)))), ((int)(((byte)(133)))));
+            this.panel4.Controls.Add(this.btnWeeklyScheduleDisplay);
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Controls.Add(this.btnAutomatedSchedule);
+            this.panel4.Controls.Add(this.btnScheduleAdministration);
+            this.panel4.Location = new System.Drawing.Point(14, 339);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(393, 244);
+            this.panel4.TabIndex = 23;
+            // 
+            // btnWeeklyScheduleDisplay
+            // 
+            this.btnWeeklyScheduleDisplay.BackColor = System.Drawing.Color.Plum;
+            this.btnWeeklyScheduleDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnWeeklyScheduleDisplay.ForeColor = System.Drawing.Color.White;
+            this.btnWeeklyScheduleDisplay.Location = new System.Drawing.Point(118, 18);
+            this.btnWeeklyScheduleDisplay.Name = "btnWeeklyScheduleDisplay";
+            this.btnWeeklyScheduleDisplay.Size = new System.Drawing.Size(260, 62);
+            this.btnWeeklyScheduleDisplay.TabIndex = 14;
+            this.btnWeeklyScheduleDisplay.Text = "Weekly schedule display";
+            this.btnWeeklyScheduleDisplay.UseVisualStyleBackColor = false;
+            this.btnWeeklyScheduleDisplay.Click += new System.EventHandler(this.btnWeeklyScheduleDisplay_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(20, 39);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(80, 86);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 19;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnAutomatedSchedule
+            // 
+            this.btnAutomatedSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(26)))), ((int)(((byte)(189)))));
+            this.btnAutomatedSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAutomatedSchedule.ForeColor = System.Drawing.Color.White;
+            this.btnAutomatedSchedule.Location = new System.Drawing.Point(17, 167);
+            this.btnAutomatedSchedule.Name = "btnAutomatedSchedule";
+            this.btnAutomatedSchedule.Size = new System.Drawing.Size(361, 56);
+            this.btnAutomatedSchedule.TabIndex = 17;
+            this.btnAutomatedSchedule.Text = "Automated Schedule";
+            this.btnAutomatedSchedule.UseVisualStyleBackColor = false;
+            this.btnAutomatedSchedule.Click += new System.EventHandler(this.btnAutomatedSchedule_Click);
+            // 
+            // btnScheduleAdministration
+            // 
+            this.btnScheduleAdministration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(115)))), ((int)(((byte)(230)))));
+            this.btnScheduleAdministration.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnScheduleAdministration.ForeColor = System.Drawing.Color.White;
+            this.btnScheduleAdministration.Location = new System.Drawing.Point(118, 96);
+            this.btnScheduleAdministration.Name = "btnScheduleAdministration";
+            this.btnScheduleAdministration.Size = new System.Drawing.Size(260, 56);
+            this.btnScheduleAdministration.TabIndex = 2;
+            this.btnScheduleAdministration.Text = "Schedule administration";
+            this.btnScheduleAdministration.UseVisualStyleBackColor = false;
+            this.btnScheduleAdministration.Click += new System.EventHandler(this.btnScheduleAdministration_Click);
             // 
             // tabEmployeeManagement
             // 
@@ -530,7 +576,7 @@ namespace MediaBazaarProject
             this.tabEmployeeManagement.Location = new System.Drawing.Point(4, 27);
             this.tabEmployeeManagement.Name = "tabEmployeeManagement";
             this.tabEmployeeManagement.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployeeManagement.Size = new System.Drawing.Size(1268, 751);
+            this.tabEmployeeManagement.Size = new System.Drawing.Size(1268, 772);
             this.tabEmployeeManagement.TabIndex = 1;
             this.tabEmployeeManagement.Text = "employeeManagement";
             // 
@@ -693,7 +739,7 @@ namespace MediaBazaarProject
             // 
             // tabScheduleAdministration
             // 
-            this.tabScheduleAdministration.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabScheduleAdministration.BackColor = System.Drawing.Color.Thistle;
             this.tabScheduleAdministration.Controls.Add(this.btnHome1);
             this.tabScheduleAdministration.Controls.Add(this.gbSelectDate);
             this.tabScheduleAdministration.Controls.Add(this.gbAssignToShift);
@@ -702,7 +748,7 @@ namespace MediaBazaarProject
             this.tabScheduleAdministration.Location = new System.Drawing.Point(4, 27);
             this.tabScheduleAdministration.Name = "tabScheduleAdministration";
             this.tabScheduleAdministration.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScheduleAdministration.Size = new System.Drawing.Size(1268, 751);
+            this.tabScheduleAdministration.Size = new System.Drawing.Size(1268, 772);
             this.tabScheduleAdministration.TabIndex = 2;
             this.tabScheduleAdministration.Text = "scheduleAdministration";
             // 
@@ -903,7 +949,7 @@ namespace MediaBazaarProject
             // 
             // tabStatistics
             // 
-            this.tabStatistics.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(115)))));
             this.tabStatistics.Controls.Add(this.tcStatistics);
             this.tabStatistics.Controls.Add(this.lblAverageSalary);
             this.tabStatistics.Controls.Add(this.lblNumberOfEmployees);
@@ -912,7 +958,7 @@ namespace MediaBazaarProject
             this.tabStatistics.Location = new System.Drawing.Point(4, 27);
             this.tabStatistics.Name = "tabStatistics";
             this.tabStatistics.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStatistics.Size = new System.Drawing.Size(1268, 751);
+            this.tabStatistics.Size = new System.Drawing.Size(1268, 772);
             this.tabStatistics.TabIndex = 3;
             this.tabStatistics.Text = "statistics";
             // 
@@ -1037,7 +1083,7 @@ namespace MediaBazaarProject
             // 
             // tabWeeklySchedule
             // 
-            this.tabWeeklySchedule.BackColor = System.Drawing.Color.AliceBlue;
+            this.tabWeeklySchedule.BackColor = System.Drawing.Color.Plum;
             this.tabWeeklySchedule.Controls.Add(this.lblWeekDays);
             this.tabWeeklySchedule.Controls.Add(this.lblWeeklyEvening);
             this.tabWeeklySchedule.Controls.Add(this.lblWeeklyMidday);
@@ -1054,7 +1100,7 @@ namespace MediaBazaarProject
             this.tabWeeklySchedule.Location = new System.Drawing.Point(4, 27);
             this.tabWeeklySchedule.Name = "tabWeeklySchedule";
             this.tabWeeklySchedule.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWeeklySchedule.Size = new System.Drawing.Size(1268, 751);
+            this.tabWeeklySchedule.Size = new System.Drawing.Size(1268, 772);
             this.tabWeeklySchedule.TabIndex = 4;
             this.tabWeeklySchedule.Text = "weeklySchedule";
             // 
@@ -1166,7 +1212,7 @@ namespace MediaBazaarProject
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.Controls.Add(this.lbMondayMidday, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbMondayEvening, 0, 2);
@@ -1204,7 +1250,7 @@ namespace MediaBazaarProject
             this.lbMondayMidday.ItemHeight = 18;
             this.lbMondayMidday.Location = new System.Drawing.Point(3, 107);
             this.lbMondayMidday.Name = "lbMondayMidday";
-            this.lbMondayMidday.Size = new System.Drawing.Size(115, 94);
+            this.lbMondayMidday.Size = new System.Drawing.Size(114, 94);
             this.lbMondayMidday.TabIndex = 1;
             // 
             // lbMondayEvening
@@ -1213,41 +1259,41 @@ namespace MediaBazaarProject
             this.lbMondayEvening.ItemHeight = 18;
             this.lbMondayEvening.Location = new System.Drawing.Point(3, 235);
             this.lbMondayEvening.Name = "lbMondayEvening";
-            this.lbMondayEvening.Size = new System.Drawing.Size(115, 94);
+            this.lbMondayEvening.Size = new System.Drawing.Size(114, 94);
             this.lbMondayEvening.TabIndex = 2;
             // 
             // lbTuesdayMorning
             // 
             this.lbTuesdayMorning.FormattingEnabled = true;
             this.lbTuesdayMorning.ItemHeight = 18;
-            this.lbTuesdayMorning.Location = new System.Drawing.Point(124, 3);
+            this.lbTuesdayMorning.Location = new System.Drawing.Point(123, 3);
             this.lbTuesdayMorning.Name = "lbTuesdayMorning";
-            this.lbTuesdayMorning.Size = new System.Drawing.Size(119, 40);
+            this.lbTuesdayMorning.Size = new System.Drawing.Size(118, 40);
             this.lbTuesdayMorning.TabIndex = 3;
             // 
             // lbTuesdayMidday
             // 
             this.lbTuesdayMidday.FormattingEnabled = true;
             this.lbTuesdayMidday.ItemHeight = 18;
-            this.lbTuesdayMidday.Location = new System.Drawing.Point(124, 107);
+            this.lbTuesdayMidday.Location = new System.Drawing.Point(123, 107);
             this.lbTuesdayMidday.Name = "lbTuesdayMidday";
-            this.lbTuesdayMidday.Size = new System.Drawing.Size(119, 94);
+            this.lbTuesdayMidday.Size = new System.Drawing.Size(118, 94);
             this.lbTuesdayMidday.TabIndex = 4;
             // 
             // lbTuesdayEvening
             // 
             this.lbTuesdayEvening.FormattingEnabled = true;
             this.lbTuesdayEvening.ItemHeight = 18;
-            this.lbTuesdayEvening.Location = new System.Drawing.Point(124, 235);
+            this.lbTuesdayEvening.Location = new System.Drawing.Point(123, 235);
             this.lbTuesdayEvening.Name = "lbTuesdayEvening";
-            this.lbTuesdayEvening.Size = new System.Drawing.Size(119, 94);
+            this.lbTuesdayEvening.Size = new System.Drawing.Size(118, 94);
             this.lbTuesdayEvening.TabIndex = 5;
             // 
             // lbWednesdayMidday
             // 
             this.lbWednesdayMidday.FormattingEnabled = true;
             this.lbWednesdayMidday.ItemHeight = 18;
-            this.lbWednesdayMidday.Location = new System.Drawing.Point(249, 107);
+            this.lbWednesdayMidday.Location = new System.Drawing.Point(247, 107);
             this.lbWednesdayMidday.Name = "lbWednesdayMidday";
             this.lbWednesdayMidday.Size = new System.Drawing.Size(166, 94);
             this.lbWednesdayMidday.TabIndex = 7;
@@ -1256,7 +1302,7 @@ namespace MediaBazaarProject
             // 
             this.lbWednesdayEvening.FormattingEnabled = true;
             this.lbWednesdayEvening.ItemHeight = 18;
-            this.lbWednesdayEvening.Location = new System.Drawing.Point(249, 235);
+            this.lbWednesdayEvening.Location = new System.Drawing.Point(247, 235);
             this.lbWednesdayEvening.Name = "lbWednesdayEvening";
             this.lbWednesdayEvening.Size = new System.Drawing.Size(166, 94);
             this.lbWednesdayEvening.TabIndex = 8;
@@ -1265,7 +1311,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayMorning.FormattingEnabled = true;
             this.lbThursdayMorning.ItemHeight = 18;
-            this.lbThursdayMorning.Location = new System.Drawing.Point(423, 3);
+            this.lbThursdayMorning.Location = new System.Drawing.Point(421, 3);
             this.lbThursdayMorning.Name = "lbThursdayMorning";
             this.lbThursdayMorning.Size = new System.Drawing.Size(158, 76);
             this.lbThursdayMorning.TabIndex = 9;
@@ -1274,7 +1320,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayMidday.FormattingEnabled = true;
             this.lbThursdayMidday.ItemHeight = 18;
-            this.lbThursdayMidday.Location = new System.Drawing.Point(423, 107);
+            this.lbThursdayMidday.Location = new System.Drawing.Point(421, 107);
             this.lbThursdayMidday.Name = "lbThursdayMidday";
             this.lbThursdayMidday.Size = new System.Drawing.Size(158, 94);
             this.lbThursdayMidday.TabIndex = 10;
@@ -1283,7 +1329,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayEvening.FormattingEnabled = true;
             this.lbThursdayEvening.ItemHeight = 18;
-            this.lbThursdayEvening.Location = new System.Drawing.Point(423, 235);
+            this.lbThursdayEvening.Location = new System.Drawing.Point(421, 235);
             this.lbThursdayEvening.Name = "lbThursdayEvening";
             this.lbThursdayEvening.Size = new System.Drawing.Size(158, 94);
             this.lbThursdayEvening.TabIndex = 11;
@@ -1292,7 +1338,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayMorning.FormattingEnabled = true;
             this.lbFridayMorning.ItemHeight = 18;
-            this.lbFridayMorning.Location = new System.Drawing.Point(591, 3);
+            this.lbFridayMorning.Location = new System.Drawing.Point(589, 3);
             this.lbFridayMorning.Name = "lbFridayMorning";
             this.lbFridayMorning.Size = new System.Drawing.Size(165, 22);
             this.lbFridayMorning.TabIndex = 12;
@@ -1301,7 +1347,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayMidday.FormattingEnabled = true;
             this.lbFridayMidday.ItemHeight = 18;
-            this.lbFridayMidday.Location = new System.Drawing.Point(591, 107);
+            this.lbFridayMidday.Location = new System.Drawing.Point(589, 107);
             this.lbFridayMidday.Name = "lbFridayMidday";
             this.lbFridayMidday.Size = new System.Drawing.Size(165, 94);
             this.lbFridayMidday.TabIndex = 13;
@@ -1310,7 +1356,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayEvening.FormattingEnabled = true;
             this.lbFridayEvening.ItemHeight = 18;
-            this.lbFridayEvening.Location = new System.Drawing.Point(591, 235);
+            this.lbFridayEvening.Location = new System.Drawing.Point(589, 235);
             this.lbFridayEvening.Name = "lbFridayEvening";
             this.lbFridayEvening.Size = new System.Drawing.Size(165, 94);
             this.lbFridayEvening.TabIndex = 14;
@@ -1319,7 +1365,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayMorning.FormattingEnabled = true;
             this.lbSaturdayMorning.ItemHeight = 18;
-            this.lbSaturdayMorning.Location = new System.Drawing.Point(764, 3);
+            this.lbSaturdayMorning.Location = new System.Drawing.Point(762, 3);
             this.lbSaturdayMorning.Name = "lbSaturdayMorning";
             this.lbSaturdayMorning.Size = new System.Drawing.Size(154, 22);
             this.lbSaturdayMorning.TabIndex = 15;
@@ -1328,7 +1374,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayMidday.FormattingEnabled = true;
             this.lbSaturdayMidday.ItemHeight = 18;
-            this.lbSaturdayMidday.Location = new System.Drawing.Point(764, 107);
+            this.lbSaturdayMidday.Location = new System.Drawing.Point(762, 107);
             this.lbSaturdayMidday.Name = "lbSaturdayMidday";
             this.lbSaturdayMidday.Size = new System.Drawing.Size(154, 94);
             this.lbSaturdayMidday.TabIndex = 16;
@@ -1337,7 +1383,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayEvening.FormattingEnabled = true;
             this.lbSaturdayEvening.ItemHeight = 18;
-            this.lbSaturdayEvening.Location = new System.Drawing.Point(764, 235);
+            this.lbSaturdayEvening.Location = new System.Drawing.Point(762, 235);
             this.lbSaturdayEvening.Name = "lbSaturdayEvening";
             this.lbSaturdayEvening.Size = new System.Drawing.Size(154, 94);
             this.lbSaturdayEvening.TabIndex = 17;
@@ -1346,7 +1392,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayMorning.FormattingEnabled = true;
             this.lbSundayMorning.ItemHeight = 18;
-            this.lbSundayMorning.Location = new System.Drawing.Point(926, 3);
+            this.lbSundayMorning.Location = new System.Drawing.Point(924, 3);
             this.lbSundayMorning.Name = "lbSundayMorning";
             this.lbSundayMorning.Size = new System.Drawing.Size(131, 22);
             this.lbSundayMorning.TabIndex = 18;
@@ -1355,7 +1401,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayMidday.FormattingEnabled = true;
             this.lbSundayMidday.ItemHeight = 18;
-            this.lbSundayMidday.Location = new System.Drawing.Point(926, 107);
+            this.lbSundayMidday.Location = new System.Drawing.Point(924, 107);
             this.lbSundayMidday.Name = "lbSundayMidday";
             this.lbSundayMidday.Size = new System.Drawing.Size(131, 94);
             this.lbSundayMidday.TabIndex = 19;
@@ -1364,7 +1410,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayEvening.FormattingEnabled = true;
             this.lbSundayEvening.ItemHeight = 18;
-            this.lbSundayEvening.Location = new System.Drawing.Point(926, 235);
+            this.lbSundayEvening.Location = new System.Drawing.Point(924, 235);
             this.lbSundayEvening.Name = "lbSundayEvening";
             this.lbSundayEvening.Size = new System.Drawing.Size(131, 94);
             this.lbSundayEvening.TabIndex = 20;
@@ -1375,14 +1421,14 @@ namespace MediaBazaarProject
             this.lbMondayMorning.ItemHeight = 18;
             this.lbMondayMorning.Location = new System.Drawing.Point(3, 3);
             this.lbMondayMorning.Name = "lbMondayMorning";
-            this.lbMondayMorning.Size = new System.Drawing.Size(115, 40);
+            this.lbMondayMorning.Size = new System.Drawing.Size(114, 40);
             this.lbMondayMorning.TabIndex = 0;
             // 
             // lbWednesdayMorning
             // 
             this.lbWednesdayMorning.FormattingEnabled = true;
             this.lbWednesdayMorning.ItemHeight = 18;
-            this.lbWednesdayMorning.Location = new System.Drawing.Point(249, 3);
+            this.lbWednesdayMorning.Location = new System.Drawing.Point(247, 3);
             this.lbWednesdayMorning.Name = "lbWednesdayMorning";
             this.lbWednesdayMorning.Size = new System.Drawing.Size(166, 22);
             this.lbWednesdayMorning.TabIndex = 6;
@@ -1417,7 +1463,7 @@ namespace MediaBazaarProject
             this.tabProductManagement.Controls.Add(this.btnAddProduct);
             this.tabProductManagement.Location = new System.Drawing.Point(4, 27);
             this.tabProductManagement.Name = "tabProductManagement";
-            this.tabProductManagement.Size = new System.Drawing.Size(1268, 751);
+            this.tabProductManagement.Size = new System.Drawing.Size(1268, 772);
             this.tabProductManagement.TabIndex = 5;
             this.tabProductManagement.Text = "ProductManagement";
             // 
@@ -1571,14 +1617,14 @@ namespace MediaBazaarProject
             // 
             // tabLeaveRequests
             // 
+            this.tabLeaveRequests.BackColor = System.Drawing.Color.Azure;
             this.tabLeaveRequests.Controls.Add(this.tabControl1);
             this.tabLeaveRequests.Controls.Add(this.btnHomeLeaveRequest);
             this.tabLeaveRequests.Location = new System.Drawing.Point(4, 27);
             this.tabLeaveRequests.Name = "tabLeaveRequests";
-            this.tabLeaveRequests.Size = new System.Drawing.Size(1268, 751);
+            this.tabLeaveRequests.Size = new System.Drawing.Size(1268, 772);
             this.tabLeaveRequests.TabIndex = 6;
             this.tabLeaveRequests.Text = "tabLeaveRequests";
-            this.tabLeaveRequests.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -1699,6 +1745,7 @@ namespace MediaBazaarProject
             // 
             // tabAutomatedSchedule
             // 
+            this.tabAutomatedSchedule.BackColor = System.Drawing.Color.Plum;
             this.tabAutomatedSchedule.Controls.Add(this.btnSeeSchedule);
             this.tabAutomatedSchedule.Controls.Add(this.lblDates);
             this.tabAutomatedSchedule.Controls.Add(this.lblWeek);
@@ -1708,10 +1755,9 @@ namespace MediaBazaarProject
             this.tabAutomatedSchedule.Controls.Add(this.btnHomeSchedule);
             this.tabAutomatedSchedule.Location = new System.Drawing.Point(4, 27);
             this.tabAutomatedSchedule.Name = "tabAutomatedSchedule";
-            this.tabAutomatedSchedule.Size = new System.Drawing.Size(1268, 751);
+            this.tabAutomatedSchedule.Size = new System.Drawing.Size(1268, 772);
             this.tabAutomatedSchedule.TabIndex = 7;
             this.tabAutomatedSchedule.Text = "AutomatedSchedule";
-            this.tabAutomatedSchedule.UseVisualStyleBackColor = true;
             // 
             // btnSeeSchedule
             // 
@@ -1842,30 +1888,11 @@ namespace MediaBazaarProject
             this.listBox3.Size = new System.Drawing.Size(1, 44);
             this.listBox3.TabIndex = 3;
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnWeeklyScheduleDisplay);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(14, 369);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(311, 244);
-            this.panel4.TabIndex = 23;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(15, 13);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(88, 84);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 22;
-            this.pictureBox4.TabStop = false;
-            // 
             // admin_managerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1277, 816);
+            this.ClientSize = new System.Drawing.Size(1277, 771);
             this.Controls.Add(this.tabAdmin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Name = "admin_managerForm";
@@ -1875,11 +1902,14 @@ namespace MediaBazaarProject
             this.tabAdminHome.ResumeLayout(false);
             this.tabAdminHome.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabEmployeeManagement.ResumeLayout(false);
             this.tabEmployeeManagement.PerformLayout();
             this.gbxFiring.ResumeLayout(false);
@@ -1909,8 +1939,6 @@ namespace MediaBazaarProject
             this.tabAutomatedSchedule.ResumeLayout(false);
             this.tabAutomatedSchedule.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2072,5 +2100,6 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
     }
 }
