@@ -426,8 +426,7 @@ namespace MediaBazaarProject
                 overallScannedPrice += SelectedProduct().ProductPrice;
                 tbOverallPrice.Text = $"€{overallScannedPrice}";
                 lbScannedItems.Items.Add($"Name: {SelectedProduct().ProductName}, Price: {SelectedProduct().ProductPrice}, Sales quantity: {SelectedProduct().QuantitySales}");
-                SelectedProduct().QuantitySales -= 1;
-                productManager.Edit(SelectedProduct(), SelectedProduct().ProductName, SelectedProduct().ProductDescription, SelectedProduct().ProductPrice, SelectedProduct().ProductManufacturer, SelectedProduct().ProductCategory, SelectedProduct().QuantityWarehouse, SelectedProduct().QuantitySales, SelectedProduct().Barcode);
+
             }
         }
 

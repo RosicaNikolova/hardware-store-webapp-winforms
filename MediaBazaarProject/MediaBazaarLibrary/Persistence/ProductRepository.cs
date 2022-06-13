@@ -155,6 +155,8 @@ namespace MediaBazaarLibrary.Persistence
                     product.QuantitySales = dateReader.GetInt32("QuantitySales");
                     product.QuantityWarehouse = dateReader.GetInt32("QuantityWarehouse");
                     product.Barcode = dateReader.GetInt32("Barcode");
+
+
                 }
                 return product;
             }
