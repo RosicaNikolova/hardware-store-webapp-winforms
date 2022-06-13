@@ -9,7 +9,6 @@ C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarL
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.dll
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\ref\MediaBazaarLibrary.dll
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.pdb
-C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarLibrary\obj\Debug\net5.0\MediaBazaarLibrary.csproj.AssemblyReference.cache
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.deps.json
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\MediaBazaarLibrary.dll
 D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarLibrary\bin\Debug\net5.0\ref\MediaBazaarLibrary.dll
