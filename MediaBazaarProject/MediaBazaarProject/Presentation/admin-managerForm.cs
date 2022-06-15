@@ -980,5 +980,6 @@ namespace MediaBazaarProject
             AutomatedSchedule automatedSchedule = new AutomatedSchedule();
             automatedSchedule.Show();
         }
+
     }
 }
