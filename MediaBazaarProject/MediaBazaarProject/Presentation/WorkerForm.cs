@@ -43,10 +43,12 @@ namespace MediaBazaarProject
             if (role == "sales")
             {
                 btnWarehouse.Visible = false;
+                pbWarehouse.Visible = false;
             }
             else if (role == "warehouse")
             {
                 btnSales.Visible = false;
+                pbSales.Visible = false;
             }
 
             DateTime maxDate;
@@ -435,5 +437,6 @@ namespace MediaBazaarProject
         {
             lbScannedItems.Items.Clear();
         }
+
     }
 }

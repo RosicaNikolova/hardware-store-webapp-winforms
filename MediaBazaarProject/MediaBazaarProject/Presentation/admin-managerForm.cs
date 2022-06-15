@@ -981,5 +981,14 @@ namespace MediaBazaarProject
             automatedSchedule.Show();
         }
 
+        private void btnEmployeeStatistics_Click(object sender, EventArgs e)
+        {
+            tcStatistics.SelectedTab = tabEmployeeStatistics;
+        }
+
+        private void btnProductStatistics_Click(object sender, EventArgs e)
+        {
+            tcStatistics.SelectedTab = tabProductStatistics;
+        }
     }
 }
