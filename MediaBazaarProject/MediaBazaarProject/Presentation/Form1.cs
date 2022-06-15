@@ -26,8 +26,8 @@ namespace MediaBazaarProject
         private void btnLogin_Click(object sender, EventArgs e)
         {
             User user = new User();
-            //try
-            //{
+            try
+            {
                 if (EmailValidation.IsValidEmail(tbEmailLogin.Text) == true)
                 {
                     user = loginManager.Login(tbEmailLogin.Text, tbPasswordLogin.Text);
@@ -80,19 +80,19 @@ namespace MediaBazaarProject
                     }
                     else
                     {
-                        //MessageBox.Show("Invalid credentials");
-                        //throw new Exception("Invalid credentials!");
+                        MessageBox.Show("Invalid credentials");
+                        throw new Exception("Invalid credentials!");
                     }
                 }
                 else {
                     throw new Exception("Invalid credentials!");
                 }
-            //}
-            //catch(Exception error)
-            //{
-            //    MessageBox.Show(error.Message);
-                
-            //}
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+
+            }
 
         }
     }

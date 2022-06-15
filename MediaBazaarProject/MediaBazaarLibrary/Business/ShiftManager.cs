@@ -140,8 +140,11 @@ namespace MediaBazaarLibrary.Business
                 {
                     if(employee.Id == leave.EmployeeID)
                     {
-                        flag = false;
-                        break;
+                        if (date == leave.RequestedDate)
+                        {
+                            flag = false;
+                            break;
+                        }
                     }
                     else
                     {

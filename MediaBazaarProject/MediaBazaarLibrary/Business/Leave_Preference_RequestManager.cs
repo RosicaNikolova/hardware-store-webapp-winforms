@@ -54,6 +54,7 @@ namespace MediaBazaarLibrary.Business
             LeaveRequest leaveRequest = leave_preference_RequestRepository.getLeaveRequest(leaveRequestID);
             leaveRequest.RequestStatus = "APPROVED";
             leave_preference_RequestRepository.updateRequest(leaveRequest);
+            leave_preference_RequestRepository.RemoveWorkerFromSchedule(leaveRequest);
         }
         public void disapproveRequest(int leaveRequestID)
         {

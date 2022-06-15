@@ -145,6 +145,7 @@ namespace MediaBazaarLibrary.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
+
         public void DeleteEmployee(Employee e)
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())

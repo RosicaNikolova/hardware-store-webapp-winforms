@@ -62,6 +62,23 @@ namespace MediaBazaarLibrary.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void RemoveWorkerFromSchedule(LeaveRequest leaveRequest)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "delete from shifts where ShiftDate=@ShiftDate and EmployeeId=@EmployeeId";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("ShiftDate", leaveRequest.RequestedDate);
+                cmd.Parameters.AddWithValue("EmployeeID", leaveRequest.EmployeeID);
+
+                conn.Open();
+
+                cmd.ExecuteNonQuery();
+            }
+
+        }
+
         //update preferedShift status CHECKKKKK!!!! - ADMIN FORM, selects accept or reject
         public void updatePreferedShiftStatus(PreferedShift preferedShift) {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())

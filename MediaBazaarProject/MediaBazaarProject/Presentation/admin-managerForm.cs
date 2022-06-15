@@ -215,7 +215,7 @@ namespace MediaBazaarProject
                     }
                     else
                     {
-                        MessageBox.Show("Operation is unsuccessful");
+                        MessageBox.Show("Employee already assigned to this shift");
                     }
                 }
                 catch (Exception)
@@ -234,6 +234,10 @@ namespace MediaBazaarProject
                 {
                     lbEmployeeShiftList.Items.Add(w);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please, select employee or shift type");
             }
         }
 
