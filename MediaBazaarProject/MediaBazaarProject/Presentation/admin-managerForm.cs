@@ -994,5 +994,28 @@ namespace MediaBazaarProject
         {
             tcStatistics.SelectedTab = tabProductStatistics;
         }
+
+        private void btnDeleteSchedule_Click(object sender, EventArgs e)
+        {
+            DateTime nextMonday = GetNextMonday();
+            DateTime nextSunday = new DateTime(nextMonday.Year, nextMonday.Month, nextMonday.Day + 6);
+            bool alreadyGenerated = shiftManager.ScheduleForWeekAlreadyGenerated(nextMonday);
+            if (alreadyGenerated)
+            {
+                bool result= shiftManager.DeleteSchedule(nextMonday, nextSunday);
+                if (result)
+                {
+                    MessageBox.Show("Schedule deleted sucessfully");
+                }
+                else
+                {
+                    MessageBox.Show("Operation is not sucessful.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Schedule cannot be deleted because its not generated yet.");
+            }
+        }
     }
 }

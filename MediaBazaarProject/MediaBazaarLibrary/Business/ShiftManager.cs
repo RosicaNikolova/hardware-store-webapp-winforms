@@ -435,8 +435,20 @@ namespace MediaBazaarLibrary.Business
             return scheduleRepository.getAutomatedScheduleShiftsForSelectedWeek(startDate, endDate);
         }
 
+        public bool DeleteSchedule(DateTime nextMonday, DateTime nextSunday)
+        {
+            bool result = scheduleRepository.DeleteScheduleForWeeek(nextMonday, nextSunday);
+            if (result)
+            {
+                scheduleRepository.SetWeekToNotGenerated(nextMonday);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
-
+        }
     }
 }
 

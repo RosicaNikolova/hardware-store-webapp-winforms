@@ -337,5 +337,43 @@ namespace MediaBazaarLibrary.Persistence
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void SetWeekToNotGenerated(DateTime startDate)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "delete from automatedscheduleweeks where startDate=@startDate;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+
+                cmd.Parameters.AddWithValue("startDate", startDate);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public bool DeleteScheduleForWeeek(DateTime nextMonday, DateTime nextSunday)
+        {
+            try
+            {
+                using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+                {
+                    string sql = "Delete from shifts where ShiftDate between @nextMonday and @nextSunday";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("nextMonday", nextMonday);
+                    cmd.Parameters.AddWithValue("nextSunday", nextSunday);
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
