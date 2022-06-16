@@ -17,7 +17,7 @@ namespace MediaBazaarWebsite.Pages
         public LeaveRequest LeaveRequest { get; set; }
         [BindProperty]
         public PreferedShift PreferedShift { get; set; }
-        public List<string> listDays = new List<string>() {"Moday", "Tuesday", "Wednesday","Thursday", "Friday"};
+        public List<string> listDays = new List<string>() {"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"};
         Leave_Preference_RequestManager leaveRequestManager = new Leave_Preference_RequestManager();
         public string MessageLeave { get; set; }
         public string MessagePreference { get; set; }
