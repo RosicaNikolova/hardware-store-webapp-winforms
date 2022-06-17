@@ -172,3 +172,4 @@ D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\bin\Debug\net5.0-window
 C:\Users\Jakub Jelinek\GIT\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.AutomatedSchedule.resources
 D:\media_bazar\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.AutomatedSchedule.resources
 C:\Users\35988\source\repos\group04-hardwarestore\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.AutomatedSchedule.resources
+D:\Git\MediaBazaar\MediaBazaarProject\MediaBazaarProject\obj\Debug\net5.0-windows\MediaBazaarProject.Presentation.AutomatedSchedule.resources

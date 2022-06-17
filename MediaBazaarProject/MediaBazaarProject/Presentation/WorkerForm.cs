@@ -221,14 +221,14 @@ namespace MediaBazaarProject
                 {
                     if (request.RequestedAmount <= product.QuantityWarehouse)
                     {
-                        requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED);
+                        requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.ACCEPTED, "");
                         productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductPrice, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount, product.QuantitySales + request.RequestedAmount, product.Barcode);
                         MessageBox.Show("Request has been Accepted");
                     }
                     else if (request.RequestedAmount > product.QuantityWarehouse && product.QuantityWarehouse > 0)
                     {
                         int dif = Math.Abs(product.QuantityWarehouse - request.RequestedAmount);
-                        requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY);
+                        requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.PARTIALLY, "Sending Remaining Stock");
                         productManager.Edit(product, product.ProductName, product.ProductDescription, product.ProductPrice, product.ProductManufacturer, product.ProductCategory, product.QuantityWarehouse - request.RequestedAmount + dif, product.QuantitySales + request.RequestedAmount - dif, product.Barcode);
                         MessageBox.Show("Request has been  partially Accepted");
                     }
@@ -263,11 +263,16 @@ namespace MediaBazaarProject
         private void btnRejectRequest_Click(object sender, EventArgs e)
         {
             Request request = SelectedRequest();
+            string reason = tbxReasonRejection.Text;
+            if(reason == String.Empty)
+            {
+                reason = "Request has been rejected";
+            }
             if (request != null)
             {
                 if (request.Status == EnumRequestStatus.PENDING)
                 {
-                    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.REJECTED);
+                    requestManager.Edit(request, request.EmployeeId, request.ProductId, request.RequestedAmount, EnumRequestStatus.REJECTED, reason);
                     MessageBox.Show("Request has been denied");
                     List<Request> requests = requestManager.GetAllRequestsList();
                     lbxRequestWarehouse.Items.Clear();

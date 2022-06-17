@@ -18,9 +18,11 @@ namespace MediaBazaarLibrary.Business
 
         public EnumRequestStatus Status { get; set; }
 
+        public string Reason {get; set;}
+
         public override string ToString()
         {
-            return $"RequestId: {this.RequestId}, Requested by: {this.EmployeeId}, RequestedItem: {this.ProductId}, AmountRequested: {this.RequestedAmount}, Status: {this.Status}";
+            return $"RequestId: {this.RequestId}, Requested by: {this.EmployeeId}, RequestedItem: {this.ProductId}, AmountRequested: {this.RequestedAmount}, Status: {this.Status}, {this.Reason}";
         }
     }
 }

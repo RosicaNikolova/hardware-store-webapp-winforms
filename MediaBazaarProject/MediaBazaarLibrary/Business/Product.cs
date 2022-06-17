@@ -26,7 +26,7 @@ namespace MediaBazaarLibrary.Business
         public int Barcode { get; set; }
         public override string ToString()
         {
-            return $"Product Id: {this.ProductId}, Product Name: {this.ProductName}, Price: {this.ProductPrice}, Category: {this.ProductCategory}, Manufacturer: {this.ProductManufacturer}";
+            return $"{this.ProductId}, \t {this.ProductName}, \t {this.ProductPrice}, \t {this.ProductCategory}, \t {this.ProductManufacturer}";
         }
 
     }

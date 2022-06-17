@@ -33,7 +33,7 @@ namespace MediaBazaarLibrary.Business
             }
         }
 
-        public void Edit(Request updateRequest, int empId, int productId, int requestAmount, EnumRequestStatus status)
+        public void Edit(Request updateRequest, int empId, int productId, int requestAmount, EnumRequestStatus status, string reason)
         {
             try
             {
@@ -42,6 +42,7 @@ namespace MediaBazaarLibrary.Business
                 request.ProductId = productId;
                 request.RequestedAmount = requestAmount;
                 request.Status = status;
+                request.Reason = reason;
                 requestRepository.UpdateRequest(request);
             }
             catch (Exception error)

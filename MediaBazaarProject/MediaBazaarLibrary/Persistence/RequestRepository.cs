@@ -17,7 +17,7 @@ namespace MediaBazaarLibrary.Persistence
             List<Request> allRequests = new List<Request>();
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "SELECT employees.EmployeeId, products.ProductId, products.ProductName, request.RequestId, request.RequestedAmount, request.RequestStatus " +
+                string sql = "SELECT employees.EmployeeId, products.ProductId, products.ProductName, request.RequestId, request.RequestedAmount, request.RequestStatus, request.Reason " +
                     "FROM request INNER JOIN products INNER JOIN employees " +
                     "ON request.ProductId = products.ProductId AND request.EmployeeId = employees.EmployeeID " +
                     "WHERE request.ProductId = products.ProductId";
@@ -36,6 +36,7 @@ namespace MediaBazaarLibrary.Persistence
                     request.ProductId = dr.GetInt32("ProductId");
                     request.RequestedAmount = dr.GetInt32("RequestedAmount");
                     request.Status = enumManager.GetRequestStatus(dr.GetString("RequestStatus"));
+                    request.Reason = dr.GetString("Reason");
                     allRequests.Add(request);
                 }
             }
@@ -72,7 +73,7 @@ namespace MediaBazaarLibrary.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "UPDATE request SET EmployeeId=@EmployeeId, ProductId=@ProductId, RequestedAmount=@RequestedAmount, RequestStatus=@RequestStatus where RequestId = @RequestId";
+                    string sql = "UPDATE request SET EmployeeId=@EmployeeId, ProductId=@ProductId, RequestedAmount=@RequestedAmount, RequestStatus=@RequestStatus, Reason=@Reason where RequestId = @RequestId";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("RequestId", request.RequestId);
@@ -80,6 +81,7 @@ namespace MediaBazaarLibrary.Persistence
                     cmd.Parameters.AddWithValue("ProductId", request.ProductId);
                     cmd.Parameters.AddWithValue("RequestedAmount", request.RequestedAmount);
                     cmd.Parameters.AddWithValue("RequestStatus", request.Status.ToString());
+                    cmd.Parameters.AddWithValue("Reason", request.Reason);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
