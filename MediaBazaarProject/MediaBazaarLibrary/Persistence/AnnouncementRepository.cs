@@ -10,18 +10,25 @@ namespace MediaBazaarLibrary.Persistence
 {
     public class AnnouncementRepository
     {
-        public void AddAnnouncement(string announcementContent)
+        public void AddAnnouncement(string announcementContent, string announcementSubject)
         {
-            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            try
             {
-                string sql = "INSERT INTO announcements (announcementContent, announcementDate) VALUES (@announcementContent, @announcementDate)";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+                {
+                    string sql = "INSERT INTO announcements (announcementContent, announcementSubject, announcementDate) VALUES (@announcementContent, @announcementSubject, @announcementDate)";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("announcementContent", announcementContent);
-                cmd.Parameters.AddWithValue("announcementDate", DateTime.Now);
+                    cmd.Parameters.AddWithValue("announcementContent", announcementContent);
+                    cmd.Parameters.AddWithValue("announcementSubject", announcementSubject);
+                    cmd.Parameters.AddWithValue("announcementDate", DateTime.Now);
 
-                conn.Open();
-                cmd.ExecuteNonQuery();
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch {
+                throw new Exception();
             }
         }
 
@@ -29,10 +36,11 @@ namespace MediaBazaarLibrary.Persistence
         {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "UPDATE announcements SET announcementContent = @announcementContent WHERE announcementId = @announcementId";
+                string sql = "UPDATE announcements SET announcementContent = @announcementContent, announcementSubject = @announcementSubject WHERE announcementId = @announcementId";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 cmd.Parameters.AddWithValue("announcementContent", announcement.AnnouncementContent);
+                cmd.Parameters.AddWithValue("announcementSubject", announcement.AnnouncementSubject);
                 cmd.Parameters.AddWithValue("announcementId", announcement.AnnouncementId);
 
                 conn.Open();
@@ -74,6 +82,7 @@ namespace MediaBazaarLibrary.Persistence
                     announcement = new Announcement();
                     announcement.AnnouncementId = dr.GetInt32("announcementId");
                     announcement.AnnouncementContent = dr.GetString("announcementContent");
+                    announcement.AnnouncementSubject = dr.GetString("announcementSubject");
                     announcement.AnnouncementDate = dr.GetDateTime("announcementDate");
                 }
 
@@ -100,6 +109,7 @@ namespace MediaBazaarLibrary.Persistence
                     announcement = new Announcement();
                     announcement.AnnouncementId = dr.GetInt32("announcementId");
                     announcement.AnnouncementContent = dr.GetString("announcementContent");
+                    announcement.AnnouncementSubject = dr.GetString("announcementSubject");
                     announcement.AnnouncementDate = dr.GetDateTime("announcementDate");
                     announcements.Add(announcement);
                 }

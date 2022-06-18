@@ -9,6 +9,7 @@ namespace MediaBazaarLibrary.Business
     public class Announcement
     {
         public int AnnouncementId { get; set; }
+        public string AnnouncementSubject { get; set; }
 
         public string AnnouncementContent { get; set; }
 

@@ -24,6 +24,7 @@ namespace MediaBazaarProject
         EmployeeManager employeeManager = new EmployeeManager();
         ShiftManager shiftManager = new ShiftManager();
         ProductManager productManager = new ProductManager();
+        AnnouncementManager announcementManager = new AnnouncementManager();
         Leave_Preference_RequestManager leavePreferenceRequestManager = new Leave_Preference_RequestManager();
         string role = string.Empty;
 
@@ -41,11 +42,17 @@ namespace MediaBazaarProject
             {
                 btnScheduleAdministration.Visible = true;
                 btnEmployeeManagement.Visible = true;
+                btnAutomatedSchedule.Visible = true;
+                panelEmployeeManagement.Visible = true;
+                panelAnnouncement.Visible = false;
             }
             else if (role == "manager")
             {
                 btnScheduleAdministration.Visible = false;
-                btnEmployeeManagement.Visible = false;
+                //btnEmployeeManagement.Visible = false;
+                btnAutomatedSchedule.Visible = false;
+                panelEmployeeManagement.Visible = false;
+                panelAnnouncement.Visible = true;
             }
 
             DateTime maxDate;
@@ -1015,6 +1022,82 @@ namespace MediaBazaarProject
             else
             {
                 MessageBox.Show("Schedule cannot be deleted because its not generated yet.");
+            }
+        }
+
+        private void btnAnnouncement_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tbPageAnnouncements;
+            dataGridViewAnnouncements.DataSource = announcementManager.GetAllAnnouncements();
+            tbAnnouncementMessage.Text = string.Empty;
+        }
+
+        private void btnPublishAnnouncement_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (tbAnnouncementMessage.Text != string.Empty)
+                {
+                    announcementManager.AddAnnouncement(tbAnnouncementMessage.Text, tbSubject.Text);
+                    MessageBox.Show("Successfully created");
+                    dataGridViewAnnouncements.DataSource = announcementManager.GetAllAnnouncements();
+                    tbAnnouncementMessage.Text = string.Empty;
+                    tbSubject.Text = string.Empty;
+                }
+                else {
+                    MessageBox.Show("Message cannot be empty!");
+                }
+            }
+            catch (Exception error) {
+                MessageBox.Show(error.Message);//if there is something wrong in database part
+            }
+        }
+
+        private void dataGridViewAnnouncements_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewAnnouncements.Columns[e.ColumnIndex].Name == "View" || dataGridViewAnnouncements.Columns[e.ColumnIndex].Name == "Edit")
+            {
+                DataGridViewRow row = dataGridViewAnnouncements.Rows[e.RowIndex];
+                Announcement announcement = announcementManager.GetAnnouncementById(Convert.ToInt32(row.Cells[3].Value));
+                tbAnnouncementMessageViewEdit.Text = announcement.AnnouncementContent;
+                tbSubjectViewEdit.Text = announcement.AnnouncementSubject;
+                tbID.Text = announcement.AnnouncementId.ToString();
+            }
+            else if (dataGridViewAnnouncements.Columns[e.ColumnIndex].Name == "Delete") {
+                DataGridViewRow row = dataGridViewAnnouncements.Rows[e.RowIndex];
+                Announcement announcement = announcementManager.GetAnnouncementById(Convert.ToInt32(row.Cells[3].Value));
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete announcement?", "Alert!", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    announcementManager.DeleteAnnouncement(announcement);
+                    dataGridViewAnnouncements.DataSource = announcementManager.GetAllAnnouncements();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    //nothing happens
+                }
+            }
+        }
+
+        private void btnEditAnnouncement_Click(object sender, EventArgs e)
+        {
+            Announcement announcement = new Announcement()
+            {
+                AnnouncementId = Convert.ToInt32(tbID.Text),
+                AnnouncementSubject = tbSubjectViewEdit.Text,
+                AnnouncementContent = tbAnnouncementMessageViewEdit.Text
+            };
+            if (announcement.AnnouncementId != 0 && announcement.AnnouncementContent != string.Empty && announcement.AnnouncementSubject != string.Empty)
+            {
+                announcementManager.EditAnnouncement(announcement);
+                dataGridViewAnnouncements.DataSource = announcementManager.GetAllAnnouncements();
+                tbAnnouncementMessageViewEdit.Text = string.Empty;
+                tbID.Text = string.Empty;
+                tbSubjectViewEdit.Text = string.Empty;
+                MessageBox.Show("Announcement edited!");
+            }
+            else {
+                MessageBox.Show("Invalid operation. Try again!");
             }
         }
     }
