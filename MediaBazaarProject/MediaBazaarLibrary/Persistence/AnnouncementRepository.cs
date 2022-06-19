@@ -95,7 +95,7 @@ namespace MediaBazaarLibrary.Persistence
             List<Announcement> announcements = new List<Announcement>();
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
-                string sql = "SELECT * FROM announcements";
+                string sql = "SELECT * FROM announcements ORDER BY announcementDate DESC";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 

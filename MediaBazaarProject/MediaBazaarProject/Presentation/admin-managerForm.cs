@@ -1100,5 +1100,10 @@ namespace MediaBazaarProject
                 MessageBox.Show("Invalid operation. Try again!");
             }
         }
+
+        private void btnAnnouncementsHome_Click(object sender, EventArgs e)
+        {
+            tabAdmin.SelectedTab = tabAdminHome;
+        }
     }
 }

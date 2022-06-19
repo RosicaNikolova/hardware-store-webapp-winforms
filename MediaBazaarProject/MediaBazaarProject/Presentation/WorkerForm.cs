@@ -443,5 +443,9 @@ namespace MediaBazaarProject
             lbScannedItems.Items.Clear();
         }
 
+        private void btnProductRepositoryHome_Click(object sender, EventArgs e)
+        {
+            TabWorker.SelectedTab = tabWorkerHome;
+        }
     }
 }
