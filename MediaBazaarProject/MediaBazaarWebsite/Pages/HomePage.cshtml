@@ -13,30 +13,31 @@
             We are pleased we have you. Our goal is to reach total 500 selling places all around Wedrlands.
         </p>
     </div>
-    <div class="container-newsletter">
-        <h1>Announcements</h1>
-        @foreach (var announcement in Model.announcementManager.GetAnnouncements())
-        {
-            <div class="newsbox">
-                <div class="container-newsletter-newsbox">
-                    <div class="container-newsletter-newsbox-leftpannel">
-                        <div class="name-tag">
-                            <p>M</p>
+    <div class="container-for-newslettercontainer">
+        <div class="container-newsletter">
+            <h2>Announcements</h2>
+            @foreach (var announcement in Model.announcementManager.GetAnnouncements())
+            {
+                <div class="newsbox">
+                    <div class="container-newsletter-newsbox">
+                        <div class="container-newsletter-newsbox-leftpannel">
+                            <div class="name-tag">
+                                <p>M</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="container-newsletter-newsbox-rightpannel">
+                        <div class="container-newsletter-newsbox-rightpannel">
 
-                        <div class="newsbox-heading">
-                            <p>Manager</p>
-                            <p>@announcement.AnnouncementDate.ToString("dd/MM/yyyy")</p>
+                            <div class="newsbox-heading">
+                                <p>Manager</p>
+                                <p>@announcement.AnnouncementDate.ToString("dd/MM/yyyy")</p>
+                            </div>
+                            <h3>Subject: @announcement.AnnouncementSubject</h3>
+                            <p>@announcement.AnnouncementContent</p>
                         </div>
-                        <h3>Subject: @announcement.AnnouncementSubject</h3>
-                        <p>Message:</p>
-                        <p>@announcement.AnnouncementContent</p>
                     </div>
                 </div>
-            </div>
-        }
+            }
         </div>
+    </div>
 </div> 

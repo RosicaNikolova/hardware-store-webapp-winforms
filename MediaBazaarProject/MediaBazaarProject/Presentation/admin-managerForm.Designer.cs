@@ -218,9 +218,6 @@ namespace MediaBazaarProject
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewAnnouncements = new System.Windows.Forms.DataGridView();
-            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.tEmployeeLbRefresh = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
@@ -228,6 +225,9 @@ namespace MediaBazaarProject
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
+            this.View = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabAdmin.SuspendLayout();
             this.tabAdminHome.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -892,7 +892,8 @@ namespace MediaBazaarProject
             // 
             // lblAdminEmpManagement
             // 
-            this.lblAdminEmpManagement.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblAdminEmpManagement.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAdminEmpManagement.AutoSize = true;
             this.lblAdminEmpManagement.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAdminEmpManagement.Location = new System.Drawing.Point(466, 25);
@@ -1477,7 +1478,7 @@ namespace MediaBazaarProject
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel1.Controls.Add(this.lbMondayMidday, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbMondayEvening, 0, 2);
@@ -1558,7 +1559,7 @@ namespace MediaBazaarProject
             // 
             this.lbWednesdayMidday.FormattingEnabled = true;
             this.lbWednesdayMidday.ItemHeight = 18;
-            this.lbWednesdayMidday.Location = new System.Drawing.Point(263, 107);
+            this.lbWednesdayMidday.Location = new System.Drawing.Point(262, 107);
             this.lbWednesdayMidday.Name = "lbWednesdayMidday";
             this.lbWednesdayMidday.Size = new System.Drawing.Size(166, 112);
             this.lbWednesdayMidday.TabIndex = 7;
@@ -1567,7 +1568,7 @@ namespace MediaBazaarProject
             // 
             this.lbWednesdayEvening.FormattingEnabled = true;
             this.lbWednesdayEvening.ItemHeight = 18;
-            this.lbWednesdayEvening.Location = new System.Drawing.Point(263, 235);
+            this.lbWednesdayEvening.Location = new System.Drawing.Point(262, 235);
             this.lbWednesdayEvening.Name = "lbWednesdayEvening";
             this.lbWednesdayEvening.Size = new System.Drawing.Size(166, 94);
             this.lbWednesdayEvening.TabIndex = 8;
@@ -1576,7 +1577,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayMorning.FormattingEnabled = true;
             this.lbThursdayMorning.ItemHeight = 18;
-            this.lbThursdayMorning.Location = new System.Drawing.Point(437, 3);
+            this.lbThursdayMorning.Location = new System.Drawing.Point(436, 3);
             this.lbThursdayMorning.Name = "lbThursdayMorning";
             this.lbThursdayMorning.Size = new System.Drawing.Size(158, 94);
             this.lbThursdayMorning.TabIndex = 9;
@@ -1585,7 +1586,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayMidday.FormattingEnabled = true;
             this.lbThursdayMidday.ItemHeight = 18;
-            this.lbThursdayMidday.Location = new System.Drawing.Point(437, 107);
+            this.lbThursdayMidday.Location = new System.Drawing.Point(436, 107);
             this.lbThursdayMidday.Name = "lbThursdayMidday";
             this.lbThursdayMidday.Size = new System.Drawing.Size(158, 112);
             this.lbThursdayMidday.TabIndex = 10;
@@ -1594,7 +1595,7 @@ namespace MediaBazaarProject
             // 
             this.lbThursdayEvening.FormattingEnabled = true;
             this.lbThursdayEvening.ItemHeight = 18;
-            this.lbThursdayEvening.Location = new System.Drawing.Point(437, 235);
+            this.lbThursdayEvening.Location = new System.Drawing.Point(436, 235);
             this.lbThursdayEvening.Name = "lbThursdayEvening";
             this.lbThursdayEvening.Size = new System.Drawing.Size(158, 94);
             this.lbThursdayEvening.TabIndex = 11;
@@ -1603,7 +1604,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayMorning.FormattingEnabled = true;
             this.lbFridayMorning.ItemHeight = 18;
-            this.lbFridayMorning.Location = new System.Drawing.Point(605, 3);
+            this.lbFridayMorning.Location = new System.Drawing.Point(604, 3);
             this.lbFridayMorning.Name = "lbFridayMorning";
             this.lbFridayMorning.Size = new System.Drawing.Size(165, 94);
             this.lbFridayMorning.TabIndex = 12;
@@ -1612,7 +1613,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayMidday.FormattingEnabled = true;
             this.lbFridayMidday.ItemHeight = 18;
-            this.lbFridayMidday.Location = new System.Drawing.Point(605, 107);
+            this.lbFridayMidday.Location = new System.Drawing.Point(604, 107);
             this.lbFridayMidday.Name = "lbFridayMidday";
             this.lbFridayMidday.Size = new System.Drawing.Size(165, 112);
             this.lbFridayMidday.TabIndex = 13;
@@ -1621,7 +1622,7 @@ namespace MediaBazaarProject
             // 
             this.lbFridayEvening.FormattingEnabled = true;
             this.lbFridayEvening.ItemHeight = 18;
-            this.lbFridayEvening.Location = new System.Drawing.Point(605, 235);
+            this.lbFridayEvening.Location = new System.Drawing.Point(604, 235);
             this.lbFridayEvening.Name = "lbFridayEvening";
             this.lbFridayEvening.Size = new System.Drawing.Size(165, 94);
             this.lbFridayEvening.TabIndex = 14;
@@ -1630,7 +1631,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayMorning.FormattingEnabled = true;
             this.lbSaturdayMorning.ItemHeight = 18;
-            this.lbSaturdayMorning.Location = new System.Drawing.Point(778, 3);
+            this.lbSaturdayMorning.Location = new System.Drawing.Point(777, 3);
             this.lbSaturdayMorning.Name = "lbSaturdayMorning";
             this.lbSaturdayMorning.Size = new System.Drawing.Size(154, 94);
             this.lbSaturdayMorning.TabIndex = 15;
@@ -1639,7 +1640,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayMidday.FormattingEnabled = true;
             this.lbSaturdayMidday.ItemHeight = 18;
-            this.lbSaturdayMidday.Location = new System.Drawing.Point(778, 107);
+            this.lbSaturdayMidday.Location = new System.Drawing.Point(777, 107);
             this.lbSaturdayMidday.Name = "lbSaturdayMidday";
             this.lbSaturdayMidday.Size = new System.Drawing.Size(154, 112);
             this.lbSaturdayMidday.TabIndex = 16;
@@ -1648,7 +1649,7 @@ namespace MediaBazaarProject
             // 
             this.lbSaturdayEvening.FormattingEnabled = true;
             this.lbSaturdayEvening.ItemHeight = 18;
-            this.lbSaturdayEvening.Location = new System.Drawing.Point(778, 235);
+            this.lbSaturdayEvening.Location = new System.Drawing.Point(777, 235);
             this.lbSaturdayEvening.Name = "lbSaturdayEvening";
             this.lbSaturdayEvening.Size = new System.Drawing.Size(154, 94);
             this.lbSaturdayEvening.TabIndex = 17;
@@ -1657,7 +1658,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayMorning.FormattingEnabled = true;
             this.lbSundayMorning.ItemHeight = 18;
-            this.lbSundayMorning.Location = new System.Drawing.Point(940, 3);
+            this.lbSundayMorning.Location = new System.Drawing.Point(939, 3);
             this.lbSundayMorning.Name = "lbSundayMorning";
             this.lbSundayMorning.Size = new System.Drawing.Size(131, 94);
             this.lbSundayMorning.TabIndex = 18;
@@ -1666,7 +1667,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayMidday.FormattingEnabled = true;
             this.lbSundayMidday.ItemHeight = 18;
-            this.lbSundayMidday.Location = new System.Drawing.Point(940, 107);
+            this.lbSundayMidday.Location = new System.Drawing.Point(939, 107);
             this.lbSundayMidday.Name = "lbSundayMidday";
             this.lbSundayMidday.Size = new System.Drawing.Size(131, 112);
             this.lbSundayMidday.TabIndex = 19;
@@ -1675,7 +1676,7 @@ namespace MediaBazaarProject
             // 
             this.lbSundayEvening.FormattingEnabled = true;
             this.lbSundayEvening.ItemHeight = 18;
-            this.lbSundayEvening.Location = new System.Drawing.Point(940, 235);
+            this.lbSundayEvening.Location = new System.Drawing.Point(939, 235);
             this.lbSundayEvening.Name = "lbSundayEvening";
             this.lbSundayEvening.Size = new System.Drawing.Size(131, 94);
             this.lbSundayEvening.TabIndex = 20;
@@ -1693,7 +1694,7 @@ namespace MediaBazaarProject
             // 
             this.lbWednesdayMorning.FormattingEnabled = true;
             this.lbWednesdayMorning.ItemHeight = 18;
-            this.lbWednesdayMorning.Location = new System.Drawing.Point(263, 3);
+            this.lbWednesdayMorning.Location = new System.Drawing.Point(262, 3);
             this.lbWednesdayMorning.Name = "lbWednesdayMorning";
             this.lbWednesdayMorning.Size = new System.Drawing.Size(166, 94);
             this.lbWednesdayMorning.TabIndex = 6;
@@ -2381,27 +2382,6 @@ namespace MediaBazaarProject
             this.dataGridViewAnnouncements.TabIndex = 1;
             this.dataGridViewAnnouncements.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAnnouncements_CellContentClick);
             // 
-            // View
-            // 
-            this.View.HeaderText = "View";
-            this.View.MinimumWidth = 6;
-            this.View.Name = "View";
-            this.View.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.MinimumWidth = 6;
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -2476,6 +2456,33 @@ namespace MediaBazaarProject
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(1, 44);
             this.listBox3.TabIndex = 3;
+            // 
+            // View
+            // 
+            this.View.HeaderText = "View";
+            this.View.MinimumWidth = 6;
+            this.View.Name = "View";
+            this.View.ReadOnly = true;
+            this.View.Text = "View";
+            this.View.UseColumnTextForButtonValue = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "Edit";
+            this.Edit.MinimumWidth = 6;
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 6;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // admin_managerForm
             // 
@@ -2750,14 +2757,14 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Button btnEditAnnouncement;
         private System.Windows.Forms.TextBox tbAnnouncementMessageViewEdit;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewButtonColumn View;
-        private System.Windows.Forms.DataGridViewButtonColumn Edit;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.TextBox tbSubject;
         private System.Windows.Forms.TextBox tbSubjectViewEdit;
         private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.Label lblAnnouncementID;
+        private System.Windows.Forms.DataGridViewButtonColumn View;
+        private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

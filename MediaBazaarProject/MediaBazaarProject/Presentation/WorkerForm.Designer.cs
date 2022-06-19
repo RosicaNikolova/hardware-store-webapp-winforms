@@ -59,6 +59,8 @@ namespace MediaBazaarProject
             this.nudAmountSales = new System.Windows.Forms.NumericUpDown();
             this.lblAmountSales = new System.Windows.Forms.Label();
             this.tabWarehouse = new System.Windows.Forms.TabPage();
+            this.tbxReasonRejection = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -102,8 +104,6 @@ namespace MediaBazaarProject
             this.lbScannedItems = new System.Windows.Forms.ListBox();
             this.pbSelectedItemBarcode = new System.Windows.Forms.PictureBox();
             this.lbProductsInSales = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbxReasonRejection = new System.Windows.Forms.TextBox();
             this.TabWorker.SuspendLayout();
             this.tabWorkerHome.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,15 +149,17 @@ namespace MediaBazaarProject
             this.tabWorkerHome.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.tabWorkerHome.Controls.Add(this.panel2);
             this.tabWorkerHome.Controls.Add(this.btnLogOut);
-            this.tabWorkerHome.Location = new System.Drawing.Point(4, 24);
+            this.tabWorkerHome.Location = new System.Drawing.Point(4, 27);
             this.tabWorkerHome.Name = "tabWorkerHome";
             this.tabWorkerHome.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWorkerHome.Size = new System.Drawing.Size(1421, 851);
+            this.tabWorkerHome.Size = new System.Drawing.Size(1421, 848);
             this.tabWorkerHome.TabIndex = 0;
             this.tabWorkerHome.Text = "WorkerHome";
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Controls.Add(this.pbSales);
@@ -225,7 +227,7 @@ namespace MediaBazaarProject
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(301, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 20);
+            this.label3.Size = new System.Drawing.Size(89, 25);
             this.label3.TabIndex = 28;
             this.label3.Text = "My shifts";
             // 
@@ -261,7 +263,7 @@ namespace MediaBazaarProject
             this.dateWorker.MaxDate = new System.DateTime(2022, 3, 22, 0, 0, 0, 0);
             this.dateWorker.MinDate = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dateWorker.Name = "dateWorker";
-            this.dateWorker.Size = new System.Drawing.Size(286, 21);
+            this.dateWorker.Size = new System.Drawing.Size(286, 24);
             this.dateWorker.TabIndex = 20;
             this.dateWorker.Value = new System.DateTime(2022, 3, 14, 0, 0, 0, 0);
             this.dateWorker.ValueChanged += new System.EventHandler(this.dateWorker_ValueChanged);
@@ -271,7 +273,7 @@ namespace MediaBazaarProject
             this.lblshift.AutoSize = true;
             this.lblshift.Location = new System.Drawing.Point(301, 80);
             this.lblshift.Name = "lblshift";
-            this.lblshift.Size = new System.Drawing.Size(104, 15);
+            this.lblshift.Size = new System.Drawing.Size(127, 18);
             this.lblshift.TabIndex = 21;
             this.lblshift.Text = "Shifts for the date:";
             // 
@@ -291,10 +293,10 @@ namespace MediaBazaarProject
             // lbxShiftEmployeeDay
             // 
             this.lbxShiftEmployeeDay.FormattingEnabled = true;
-            this.lbxShiftEmployeeDay.ItemHeight = 15;
+            this.lbxShiftEmployeeDay.ItemHeight = 18;
             this.lbxShiftEmployeeDay.Location = new System.Drawing.Point(301, 138);
             this.lbxShiftEmployeeDay.Name = "lbxShiftEmployeeDay";
-            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(419, 154);
+            this.lbxShiftEmployeeDay.Size = new System.Drawing.Size(419, 148);
             this.lbxShiftEmployeeDay.TabIndex = 22;
             // 
             // btnSales
@@ -312,6 +314,7 @@ namespace MediaBazaarProject
             // 
             // btnLogOut
             // 
+            this.btnLogOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogOut.BackColor = System.Drawing.Color.Maroon;
             this.btnLogOut.Location = new System.Drawing.Point(1285, 6);
             this.btnLogOut.Name = "btnLogOut";
@@ -333,10 +336,10 @@ namespace MediaBazaarProject
             this.tabSales.Controls.Add(this.btnHomeSales);
             this.tabSales.Controls.Add(this.lbxStockSales);
             this.tabSales.Controls.Add(this.groupBox2);
-            this.tabSales.Location = new System.Drawing.Point(4, 24);
+            this.tabSales.Location = new System.Drawing.Point(4, 27);
             this.tabSales.Name = "tabSales";
             this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(1421, 851);
+            this.tabSales.Size = new System.Drawing.Size(1421, 848);
             this.tabSales.TabIndex = 1;
             this.tabSales.Text = "SalesTab";
             // 
@@ -346,7 +349,7 @@ namespace MediaBazaarProject
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(657, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 26);
+            this.label1.Size = new System.Drawing.Size(86, 32);
             this.label1.TabIndex = 36;
             this.label1.Text = "Sales";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -356,19 +359,17 @@ namespace MediaBazaarProject
             this.lblSalesQuantity.AutoSize = true;
             this.lblSalesQuantity.Location = new System.Drawing.Point(805, 86);
             this.lblSalesQuantity.Name = "lblSalesQuantity";
-            this.lblSalesQuantity.Size = new System.Drawing.Size(83, 15);
+            this.lblSalesQuantity.Size = new System.Drawing.Size(99, 18);
             this.lblSalesQuantity.TabIndex = 35;
             this.lblSalesQuantity.Text = "Sales quantity";
             // 
             // lbSalesQuantity
             // 
-            this.lbSalesQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbSalesQuantity.FormattingEnabled = true;
-            this.lbSalesQuantity.ItemHeight = 15;
+            this.lbSalesQuantity.ItemHeight = 18;
             this.lbSalesQuantity.Location = new System.Drawing.Point(805, 107);
             this.lbSalesQuantity.Name = "lbSalesQuantity";
-            this.lbSalesQuantity.Size = new System.Drawing.Size(176, 334);
+            this.lbSalesQuantity.Size = new System.Drawing.Size(176, 328);
             this.lbSalesQuantity.TabIndex = 34;
             // 
             // lblInventorySales
@@ -377,7 +378,7 @@ namespace MediaBazaarProject
             this.lblInventorySales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblInventorySales.Location = new System.Drawing.Point(126, 77);
             this.lblInventorySales.Name = "lblInventorySales";
-            this.lblInventorySales.Size = new System.Drawing.Size(74, 20);
+            this.lblInventorySales.Size = new System.Drawing.Size(92, 25);
             this.lblInventorySales.TabIndex = 33;
             this.lblInventorySales.Text = "Inventory";
             // 
@@ -387,7 +388,7 @@ namespace MediaBazaarProject
             this.lblRequestSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRequestSales.Location = new System.Drawing.Point(126, 470);
             this.lblRequestSales.Name = "lblRequestSales";
-            this.lblRequestSales.Size = new System.Drawing.Size(78, 20);
+            this.lblRequestSales.Size = new System.Drawing.Size(94, 25);
             this.lblRequestSales.TabIndex = 32;
             this.lblRequestSales.Text = "Requests";
             // 
@@ -396,10 +397,10 @@ namespace MediaBazaarProject
             this.lbxRequestSales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lbxRequestSales.FormattingEnabled = true;
-            this.lbxRequestSales.ItemHeight = 15;
+            this.lbxRequestSales.ItemHeight = 18;
             this.lbxRequestSales.Location = new System.Drawing.Point(126, 501);
             this.lbxRequestSales.Name = "lbxRequestSales";
-            this.lbxRequestSales.Size = new System.Drawing.Size(1175, 304);
+            this.lbxRequestSales.Size = new System.Drawing.Size(1175, 292);
             this.lbxRequestSales.TabIndex = 31;
             // 
             // btnHomeSales
@@ -414,13 +415,11 @@ namespace MediaBazaarProject
             // 
             // lbxStockSales
             // 
-            this.lbxStockSales.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.lbxStockSales.FormattingEnabled = true;
-            this.lbxStockSales.ItemHeight = 15;
+            this.lbxStockSales.ItemHeight = 18;
             this.lbxStockSales.Location = new System.Drawing.Point(126, 107);
             this.lbxStockSales.Name = "lbxStockSales";
-            this.lbxStockSales.Size = new System.Drawing.Size(680, 334);
+            this.lbxStockSales.Size = new System.Drawing.Size(680, 328);
             this.lbxStockSales.TabIndex = 0;
             // 
             // groupBox2
@@ -451,7 +450,7 @@ namespace MediaBazaarProject
             // 
             this.nudAmountSales.Location = new System.Drawing.Point(163, 61);
             this.nudAmountSales.Name = "nudAmountSales";
-            this.nudAmountSales.Size = new System.Drawing.Size(120, 21);
+            this.nudAmountSales.Size = new System.Drawing.Size(120, 24);
             this.nudAmountSales.TabIndex = 26;
             // 
             // lblAmountSales
@@ -459,7 +458,7 @@ namespace MediaBazaarProject
             this.lblAmountSales.AutoSize = true;
             this.lblAmountSales.Location = new System.Drawing.Point(21, 63);
             this.lblAmountSales.Name = "lblAmountSales";
-            this.lblAmountSales.Size = new System.Drawing.Size(115, 15);
+            this.lblAmountSales.Size = new System.Drawing.Size(137, 18);
             this.lblAmountSales.TabIndex = 25;
             this.lblAmountSales.Text = "Requested amount:";
             // 
@@ -489,15 +488,34 @@ namespace MediaBazaarProject
             this.tabWarehouse.Controls.Add(this.lblAmountWarehouse);
             this.tabWarehouse.Controls.Add(this.lbxStockWarehouse);
             this.tabWarehouse.Controls.Add(this.groupBox1);
-            this.tabWarehouse.Location = new System.Drawing.Point(4, 24);
+            this.tabWarehouse.Location = new System.Drawing.Point(4, 27);
             this.tabWarehouse.Name = "tabWarehouse";
             this.tabWarehouse.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWarehouse.Size = new System.Drawing.Size(1421, 851);
+            this.tabWarehouse.Size = new System.Drawing.Size(1421, 848);
             this.tabWarehouse.TabIndex = 2;
             this.tabWarehouse.Text = "WarehouseTab";
             // 
+            // tbxReasonRejection
+            // 
+            this.tbxReasonRejection.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.tbxReasonRejection.Location = new System.Drawing.Point(1216, 721);
+            this.tbxReasonRejection.Name = "tbxReasonRejection";
+            this.tbxReasonRejection.Size = new System.Drawing.Size(188, 24);
+            this.tbxReasonRejection.TabIndex = 49;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1216, 682);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 18);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "Reason For Rejection";
+            // 
             // pictureBox7
             // 
+            this.pictureBox7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox7.BackColor = System.Drawing.Color.Maroon;
             this.pictureBox7.Image = global::MediaBazaarProject.Properties.Resources.decline;
             this.pictureBox7.Location = new System.Drawing.Point(42, 635);
@@ -509,6 +527,7 @@ namespace MediaBazaarProject
             // 
             // pictureBox6
             // 
+            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox6.BackColor = System.Drawing.Color.YellowGreen;
             this.pictureBox6.Image = global::MediaBazaarProject.Properties.Resources.acceptIcon;
             this.pictureBox6.Location = new System.Drawing.Point(42, 531);
@@ -520,16 +539,19 @@ namespace MediaBazaarProject
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(634, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 26);
+            this.label2.Size = new System.Drawing.Size(159, 32);
             this.label2.TabIndex = 44;
             this.label2.Text = "Warehouse";
             // 
             // btnResetFiltersWarehouse
             // 
+            this.btnResetFiltersWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnResetFiltersWarehouse.Location = new System.Drawing.Point(259, 134);
             this.btnResetFiltersWarehouse.Name = "btnResetFiltersWarehouse";
             this.btnResetFiltersWarehouse.Size = new System.Drawing.Size(94, 24);
@@ -540,6 +562,7 @@ namespace MediaBazaarProject
             // 
             // btnFilterProductsWarehouse
             // 
+            this.btnFilterProductsWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnFilterProductsWarehouse.Location = new System.Drawing.Point(159, 134);
             this.btnFilterProductsWarehouse.Name = "btnFilterProductsWarehouse";
             this.btnFilterProductsWarehouse.Size = new System.Drawing.Size(94, 24);
@@ -550,27 +573,30 @@ namespace MediaBazaarProject
             // 
             // tbFilterProductsWarehouse
             // 
+            this.tbFilterProductsWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbFilterProductsWarehouse.Location = new System.Drawing.Point(159, 75);
             this.tbFilterProductsWarehouse.Name = "tbFilterProductsWarehouse";
             this.tbFilterProductsWarehouse.PlaceholderText = "Search...";
-            this.tbFilterProductsWarehouse.Size = new System.Drawing.Size(164, 21);
+            this.tbFilterProductsWarehouse.Size = new System.Drawing.Size(164, 24);
             this.tbFilterProductsWarehouse.TabIndex = 41;
             // 
             // lblFilterProductsByWarehouse
             // 
+            this.lblFilterProductsByWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblFilterProductsByWarehouse.AutoSize = true;
             this.lblFilterProductsByWarehouse.Location = new System.Drawing.Point(163, 107);
             this.lblFilterProductsByWarehouse.Name = "lblFilterProductsByWarehouse";
-            this.lblFilterProductsByWarehouse.Size = new System.Drawing.Size(53, 15);
+            this.lblFilterProductsByWarehouse.Size = new System.Drawing.Size(65, 18);
             this.lblFilterProductsByWarehouse.TabIndex = 40;
             this.lblFilterProductsByWarehouse.Text = "Filter By:";
             // 
             // rbFilterProductsByBrandWarehouse
             // 
+            this.rbFilterProductsByBrandWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rbFilterProductsByBrandWarehouse.AutoSize = true;
             this.rbFilterProductsByBrandWarehouse.Location = new System.Drawing.Point(404, 105);
             this.rbFilterProductsByBrandWarehouse.Name = "rbFilterProductsByBrandWarehouse";
-            this.rbFilterProductsByBrandWarehouse.Size = new System.Drawing.Size(58, 19);
+            this.rbFilterProductsByBrandWarehouse.Size = new System.Drawing.Size(68, 22);
             this.rbFilterProductsByBrandWarehouse.TabIndex = 39;
             this.rbFilterProductsByBrandWarehouse.TabStop = true;
             this.rbFilterProductsByBrandWarehouse.Text = "Brand";
@@ -578,10 +604,11 @@ namespace MediaBazaarProject
             // 
             // rbFilterProductsByCategoryWarehouse
             // 
+            this.rbFilterProductsByCategoryWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rbFilterProductsByCategoryWarehouse.AutoSize = true;
             this.rbFilterProductsByCategoryWarehouse.Location = new System.Drawing.Point(309, 105);
             this.rbFilterProductsByCategoryWarehouse.Name = "rbFilterProductsByCategoryWarehouse";
-            this.rbFilterProductsByCategoryWarehouse.Size = new System.Drawing.Size(73, 19);
+            this.rbFilterProductsByCategoryWarehouse.Size = new System.Drawing.Size(89, 22);
             this.rbFilterProductsByCategoryWarehouse.TabIndex = 38;
             this.rbFilterProductsByCategoryWarehouse.TabStop = true;
             this.rbFilterProductsByCategoryWarehouse.Text = "Category";
@@ -589,10 +616,11 @@ namespace MediaBazaarProject
             // 
             // rbFilterProductsByNameWarehouse
             // 
+            this.rbFilterProductsByNameWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.rbFilterProductsByNameWarehouse.AutoSize = true;
             this.rbFilterProductsByNameWarehouse.Location = new System.Drawing.Point(234, 105);
             this.rbFilterProductsByNameWarehouse.Name = "rbFilterProductsByNameWarehouse";
-            this.rbFilterProductsByNameWarehouse.Size = new System.Drawing.Size(59, 19);
+            this.rbFilterProductsByNameWarehouse.Size = new System.Drawing.Size(69, 22);
             this.rbFilterProductsByNameWarehouse.TabIndex = 37;
             this.rbFilterProductsByNameWarehouse.TabStop = true;
             this.rbFilterProductsByNameWarehouse.Text = "Name";
@@ -603,43 +631,45 @@ namespace MediaBazaarProject
             this.lblWarehouseQuantity.AutoSize = true;
             this.lblWarehouseQuantity.Location = new System.Drawing.Point(838, 131);
             this.lblWarehouseQuantity.Name = "lblWarehouseQuantity";
-            this.lblWarehouseQuantity.Size = new System.Drawing.Size(115, 15);
+            this.lblWarehouseQuantity.Size = new System.Drawing.Size(139, 18);
             this.lblWarehouseQuantity.TabIndex = 36;
             this.lblWarehouseQuantity.Text = "Warehouse quantity";
             // 
             // lbWarehouseQuantity
             // 
-            this.lbWarehouseQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbWarehouseQuantity.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbWarehouseQuantity.FormattingEnabled = true;
-            this.lbWarehouseQuantity.ItemHeight = 15;
+            this.lbWarehouseQuantity.ItemHeight = 18;
             this.lbWarehouseQuantity.Location = new System.Drawing.Point(838, 164);
             this.lbWarehouseQuantity.Name = "lbWarehouseQuantity";
-            this.lbWarehouseQuantity.Size = new System.Drawing.Size(176, 304);
+            this.lbWarehouseQuantity.Size = new System.Drawing.Size(176, 292);
             this.lbWarehouseQuantity.TabIndex = 35;
             // 
             // lblInventoryWarehouse
             // 
+            this.lblInventoryWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblInventoryWarehouse.AutoSize = true;
             this.lblInventoryWarehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblInventoryWarehouse.Location = new System.Drawing.Point(159, 35);
             this.lblInventoryWarehouse.Name = "lblInventoryWarehouse";
-            this.lblInventoryWarehouse.Size = new System.Drawing.Size(74, 20);
+            this.lblInventoryWarehouse.Size = new System.Drawing.Size(92, 25);
             this.lblInventoryWarehouse.TabIndex = 34;
             this.lblInventoryWarehouse.Text = "Inventory";
             // 
             // lblRequestWarehouse
             // 
+            this.lblRequestWarehouse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblRequestWarehouse.AutoSize = true;
             this.lblRequestWarehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblRequestWarehouse.Location = new System.Drawing.Point(37, 483);
             this.lblRequestWarehouse.Name = "lblRequestWarehouse";
-            this.lblRequestWarehouse.Size = new System.Drawing.Size(78, 20);
+            this.lblRequestWarehouse.Size = new System.Drawing.Size(94, 25);
             this.lblRequestWarehouse.TabIndex = 33;
             this.lblRequestWarehouse.Text = "Requests";
             // 
             // btnRejectRequest
             // 
+            this.btnRejectRequest.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnRejectRequest.BackColor = System.Drawing.Color.Maroon;
             this.btnRejectRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnRejectRequest.Location = new System.Drawing.Point(34, 627);
@@ -653,6 +683,7 @@ namespace MediaBazaarProject
             // 
             // btnAcceptRequest
             // 
+            this.btnAcceptRequest.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAcceptRequest.BackColor = System.Drawing.Color.YellowGreen;
             this.btnAcceptRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAcceptRequest.Location = new System.Drawing.Point(34, 523);
@@ -666,18 +697,18 @@ namespace MediaBazaarProject
             // 
             // lbxRequestWarehouse
             // 
-            this.lbxRequestWarehouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbxRequestWarehouse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbxRequestWarehouse.FormattingEnabled = true;
-            this.lbxRequestWarehouse.ItemHeight = 15;
+            this.lbxRequestWarehouse.ItemHeight = 18;
             this.lbxRequestWarehouse.Location = new System.Drawing.Point(142, 524);
             this.lbxRequestWarehouse.Name = "lbxRequestWarehouse";
-            this.lbxRequestWarehouse.Size = new System.Drawing.Size(1033, 304);
+            this.lbxRequestWarehouse.Size = new System.Drawing.Size(1033, 292);
             this.lbxRequestWarehouse.TabIndex = 30;
             this.lbxRequestWarehouse.SelectedIndexChanged += new System.EventHandler(this.lbxRequestWarehouse_SelectedIndexChanged);
             // 
             // btnHomeWarehouse
             // 
+            this.btnHomeWarehouse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHomeWarehouse.Location = new System.Drawing.Point(1310, 28);
             this.btnHomeWarehouse.Name = "btnHomeWarehouse";
             this.btnHomeWarehouse.Size = new System.Drawing.Size(75, 23);
@@ -688,26 +719,27 @@ namespace MediaBazaarProject
             // 
             // lblAmountWarehouse
             // 
+            this.lblAmountWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblAmountWarehouse.AutoSize = true;
             this.lblAmountWarehouse.Location = new System.Drawing.Point(1031, 243);
             this.lblAmountWarehouse.Name = "lblAmountWarehouse";
-            this.lblAmountWarehouse.Size = new System.Drawing.Size(99, 15);
+            this.lblAmountWarehouse.Size = new System.Drawing.Size(117, 18);
             this.lblAmountWarehouse.TabIndex = 27;
             this.lblAmountWarehouse.Text = "Needed amount:";
             // 
             // lbxStockWarehouse
             // 
-            this.lbxStockWarehouse.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbxStockWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbxStockWarehouse.FormattingEnabled = true;
-            this.lbxStockWarehouse.ItemHeight = 15;
+            this.lbxStockWarehouse.ItemHeight = 18;
             this.lbxStockWarehouse.Location = new System.Drawing.Point(159, 164);
             this.lbxStockWarehouse.Name = "lbxStockWarehouse";
-            this.lbxStockWarehouse.Size = new System.Drawing.Size(680, 304);
+            this.lbxStockWarehouse.Size = new System.Drawing.Size(680, 292);
             this.lbxStockWarehouse.TabIndex = 0;
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Controls.Add(this.nudAmountWarehouse);
             this.groupBox1.Controls.Add(this.btnAddStock);
@@ -733,7 +765,7 @@ namespace MediaBazaarProject
             // 
             this.nudAmountWarehouse.Location = new System.Drawing.Point(134, 77);
             this.nudAmountWarehouse.Name = "nudAmountWarehouse";
-            this.nudAmountWarehouse.Size = new System.Drawing.Size(120, 21);
+            this.nudAmountWarehouse.Size = new System.Drawing.Size(120, 24);
             this.nudAmountWarehouse.TabIndex = 28;
             // 
             // btnAddStock
@@ -755,24 +787,26 @@ namespace MediaBazaarProject
             this.tabLeaveRequestsOverview.Controls.Add(this.lblLeaveRequestsOverview);
             this.tabLeaveRequestsOverview.Controls.Add(this.btnHomeFromLeaveRequests);
             this.tabLeaveRequestsOverview.Controls.Add(this.panel1);
-            this.tabLeaveRequestsOverview.Location = new System.Drawing.Point(4, 24);
+            this.tabLeaveRequestsOverview.Location = new System.Drawing.Point(4, 27);
             this.tabLeaveRequestsOverview.Name = "tabLeaveRequestsOverview";
-            this.tabLeaveRequestsOverview.Size = new System.Drawing.Size(1421, 851);
+            this.tabLeaveRequestsOverview.Size = new System.Drawing.Size(1421, 848);
             this.tabLeaveRequestsOverview.TabIndex = 3;
             this.tabLeaveRequestsOverview.Text = "MyLeaveRequests";
             // 
             // lblLeaveRequestsOverview
             // 
+            this.lblLeaveRequestsOverview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblLeaveRequestsOverview.AutoSize = true;
             this.lblLeaveRequestsOverview.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblLeaveRequestsOverview.Location = new System.Drawing.Point(159, 105);
             this.lblLeaveRequestsOverview.Name = "lblLeaveRequestsOverview";
-            this.lblLeaveRequestsOverview.Size = new System.Drawing.Size(229, 24);
+            this.lblLeaveRequestsOverview.Size = new System.Drawing.Size(293, 29);
             this.lblLeaveRequestsOverview.TabIndex = 3;
             this.lblLeaveRequestsOverview.Text = "Leave Requests Overview";
             // 
             // btnHomeFromLeaveRequests
             // 
+            this.btnHomeFromLeaveRequests.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHomeFromLeaveRequests.Location = new System.Drawing.Point(1296, 33);
             this.btnHomeFromLeaveRequests.Name = "btnHomeFromLeaveRequests";
             this.btnHomeFromLeaveRequests.Size = new System.Drawing.Size(94, 29);
@@ -791,11 +825,16 @@ namespace MediaBazaarProject
             // 
             // dgEmployeesRequests
             // 
+            this.dgEmployeesRequests.AllowUserToAddRows = false;
+            this.dgEmployeesRequests.AllowUserToDeleteRows = false;
+            this.dgEmployeesRequests.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgEmployeesRequests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgEmployeesRequests.BackgroundColor = System.Drawing.Color.White;
             this.dgEmployeesRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEmployeesRequests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgEmployeesRequests.Location = new System.Drawing.Point(0, 0);
             this.dgEmployeesRequests.Name = "dgEmployeesRequests";
+            this.dgEmployeesRequests.ReadOnly = true;
             this.dgEmployeesRequests.RowHeadersWidth = 51;
             this.dgEmployeesRequests.RowTemplate.Height = 29;
             this.dgEmployeesRequests.Size = new System.Drawing.Size(1035, 480);
@@ -817,15 +856,16 @@ namespace MediaBazaarProject
             this.tabBarcodeScanner.Controls.Add(this.lbScannedItems);
             this.tabBarcodeScanner.Controls.Add(this.pbSelectedItemBarcode);
             this.tabBarcodeScanner.Controls.Add(this.lbProductsInSales);
-            this.tabBarcodeScanner.Location = new System.Drawing.Point(4, 24);
+            this.tabBarcodeScanner.Location = new System.Drawing.Point(4, 27);
             this.tabBarcodeScanner.Name = "tabBarcodeScanner";
             this.tabBarcodeScanner.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBarcodeScanner.Size = new System.Drawing.Size(1421, 851);
+            this.tabBarcodeScanner.Size = new System.Drawing.Size(1421, 848);
             this.tabBarcodeScanner.TabIndex = 4;
             this.tabBarcodeScanner.Text = "BarcodeScanner";
             // 
             // pictureBox8
             // 
+            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox8.Image = global::MediaBazaarProject.Properties.Resources.arrowIcon;
             this.pictureBox8.Location = new System.Drawing.Point(341, 548);
             this.pictureBox8.Name = "pictureBox8";
@@ -836,6 +876,7 @@ namespace MediaBazaarProject
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(75, 517);
             this.label4.Name = "label4";
@@ -845,41 +886,47 @@ namespace MediaBazaarProject
             // 
             // lblProductsrepository
             // 
+            this.lblProductsrepository.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblProductsrepository.AutoSize = true;
             this.lblProductsrepository.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblProductsrepository.Location = new System.Drawing.Point(523, 31);
             this.lblProductsrepository.Name = "lblProductsrepository";
-            this.lblProductsrepository.Size = new System.Drawing.Size(199, 26);
+            this.lblProductsrepository.Size = new System.Drawing.Size(258, 32);
             this.lblProductsrepository.TabIndex = 10;
             this.lblProductsrepository.Text = "Products repository";
             this.lblProductsrepository.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblOverallPrice
             // 
+            this.lblOverallPrice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblOverallPrice.AutoSize = true;
             this.lblOverallPrice.Location = new System.Drawing.Point(1142, 779);
             this.lblOverallPrice.Name = "lblOverallPrice";
-            this.lblOverallPrice.Size = new System.Drawing.Size(78, 15);
+            this.lblOverallPrice.Size = new System.Drawing.Size(94, 18);
             this.lblOverallPrice.TabIndex = 9;
             this.lblOverallPrice.Text = "Overall price:";
             // 
             // tbOverallPrice
             // 
+            this.tbOverallPrice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.tbOverallPrice.Location = new System.Drawing.Point(1242, 776);
             this.tbOverallPrice.Name = "tbOverallPrice";
-            this.tbOverallPrice.Size = new System.Drawing.Size(84, 21);
+            this.tbOverallPrice.Size = new System.Drawing.Size(84, 24);
             this.tbOverallPrice.TabIndex = 8;
             // 
             // tbScannedItemBarcode
             // 
+            this.tbScannedItemBarcode.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.tbScannedItemBarcode.Location = new System.Drawing.Point(485, 720);
             this.tbScannedItemBarcode.Name = "tbScannedItemBarcode";
-            this.tbScannedItemBarcode.Size = new System.Drawing.Size(335, 21);
+            this.tbScannedItemBarcode.Size = new System.Drawing.Size(335, 24);
             this.tbScannedItemBarcode.TabIndex = 7;
             this.tbScannedItemBarcode.TextChanged += new System.EventHandler(this.tbScannedItemBarcode_TextChanged);
             // 
             // btnClearScannedItemsList
             // 
+            this.btnClearScannedItemsList.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnClearScannedItemsList.Location = new System.Drawing.Point(914, 773);
             this.btnClearScannedItemsList.Name = "btnClearScannedItemsList";
             this.btnClearScannedItemsList.Size = new System.Drawing.Size(94, 29);
@@ -890,44 +937,49 @@ namespace MediaBazaarProject
             // 
             // lblSelectedItemBarcode
             // 
+            this.lblSelectedItemBarcode.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblSelectedItemBarcode.AutoSize = true;
             this.lblSelectedItemBarcode.Location = new System.Drawing.Point(485, 486);
             this.lblSelectedItemBarcode.Name = "lblSelectedItemBarcode";
-            this.lblSelectedItemBarcode.Size = new System.Drawing.Size(139, 15);
+            this.lblSelectedItemBarcode.Size = new System.Drawing.Size(166, 18);
             this.lblSelectedItemBarcode.TabIndex = 5;
             this.lblSelectedItemBarcode.Text = "Selected item\'s barcode";
             // 
             // lblScannedItems
             // 
+            this.lblScannedItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblScannedItems.AutoSize = true;
             this.lblScannedItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblScannedItems.Location = new System.Drawing.Point(914, 74);
             this.lblScannedItems.Name = "lblScannedItems";
-            this.lblScannedItems.Size = new System.Drawing.Size(115, 20);
+            this.lblScannedItems.Size = new System.Drawing.Size(142, 25);
             this.lblScannedItems.TabIndex = 4;
             this.lblScannedItems.Text = "Scanned items";
             // 
             // lblSalesProducts
             // 
+            this.lblSalesProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lblSalesProducts.AutoSize = true;
             this.lblSalesProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSalesProducts.Location = new System.Drawing.Point(85, 74);
             this.lblSalesProducts.Name = "lblSalesProducts";
-            this.lblSalesProducts.Size = new System.Drawing.Size(129, 20);
+            this.lblSalesProducts.Size = new System.Drawing.Size(160, 25);
             this.lblSalesProducts.TabIndex = 3;
             this.lblSalesProducts.Text = "Products in sales";
             // 
             // lbScannedItems
             // 
+            this.lbScannedItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbScannedItems.FormattingEnabled = true;
-            this.lbScannedItems.ItemHeight = 15;
+            this.lbScannedItems.ItemHeight = 18;
             this.lbScannedItems.Location = new System.Drawing.Point(914, 106);
             this.lbScannedItems.Name = "lbScannedItems";
-            this.lbScannedItems.Size = new System.Drawing.Size(413, 649);
+            this.lbScannedItems.Size = new System.Drawing.Size(413, 634);
             this.lbScannedItems.TabIndex = 2;
             // 
             // pbSelectedItemBarcode
             // 
+            this.pbSelectedItemBarcode.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pbSelectedItemBarcode.Location = new System.Drawing.Point(485, 517);
             this.pbSelectedItemBarcode.Name = "pbSelectedItemBarcode";
             this.pbSelectedItemBarcode.Size = new System.Drawing.Size(335, 186);
@@ -936,33 +988,18 @@ namespace MediaBazaarProject
             // 
             // lbProductsInSales
             // 
+            this.lbProductsInSales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.lbProductsInSales.FormattingEnabled = true;
-            this.lbProductsInSales.ItemHeight = 15;
+            this.lbProductsInSales.ItemHeight = 18;
             this.lbProductsInSales.Location = new System.Drawing.Point(85, 106);
             this.lbProductsInSales.Name = "lbProductsInSales";
-            this.lbProductsInSales.Size = new System.Drawing.Size(735, 304);
+            this.lbProductsInSales.Size = new System.Drawing.Size(735, 292);
             this.lbProductsInSales.TabIndex = 0;
             this.lbProductsInSales.SelectedIndexChanged += new System.EventHandler(this.lbProductsInSales_SelectedIndexChanged);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1216, 682);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 15);
-            this.label5.TabIndex = 48;
-            this.label5.Text = "Reason For Rejection";
-            // 
-            // tbxReasonRejection
-            // 
-            this.tbxReasonRejection.Location = new System.Drawing.Point(1216, 721);
-            this.tbxReasonRejection.Name = "tbxReasonRejection";
-            this.tbxReasonRejection.Size = new System.Drawing.Size(188, 21);
-            this.tbxReasonRejection.TabIndex = 49;
-            // 
             // WorkerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(1446, 893);

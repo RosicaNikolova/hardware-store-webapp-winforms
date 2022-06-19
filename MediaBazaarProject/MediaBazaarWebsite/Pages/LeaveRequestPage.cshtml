@@ -4,11 +4,12 @@
     ViewData["Title"] = "Schedule";
     Layout = "_LayoutSignedIn";
 }
-<h1 class="titleRequest">
-    Request page
-</h1>
+
 <div class="requestContainer">
-    <div class="requestContainer_leaveRequest">
+    <h1 class="titleRequest"> @*grid area header*@
+        Request page
+    </h1>
+    <div class="requestContainer_leaveRequest"> @*grid area leave*@
         <form method="post">
             <h2>Select date for leave request</h2>
             <input type="date" asp-for="@Model.LeaveRequest.RequestedDate">
@@ -17,13 +18,13 @@
         </form>
         <p class="notificationMessage">@Model.MessageLeave</p>
     </div>
-    <div class="requestContainer_preferenceRequest">
+    <div class="requestContainer_preferenceRequest"> @*grid area preferred*@
         <form method="post">
             <h2>Select date of your prefered shift for next week</h2>
             <select asp-for="PreferedShift.RequestedDateDay" required>
                 @foreach (var select in @Model.listDays)
                 {
-                <option asp-for="PreferedShift.RequestedDateDay">@select.ToString()</option>
+                    <option asp-for="PreferedShift.RequestedDateDay">@select.ToString()</option>
                 }
             </select>
             <input type="submit" asp-page-handler="PREFERENCEREQUEST" value="Confirm PREFERENCE request" />

@@ -20,6 +20,9 @@ nav {
     justify-content: end;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
 }
+    nav a {
+        padding: 15px;
+    }
 
     nav ul li a {
         text-decoration: none;
@@ -29,7 +32,11 @@ nav {
 header{
     padding-bottom: 20px
 }
-
+nav a:hover {
+    border-radius: 50px;
+    color: white;
+    background-color: #308695;
+}
 /*-------------Log In Page-----------------*/
 body {
     font-family: 'Roboto', sans-serif;
@@ -192,9 +199,15 @@ body {
     display: flex;
     flex-direction: column;
 }
+.container-for-newslettercontainer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .container-newsletter {
     height: 70vh;
-    width: 500px;
+    width: 450px;
     overflow-y: scroll;
     overflow-x: hidden;
     text-align: left;
@@ -204,7 +217,6 @@ body {
     padding: 10px 20px 50px 20px;
     background-color: white;
     /*box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;*/
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .newsbox {
     border-radius: 10px;
@@ -214,6 +226,9 @@ body {
         color: white;
         background-color: #74bbc7;
         border-radius: 10px;
+    }
+    .newsbox p {
+        font-size: 15px;
     }
 .container-newsletter-newsbox {
     padding: 10px 10px 50px 10px;
@@ -255,19 +270,27 @@ body {
 }
 
 /*--------------------RequestPage-------------------*/
+
+.requestContainer {
+    padding: 10px;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    grid-template-areas:
+        'header header'
+        'leave prefered';
+    gap: 20px;
+    height: 500px;
+}
 .titleRequest {
-    padding-left: 5%;
+    grid-area: header;
     color: #508791;
 }
-.requestContainer {
-    display: flex;
-    align-items:center;
-    text-align: center;
-    height: 500px;
-    justify-content: space-evenly;
-}
 .requestContainer_leaveRequest {
-    width: 40%;
+    grid-area: leave;
+    width: 80%;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -282,7 +305,8 @@ body {
     color: #729fa7;
 }
 .requestContainer_preferenceRequest {
-    width: 40%;
+    grid-area: prefered;
+    width: 80%;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -300,9 +324,6 @@ body {
     font-size:15px;
     color:red;
 }
-
-
-
 .navigationButtons a {
     text-decoration: none;
     margin-top: 15px;
@@ -319,6 +340,30 @@ body {
     margin-bottom:20px;
     font-size: 40px;
 
+}
+@media screen and (max-width: 640px) {
+    .homePage {
+        padding-bottom: 20px;
+        display: flex;
+        text-align: center;
+        align-items:center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 20px;
+        color: #508791;
+    }
+    .requestContainer {
+        display: grid;
+        text-align: center;
+        justify-content: center;
+        grid-template-columns: 1fr;
+        place-items: center;
+        grid-template-areas:
+            'header'
+            'leave'
+            'prefered';
+        gap: 20px;
+    }
 }
 
 
