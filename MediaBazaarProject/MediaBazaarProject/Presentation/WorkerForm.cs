@@ -169,7 +169,7 @@ namespace MediaBazaarProject
             if (nudAmountSales.Value > 0)
             {
                 Product product = SelectedProduct();
-                requestManager.Create(user.Id, product.ProductId, Convert.ToInt32(nudAmountSales.Value), EnumRequestStatus.PENDING);
+                requestManager.Create(user.Id, product.ProductId, Convert.ToInt32(nudAmountSales.Value), EnumRequestStatus.PENDING, "");
                 MessageBox.Show("Item has been requested");
                 List<Request> requests = requestManager.GetAllRequestsList();
                 lbxRequestSales.Items.Clear();

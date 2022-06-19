@@ -16,7 +16,7 @@ namespace MediaBazaarLibrary.Business
             return requestRepository.GetRequests();
         }
 
-        public void Create(int empId, int productId, int requestAmount, EnumRequestStatus status)
+        public void Create(int empId, int productId, int requestAmount, EnumRequestStatus status, string reason)
         {
             try
             {
@@ -25,6 +25,7 @@ namespace MediaBazaarLibrary.Business
                 request.ProductId = productId;
                 request.RequestedAmount = requestAmount;
                 request.Status = status;
+                request.Reason = reason;
                 requestRepository.CreateRequest(request);
             }
             catch (Exception error)

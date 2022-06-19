@@ -49,13 +49,14 @@ namespace MediaBazaarLibrary.Persistence
             {
                 using (MySqlConnection conn = DatabaseConnection.CreateConnection())
                 {
-                    string sql = "INSERT into request (EmployeeId, ProductId, RequestedAmount, RequestStatus) VALUES(@EmployeeId, @ProductId, @RequestedAmount, @RequestStatus)";
+                    string sql = "INSERT into request (EmployeeId, ProductId, RequestedAmount, RequestStatus, Reason) VALUES(@EmployeeId, @ProductId, @RequestedAmount, @RequestStatus, @Reason)";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("EmployeeId", request.EmployeeId);
                     cmd.Parameters.AddWithValue("ProductId", request.ProductId);
                     cmd.Parameters.AddWithValue("RequestedAmount", request.RequestedAmount);
                     cmd.Parameters.AddWithValue("RequestStatus", request.Status.ToString());
+                    cmd.Parameters.AddWithValue("Reason", request.Reason);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                 }
