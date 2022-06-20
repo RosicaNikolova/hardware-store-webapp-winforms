@@ -575,7 +575,7 @@ namespace MediaBazaarProject
                 shift = "EVENING";
             }
 
-            if (shiftManager.RemoveShift(date, shift, employee))
+            if (shift != string.Empty && shiftManager.RemoveShift(date, shift, employee))
             {
                 MessageBox.Show("Employee successfully removed");
             }

@@ -51,32 +51,47 @@ namespace MediaBazaarProject.Presentation
             tbQWare.Text = productForUpdate.QuantityWarehouse.ToString();
             tbQSale.Text = productForUpdate.QuantitySales.ToString();
             tbBarcode.Text = productForUpdate.Barcode.ToString();
+            tbBarcode.Enabled = false;
         }
 
         private void btnAddEdit_Click(object sender, EventArgs e)
         {
             if (tbName.Text != string.Empty && tbDesc.Text != string.Empty && tbManu.Text != string.Empty && cbCate.Text != string.Empty && tbQWare.Text != string.Empty && tbQSale.Text != string.Empty && tbBarcode.Text != string.Empty)
             {
-                if (optionForm == 1)
+                if (tbBarcode.Text.Length == 9)
                 {
-                    productManager.Create(tbName.Text, tbDesc.Text, Convert.ToDouble(tbPrPrice.Text), tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
-                    MessageBox.Show("Product Added!!!");
-                    this.Close();
-                }
-                else
-                {
-                    if (productForUpdate != null)
+                    if (optionForm == 1)
                     {
-                        productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, Convert.ToDouble(tbPrPrice.Text), tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
-                        MessageBox.Show("Product edited!!!");
+                        try
+                        {
+                            productManager.Create(tbName.Text, tbDesc.Text, Convert.ToDouble(tbPrPrice.Text), tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
+                            MessageBox.Show("Product Added!!!");
+                        }
+                        catch (Exception error)
+                        {
+                            MessageBox.Show(error.Message);
+                        }
+                        
                         this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("There has been an error in the system.");
-                        this.Close();
-                    }
+                        if (productForUpdate != null)
+                        {
+                            productManager.Edit(productForUpdate, tbName.Text, tbDesc.Text, Convert.ToDouble(tbPrPrice.Text), tbManu.Text, cbCate.Text, Convert.ToInt32(tbQWare.Text), Convert.ToInt32(tbQSale.Text), Convert.ToInt32(tbBarcode.Text));
+                            MessageBox.Show("Product edited!!!");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("There has been an error in the system.");
+                            this.Close();
+                        }
 
+                    }
+                }
+                else {
+                    MessageBox.Show("Barcode must be 9 digits long!!!");
                 }
             }
             else

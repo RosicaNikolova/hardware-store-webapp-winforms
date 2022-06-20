@@ -10,6 +10,8 @@ namespace MediaBazaarLibrary.Persistence
 {
     public class Leave_Preference_RequestRepository
     {
+        private string firstName;
+        private string lastName;
         public int checkForNrOfRequestsAMonth(int employeeID, DateTime requestedDateMonth) {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
@@ -79,7 +81,6 @@ namespace MediaBazaarLibrary.Persistence
 
         }
 
-        //update preferedShift status CHECKKKKK!!!! - ADMIN FORM, selects accept or reject
         public void updatePreferedShiftStatus(PreferedShift preferedShift) {
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {//check if the column is RequestID or which one it is
@@ -120,13 +121,12 @@ namespace MediaBazaarLibrary.Persistence
                 return preferedShift;
             }
         }
-        //list of all prefered shifts requests for admin form, CHECK IF WOOOOOOOORKS!!!!!!
         public List<PreferedShift> getPreferedShifts() {
             List<PreferedShift> allPreferedShifts = new List<PreferedShift>();
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
 
-                string sql = "SELECT e.EmployeeID, RequestID, Status, RequestedDateDay from employees as e right join prefered_shifts as p_s on e.EmployeeID = p_s.EmployeeID";
+                string sql = "SELECT e.EmployeeID, e.FirstName, e.LastName, RequestID, Status, RequestedDateDay from employees as e right join prefered_shifts as p_s on e.EmployeeID = p_s.EmployeeID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 conn.Open();
@@ -139,6 +139,9 @@ namespace MediaBazaarLibrary.Persistence
                 {
                     preferedShift = new PreferedShift();
                     preferedShift.EmployeeID = dr.GetInt32("EmployeeID");
+                    firstName = dr.GetString("FirstName");
+                    lastName = dr.GetString("LastName");
+                    preferedShift.Name = firstName + " " + lastName;
                     preferedShift.RequestID = dr.GetInt32("RequestID");
                     preferedShift.RequestedDateDay = dr.GetString("RequestedDateDay");
                     preferedShift.Status = dr.GetString("Status");
@@ -147,7 +150,6 @@ namespace MediaBazaarLibrary.Persistence
             }
             return allPreferedShifts;
         }
-        //lists all prefered requests per employeeID, WORKSSSSSSS!!!!
         public List<PreferedShift> getPreferedShiftsEmployee(int employeeID)
         {
             List<PreferedShift> allPreferedShifts = new List<PreferedShift>();
@@ -239,7 +241,7 @@ namespace MediaBazaarLibrary.Persistence
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
 
-                string sql = "SELECT e.EmployeeID, RequestID, RequestStatus, RequestedDate from employees as e right join leave_requests as l_s on e.EmployeeID = l_s.EmployeeID";
+                string sql = "SELECT e.EmployeeID, e.FirstName, e.LastName, RequestID, RequestStatus, RequestedDate from employees as e right join leave_requests as l_s on e.EmployeeID = l_s.EmployeeID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 
                 conn.Open();
@@ -252,6 +254,9 @@ namespace MediaBazaarLibrary.Persistence
                 {
                     leaveRequest = new LeaveRequest();
                     leaveRequest.EmployeeID = dr.GetInt32("EmployeeID");
+                    firstName = dr.GetString("FirstName");
+                    lastName = dr.GetString("LastName");
+                    leaveRequest.Name = firstName + " " + lastName;
                     leaveRequest.RequestID = dr.GetInt32("RequestID");
                     leaveRequest.RequestedDate = dr.GetDateTime("RequestedDate");
                     leaveRequest.RequestStatus = dr.GetString("RequestStatus");

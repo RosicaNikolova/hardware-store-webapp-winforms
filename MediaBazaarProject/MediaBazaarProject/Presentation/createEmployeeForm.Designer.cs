@@ -54,9 +54,6 @@ namespace MediaBazaarProject
             this.lblCovidVaccinated = new System.Windows.Forms.Label();
             this.rBtnYes = new System.Windows.Forms.RadioButton();
             this.rBtnNo = new System.Windows.Forms.RadioButton();
-            this.lblIsAccountActive = new System.Windows.Forms.Label();
-            this.rBtnActive = new System.Windows.Forms.RadioButton();
-            this.rBtnNotActive = new System.Windows.Forms.RadioButton();
             this.lblAge = new System.Windows.Forms.Label();
             this.tbAge = new System.Windows.Forms.TextBox();
             this.lblNationality = new System.Windows.Forms.Label();
@@ -66,14 +63,17 @@ namespace MediaBazaarProject
             this.label11 = new System.Windows.Forms.Label();
             this.rBtnMale = new System.Windows.Forms.RadioButton();
             this.rBtnFemale = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.rBtnActive = new System.Windows.Forms.RadioButton();
+            this.lblIsAccountActive = new System.Windows.Forms.Label();
+            this.rBtnNotActive = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -286,37 +286,6 @@ namespace MediaBazaarProject
             this.rBtnNo.Text = "No";
             this.rBtnNo.UseVisualStyleBackColor = true;
             // 
-            // lblIsAccountActive
-            // 
-            this.lblIsAccountActive.AutoSize = true;
-            this.lblIsAccountActive.Location = new System.Drawing.Point(20, 16);
-            this.lblIsAccountActive.Name = "lblIsAccountActive";
-            this.lblIsAccountActive.Size = new System.Drawing.Size(125, 20);
-            this.lblIsAccountActive.TabIndex = 25;
-            this.lblIsAccountActive.Text = "Is Account Active:";
-            // 
-            // rBtnActive
-            // 
-            this.rBtnActive.AutoSize = true;
-            this.rBtnActive.Checked = true;
-            this.rBtnActive.Location = new System.Drawing.Point(163, 15);
-            this.rBtnActive.Name = "rBtnActive";
-            this.rBtnActive.Size = new System.Drawing.Size(71, 24);
-            this.rBtnActive.TabIndex = 26;
-            this.rBtnActive.TabStop = true;
-            this.rBtnActive.Text = "Active";
-            this.rBtnActive.UseVisualStyleBackColor = true;
-            // 
-            // rBtnNotActive
-            // 
-            this.rBtnNotActive.AutoSize = true;
-            this.rBtnNotActive.Location = new System.Drawing.Point(252, 15);
-            this.rBtnNotActive.Name = "rBtnNotActive";
-            this.rBtnNotActive.Size = new System.Drawing.Size(100, 24);
-            this.rBtnNotActive.TabIndex = 27;
-            this.rBtnNotActive.Text = "Not Active";
-            this.rBtnNotActive.UseVisualStyleBackColor = true;
-            // 
             // lblAge
             // 
             this.lblAge.AutoSize = true;
@@ -414,22 +383,12 @@ namespace MediaBazaarProject
             this.rBtnFemale.Text = "Female";
             this.rBtnFemale.UseVisualStyleBackColor = true;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.rBtnNotActive);
-            this.panel1.Controls.Add(this.lblIsAccountActive);
-            this.panel1.Controls.Add(this.rBtnActive);
-            this.panel1.Location = new System.Drawing.Point(398, 105);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 54);
-            this.panel1.TabIndex = 37;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.lblCovidVaccinated);
             this.panel2.Controls.Add(this.rBtnYes);
             this.panel2.Controls.Add(this.rBtnNo);
-            this.panel2.Location = new System.Drawing.Point(398, 169);
+            this.panel2.Location = new System.Drawing.Point(398, 107);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(322, 58);
             this.panel2.TabIndex = 38;
@@ -439,7 +398,7 @@ namespace MediaBazaarProject
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.rBtnYesPermanent);
             this.panel3.Controls.Add(this.rBtnNotPermanent);
-            this.panel3.Location = new System.Drawing.Point(398, 238);
+            this.panel3.Location = new System.Drawing.Point(398, 176);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(316, 65);
             this.panel3.TabIndex = 0;
@@ -453,6 +412,49 @@ namespace MediaBazaarProject
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(387, 60);
             this.panel4.TabIndex = 39;
+            // 
+            // rBtnActive
+            // 
+            this.rBtnActive.AutoSize = true;
+            this.rBtnActive.Checked = true;
+            this.rBtnActive.Location = new System.Drawing.Point(163, 15);
+            this.rBtnActive.Name = "rBtnActive";
+            this.rBtnActive.Size = new System.Drawing.Size(71, 24);
+            this.rBtnActive.TabIndex = 26;
+            this.rBtnActive.TabStop = true;
+            this.rBtnActive.Text = "Active";
+            this.rBtnActive.UseVisualStyleBackColor = true;
+            // 
+            // lblIsAccountActive
+            // 
+            this.lblIsAccountActive.AutoSize = true;
+            this.lblIsAccountActive.Location = new System.Drawing.Point(20, 16);
+            this.lblIsAccountActive.Name = "lblIsAccountActive";
+            this.lblIsAccountActive.Size = new System.Drawing.Size(125, 20);
+            this.lblIsAccountActive.TabIndex = 25;
+            this.lblIsAccountActive.Text = "Is Account Active:";
+            // 
+            // rBtnNotActive
+            // 
+            this.rBtnNotActive.AutoSize = true;
+            this.rBtnNotActive.Location = new System.Drawing.Point(252, 15);
+            this.rBtnNotActive.Name = "rBtnNotActive";
+            this.rBtnNotActive.Size = new System.Drawing.Size(100, 24);
+            this.rBtnNotActive.TabIndex = 27;
+            this.rBtnNotActive.Text = "Not Active";
+            this.rBtnNotActive.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rBtnNotActive);
+            this.panel1.Controls.Add(this.lblIsAccountActive);
+            this.panel1.Controls.Add(this.rBtnActive);
+            this.panel1.Enabled = false;
+            this.panel1.Location = new System.Drawing.Point(398, 253);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(387, 54);
+            this.panel1.TabIndex = 37;
+            this.panel1.Visible = false;
             // 
             // createEmployeeForm
             // 
@@ -490,14 +492,14 @@ namespace MediaBazaarProject
             this.Controls.Add(this.label1);
             this.Name = "createEmployeeForm";
             this.Text = "UpdateEmployeeForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,9 +532,6 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Label lblCovidVaccinated;
         private System.Windows.Forms.RadioButton rBtnYes;
         private System.Windows.Forms.RadioButton rBtnNo;
-        private System.Windows.Forms.Label lblIsAccountActive;
-        private System.Windows.Forms.RadioButton rBtnActive;
-        private System.Windows.Forms.RadioButton rBtnNotActive;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.TextBox tbAge;
         private System.Windows.Forms.Label lblNationality;
@@ -542,9 +541,12 @@ namespace MediaBazaarProject
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton rBtnMale;
         private System.Windows.Forms.RadioButton rBtnFemale;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton rBtnActive;
+        private System.Windows.Forms.Label lblIsAccountActive;
+        private System.Windows.Forms.RadioButton rBtnNotActive;
+        private System.Windows.Forms.Panel panel1;
     }
 }

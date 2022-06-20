@@ -161,5 +161,27 @@ namespace MediaBazaarLibrary.Persistence
                 return product;
             }
         }
+        public bool GetProductByBarcode(int barcode)
+        {
+            using (MySqlConnection conn = DatabaseConnection.CreateConnection())
+            {
+                string sql = "SELECT ProductId FROM products WHERE Barcode=@Barcode";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("Barcode", barcode);
+
+                conn.Open();
+                Product product = new Product();
+                MySqlDataReader dateReader = cmd.ExecuteReader();
+
+                if (dateReader.Read())
+                {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
     }
 }

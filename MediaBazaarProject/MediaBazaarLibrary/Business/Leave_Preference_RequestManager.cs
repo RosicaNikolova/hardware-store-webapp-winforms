@@ -79,6 +79,7 @@ namespace MediaBazaarLibrary.Business
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("EmployeeID".ToString());
+            dt.Columns.Add("Employee");
             dt.Columns.Add("RequestID".ToString());
             dt.Columns.Add("RequestedDate".ToString());
             dt.Columns.Add("RequestStatus".ToString());
@@ -86,6 +87,7 @@ namespace MediaBazaarLibrary.Business
             {
                 DataRow dr = dt.NewRow();
                 dr["EmployeeID"] = leaveRequest.EmployeeID;
+                dr["Employee"] = leaveRequest.Name;
                 dr["RequestID"] = leaveRequest.RequestID;
                 dr["RequestedDate"] = leaveRequest.RequestedDate;
                 dr["RequestStatus"] = leaveRequest.RequestStatus;
@@ -140,11 +142,11 @@ namespace MediaBazaarLibrary.Business
             return leaves;
         }
 
-        //Yable of all prefered shifts, admin form
         public DataTable GetPreferedShiftsRequestsTable()
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("EmployeeID".ToString());
+            dt.Columns.Add("Employee");
             dt.Columns.Add("RequestID".ToString());
             dt.Columns.Add("RequestedDateDay".ToString());
             dt.Columns.Add("Status".ToString());
@@ -152,6 +154,7 @@ namespace MediaBazaarLibrary.Business
             {
                 DataRow dr = dt.NewRow();
                 dr["EmployeeID"] = preferedShift.EmployeeID;
+                dr["Employee"] = preferedShift.Name;
                 dr["RequestID"] = preferedShift.RequestID;
                 dr["RequestedDateDay"] = preferedShift.RequestedDateDay;
                 dr["Status"] = preferedShift.Status;

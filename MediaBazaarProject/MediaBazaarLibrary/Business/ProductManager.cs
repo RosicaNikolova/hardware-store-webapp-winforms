@@ -18,16 +18,22 @@ namespace MediaBazaarLibrary.Business
         {
             try
             {
-                Product product = new Product();
-                product.ProductName = prName;
-                product.ProductDescription = prDesc;
-                product.ProductPrice = prPrice;
-                product.ProductManufacturer = prManu;
-                product.ProductCategory = prCateg;
-                product.QuantityWarehouse = qWare;
-                product.QuantitySales = qSale;
-                product.Barcode = prBarcode;
-                productRepository.CreateProduct(product);
+                if (productRepository.GetProductByBarcode(prBarcode) == false)
+                {
+                    Product product = new Product();
+                    product.ProductName = prName;
+                    product.ProductDescription = prDesc;
+                    product.ProductPrice = prPrice;
+                    product.ProductManufacturer = prManu;
+                    product.ProductCategory = prCateg;
+                    product.QuantityWarehouse = qWare;
+                    product.QuantitySales = qSale;
+                    product.Barcode = prBarcode;
+                    productRepository.CreateProduct(product);
+                }
+                else {
+                    throw new Exception("Barcode already exists!");
+                }
             }
             catch (Exception error)
             {

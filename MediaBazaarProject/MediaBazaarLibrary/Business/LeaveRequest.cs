@@ -10,6 +10,7 @@ namespace MediaBazaarLibrary.Business
     {
         public int RequestID { get; set; }
         public int EmployeeID { get; set; }
+        public string Name { get; set; }
         public DateTime RequestedDate { get; set; }
         public string RequestStatus { get; set; }
     }
