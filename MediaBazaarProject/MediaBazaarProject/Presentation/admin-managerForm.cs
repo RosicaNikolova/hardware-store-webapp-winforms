@@ -839,14 +839,14 @@ namespace MediaBazaarProject
             if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Approve")
             {
                 DataGridViewRow row = dgAllLeaveRequests.Rows[e.RowIndex];
-                int requestID = Convert.ToInt32(row.Cells[3].Value);
+                int requestID = Convert.ToInt32(row.Cells[4].Value);
                 leavePreferenceRequestManager.approveRequest(requestID);
                 dgAllLeaveRequests.DataSource = leavePreferenceRequestManager.GetLeaveRequestsTable();
             }
             else if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Disapprove")
             {
                 DataGridViewRow row = dgAllLeaveRequests.Rows[e.RowIndex];
-                int requestID = Convert.ToInt32(row.Cells[3].Value);
+                int requestID = Convert.ToInt32(row.Cells[4].Value);
                 leavePreferenceRequestManager.disapproveRequest(requestID);
                 dgAllLeaveRequests.DataSource = leavePreferenceRequestManager.GetLeaveRequestsTable();
             }
@@ -920,14 +920,14 @@ namespace MediaBazaarProject
             if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Approve")
             {
                 DataGridViewRow row = dataGridViewPreferedShifts.Rows[e.RowIndex];
-                int requestID = Convert.ToInt32(row.Cells[3].Value);
+                int requestID = Convert.ToInt32(row.Cells[4].Value);
                 leavePreferenceRequestManager.approvePreferedShift(requestID);
                 dataGridViewPreferedShifts.DataSource = leavePreferenceRequestManager.GetPreferedShiftsRequestsTable();
             }
             else if (dgAllLeaveRequests.Columns[e.ColumnIndex].Name == "Disapprove")
             {
                 DataGridViewRow row = dataGridViewPreferedShifts.Rows[e.RowIndex];
-                int requestID = Convert.ToInt32(row.Cells[3].Value);
+                int requestID = Convert.ToInt32(row.Cells[4].Value);
                 leavePreferenceRequestManager.disapprovePreferedShift(requestID);
                 dataGridViewPreferedShifts.DataSource = leavePreferenceRequestManager.GetPreferedShiftsRequestsTable();
             }

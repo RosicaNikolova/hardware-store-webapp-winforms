@@ -271,17 +271,13 @@ namespace MediaBazaarLibrary.Persistence
             using (MySqlConnection conn = DatabaseConnection.CreateConnection())
             {
 
-                string sql = "SELECT e.EmployeeID, RequestID, RequestStatus, RequestedDate " +
-                    "from employees as e left join" +
-                    " leave_requests as l_s on e.EmployeeID = l_s.EmployeeID " +
-                    "where RequestID=@requestID ";
+                string sql = "SELECT e.EmployeeID, RequestID, RequestStatus, RequestedDate from employees as e left join leave_requests as l_s on e.EmployeeID = l_s.EmployeeID where RequestID=@RequestID";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("RequestID", requestID);
                 conn.Open();
 
                 MySqlDataReader dr = cmd.ExecuteReader();
                 
-
                 LeaveRequest leaveRequest = null;
                 while (dr.Read())
                 {
