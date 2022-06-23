@@ -29,6 +29,7 @@ namespace MediaBazaarProject.Presentation
             DateTime nextWeekToday = DateTime.Now.AddDays(7);
             var startOfNextWeek = nextWeekToday.AddDays(-(int)nextWeekToday.DayOfWeek);
             DateTime lastDayOfWeek = startOfNextWeek.AddDays(7).AddSeconds(-1);
+            //DateTime lastDayOfWeek = new DateTime(2022, 7, 3);
             return lastDayOfWeek;
         }
         private void importIntoListBoxes() {
@@ -39,7 +40,7 @@ namespace MediaBazaarProject.Presentation
 
             foreach (Shift shift in schedule)
             {
-                if (shift.Date.Day == nextWeek1stDay.Day+1)
+                if (shift.Date.Day == nextWeek1stDay.AddDays(1).Day)
                 {
                     switch (shift.ShiftType)
                     {
@@ -54,7 +55,7 @@ namespace MediaBazaarProject.Presentation
                             break;
                     }
                 }
-                else if (shift.Date.Day == nextWeek1stDay.Day + 2)
+                else if (shift.Date.Day == nextWeek1stDay.AddDays(2).Day)
                 {
                     switch (shift.ShiftType)
                     {
@@ -69,7 +70,7 @@ namespace MediaBazaarProject.Presentation
                             break;
                     }
                 }
-                else if (shift.Date.Day == nextWeek1stDay.Day + 3)
+                else if (shift.Date.Day == nextWeek1stDay.AddDays(3).Day)
                 {
                     switch (shift.ShiftType)
                     {
@@ -84,7 +85,7 @@ namespace MediaBazaarProject.Presentation
                             break;
                     }
                 }
-                else if (shift.Date.Day == nextWeek1stDay.Day + 4)
+                else if (shift.Date.Day == nextWeek1stDay.AddDays(4).Day)
                 {
                     switch (shift.ShiftType)
                     {
@@ -99,7 +100,7 @@ namespace MediaBazaarProject.Presentation
                             break;
                     }
                 }
-                else if (shift.Date.Day == nextWeek1stDay.Day + 5)
+                else if (shift.Date.Day == nextWeek1stDay.AddDays(5).Day)
                 {
                     switch (shift.ShiftType)
                     {
@@ -114,7 +115,7 @@ namespace MediaBazaarProject.Presentation
                             break;
                     }
                 }
-                else if (shift.Date.Day == nextWeek1stDay.Day + 6)
+                else if (shift.Date.Day == nextWeek1stDay.AddDays(6).Day)
                 {
                     switch (shift.ShiftType)
                     {
@@ -129,7 +130,7 @@ namespace MediaBazaarProject.Presentation
                             break;
                     }
                 }
-                else if (shift.Date.Day == nextWeek1stDay.Day + 7)
+                else if (shift.Date.Day == nextWeek1stDay.AddDays(7).Day)
                 {
                     switch (shift.ShiftType)
                     {

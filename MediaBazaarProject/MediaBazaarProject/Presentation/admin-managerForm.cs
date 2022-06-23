@@ -516,8 +516,10 @@ namespace MediaBazaarProject
             if (tabAdmin.SelectedTab == tabAutomatedSchedule)
             {
 
-                DateTime nextMonday = GetNextMonday();
-                DateTime nextSunday = new DateTime(nextMonday.Year, nextMonday.Month, nextMonday.Day + 6);
+                //DateTime nextMonday = GetNextMonday();
+                DateTime nextMonday = new DateTime(2022, 6, 27);
+                DateTime nextSunday = new DateTime(2022, 7, 3);
+                //DateTime nextSunday = new DateTime(nextMonday.Year, nextMonday.Month, nextMonday.Day + 6);
                 lblDates.Text = $"{nextMonday.Day}.{nextMonday.Month}.{nextMonday.Year} - {nextSunday.Day}.{nextSunday.Month}.{nextSunday.Year}";
                 tbxEmployeesPerShift.Text = string.Empty;
             }
@@ -1005,7 +1007,9 @@ namespace MediaBazaarProject
         private void btnDeleteSchedule_Click(object sender, EventArgs e)
         {
             DateTime nextMonday = GetNextMonday();
-            DateTime nextSunday = new DateTime(nextMonday.Year, nextMonday.Month, nextMonday.Day + 6);
+
+            //DateTime nextSunday = new DateTime(nextMonday.Year, nextMonday.Month, nextMonday.Day + 6);
+            DateTime nextSunday = new DateTime(2022, 7, 3);
             bool alreadyGenerated = shiftManager.ScheduleForWeekAlreadyGenerated(nextMonday);
             if (alreadyGenerated)
             {
